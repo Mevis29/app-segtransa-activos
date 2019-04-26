@@ -13,7 +13,7 @@
         <EntityTypeShape EntityType="SegtransaModel.EstadoUsuarios" Width="1.5" PointX="8.125" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SegtransaModel.Proveedores" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SegtransaModel.RolUsuarios" Width="1.5" PointX="12.375" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SegtransaModel.THAsignaciones" Width="1.5" PointX="6.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SegtransaModel.THAsignaciones" Width="1.5" PointX="6.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="SegtransaModel.THReparaciones" Width="1.5" PointX="2" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SegtransaModel.Usuarios" Width="1.5" PointX="9.375" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="SegtransaModel.FK_Activo_Depc" ManuallyRouted="false" />
