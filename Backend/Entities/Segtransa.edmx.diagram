@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b869bbe5861847189490a1eeaf0d1b87" Name="Diagram1">
+        <EntityTypeShape EntityType="SegtransaModel.Activos" Width="1.5" PointX="3.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SegtransaModel.Bitacora" Width="1.5" PointX="12.375" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="SegtransaModel.Categorias" Width="1.5" PointX="0.5" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SegtransaModel.Depreciacion" Width="1.5" PointX="12.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SegtransaModel.EstadoActivos" Width="1.5" PointX="0.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SegtransaModel.EstadoUsuarios" Width="1.5" PointX="8.125" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SegtransaModel.Proveedores" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SegtransaModel.RolUsuarios" Width="1.5" PointX="12.375" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SegtransaModel.THAsignaciones" Width="1.5" PointX="6.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SegtransaModel.THReparaciones" Width="1.5" PointX="2" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SegtransaModel.Usuarios" Width="1.5" PointX="9.375" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="SegtransaModel.FK_Activo_Depc" ManuallyRouted="false" />
+        <AssociationConnector Association="SegtransaModel.FK_Categ_Act" ManuallyRouted="false" />
+        <AssociationConnector Association="SegtransaModel.FK_EstActivo_US" ManuallyRouted="false" />
+        <AssociationConnector Association="SegtransaModel.FK_IdActivo_THA" ManuallyRouted="false" />
+        <AssociationConnector Association="SegtransaModel.FK_IdActivo_THR" ManuallyRouted="false" />
+        <AssociationConnector Association="SegtransaModel.FK_Proved_Act" ManuallyRouted="false" />
+        <AssociationConnector Association="SegtransaModel.FK_IdUsuario_Bi" ManuallyRouted="false" />
+        <AssociationConnector Association="SegtransaModel.FK_EstUsuario_US" ManuallyRouted="false" />
+        <AssociationConnector Association="SegtransaModel.FK_RolUsuario_US" ManuallyRouted="false" />
+        <AssociationConnector Association="SegtransaModel.FK_IdUsuario_THA" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

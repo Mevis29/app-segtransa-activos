@@ -1,0 +1,678 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CEE9FF1D-6A40-4A90-A298-9B83424BC079}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FrontEnd</RootNamespace>
+    <AssemblyName>FrontEnd</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms_new\frmReparaciones_n.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmReparaciones_n.designer.cs">
+      <DependentUpon>frmReparaciones_n.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmAsignacionesModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmAsignacionesModificar.designer.cs">
+      <DependentUpon>frmAsignacionesModificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmAsignacionesAgregar_n.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmAsignacionesAgregar_n.designer.cs">
+      <DependentUpon>frmAsignacionesAgregar_n.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmAsignaciones_n.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmAsignaciones_n.designer.cs">
+      <DependentUpon>frmAsignaciones_n.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmMisActivos_n.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmMisActivos_n.designer.cs">
+      <DependentUpon>frmMisActivos_n.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmProveedoresModificar_n.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmProveedoresModificar_n.designer.cs">
+      <DependentUpon>frmProveedoresModificar_n.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmProveedoresAgregar_n.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmProveedoresAgregar_n.designer.cs">
+      <DependentUpon>frmProveedoresAgregar_n.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmActivosModificar_n.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmActivosModificar_n.designer.cs">
+      <DependentUpon>frmActivosModificar_n.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmActivosAgregar_n.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmActivosAgregar_n.designer.cs">
+      <DependentUpon>frmActivosAgregar_n.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmProveedores_n.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmProveedores_n.designer.cs">
+      <DependentUpon>frmProveedores_n.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmMiPerfil_n.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmMiPerfil_n.designer.cs">
+      <DependentUpon>frmMiPerfil_n.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmUsuariosModificar_n.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmUsuariosModificar_n.designer.cs">
+      <DependentUpon>frmUsuariosModificar_n.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmUsuariosAgregar_n.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmUsuariosAgregar_n.designer.cs">
+      <DependentUpon>frmUsuariosAgregar_n.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmMenuPrincipal.designer.cs">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmActivos_n.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmActivos_n.designer.cs">
+      <DependentUpon>frmActivos_n.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmUsuarios_n.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmUsuarios_n.designer.cs">
+      <DependentUpon>frmUsuarios_n.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmActivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmActivos.Designer.cs">
+      <DependentUpon>frmActivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmActivosAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmActivosAdd.Designer.cs">
+      <DependentUpon>frmActivosAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmActivosSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmActivosSearch.Designer.cs">
+      <DependentUpon>frmActivosSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmMisActivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmMisActivos.Designer.cs">
+      <DependentUpon>frmMisActivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmMisDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmMisDatos.Designer.cs">
+      <DependentUpon>frmMisDatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmActivosUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmActivosUpdate.designer.cs">
+      <DependentUpon>frmActivosUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmRepActivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmRepActivo.Designer.cs">
+      <DependentUpon>frmRepActivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmRepBitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmRepBitacora.Designer.cs">
+      <DependentUpon>frmRepBitacora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmRepProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmRepProveedor.Designer.cs">
+      <DependentUpon>frmRepProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmRepRolUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmRepRolUsuario.Designer.cs">
+      <DependentUpon>frmRepRolUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmRepUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmRepUsuario.Designer.cs">
+      <DependentUpon>frmRepUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmUsuariosAgrega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmUsuariosAgrega.Designer.cs">
+      <DependentUpon>frmUsuariosAgrega.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmUsuariosModifica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmUsuariosModifica.Designer.cs">
+      <DependentUpon>frmUsuariosModifica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Formularios\frmReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmReportes.Designer.cs">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources_Reportes\SEGTRANSADataSetActivo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SEGTRANSADataSetActivo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources_Reportes\SEGTRANSADataSetBitacora.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SEGTRANSADataSetBitacora.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources_Reportes\SEGTRANSADataSetProveedor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SEGTRANSADataSetProveedor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources_Reportes\SEGTRANSADataSetRolUsuario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SEGTRANSADataSetRolUsuario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources_Reportes\SEGTRANSADataSetUsuario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SEGTRANSADataSetUsuario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources_Reportes\SEGTRANSADataSetUsuarios.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SEGTRANSADataSetUsuarios.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources_Forms\SEGTRANSADataSource_USUARIOS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SEGTRANSADataSource_USUARIOS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources_Forms\SEGTRANSADataSource_ACTIVOS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SEGTRANSADataSource_ACTIVOS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources_Forms\SEGTRANSADataSource_PROVEEDORES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SEGTRANSADataSource_PROVEEDORES.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources_Forms\SEGTRANSADataSource_spActivosporIdUsuario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SEGTRANSADataSource_spActivosporIdUsuario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources_Forms\SEGTRANSADataSource_ASIGNACIONES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SEGTRANSADataSource_ASIGNACIONES.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources_Forms\SEGTRANSADataSource_spListaTotalAsignaciones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SEGTRANSADataSource_spListaTotalAsignaciones.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources_Forms\SEGTRANSADataSource_REPARACIONES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SEGTRANSADataSource_REPARACIONES.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Forms_new\frmReparaciones_n.resx">
+      <DependentUpon>frmReparaciones_n.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmAsignacionesModificar.resx">
+      <DependentUpon>frmAsignacionesModificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmAsignacionesAgregar_n.resx">
+      <DependentUpon>frmAsignacionesAgregar_n.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmAsignaciones_n.resx">
+      <DependentUpon>frmAsignaciones_n.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmMisActivos_n.resx">
+      <DependentUpon>frmMisActivos_n.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmProveedoresModificar_n.resx">
+      <DependentUpon>frmProveedoresModificar_n.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmProveedoresAgregar_n.resx">
+      <DependentUpon>frmProveedoresAgregar_n.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmActivosModificar_n.resx">
+      <DependentUpon>frmActivosModificar_n.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmActivosAgregar_n.resx">
+      <DependentUpon>frmActivosAgregar_n.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmProveedores_n.resx">
+      <DependentUpon>frmProveedores_n.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmMiPerfil_n.resx">
+      <DependentUpon>frmMiPerfil_n.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmUsuariosModificar_n.resx">
+      <DependentUpon>frmUsuariosModificar_n.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmUsuariosAgregar_n.resx">
+      <DependentUpon>frmUsuariosAgregar_n.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmMenuPrincipal.resx">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmActivos_n.resx">
+      <DependentUpon>frmActivos_n.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmUsuarios_n.resx">
+      <DependentUpon>frmUsuarios_n.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmActivos.resx">
+      <DependentUpon>frmActivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmActivosAdd.resx">
+      <DependentUpon>frmActivosAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmActivosSearch.resx">
+      <DependentUpon>frmActivosSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmMisActivos.resx">
+      <DependentUpon>frmMisActivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmMisDatos.resx">
+      <DependentUpon>frmMisDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmRepActivo.resx">
+      <DependentUpon>frmRepActivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmRepBitacora.resx">
+      <DependentUpon>frmRepBitacora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmReportes.resx">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmActivosUpdate.resx">
+      <DependentUpon>frmActivosUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmRepProveedor.resx">
+      <DependentUpon>frmRepProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmRepRolUsuario.resx">
+      <DependentUpon>frmRepRolUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmRepUsuario.resx">
+      <DependentUpon>frmRepUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmUsuariosAgrega.resx">
+      <DependentUpon>frmUsuariosAgrega.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmUsuariosModifica.resx">
+      <DependentUpon>frmUsuariosModifica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptActivo.rdlc" />
+    <EmbeddedResource Include="Reportes\rptProveedor.rdlc" />
+    <EmbeddedResource Include="Reportes\rptRolUsuario.rdlc" />
+    <EmbeddedResource Include="Reportes\rptUsuario.rdlc" />
+    <EmbeddedResource Include="Reportes\rtpBitacora.rdlc" />
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="DataSources_Reportes\SEGTRANSADataSetActivo.xsc">
+      <DependentUpon>SEGTRANSADataSetActivo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Reportes\SEGTRANSADataSetActivo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SEGTRANSADataSetActivo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources_Reportes\SEGTRANSADataSetActivo.xss">
+      <DependentUpon>SEGTRANSADataSetActivo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Reportes\SEGTRANSADataSetBitacora.xsc">
+      <DependentUpon>SEGTRANSADataSetBitacora.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Reportes\SEGTRANSADataSetBitacora.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SEGTRANSADataSetBitacora.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources_Reportes\SEGTRANSADataSetBitacora.xss">
+      <DependentUpon>SEGTRANSADataSetBitacora.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Reportes\SEGTRANSADataSetProveedor.xsc">
+      <DependentUpon>SEGTRANSADataSetProveedor.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Reportes\SEGTRANSADataSetProveedor.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SEGTRANSADataSetProveedor.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources_Reportes\SEGTRANSADataSetProveedor.xss">
+      <DependentUpon>SEGTRANSADataSetProveedor.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Reportes\SEGTRANSADataSetRolUsuario.xsc">
+      <DependentUpon>SEGTRANSADataSetRolUsuario.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Reportes\SEGTRANSADataSetRolUsuario.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SEGTRANSADataSetRolUsuario.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources_Reportes\SEGTRANSADataSetRolUsuario.xss">
+      <DependentUpon>SEGTRANSADataSetRolUsuario.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Reportes\SEGTRANSADataSetUsuario.xsc">
+      <DependentUpon>SEGTRANSADataSetUsuario.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Reportes\SEGTRANSADataSetUsuario.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SEGTRANSADataSetUsuario.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources_Reportes\SEGTRANSADataSetUsuario.xss">
+      <DependentUpon>SEGTRANSADataSetUsuario.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Reportes\SEGTRANSADataSetUsuarios.xsc">
+      <DependentUpon>SEGTRANSADataSetUsuarios.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Reportes\SEGTRANSADataSetUsuarios.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SEGTRANSADataSetUsuarios.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources_Reportes\SEGTRANSADataSetUsuarios.xss">
+      <DependentUpon>SEGTRANSADataSetUsuarios.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSource_USUARIOS.xsc">
+      <DependentUpon>SEGTRANSADataSource_USUARIOS.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSource_USUARIOS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SEGTRANSADataSource_USUARIOS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSource_USUARIOS.xss">
+      <DependentUpon>SEGTRANSADataSource_USUARIOS.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSource_ACTIVOS.xsc">
+      <DependentUpon>SEGTRANSADataSource_ACTIVOS.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSource_ACTIVOS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SEGTRANSADataSource_ACTIVOS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSource_ACTIVOS.xss">
+      <DependentUpon>SEGTRANSADataSource_ACTIVOS.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSource_PROVEEDORES.xsc">
+      <DependentUpon>SEGTRANSADataSource_PROVEEDORES.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSource_PROVEEDORES.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SEGTRANSADataSource_PROVEEDORES.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSource_PROVEEDORES.xss">
+      <DependentUpon>SEGTRANSADataSource_PROVEEDORES.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSource_spActivosporIdUsuario.xsc">
+      <DependentUpon>SEGTRANSADataSource_spActivosporIdUsuario.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSource_spActivosporIdUsuario.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SEGTRANSADataSource_spActivosporIdUsuario.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSource_spActivosporIdUsuario.xss">
+      <DependentUpon>SEGTRANSADataSource_spActivosporIdUsuario.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSource_ASIGNACIONES.xsc">
+      <DependentUpon>SEGTRANSADataSource_ASIGNACIONES.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSource_ASIGNACIONES.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SEGTRANSADataSource_ASIGNACIONES.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSource_ASIGNACIONES.xss">
+      <DependentUpon>SEGTRANSADataSource_ASIGNACIONES.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSource_spListaTotalAsignaciones.xsc">
+      <DependentUpon>SEGTRANSADataSource_spListaTotalAsignaciones.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSource_spListaTotalAsignaciones.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SEGTRANSADataSource_spListaTotalAsignaciones.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSource_spListaTotalAsignaciones.xss">
+      <DependentUpon>SEGTRANSADataSource_spListaTotalAsignaciones.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSource_REPARACIONES.xsc">
+      <DependentUpon>SEGTRANSADataSource_REPARACIONES.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSource_REPARACIONES.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SEGTRANSADataSource_REPARACIONES.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSource_REPARACIONES.xss">
+      <DependentUpon>SEGTRANSADataSource_REPARACIONES.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Backend\Backend.csproj">
+      <Project>{ac500664-1ca8-47aa-8157-c4308dc1d5e5}</Project>
+      <Name>Backend</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagenes\add.png" />
+    <None Include="Resources\Imagenes\activos.png" />
+    <Content Include="Resources\Imagenes\assets.png" />
+    <None Include="Resources\Imagenes\myprofile.png" />
+    <None Include="Resources\Imagenes\logo.png" />
+    <None Include="Resources\Imagenes\logo2-01.png" />
+    <None Include="Resources\Imagenes\Logo-peq.PNG" />
+    <None Include="Resources\Imagenes\logpe.png" />
+    <None Include="Resources\Imagenes\logout.png" />
+    <None Include="Resources\Imagenes\delete.png" />
+    <None Include="Resources\Imagenes\logo 3.PNG" />
+    <None Include="Resources\Imagenes\maintenance.png" />
+    <None Include="Resources\Imagenes\group.png" />
+    <None Include="Resources\Imagenes\franchise.png" />
+    <None Include="Resources\Imagenes\list.png" />
+    <None Include="Resources\Imagenes\coordination.png" />
+    <None Include="Resources\Imagenes\mouse.png" />
+    <None Include="Resources\Imagenes\followers.png" />
+    <None Include="Resources\Imagenes\magnifying-glass.png" />
+    <None Include="Resources\Imagenes\coordination1.png" />
+    <None Include="Resources\Imagenes\interview.png" />
+    <None Include="Resources\Imagenes\hd.png" />
+    <None Include="Resources\Imagenes\keyboard.png" />
+    <None Include="Resources\Imagenes\big-loupe.png" />
+    <None Include="Resources\Imagenes\big-loupe1.png" />
+    <None Include="Resources\Imagenes\curved-arrows.png" />
+    <None Include="Resources\Imagenes\minus-button.png" />
+    <Content Include="Resources\Imagenes\myassets.png" />
+    <None Include="Resources\Imagenes\profile.png" />
+    <None Include="Resources\Imagenes\projector.png" />
+    <None Include="Resources\Imagenes\Picture1.png" />
+    <None Include="Resources\Imagenes\plus-button.png" />
+    <Content Include="Resources\Imagenes\repairments.png" />
+    <None Include="Resources\Imagenes\reports.png" />
+    <None Include="Resources\Imagenes\update.png" />
+    <None Include="Resources\Imagenes\user24.png" />
+    <None Include="Resources\Imagenes\strategy.png" />
+    <None Include="Resources\Imagenes\statistics.png" />
+    <Content Include="Resources\Imagenes\users.png" />
+    <None Include="Resources\Imagenes\users1.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
