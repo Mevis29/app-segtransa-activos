@@ -20,6 +20,8 @@ namespace FronEnd
         
         private IUsuariosDAL usuariosDAL = new UsuariosImplDAL();
         private IActivosDAL activosDAL = new ActivosImplDAL();
+        private IBitacoraDAL bitacoraDAL = new BitacoraImplDAL();
+        private Bitacora bitacora = new Bitacora();
 
         public FrmAsignacionesAgregar_n()
         {

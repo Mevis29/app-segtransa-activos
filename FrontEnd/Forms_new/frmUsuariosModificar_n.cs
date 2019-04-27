@@ -1,5 +1,6 @@
 ﻿using Backend.DAL;
 using Backend.Entities;
+using FrontEnd.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,8 @@ namespace FronEnd
         private IUsuariosDAL usuariosDAL;
         private IRolUsuariosDAL rolUsuariosDAL;
         private IEstadoUsuariosDAL estadoUsuariosDAL;
+        private IBitacoraDAL bitacoraDAL = new BitacoraImplDAL();
+        private Bitacora bitacora = new Bitacora();
         private Usuarios Usuario;
 
       public FrmUsuariosModificar_n()
@@ -115,6 +118,10 @@ namespace FronEnd
                     
 
                     usuariosDAL.Update(Usuario);
+                    string detalleBitacora = "Se actualizaron los datos del usuario: " + Usuario.Nombre+" "+Usuario.Apellido;
+                    bitacora.DetalleBitacora = detalleBitacora;
+                    bitacora.IdUsuario = ValoresAplicacion.idUsuario;
+                    bitacoraDAL.Add(bitacora);
                     MessageBox.Show("Usuario actualizado");
                     this.Hide();
                 }

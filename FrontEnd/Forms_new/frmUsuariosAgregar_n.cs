@@ -1,5 +1,6 @@
 ﻿using Backend.DAL;
 using Backend.Entities;
+using FrontEnd.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,8 @@ namespace FronEnd
     {
         private IUsuariosDAL usuarioDAL = new UsuariosImplDAL();
         private IRolUsuariosDAL rolUsuariosDAL = new RolUsuariosImplDAL();
+        private IBitacoraDAL bitacoraDAL = new BitacoraImplDAL();
+        private Bitacora bitacora = new Bitacora();
         private Usuarios Usuario;
 
         public FrmUsuariosAgregar_n()
@@ -82,6 +85,10 @@ namespace FronEnd
                     Usuario.EstadoUsuario = 1; // Estado default al agregar un usuario es 1 de Activo
 
                     usuarioDAL.Add(Usuario);
+                    string detalleBitacora = "Se insertó el usuario: " + Usuario.Nombre+" "+Usuario.Apellido;
+                    bitacora.DetalleBitacora = detalleBitacora;
+                    bitacora.IdUsuario = ValoresAplicacion.idUsuario;
+                    bitacoraDAL.Add(bitacora);
                     MessageBox.Show("Usuario agregado");
                     this.Hide();
                 }

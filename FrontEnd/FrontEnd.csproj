@@ -77,6 +77,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\ValoresAplicacion.cs" />
+    <Compile Include="DataSources_Forms\ActivosDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActivosDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources_Forms\SEGTRANSADataSource_REPARACIONES.cs">
+      <DependentUpon>SEGTRANSADataSource_REPARACIONES.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources_Forms\sp_RetornaReparacionesDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sp_RetornaReparacionesDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources_Reportes\SEGTRANSADataSetSp_RetornaBitacora.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SEGTRANSADataSetSp_RetornaBitacora.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmMenuReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmMenuReportes.Designer.cs">
+      <DependentUpon>frmMenuReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmReparaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmReparaciones.designer.cs">
+      <DependentUpon>frmReparaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmReparacionesAgregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmReparacionesAgregar.designer.cs">
+      <DependentUpon>frmReparacionesAgregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmReparacionesModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmReparacionesModificar.designer.cs">
+      <DependentUpon>frmReparacionesModificar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms_new\frmReparaciones_n.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +185,18 @@
     </Compile>
     <Compile Include="Forms_new\frmMiPerfil_n.designer.cs">
       <DependentUpon>frmMiPerfil_n.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmRptBitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmRptBitacora.designer.cs">
+      <DependentUpon>frmRptBitacora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmRptReparaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmRptReparaciones.designer.cs">
+      <DependentUpon>frmRptReparaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms_new\frmUsuariosModificar_n.cs">
       <SubType>Form</SubType>
@@ -348,6 +403,18 @@
       <DependentUpon>SEGTRANSADataSource_REPARACIONES.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Forms_new\frmMenuReportes.resx">
+      <DependentUpon>frmMenuReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmReparaciones.resx">
+      <DependentUpon>frmReparaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmReparacionesAgregar.resx">
+      <DependentUpon>frmReparacionesAgregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmReparacionesModificar.resx">
+      <DependentUpon>frmReparacionesModificar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms_new\frmReparaciones_n.resx">
       <DependentUpon>frmReparaciones_n.cs</DependentUpon>
     </EmbeddedResource>
@@ -380,6 +447,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_new\frmMiPerfil_n.resx">
       <DependentUpon>frmMiPerfil_n.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmRptBitacora.resx">
+      <DependentUpon>frmRptBitacora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmRptReparaciones.resx">
+      <DependentUpon>frmRptReparaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_new\frmUsuariosModificar_n.resx">
       <DependentUpon>frmUsuariosModificar_n.cs</DependentUpon>
@@ -454,10 +527,44 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptActivo.rdlc" />
     <EmbeddedResource Include="Reportes\rptProveedor.rdlc" />
+    <EmbeddedResource Include="Reportes\rptReparacion.rdlc" />
     <EmbeddedResource Include="Reportes\rptRolUsuario.rdlc" />
     <EmbeddedResource Include="Reportes\rptUsuario.rdlc" />
     <EmbeddedResource Include="Reportes\rtpBitacora.rdlc" />
     <None Include="App.Config" />
+    <None Include="DataSources_Forms\ActivosDataSet.xsc">
+      <DependentUpon>ActivosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Forms\ActivosDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ActivosDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources_Forms\ActivosDataSet.xss">
+      <DependentUpon>ActivosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Forms\sp_RetornaReparacionesDS.xsc">
+      <DependentUpon>sp_RetornaReparacionesDS.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Forms\sp_RetornaReparacionesDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sp_RetornaReparacionesDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources_Forms\sp_RetornaReparacionesDS.xss">
+      <DependentUpon>sp_RetornaReparacionesDS.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Reportes\SEGTRANSADataSetSp_RetornaBitacora.xsc">
+      <DependentUpon>SEGTRANSADataSetSp_RetornaBitacora.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Reportes\SEGTRANSADataSetSp_RetornaBitacora.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SEGTRANSADataSetSp_RetornaBitacora.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources_Reportes\SEGTRANSADataSetSp_RetornaBitacora.xss">
+      <DependentUpon>SEGTRANSADataSetSp_RetornaBitacora.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

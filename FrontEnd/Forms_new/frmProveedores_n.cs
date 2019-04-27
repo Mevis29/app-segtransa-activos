@@ -1,6 +1,7 @@
 ﻿using Backend.DAL;
 using Backend.Entities;
 using FronEnd;
+using FrontEnd.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,8 @@ namespace Frontend
     public partial class FrmProveedores_n : Form
     {
         private IProveedoresDAL proveedorDAL = new ProveedoresImplDAL();
+        private IBitacoraDAL bitacoraDAL = new BitacoraImplDAL();
+        private Bitacora bitacora = new Bitacora();
         int idProveedor;
         public FrmProveedores_n()
         {
@@ -97,6 +100,10 @@ namespace Frontend
                 if (dialogResult == DialogResult.Yes)
                 {
                     proveedorDAL.Delete(proveedor.IdProveedor);
+                    string detalleBitacora = "Se eliminó el proveedor: " + proveedor.NombreProveedor;
+                    bitacora.DetalleBitacora = detalleBitacora;
+                    bitacora.IdUsuario = ValoresAplicacion.idUsuario;
+                    bitacoraDAL.Add(bitacora);
                     MessageBox.Show("Proveedor Eliminado");
 
                     //usuarios.Clear();

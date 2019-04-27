@@ -1,6 +1,7 @@
 ﻿using Backend.DAL;
 using Backend.Entities;
 using BackEnd.DAL;
+using FrontEnd.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,9 @@ namespace FronEnd
         private ICategoriasDAL categoriaDAL = new CategoriasImplDAL();
         private IProveedoresDAL proveedorDAL = new ProveedoresImplDAL();
         private IEstadoActivosDAL estadoActivoDAL = new EstadoActivosImplDAL();
+        private IDepreciacionDAL depreciacionDAL = new DepreciacionDALImpl();
+        private IBitacoraDAL bitacoraDAL = new BitacoraImplDAL();
+        private Bitacora bitacora = new Bitacora();
         //private Activos activo;
 
         public FrmActivosAgregar_n()
@@ -63,7 +67,8 @@ namespace FronEnd
                 {
                     if (string.IsNullOrEmpty(txtDescripcion.Text) ||
                         string.IsNullOrEmpty(txtGarantia.Text) ||
-                       string.IsNullOrEmpty(txtPrecio.Text)
+                       string.IsNullOrEmpty(txtPrecio.Text) ||
+                       string.IsNullOrEmpty(txtMesesDepreciacion.Text)
                         )
                     {
 
@@ -71,6 +76,10 @@ namespace FronEnd
 
                         return;
 
+                    }
+                    else if (validarFecha() == false)
+                    {
+                        MessageBox.Show("La fecha de compra debe ser menor que la fecha actual");
                     }
                     else
                     {
@@ -96,22 +105,38 @@ namespace FronEnd
                             activo.Proveedor = proveedores.IdProveedor;
                             activo.EstadoActivo = estadoActivos.IdEstadoActivo;
                             activo.Garantia = Convert.ToInt32(txtGarantia.Text);
-
+                            activo.MesesDepreciacion = Convert.ToInt32(txtMesesDepreciacion.Text);
 
                             activoDAL.agregarActivo(activo);
+                            //Se agrega la depreciación de acuerdo al último activo agregado
+                            depreciacionDAL.Add(activoDAL.obtenerActivos()[activoDAL.obtenerActivos().Count - 1]);
+                            string detalleBitacora = "Se insertó el activo: " + activo.CodActivo + activo.IdActivo;
+                            bitacora.DetalleBitacora = detalleBitacora;
+                            bitacora.IdUsuario = ValoresAplicacion.idUsuario;
+                            bitacoraDAL.Add(bitacora);
                             MessageBox.Show("Activo agregado");
                             this.Close();
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Debe completar toda la informacion");
+                    MessageBox.Show("Uno de los datos ingresados no tiene el formato correcto");
                 }
 
             }
 
 
+        }
+
+        private bool validarFecha()
+        {
+            bool fechaValidada = true;
+            if (dateFechaCompra.Value > DateTime.Now)
+            {
+                fechaValidada = false;
+            }
+            return fechaValidada;
         }
 
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
@@ -152,6 +177,24 @@ namespace FronEnd
             }
         }
 
+        private void txtMesesDepreciacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números 
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso 
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan 
+                e.Handled = true;
+            }
+        }
 
         private void txtDescripcion_Enter(object sender, EventArgs e)
         {
@@ -219,6 +262,28 @@ namespace FronEnd
 
         }
 
+        private void txtMesesDepreciacion_Enter(object sender, EventArgs e)
+        {
+            if (txtMesesDepreciacion.Text == "Meses depreciación: ")
+            {
+                txtMesesDepreciacion.Text = "";
+
+                txtMesesDepreciacion.ForeColor = Color.Black;
+            }
+
+        }
+
+        private void txtMesesDepreciacion_Leave(object sender, EventArgs e)
+        {
+            if (txtMesesDepreciacion.Text == "")
+            {
+                txtMesesDepreciacion.Text = "Meses depreciación: ";
+
+                txtMesesDepreciacion.ForeColor = Color.Silver;
+            }
+
+
+        }
 
         private void cmbCategoria_KeyPress(object sender, KeyPressEventArgs e)
         {

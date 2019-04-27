@@ -77,7 +77,7 @@ namespace Backend.DAL
             {
                 using (context = new BDContext())
                 {
-                    //context.sp_modificaReparacion(reparacion.IdReparacion, reparacion.FechaInicialReparacion, reparacion.FechafinalReparacion);
+                    context.sp_modificaReparacion(reparacion.IdReparacion, reparacion.FechaInicialReparacion, reparacion.FechafinalReparacion);
                     context.SaveChanges();
                 }
             }

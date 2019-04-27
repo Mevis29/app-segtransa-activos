@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Backend.DAL;
 using Backend.Entities;
 using FrontEnd;
-
+using FrontEnd.Clases;
 
 namespace FrontEnd
 {
@@ -23,6 +23,8 @@ namespace FrontEnd
 
         public IUsuariosDAL usuariosDal = new UsuariosImplDAL();
         CryptoEngine cryptoEngine = new CryptoEngine();
+        private IBitacoraDAL bitacoraDAL = new BitacoraImplDAL();
+        private Bitacora bitacora = new Bitacora();
         public Usuarios user;
         int contadorIntentos = 0;
 
@@ -74,6 +76,7 @@ namespace FrontEnd
                         {
                             /*Validado usuario y password se le da acceso a un menu de opciones de acuerdo a su roll, admin o cualquier otro*/
                             user = usuariosDal.GetUsuario(id);
+                            ValoresAplicacion.idUsuario = user.IdUsuario;
 
                             //Actualiza el campo del ultimo Login
 
@@ -94,12 +97,15 @@ namespace FrontEnd
 
                             //actualizar fecha y hora de último login del usuario
                             usuariosDal.actualizaDatosLogin(user.IdUsuario);
-                            
+                            string detalleBitacora = "El usuario " + user.Nombre + " " + user.Apellido + " inició sesión";
+                            bitacora.DetalleBitacora = detalleBitacora;
+                            bitacora.IdUsuario = ValoresAplicacion.idUsuario;
+                            bitacoraDAL.Add(bitacora);
 
 
 
                             // abrir form Menu Principal
-                    
+
 
                             FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(user);
                             menuPrincipal.Show();

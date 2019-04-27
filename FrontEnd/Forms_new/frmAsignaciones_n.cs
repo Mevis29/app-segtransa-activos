@@ -17,6 +17,8 @@ namespace Frontend
     public partial class FrmAsignaciones_n : Form
     {
         private IAsignacionesDAL asignacionesDAL = new AsignacionesImplDAL();
+        private IBitacoraDAL bitacoraDAL = new BitacoraImplDAL();
+        private Bitacora bitacora = new Bitacora();
         public FrmAsignaciones_n()
         {
             InitializeComponent();
@@ -118,6 +120,7 @@ namespace Frontend
                 if (dialogResult == DialogResult.Yes)
                 {
                     asignacionesDAL.Delete(asignacionSelected.IdAsignacion);
+                   
                     MessageBox.Show("Asignacion Eliminada");
 
                     //usuarios.Clear();

@@ -1,6 +1,7 @@
 ﻿using Backend.DAL;
 using Backend.Entities;
 using BackEnd.DAL;
+using FrontEnd.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,9 @@ namespace FronEnd
         private IProveedoresDAL proveedorDAL;
         private IEstadoActivosDAL estadoActivoDAL;
         private Activos Activo;
+        private IDepreciacionDAL depreciacionDAL = new DepreciacionDALImpl();
+        private IBitacoraDAL bitacoraDAL = new BitacoraImplDAL();
+        private Bitacora bitacora = new Bitacora();
 
         public FrmActivosModificar_n()
         {
@@ -63,13 +67,12 @@ namespace FronEnd
         private void FrmActivosModificar_n_Load(object sender, EventArgs e)
         {
             CargaComboBox();
-            txtCodActivo.Text = Activo.CodActivo;
+            txtCodActivo.Text = Activo.CodActivo.Trim();
             txtDescripcion.Text = Activo.Descripcion;
             dateFechaCompra.Value = Activo.FechaCompra.Value;
             txtPrecio.Text = Activo.PrecioInicial.ToString();
             txtGarantia.Text = Activo.Garantia.ToString();
-            txtPrecioActual.Text = Activo.PrecioActual.ToString();
-           
+            txtMesesDepreciacion.Text = Activo.MesesDepreciacion.ToString();
 
         }
 
@@ -86,7 +89,8 @@ namespace FronEnd
                 {
                     if (string.IsNullOrEmpty(txtDescripcion.Text) ||
                         string.IsNullOrEmpty(txtGarantia.Text) ||
-                       string.IsNullOrEmpty(txtPrecio.Text)
+                       string.IsNullOrEmpty(txtPrecio.Text) ||
+                       string.IsNullOrEmpty(txtMesesDepreciacion.Text)
                         )
                     {
 
@@ -95,6 +99,11 @@ namespace FronEnd
                         return;
 
                     }
+                    else if (validarFecha()==false)
+                    {
+                        MessageBox.Show("La fecha de compra debe ser menor que la fecha actual");
+                    }
+
                     else
                     {
 
@@ -106,7 +115,6 @@ namespace FronEnd
                             //proveedores = (Proveedores)cmbBoxProveedor.SelectedItem;
                             //estadoActivos = (EstadoActivos)cmbBoxEstadoActivos.SelectedItem;
                             Activo.PrecioInicial = Convert.ToDecimal(txtPrecio.Text);
-                            Activo.PrecioActual = Convert.ToDecimal(txtPrecioActual.Text);
                             Activo.CodActivo = txtCodActivo.Text;
                             //activo.CodActivo = codAct.ToString();
                             Activo.Categoria = (int)cmbBoxCategorias.SelectedValue;
@@ -118,9 +126,18 @@ namespace FronEnd
                             Activo.EstadoActivo = (int)cmbBoxEstadoActivos.SelectedValue;
                             Activo.EstadoActivos = (EstadoActivos)cmbBoxEstadoActivos.SelectedItem;
                             Activo.Garantia = Convert.ToInt32(txtGarantia.Text);
-
+                            Activo.MesesDepreciacion = Convert.ToInt32(txtMesesDepreciacion.Text);
 
                             activoDAL.actualizarActivo(Activo);
+
+                            //Se elimina la depreciación del activo
+                            depreciacionDAL.Delete(Activo.IdActivo);
+                            //Se agrega la depreciación correspondiente al activo
+                            depreciacionDAL.Add(Activo);
+                            string detalleBitacora = "Se actualizaron los datos del activo:" + Activo.CodActivo.Trim() + Activo.IdActivo;
+                            bitacora.DetalleBitacora = detalleBitacora;
+                            bitacora.IdUsuario = ValoresAplicacion.idUsuario;
+                            bitacoraDAL.Add(bitacora);
                             MessageBox.Show("Activo actualizado");
                             this.Close();
                         }
@@ -129,7 +146,7 @@ namespace FronEnd
                 catch (Exception ex)
                 {
                     // MessageBox.Show("Debe completar toda la informacion");
-                    MessageBox.Show("Error " + ex.Message);
+                    MessageBox.Show("Uno de los datos ingresados no tiene el formato correcto");
                 }
 
             }
@@ -137,7 +154,37 @@ namespace FronEnd
 
         }
 
+        private bool validarFecha()
+        {
+            bool fechaValidada = true;
+            if (dateFechaCompra.Value > DateTime.Now)
+            {
+                fechaValidada = false;
+            }
+            return fechaValidada;
+        }
+
+
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números 
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso 
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan 
+                e.Handled = true;
+            }
+        }
+
+        private void txtMesesDepreciacion_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Para obligar a que sólo se introduzcan números 
             if (Char.IsDigit(e.KeyChar))
@@ -271,6 +318,6 @@ namespace FronEnd
             //previousForm.Show();
         }
 
-    
+       
     }
 }

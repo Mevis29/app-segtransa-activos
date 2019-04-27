@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Frontend;
 using Backend.Entities;
+using FrontEnd.Forms_new;
 
 namespace FrontEnd
 {
@@ -201,7 +202,7 @@ namespace FrontEnd
 
         private void btnReparaciones_Click(object sender, EventArgs e)
         {
-            abrirFormInPanel(new FrmReparaciones_n());
+            abrirFormInPanel(new frmReparaciones());
         }
 
         private void contentPnl_Paint(object sender, PaintEventArgs e)
@@ -227,6 +228,11 @@ namespace FrontEnd
             {
                 this.Close();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            abrirFormInPanel(new frmMenuReportes());
         }
     }
 }

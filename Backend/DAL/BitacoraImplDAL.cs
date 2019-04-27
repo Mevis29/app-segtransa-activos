@@ -21,7 +21,7 @@ namespace Backend.DAL
                     context.SaveChanges();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }

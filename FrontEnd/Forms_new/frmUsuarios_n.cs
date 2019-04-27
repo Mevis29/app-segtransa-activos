@@ -1,6 +1,7 @@
 ﻿using Backend.DAL;
 using Backend.Entities;
 using FronEnd;
+using FrontEnd.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,8 @@ namespace Frontend
     public partial class FrmUsuarios_n : Form
     {
         private IUsuariosDAL usuarioDAL = new UsuariosImplDAL();
+        private IBitacoraDAL bitacoraDAL = new BitacoraImplDAL();
+        private Bitacora bitacora = new Bitacora();
         int idUsuario;
         public FrmUsuarios_n()
         {
@@ -97,6 +100,10 @@ namespace Frontend
                 if (dialogResult == DialogResult.Yes)
                 {
                     usuarioDAL.Delete(usuario.IdUsuario);
+                    string detalleBitacora = "Se eliminó el usuario: " +usuario.Nombre+" "+usuario.Apellido;
+                    bitacora.DetalleBitacora = detalleBitacora;
+                    bitacora.IdUsuario = ValoresAplicacion.idUsuario;
+                    bitacoraDAL.Add(bitacora);
                     MessageBox.Show("Usuario Eliminado");
 
                     //usuarios.Clear();

@@ -1,5 +1,6 @@
 ﻿using Backend.DAL;
 using Backend.Entities;
+using FrontEnd.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,9 @@ namespace FronEnd
 {
     public partial class FrmProveedoresModificar_n : Form
     {
-        private IProveedoresDAL proveedorDAL = new ProveedoresImplDAL();  
+        private IProveedoresDAL proveedorDAL = new ProveedoresImplDAL();
+        private IBitacoraDAL bitacoraDAL = new BitacoraImplDAL();
+        private Bitacora bitacora = new Bitacora();
         private Proveedores proveedor;
 
         public FrmProveedoresModificar_n()
@@ -72,6 +75,10 @@ namespace FronEnd
                         proveedor.Correo = txtCorreo.Text;
                         proveedor.Direccion = txtDireccion.Text;
                         proveedorDAL.Update(proveedor);
+                        string detalleBitacora = "Se actualizaron los datos del proveedor: " + proveedor.NombreProveedor;
+                        bitacora.DetalleBitacora = detalleBitacora;
+                        bitacora.IdUsuario = ValoresAplicacion.idUsuario;
+                        bitacoraDAL.Add(bitacora);
                         MessageBox.Show("Proveedor Actualizado");
                         this.Close();
                     }

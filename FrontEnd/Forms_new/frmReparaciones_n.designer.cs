@@ -43,13 +43,13 @@
             this.btnActivoEliminar = new System.Windows.Forms.Button();
             this.btnActivoAgregar = new System.Windows.Forms.Button();
             this.tblReparaciones = new System.Windows.Forms.DataGridView();
-            this.sEGTRANSADataSource_REPARACIONES = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_REPARACIONES();
-            this.tHReparacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tHReparacionesTableAdapter = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_REPARACIONESTableAdapters.THReparacionesTableAdapter();
             this.idReparacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idActivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaInicialReparacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechafinalReparacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tHReparacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sEGTRANSADataSource_REPARACIONES = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_REPARACIONES();
+            this.tHReparacionesTableAdapter = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_REPARACIONESTableAdapters.THReparacionesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.activosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSource_ACTIVOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
@@ -57,8 +57,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSourceUSUARIOSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblReparaciones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSource_REPARACIONES)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tHReparacionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSource_REPARACIONES)).BeginInit();
             this.SuspendLayout();
             // 
             // lblReparaciones
@@ -205,20 +205,6 @@
             this.tblReparaciones.Size = new System.Drawing.Size(674, 315);
             this.tblReparaciones.TabIndex = 8;
             // 
-            // sEGTRANSADataSource_REPARACIONES
-            // 
-            this.sEGTRANSADataSource_REPARACIONES.DataSetName = "SEGTRANSADataSource_REPARACIONES";
-            this.sEGTRANSADataSource_REPARACIONES.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tHReparacionesBindingSource
-            // 
-            this.tHReparacionesBindingSource.DataMember = "THReparaciones";
-            this.tHReparacionesBindingSource.DataSource = this.sEGTRANSADataSource_REPARACIONES;
-            // 
-            // tHReparacionesTableAdapter
-            // 
-            this.tHReparacionesTableAdapter.ClearBeforeFill = true;
-            // 
             // idReparacionDataGridViewTextBoxColumn
             // 
             this.idReparacionDataGridViewTextBoxColumn.DataPropertyName = "IdReparacion";
@@ -244,6 +230,20 @@
             this.fechafinalReparacionDataGridViewTextBoxColumn.HeaderText = "FechafinalReparacion";
             this.fechafinalReparacionDataGridViewTextBoxColumn.Name = "fechafinalReparacionDataGridViewTextBoxColumn";
             // 
+            // tHReparacionesBindingSource
+            // 
+            this.tHReparacionesBindingSource.DataMember = "THReparaciones";
+            this.tHReparacionesBindingSource.DataSource = this.sEGTRANSADataSource_REPARACIONES;
+            // 
+            // sEGTRANSADataSource_REPARACIONES
+            // 
+            this.sEGTRANSADataSource_REPARACIONES.DataSetName = "SEGTRANSADataSource_REPARACIONES";
+            this.sEGTRANSADataSource_REPARACIONES.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tHReparacionesTableAdapter
+            // 
+            this.tHReparacionesTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmReparaciones_n
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,8 +268,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSourceUSUARIOSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblReparaciones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSource_REPARACIONES)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tHReparacionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSource_REPARACIONES)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

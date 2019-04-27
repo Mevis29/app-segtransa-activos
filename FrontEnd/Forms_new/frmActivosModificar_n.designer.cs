@@ -50,8 +50,8 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblEstadoActivo = new System.Windows.Forms.Label();
             this.groupBoxDatosProveedor = new System.Windows.Forms.GroupBox();
-            this.lblPrecioActual = new System.Windows.Forms.Label();
-            this.txtPrecioActual = new System.Windows.Forms.TextBox();
+            this.txtMesesDepreciacion = new System.Windows.Forms.TextBox();
+            this.lblMesesDepreciacion = new System.Windows.Forms.Label();
             this.lblErrorPrecio = new System.Windows.Forms.Label();
             this.txtGarantia = new System.Windows.Forms.TextBox();
             this.lblGarantia = new System.Windows.Forms.Label();
@@ -111,7 +111,7 @@
             this.btnModificaActivo.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificaActivo.ForeColor = System.Drawing.Color.White;
             this.btnModificaActivo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificaActivo.Location = new System.Drawing.Point(474, 281);
+            this.btnModificaActivo.Location = new System.Drawing.Point(474, 305);
             this.btnModificaActivo.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificaActivo.Name = "btnModificaActivo";
             this.btnModificaActivo.Size = new System.Drawing.Size(145, 46);
@@ -130,7 +130,7 @@
             this.cancelarBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelarBtn.ForeColor = System.Drawing.Color.White;
             this.cancelarBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cancelarBtn.Location = new System.Drawing.Point(586, 355);
+            this.cancelarBtn.Location = new System.Drawing.Point(586, 369);
             this.cancelarBtn.Margin = new System.Windows.Forms.Padding(2);
             this.cancelarBtn.Name = "cancelarBtn";
             this.cancelarBtn.Size = new System.Drawing.Size(97, 27);
@@ -147,7 +147,7 @@
             this.errorLbl.AutoSize = true;
             this.errorLbl.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorLbl.ForeColor = System.Drawing.Color.Red;
-            this.errorLbl.Location = new System.Drawing.Point(414, 257);
+            this.errorLbl.Location = new System.Drawing.Point(414, 281);
             this.errorLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.errorLbl.Name = "errorLbl";
             this.errorLbl.Size = new System.Drawing.Size(269, 17);
@@ -158,9 +158,9 @@
             // cmbBoxProveedor
             // 
             this.cmbBoxProveedor.FormattingEnabled = true;
-            this.cmbBoxProveedor.Location = new System.Drawing.Point(126, 32);
+            this.cmbBoxProveedor.Location = new System.Drawing.Point(152, 32);
             this.cmbBoxProveedor.Name = "cmbBoxProveedor";
-            this.cmbBoxProveedor.Size = new System.Drawing.Size(150, 24);
+            this.cmbBoxProveedor.Size = new System.Drawing.Size(140, 24);
             this.cmbBoxProveedor.TabIndex = 9;
             // 
             // lblCategoria
@@ -215,10 +215,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrecio.BackColor = System.Drawing.Color.White;
             this.txtPrecio.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(126, 74);
+            this.txtPrecio.Location = new System.Drawing.Point(152, 74);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(150, 22);
+            this.txtPrecio.Size = new System.Drawing.Size(142, 22);
             this.txtPrecio.TabIndex = 14;
             this.txtPrecio.Text = "0.0";
             // 
@@ -360,8 +360,8 @@
             // 
             // groupBoxDatosProveedor
             // 
-            this.groupBoxDatosProveedor.Controls.Add(this.lblPrecioActual);
-            this.groupBoxDatosProveedor.Controls.Add(this.txtPrecioActual);
+            this.groupBoxDatosProveedor.Controls.Add(this.txtMesesDepreciacion);
+            this.groupBoxDatosProveedor.Controls.Add(this.lblMesesDepreciacion);
             this.groupBoxDatosProveedor.Controls.Add(this.lblErrorPrecio);
             this.groupBoxDatosProveedor.Controls.Add(this.txtGarantia);
             this.groupBoxDatosProveedor.Controls.Add(this.lblGarantia);
@@ -373,39 +373,39 @@
             this.groupBoxDatosProveedor.ForeColor = System.Drawing.Color.Black;
             this.groupBoxDatosProveedor.Location = new System.Drawing.Point(391, 62);
             this.groupBoxDatosProveedor.Name = "groupBoxDatosProveedor";
-            this.groupBoxDatosProveedor.Size = new System.Drawing.Size(292, 192);
+            this.groupBoxDatosProveedor.Size = new System.Drawing.Size(310, 216);
             this.groupBoxDatosProveedor.TabIndex = 16;
             this.groupBoxDatosProveedor.TabStop = false;
             this.groupBoxDatosProveedor.Text = "Datos Proveedor";
             // 
-            // lblPrecioActual
+            // txtMesesDepreciacion
             // 
-            this.lblPrecioActual.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtMesesDepreciacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPrecioActual.AutoSize = true;
-            this.lblPrecioActual.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecioActual.ForeColor = System.Drawing.Color.Black;
-            this.lblPrecioActual.Location = new System.Drawing.Point(5, 119);
-            this.lblPrecioActual.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPrecioActual.Name = "lblPrecioActual";
-            this.lblPrecioActual.Size = new System.Drawing.Size(92, 17);
-            this.lblPrecioActual.TabIndex = 30;
-            this.lblPrecioActual.Text = "Precio Actual:";
+            this.txtMesesDepreciacion.BackColor = System.Drawing.Color.White;
+            this.txtMesesDepreciacion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMesesDepreciacion.Location = new System.Drawing.Point(152, 167);
+            this.txtMesesDepreciacion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMesesDepreciacion.Name = "txtMesesDepreciacion";
+            this.txtMesesDepreciacion.Size = new System.Drawing.Size(142, 22);
+            this.txtMesesDepreciacion.TabIndex = 32;
+            this.txtMesesDepreciacion.Text = "0";
             // 
-            // txtPrecioActual
+            // lblMesesDepreciacion
             // 
-            this.txtPrecioActual.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblMesesDepreciacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPrecioActual.BackColor = System.Drawing.Color.White;
-            this.txtPrecioActual.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecioActual.Location = new System.Drawing.Point(126, 119);
-            this.txtPrecioActual.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPrecioActual.Name = "txtPrecioActual";
-            this.txtPrecioActual.Size = new System.Drawing.Size(150, 22);
-            this.txtPrecioActual.TabIndex = 29;
-            this.txtPrecioActual.Text = "0.0";
+            this.lblMesesDepreciacion.AutoSize = true;
+            this.lblMesesDepreciacion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMesesDepreciacion.ForeColor = System.Drawing.Color.Black;
+            this.lblMesesDepreciacion.Location = new System.Drawing.Point(5, 171);
+            this.lblMesesDepreciacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMesesDepreciacion.Name = "lblMesesDepreciacion";
+            this.lblMesesDepreciacion.Size = new System.Drawing.Size(132, 17);
+            this.lblMesesDepreciacion.TabIndex = 31;
+            this.lblMesesDepreciacion.Text = "Meses depreciación:";
             // 
             // lblErrorPrecio
             // 
@@ -415,7 +415,7 @@
             this.lblErrorPrecio.AutoSize = true;
             this.lblErrorPrecio.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorPrecio.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorPrecio.Location = new System.Drawing.Point(125, 96);
+            this.lblErrorPrecio.Location = new System.Drawing.Point(149, 109);
             this.lblErrorPrecio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblErrorPrecio.Name = "lblErrorPrecio";
             this.lblErrorPrecio.Size = new System.Drawing.Size(151, 17);
@@ -430,10 +430,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGarantia.BackColor = System.Drawing.Color.White;
             this.txtGarantia.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGarantia.Location = new System.Drawing.Point(126, 165);
+            this.txtGarantia.Location = new System.Drawing.Point(152, 128);
             this.txtGarantia.Margin = new System.Windows.Forms.Padding(2);
             this.txtGarantia.Name = "txtGarantia";
-            this.txtGarantia.Size = new System.Drawing.Size(150, 22);
+            this.txtGarantia.Size = new System.Drawing.Size(142, 22);
             this.txtGarantia.TabIndex = 23;
             this.txtGarantia.Text = "0";
             // 
@@ -445,7 +445,7 @@
             this.lblGarantia.AutoSize = true;
             this.lblGarantia.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGarantia.ForeColor = System.Drawing.Color.Black;
-            this.lblGarantia.Location = new System.Drawing.Point(5, 165);
+            this.lblGarantia.Location = new System.Drawing.Point(5, 128);
             this.lblGarantia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGarantia.Name = "lblGarantia";
             this.lblGarantia.Size = new System.Drawing.Size(113, 17);
@@ -505,7 +505,7 @@
         private System.Windows.Forms.ComboBox cmbBoxCategorias;
         private System.Windows.Forms.Label lblEstadoActivo;
         private System.Windows.Forms.Label lblErrorPrecio;
-        private System.Windows.Forms.Label lblPrecioActual;
-        private System.Windows.Forms.TextBox txtPrecioActual;
+        private System.Windows.Forms.TextBox txtMesesDepreciacion;
+        private System.Windows.Forms.Label lblMesesDepreciacion;
     }
 }

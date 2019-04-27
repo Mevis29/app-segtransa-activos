@@ -53,6 +53,8 @@
             this.lblErrorPrecio = new System.Windows.Forms.Label();
             this.txtGarantia = new System.Windows.Forms.TextBox();
             this.lblGarantia = new System.Windows.Forms.Label();
+            this.lblMesesDepreciacion = new System.Windows.Forms.Label();
+            this.txtMesesDepreciacion = new System.Windows.Forms.TextBox();
             this.groupBoxDatosPers.SuspendLayout();
             this.groupBoxDatosProveedor.SuspendLayout();
             this.SuspendLayout();
@@ -110,7 +112,7 @@
             this.btnAgregaActivo.ForeColor = System.Drawing.Color.White;
             this.btnAgregaActivo.Image = global::FrontEnd.Properties.Resources.plus_button;
             this.btnAgregaActivo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregaActivo.Location = new System.Drawing.Point(474, 281);
+            this.btnAgregaActivo.Location = new System.Drawing.Point(480, 294);
             this.btnAgregaActivo.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregaActivo.Name = "btnAgregaActivo";
             this.btnAgregaActivo.Size = new System.Drawing.Size(145, 46);
@@ -146,7 +148,7 @@
             this.errorLbl.AutoSize = true;
             this.errorLbl.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorLbl.ForeColor = System.Drawing.Color.Red;
-            this.errorLbl.Location = new System.Drawing.Point(414, 238);
+            this.errorLbl.Location = new System.Drawing.Point(420, 251);
             this.errorLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.errorLbl.Name = "errorLbl";
             this.errorLbl.Size = new System.Drawing.Size(269, 17);
@@ -157,9 +159,9 @@
             // cmbBoxProveedor
             // 
             this.cmbBoxProveedor.FormattingEnabled = true;
-            this.cmbBoxProveedor.Location = new System.Drawing.Point(126, 32);
+            this.cmbBoxProveedor.Location = new System.Drawing.Point(150, 32);
             this.cmbBoxProveedor.Name = "cmbBoxProveedor";
-            this.cmbBoxProveedor.Size = new System.Drawing.Size(150, 24);
+            this.cmbBoxProveedor.Size = new System.Drawing.Size(140, 24);
             this.cmbBoxProveedor.TabIndex = 9;
             // 
             // lblCategoria
@@ -214,10 +216,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrecio.BackColor = System.Drawing.Color.White;
             this.txtPrecio.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(126, 79);
+            this.txtPrecio.Location = new System.Drawing.Point(150, 79);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(150, 22);
+            this.txtPrecio.Size = new System.Drawing.Size(140, 22);
             this.txtPrecio.TabIndex = 14;
             this.txtPrecio.Text = "0";
             // 
@@ -359,6 +361,8 @@
             // 
             // groupBoxDatosProveedor
             // 
+            this.groupBoxDatosProveedor.Controls.Add(this.txtMesesDepreciacion);
+            this.groupBoxDatosProveedor.Controls.Add(this.lblMesesDepreciacion);
             this.groupBoxDatosProveedor.Controls.Add(this.lblErrorPrecio);
             this.groupBoxDatosProveedor.Controls.Add(this.txtGarantia);
             this.groupBoxDatosProveedor.Controls.Add(this.lblGarantia);
@@ -370,7 +374,7 @@
             this.groupBoxDatosProveedor.ForeColor = System.Drawing.Color.Black;
             this.groupBoxDatosProveedor.Location = new System.Drawing.Point(391, 62);
             this.groupBoxDatosProveedor.Name = "groupBoxDatosProveedor";
-            this.groupBoxDatosProveedor.Size = new System.Drawing.Size(292, 160);
+            this.groupBoxDatosProveedor.Size = new System.Drawing.Size(310, 186);
             this.groupBoxDatosProveedor.TabIndex = 16;
             this.groupBoxDatosProveedor.TabStop = false;
             this.groupBoxDatosProveedor.Text = "Datos Proveedor";
@@ -383,7 +387,7 @@
             this.lblErrorPrecio.AutoSize = true;
             this.lblErrorPrecio.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorPrecio.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorPrecio.Location = new System.Drawing.Point(125, 103);
+            this.lblErrorPrecio.Location = new System.Drawing.Point(147, 103);
             this.lblErrorPrecio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblErrorPrecio.Name = "lblErrorPrecio";
             this.lblErrorPrecio.Size = new System.Drawing.Size(151, 17);
@@ -398,10 +402,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGarantia.BackColor = System.Drawing.Color.White;
             this.txtGarantia.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGarantia.Location = new System.Drawing.Point(126, 126);
+            this.txtGarantia.Location = new System.Drawing.Point(150, 126);
             this.txtGarantia.Margin = new System.Windows.Forms.Padding(2);
             this.txtGarantia.Name = "txtGarantia";
-            this.txtGarantia.Size = new System.Drawing.Size(150, 22);
+            this.txtGarantia.Size = new System.Drawing.Size(142, 22);
             this.txtGarantia.TabIndex = 23;
             this.txtGarantia.Text = "0";
             // 
@@ -419,6 +423,35 @@
             this.lblGarantia.Size = new System.Drawing.Size(113, 17);
             this.lblGarantia.TabIndex = 22;
             this.lblGarantia.Text = "Garantia (meses):";
+            // 
+            // lblMesesDepreciacion
+            // 
+            this.lblMesesDepreciacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMesesDepreciacion.AutoSize = true;
+            this.lblMesesDepreciacion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMesesDepreciacion.ForeColor = System.Drawing.Color.Black;
+            this.lblMesesDepreciacion.Location = new System.Drawing.Point(9, 166);
+            this.lblMesesDepreciacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMesesDepreciacion.Name = "lblMesesDepreciacion";
+            this.lblMesesDepreciacion.Size = new System.Drawing.Size(132, 17);
+            this.lblMesesDepreciacion.TabIndex = 29;
+            this.lblMesesDepreciacion.Text = "Meses depreciación:";
+            // 
+            // txtMesesDepreciacion
+            // 
+            this.txtMesesDepreciacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMesesDepreciacion.BackColor = System.Drawing.Color.White;
+            this.txtMesesDepreciacion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMesesDepreciacion.Location = new System.Drawing.Point(150, 163);
+            this.txtMesesDepreciacion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMesesDepreciacion.Name = "txtMesesDepreciacion";
+            this.txtMesesDepreciacion.Size = new System.Drawing.Size(142, 22);
+            this.txtMesesDepreciacion.TabIndex = 30;
+            this.txtMesesDepreciacion.Text = "0";
             // 
             // FrmActivosAgregar_n
             // 
@@ -472,5 +505,7 @@
         private System.Windows.Forms.ComboBox cmbBoxCategorias;
         private System.Windows.Forms.Label lblEstadoActivo;
         private System.Windows.Forms.Label lblErrorPrecio;
+        private System.Windows.Forms.TextBox txtMesesDepreciacion;
+        private System.Windows.Forms.Label lblMesesDepreciacion;
     }
 }
