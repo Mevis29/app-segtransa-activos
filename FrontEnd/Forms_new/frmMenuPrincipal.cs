@@ -234,5 +234,10 @@ namespace FrontEnd
         {
             abrirFormInPanel(new frmMenuReportes());
         }
+
+        private void btnFormRespaldos_Click(object sender, EventArgs e)
+        {
+            abrirFormInPanel(new frmRespaldos());
+        }
     }
 }

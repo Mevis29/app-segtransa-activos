@@ -63,18 +63,42 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\ValoresAplicacion.cs" />
@@ -185,6 +209,12 @@
     </Compile>
     <Compile Include="Forms_new\frmMiPerfil_n.designer.cs">
       <DependentUpon>frmMiPerfil_n.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmRespaldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmRespaldos.Designer.cs">
+      <DependentUpon>frmRespaldos.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms_new\frmRptBitacora.cs">
       <SubType>Form</SubType>
@@ -447,6 +477,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_new\frmMiPerfil_n.resx">
       <DependentUpon>frmMiPerfil_n.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmRespaldos.resx">
+      <DependentUpon>frmRespaldos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_new\frmRptBitacora.resx">
       <DependentUpon>frmRptBitacora.cs</DependentUpon>
