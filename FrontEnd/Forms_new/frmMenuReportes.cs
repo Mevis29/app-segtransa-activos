@@ -57,21 +57,6 @@ namespace FrontEnd.Forms_new
             abrirFormInPanel(new frmRptReparaciones());
         }
 
-        private void optionRptAsignaciones_Click(object sender, EventArgs e)
-        {
-            abrirFormInPanel(new frmRptAsignaciones());
-        }
-
-        private void optionRptActivos_Click(object sender, EventArgs e)
-        {
-            abrirFormInPanel(new frmRptActivo());
-        }
-
-        private void optionRptUsuarios_Click(object sender, EventArgs e)
-        {
-            abrirFormInPanel(new frmRptUsuarios());
-        }
-
         private void cerrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();

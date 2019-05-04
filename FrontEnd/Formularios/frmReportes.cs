@@ -49,7 +49,8 @@ namespace FrontEnd
 
         private void btnRepActivo_Click(object sender, EventArgs e)
         {
-                       
+            frmRepActivo frmRepActivo = new frmRepActivo(this);
+            frmRepActivo.Show(this);            
         }
 
         private void btnRepBitacora_Click(object sender, EventArgs e)
@@ -72,7 +73,8 @@ namespace FrontEnd
 
         private void btnRepUsuario_Click(object sender, EventArgs e)
         {
-            
+            frmRepUsuario frmRepUsuario = new frmRepUsuario(this);
+            frmRepUsuario.Show(this);
         }
     }
 }

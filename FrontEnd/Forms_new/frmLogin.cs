@@ -39,8 +39,7 @@ namespace FrontEnd
             int i = 0;
             int id = -1;
             string pass;
-            string correo;
-            if ((string.IsNullOrEmpty(tbxUserId.Text) || string.IsNullOrWhiteSpace(tbxUserId.Text)))
+            if ((!string.IsNullOrEmpty(tbxUserId.Text) && !int.TryParse(tbxUserId.Text, out i)) || string.IsNullOrEmpty(tbxUserId.Text) || string.IsNullOrWhiteSpace(tbxUserId.Text))
             {
                 showInfo("El campo de Id usuario vacio o con formato equivocado! \nPor favor ingrese unicamente numeros!");
                 tbxUserId.Clear();
@@ -52,7 +51,7 @@ namespace FrontEnd
             }
             else 
             {
-                correo = tbxUserId.Text;
+                id = int.Parse(tbxUserId.Text);
 
                 if (string.IsNullOrWhiteSpace(tbxPassword.Text) || string.IsNullOrEmpty(tbxPassword.Text))
                 {
@@ -70,14 +69,13 @@ namespace FrontEnd
                     /*user = usuariosDal.GetUsuario(id);*/
                     //showInfo("Password: " + tbxPassword.Text + " Encryptada: " + pass);
                     /*Validanado usuario*/
-                    if (usuariosDal.isRealUser(correo))
+                    if (usuariosDal.isRealUser(id))
                     {
                         
-                        if (usuariosDal.isValidPassword(pass, correo))
+                        if (usuariosDal.isValidPassword(pass, id))
                         {
                             /*Validado usuario y password se le da acceso a un menu de opciones de acuerdo a su roll, admin o cualquier otro*/
-                            user = usuariosDal.Getcorreo(correo);
-                            ValoresAplicacion.correoUsuario = user.Correo;
+                            user = usuariosDal.GetUsuario(id);
                             ValoresAplicacion.idUsuario = user.IdUsuario;
 
                             //Actualiza el campo del ultimo Login
@@ -144,7 +142,7 @@ namespace FrontEnd
 
         private void tbxUserId_Enter(object sender, EventArgs e)
         {
-            if (tbxUserId.Text == "CORREO")
+            if (tbxUserId.Text == "USUARIO")
             {
                 tbxUserId.Text = "";
                 tbxUserId.ForeColor = Color.LightGray;
@@ -156,7 +154,7 @@ namespace FrontEnd
         {
             if (tbxUserId.Text == "")
             {
-                tbxUserId.Text = "CORREO";
+                tbxUserId.Text = "USUARIO";
                 tbxUserId.ForeColor = Color.DimGray;
             }
         }
