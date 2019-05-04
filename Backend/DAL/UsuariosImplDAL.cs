@@ -98,6 +98,26 @@ public class UsuariosImplDAL : IUsuariosDAL
         }
 
     }
+    public Usuarios Getcorreo(string correo)
+    {
+        try
+        {
+            Usuarios result;
+            using (context = new BDContext())
+            {
+                result = (from c in context.Usuarios
+                          where c.Correo == correo
+                          select c).First();
+            }
+            return result;
+        }
+        catch (Exception)
+        {
+
+            return null;
+        }
+
+    }
 
     public void Update(Usuarios Usuario)
     {
@@ -122,21 +142,22 @@ public class UsuariosImplDAL : IUsuariosDAL
 
 
 
-    public bool isRealUser(int idUsuario)
+    public bool isRealUser(string correo)
     {
         bool real = false;
-        if (this.GetUsuario(idUsuario) != null)
+        Usuarios usuarios = Getcorreo(correo);
+        if (usuarios.Correo == correo)
         {
             real = true;
         }
         return real;
     }
-    public bool isValidPassword(string passUser, int idUsuario)
+    public bool isValidPassword(string passUser, string correo)
     {
         CryptoEngine cryptoEngine = new CryptoEngine();
         string passDecrypted = cryptoEngine.Decrypt(passUser);
         bool valid = false;
-        if (this.GetUsuario(idUsuario).Contrasena.Equals(passDecrypted))
+        if (this.Getcorreo(correo).Contrasena.Equals(passDecrypted))
         {
             valid = true;
         }
