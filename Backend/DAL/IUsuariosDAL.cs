@@ -14,11 +14,12 @@ namespace Backend.DAL
         void Delete(int idUsuario);
         void Update(Usuarios Usuario);
         Usuarios GetUsuario(int idUsuario);
+        Usuarios Getcorreo(string correo);
         List<Usuarios> GetUsuarios();
 
         /*Metodos necesarios para validar al usuario*/
-        bool isRealUser(int idUsuario);
-        bool isValidPassword(string passUser, int idUsuario);
+        bool isRealUser(string correo);
+        bool isValidPassword(string passUser, string correo);
 
         /// <summary>
         /// Método para retornar lista de Usuario por Id
