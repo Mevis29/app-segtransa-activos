@@ -6,25 +6,25 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.04762in</Width>
+              <Width>1.06667in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.04762in</Width>
+              <Width>1.06667in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.04762in</Width>
+              <Width>1.06667in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.04762in</Width>
+              <Width>1.06667in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.04762in</Width>
+              <Width>1.06667in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.22262in</Width>
+              <Width>1.23135in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.24447in</Width>
+              <Width>1.06667in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -33,21 +33,21 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox48">
+                    <Textbox Name="Textbox39">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Id Usuario</Value>
+                              <Value>Id</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox48</rd:DefaultName>
+                      <rd:DefaultName>Textbox39</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -63,21 +63,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox50">
+                    <Textbox Name="Textbox41">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nombre</Value>
+                              <Value>Cedula</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox50</rd:DefaultName>
+                      <rd:DefaultName>Textbox41</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -93,21 +93,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox52">
+                    <Textbox Name="Textbox43">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Apellido</Value>
+                              <Value>Usuario</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox52</rd:DefaultName>
+                      <rd:DefaultName>Textbox43</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -123,21 +123,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox60">
+                    <Textbox Name="Textbox45">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Rol Usuario</Value>
+                              <Value>Codigo</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox60</rd:DefaultName>
+                      <rd:DefaultName>Textbox45</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -153,21 +153,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox58">
+                    <Textbox Name="Textbox47">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Correo</Value>
+                              <Value>Descripcion</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox58</rd:DefaultName>
+                      <rd:DefaultName>Textbox47</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -183,21 +183,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox56">
+                    <Textbox Name="Textbox49">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Fecha Creacion</Value>
+                              <Value>Fecha Asignacion</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox56</rd:DefaultName>
+                      <rd:DefaultName>Textbox49</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -213,21 +213,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox54">
+                    <Textbox Name="Textbox51">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Fecha Ultimo Login</Value>
+                              <Value>Fin Asignacion</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox54</rd:DefaultName>
+                      <rd:DefaultName>Textbox51</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -248,21 +248,21 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="IdUsuario">
+                    <Textbox Name="Id">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!IdUsuario.Value</Value>
+                              <Value>=Fields!Id.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>IdUsuario</rd:DefaultName>
+                      <rd:DefaultName>Id</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -278,21 +278,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Nombre">
+                    <Textbox Name="Cedula">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Nombre.Value</Value>
+                              <Value>=Fields!Cedula.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Nombre</rd:DefaultName>
+                      <rd:DefaultName>Cedula</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -308,21 +308,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Apellido">
+                    <Textbox Name="Usuario">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Apellido.Value</Value>
+                              <Value>=Fields!Usuario.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Apellido</rd:DefaultName>
+                      <rd:DefaultName>Usuario</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -338,21 +338,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="RolUsuario">
+                    <Textbox Name="Codigo">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!RolUsuario.Value</Value>
+                              <Value>=Fields!Codigo.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>RolUsuario</rd:DefaultName>
+                      <rd:DefaultName>Codigo</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -368,21 +368,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Correo">
+                    <Textbox Name="Descripcion">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Correo.Value</Value>
+                              <Value>=Fields!Descripcion.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Correo</rd:DefaultName>
+                      <rd:DefaultName>Descripcion</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -398,21 +398,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="FechaCreacion">
+                    <Textbox Name="FechaAsign">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!FechaCreacion.Value</Value>
+                              <Value>=Fields!FechaAsign.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>FechaCreacion</rd:DefaultName>
+                      <rd:DefaultName>FechaAsign</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -428,21 +428,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="FechaUltLogin">
+                    <Textbox Name="FechafinAsign">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!FechaUltLogin.Value</Value>
+                              <Value>=Fields!FechafinAsign.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>FechaUltLogin</rd:DefaultName>
+                      <rd:DefaultName>FechafinAsign</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -481,11 +481,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet1</DataSetName>
-        <Top>0.755in</Top>
-        <Left>0.21495in</Left>
+        <DataSetName>Asignaciones</DataSetName>
+        <Top>0.805in</Top>
+        <Left>0.53225in</Left>
         <Height>0.5in</Height>
-        <Width>7.70518in</Width>
+        <Width>7.63135in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -496,7 +496,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>8.06958in</Width>
+  <Width>8.65in</Width>
   <Page>
     <PageFooter>
       <Height>1in</Height>
@@ -522,7 +522,7 @@
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
           <Top>0.375in</Top>
-          <Left>1.91772in</Left>
+          <Left>2.19265in</Left>
           <Height>0.25in</Height>
           <Width>1.72917in</Width>
           <Style>
@@ -554,7 +554,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox5</rd:DefaultName>
           <Top>0.375in</Top>
-          <Left>0.38995in</Left>
+          <Left>0.66488in</Left>
           <Height>0.25in</Height>
           <Width>1.51389in</Width>
           <ZIndex>1</ZIndex>
@@ -587,7 +587,7 @@
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
           <Top>0.375in</Top>
-          <Left>6.797in</Left>
+          <Left>7.07193in</Left>
           <Height>0.25in</Height>
           <Width>0.3125in</Width>
           <ZIndex>2</ZIndex>
@@ -620,7 +620,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
           <Top>0.375in</Top>
-          <Left>7.17894in</Left>
+          <Left>7.45387in</Left>
           <Height>0.25in</Height>
           <Width>0.25in</Width>
           <ZIndex>3</ZIndex>
@@ -653,7 +653,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
           <Top>0.375in</Top>
-          <Left>6.26644in</Left>
+          <Left>6.54137in</Left>
           <Height>0.25in</Height>
           <Width>0.55556in</Width>
           <ZIndex>4</ZIndex>
@@ -686,7 +686,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox5</rd:DefaultName>
           <Top>0.375in</Top>
-          <Left>4.38995in</Left>
+          <Left>4.66488in</Left>
           <Height>0.25in</Height>
           <Width>0.69314in</Width>
           <ZIndex>5</ZIndex>
@@ -718,7 +718,7 @@
           </Paragraphs>
           <rd:DefaultName>UserID</rd:DefaultName>
           <Top>0.375in</Top>
-          <Left>5.08309in</Left>
+          <Left>5.35802in</Left>
           <Height>0.25in</Height>
           <Width>0.88778in</Width>
           <ZIndex>6</ZIndex>
@@ -750,7 +750,7 @@
           </Paragraphs>
           <rd:DefaultName>TotalPages</rd:DefaultName>
           <Top>0.375in</Top>
-          <Left>7.42894in</Left>
+          <Left>7.70387in</Left>
           <Height>0.25in</Height>
           <Width>0.28125in</Width>
           <ZIndex>7</ZIndex>
@@ -779,80 +779,60 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="SEGTRANSADataSource_USUARIOS">
+    <DataSource Name="SEGTRANSADataSource_spListaTotalAsignaciones">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>877e7957-f8d1-4f1d-842f-943099ee7693</rd:DataSourceID>
+      <rd:DataSourceID>8f7e1825-fcef-4682-88f2-1e834ed30272</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="Asignaciones">
       <Query>
-        <DataSourceName>SEGTRANSADataSource_USUARIOS</DataSourceName>
+        <DataSourceName>SEGTRANSADataSource_spListaTotalAsignaciones</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="IdUsuario">
-          <DataField>IdUsuario</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Nombre">
-          <DataField>Nombre</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Apellido">
-          <DataField>Apellido</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="EstadoUsuario">
-          <DataField>EstadoUsuario</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="RolUsuario">
-          <DataField>RolUsuario</DataField>
+        <Field Name="Id">
+          <DataField>Id</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Cedula">
           <DataField>Cedula</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Contrasena">
-          <DataField>Contrasena</DataField>
+        <Field Name="Usuario">
+          <DataField>Usuario</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Telefono">
-          <DataField>Telefono</DataField>
+        <Field Name="Codigo">
+          <DataField>Codigo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Correo">
-          <DataField>Correo</DataField>
+        <Field Name="Descripcion">
+          <DataField>Descripcion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Direccion">
-          <DataField>Direccion</DataField>
+        <Field Name="FechaAsign">
+          <DataField>FechaAsign</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="FechaCreacion">
-          <DataField>FechaCreacion</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="FechaUltLogin">
-          <DataField>FechaUltLogin</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+        <Field Name="FechafinAsign">
+          <DataField>FechafinAsign</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>SEGTRANSADataSource_USUARIOS</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\dadab\Desktop\app-segtransa-activos\FrontEnd\DataSources_Forms\SEGTRANSADataSource_USUARIOS.xsd</rd:SchemaPath>
-        <rd:TableName>Usuarios</rd:TableName>
+        <rd:DataSetName>SEGTRANSADataSource_spListaTotalAsignaciones</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\dadab\Desktop\app-segtransa-activos\FrontEnd\DataSources_Forms\SEGTRANSADataSource_spListaTotalAsignaciones.xsd</rd:SchemaPath>
+        <rd:TableName>spAsignUsuarioRetornaListaTotal</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>UsuariosTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>spAsignUsuarioRetornaListaTotalTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>08f5e0fa-7d30-4922-ba82-7f58806d9d63</rd:ReportID>
+  <rd:ReportID>a9787aad-a58e-4013-8176-58f8d696d76f</rd:ReportID>
 </Report>
