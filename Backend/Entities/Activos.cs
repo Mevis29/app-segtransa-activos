@@ -32,7 +32,7 @@ namespace Backend.Entities
         public Nullable<int> Proveedor { get; set; }
         public Nullable<int> EstadoActivo { get; set; }
         public Nullable<int> Garantia { get; set; }
-        public Nullable<int> MesesDepreciacion { get; set; }
+        public int MesesDepreciacion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Depreciacion> Depreciacion { get; set; }
