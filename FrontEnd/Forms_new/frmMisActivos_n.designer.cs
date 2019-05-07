@@ -34,30 +34,31 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMiPerfil = new System.Windows.Forms.Label();
             this.tblMisActivos = new System.Windows.Forms.DataGridView();
-            this.spAsignUsuarioRetornaListaIdBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sEGTRANSADataSource_spActivosPorIdUsuario = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_spActivosPorIdUsuario();
-            this.spAsignUsuarioRetornaListaIdTableAdapter = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_spActivosPorIdUsuarioTableAdapters.spAsignUsuarioRetornaListaIdTableAdapter();
             this.btnSolicitarRep = new System.Windows.Forms.Button();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sEGTRANSADataSource_spActivosPorIdUsuario = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_spActivosPorIdUsuario();
+            this.spAsignUsuarioRetornaListaIdBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.spAsignUsuarioRetornaListaIdTableAdapter = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_spActivosPorIdUsuarioTableAdapters.spAsignUsuarioRetornaListaIdTableAdapter();
             this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaAsignDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechafinAsignDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaInicialAsignDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tblMisActivos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaIdBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSource_spActivosPorIdUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaIdBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMiPerfil
             // 
             this.lblMiPerfil.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblMiPerfil.AutoSize = true;
-            this.lblMiPerfil.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMiPerfil.ForeColor = System.Drawing.Color.Black;
-            this.lblMiPerfil.Location = new System.Drawing.Point(306, 21);
+            this.lblMiPerfil.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMiPerfil.ForeColor = System.Drawing.Color.DimGray;
+            this.lblMiPerfil.Location = new System.Drawing.Point(42, 18);
             this.lblMiPerfil.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMiPerfil.Name = "lblMiPerfil";
-            this.lblMiPerfil.Size = new System.Drawing.Size(160, 33);
+            this.lblMiPerfil.Size = new System.Drawing.Size(146, 34);
             this.lblMiPerfil.TabIndex = 2;
             this.lblMiPerfil.Text = "Mis Activos";
             this.lblMiPerfil.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -86,11 +87,12 @@
             this.tblMisActivos.ColumnHeadersHeight = 35;
             this.tblMisActivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.tblMisActivos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
             this.cedulaDataGridViewTextBoxColumn,
+            this.usuarioDataGridViewTextBoxColumn,
             this.codigoDataGridViewTextBoxColumn,
-            this.fechaAsignDataGridViewTextBoxColumn,
-            this.fechafinAsignDataGridViewTextBoxColumn});
+            this.activoDataGridViewTextBoxColumn,
+            this.fechafinAsignDataGridViewTextBoxColumn,
+            this.fechaInicialAsignDataGridViewTextBoxColumn});
             this.tblMisActivos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tblMisActivos.DataSource = this.spAsignUsuarioRetornaListaIdBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -122,20 +124,6 @@
             this.tblMisActivos.Size = new System.Drawing.Size(695, 326);
             this.tblMisActivos.TabIndex = 3;
             // 
-            // spAsignUsuarioRetornaListaIdBindingSource
-            // 
-            this.spAsignUsuarioRetornaListaIdBindingSource.DataMember = "spAsignUsuarioRetornaListaId";
-            this.spAsignUsuarioRetornaListaIdBindingSource.DataSource = this.sEGTRANSADataSource_spActivosPorIdUsuario;
-            // 
-            // sEGTRANSADataSource_spActivosPorIdUsuario
-            // 
-            this.sEGTRANSADataSource_spActivosPorIdUsuario.DataSetName = "SEGTRANSADataSource_spActivosPorIdUsuario";
-            this.sEGTRANSADataSource_spActivosPorIdUsuario.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // spAsignUsuarioRetornaListaIdTableAdapter
-            // 
-            this.spAsignUsuarioRetornaListaIdTableAdapter.ClearBeforeFill = true;
-            // 
             // btnSolicitarRep
             // 
             this.btnSolicitarRep.Location = new System.Drawing.Point(601, 445);
@@ -145,12 +133,19 @@
             this.btnSolicitarRep.Text = "Solicitar Reparación";
             this.btnSolicitarRep.UseVisualStyleBackColor = true;
             // 
-            // idDataGridViewTextBoxColumn
+            // sEGTRANSADataSource_spActivosPorIdUsuario
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id Activo";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sEGTRANSADataSource_spActivosPorIdUsuario.DataSetName = "SEGTRANSADataSource_spActivosPorIdUsuario";
+            this.sEGTRANSADataSource_spActivosPorIdUsuario.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // spAsignUsuarioRetornaListaIdBindingSource
+            // 
+            this.spAsignUsuarioRetornaListaIdBindingSource.DataMember = "spAsignUsuarioRetornaListaId";
+            this.spAsignUsuarioRetornaListaIdBindingSource.DataSource = this.sEGTRANSADataSource_spActivosPorIdUsuario;
+            // 
+            // spAsignUsuarioRetornaListaIdTableAdapter
+            // 
+            this.spAsignUsuarioRetornaListaIdTableAdapter.ClearBeforeFill = true;
             // 
             // cedulaDataGridViewTextBoxColumn
             // 
@@ -159,6 +154,13 @@
             this.cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
             this.cedulaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // usuarioDataGridViewTextBoxColumn
+            // 
+            this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "Usuario";
+            this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
+            this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
+            this.usuarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // codigoDataGridViewTextBoxColumn
             // 
             this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
@@ -166,19 +168,26 @@
             this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
             this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // fechaAsignDataGridViewTextBoxColumn
+            // activoDataGridViewTextBoxColumn
             // 
-            this.fechaAsignDataGridViewTextBoxColumn.DataPropertyName = "FechaAsign";
-            this.fechaAsignDataGridViewTextBoxColumn.HeaderText = "Fecha de Asignación";
-            this.fechaAsignDataGridViewTextBoxColumn.Name = "fechaAsignDataGridViewTextBoxColumn";
-            this.fechaAsignDataGridViewTextBoxColumn.ReadOnly = true;
+            this.activoDataGridViewTextBoxColumn.DataPropertyName = "Activo";
+            this.activoDataGridViewTextBoxColumn.HeaderText = "Activo";
+            this.activoDataGridViewTextBoxColumn.Name = "activoDataGridViewTextBoxColumn";
+            this.activoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fechafinAsignDataGridViewTextBoxColumn
             // 
             this.fechafinAsignDataGridViewTextBoxColumn.DataPropertyName = "FechafinAsign";
-            this.fechafinAsignDataGridViewTextBoxColumn.HeaderText = "Fecha Fin de Asignación";
+            this.fechafinAsignDataGridViewTextBoxColumn.HeaderText = "Fin de Asignación";
             this.fechafinAsignDataGridViewTextBoxColumn.Name = "fechafinAsignDataGridViewTextBoxColumn";
             this.fechafinAsignDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaInicialAsignDataGridViewTextBoxColumn
+            // 
+            this.fechaInicialAsignDataGridViewTextBoxColumn.DataPropertyName = "FechaInicialAsign";
+            this.fechaInicialAsignDataGridViewTextBoxColumn.HeaderText = "Inicio de Asignación";
+            this.fechaInicialAsignDataGridViewTextBoxColumn.Name = "fechaInicialAsignDataGridViewTextBoxColumn";
+            this.fechaInicialAsignDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FrmMisActivos_n
             // 
@@ -194,8 +203,8 @@
             this.Name = "FrmMisActivos_n";
             this.Load += new System.EventHandler(this.FrmMisActivos_n_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tblMisActivos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaIdBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSource_spActivosPorIdUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaIdBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,14 +213,16 @@
         #endregion
         private System.Windows.Forms.Label lblMiPerfil;
         private System.Windows.Forms.DataGridView tblMisActivos;
+        private System.Windows.Forms.Button btnSolicitarRep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaAsignDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource spAsignUsuarioRetornaListaIdBindingSource;
         private FrontEnd.DataSources_Forms.SEGTRANSADataSource_spActivosPorIdUsuario sEGTRANSADataSource_spActivosPorIdUsuario;
         private FrontEnd.DataSources_Forms.SEGTRANSADataSource_spActivosPorIdUsuarioTableAdapters.spAsignUsuarioRetornaListaIdTableAdapter spAsignUsuarioRetornaListaIdTableAdapter;
-        private System.Windows.Forms.Button btnSolicitarRep;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cedulaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaAsignDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn activoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechafinAsignDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicialAsignDataGridViewTextBoxColumn;
     }
 }

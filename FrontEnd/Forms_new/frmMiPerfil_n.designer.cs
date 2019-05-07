@@ -59,12 +59,12 @@
             // 
             this.lblMiPerfil.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblMiPerfil.AutoSize = true;
-            this.lblMiPerfil.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMiPerfil.ForeColor = System.Drawing.Color.Black;
-            this.lblMiPerfil.Location = new System.Drawing.Point(345, 18);
+            this.lblMiPerfil.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMiPerfil.ForeColor = System.Drawing.Color.DimGray;
+            this.lblMiPerfil.Location = new System.Drawing.Point(42, 18);
             this.lblMiPerfil.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMiPerfil.Name = "lblMiPerfil";
-            this.lblMiPerfil.Size = new System.Drawing.Size(115, 33);
+            this.lblMiPerfil.Size = new System.Drawing.Size(113, 34);
             this.lblMiPerfil.TabIndex = 2;
             this.lblMiPerfil.Text = "Mi Perfil";
             this.lblMiPerfil.TextAlign = System.Drawing.ContentAlignment.TopCenter;

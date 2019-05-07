@@ -287,9 +287,11 @@ namespace FrontEnd.DataSources_Forms {
             
             private global::System.Data.DataColumn columnCodigo;
             
-            private global::System.Data.DataColumn columnFechaAsign;
-            
             private global::System.Data.DataColumn columnFechafinAsign;
+            
+            private global::System.Data.DataColumn columnActivo;
+            
+            private global::System.Data.DataColumn columnFechaInicialAsign;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -358,17 +360,25 @@ namespace FrontEnd.DataSources_Forms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn FechaAsignColumn {
+            public global::System.Data.DataColumn FechafinAsignColumn {
                 get {
-                    return this.columnFechaAsign;
+                    return this.columnFechafinAsign;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn FechafinAsignColumn {
+            public global::System.Data.DataColumn ActivoColumn {
                 get {
-                    return this.columnFechafinAsign;
+                    return this.columnActivo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn FechaInicialAsignColumn {
+                get {
+                    return this.columnFechaInicialAsign;
                 }
             }
             
@@ -409,15 +419,16 @@ namespace FrontEnd.DataSources_Forms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public spAsignUsuarioRetornaListaIdRow AddspAsignUsuarioRetornaListaIdRow(int Cedula, string Usuario, string Codigo, string FechaAsign, string FechafinAsign) {
+            public spAsignUsuarioRetornaListaIdRow AddspAsignUsuarioRetornaListaIdRow(int Cedula, string Usuario, string Codigo, string FechafinAsign, string Activo, string FechaInicialAsign) {
                 spAsignUsuarioRetornaListaIdRow rowspAsignUsuarioRetornaListaIdRow = ((spAsignUsuarioRetornaListaIdRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Cedula,
                         Usuario,
                         Codigo,
-                        FechaAsign,
-                        FechafinAsign};
+                        FechafinAsign,
+                        Activo,
+                        FechaInicialAsign};
                 rowspAsignUsuarioRetornaListaIdRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowspAsignUsuarioRetornaListaIdRow);
                 return rowspAsignUsuarioRetornaListaIdRow;
@@ -451,8 +462,9 @@ namespace FrontEnd.DataSources_Forms {
                 this.columnCedula = base.Columns["Cedula"];
                 this.columnUsuario = base.Columns["Usuario"];
                 this.columnCodigo = base.Columns["Codigo"];
-                this.columnFechaAsign = base.Columns["FechaAsign"];
                 this.columnFechafinAsign = base.Columns["FechafinAsign"];
+                this.columnActivo = base.Columns["Activo"];
+                this.columnFechaInicialAsign = base.Columns["FechaInicialAsign"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -466,10 +478,12 @@ namespace FrontEnd.DataSources_Forms {
                 base.Columns.Add(this.columnUsuario);
                 this.columnCodigo = new global::System.Data.DataColumn("Codigo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCodigo);
-                this.columnFechaAsign = new global::System.Data.DataColumn("FechaAsign", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFechaAsign);
                 this.columnFechafinAsign = new global::System.Data.DataColumn("FechafinAsign", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFechafinAsign);
+                this.columnActivo = new global::System.Data.DataColumn("Activo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActivo);
+                this.columnFechaInicialAsign = new global::System.Data.DataColumn("FechaInicialAsign", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaInicialAsign);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -480,10 +494,11 @@ namespace FrontEnd.DataSources_Forms {
                 this.columnUsuario.ReadOnly = true;
                 this.columnUsuario.MaxLength = 101;
                 this.columnCodigo.MaxLength = 50;
-                this.columnFechaAsign.ReadOnly = true;
-                this.columnFechaAsign.MaxLength = 4000;
                 this.columnFechafinAsign.ReadOnly = true;
                 this.columnFechafinAsign.MaxLength = 4000;
+                this.columnActivo.MaxLength = 90;
+                this.columnFechaInicialAsign.ReadOnly = true;
+                this.columnFechaInicialAsign.MaxLength = 4000;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -681,23 +696,6 @@ namespace FrontEnd.DataSources_Forms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string FechaAsign {
-                get {
-                    try {
-                        return ((string)(this[this.tablespAsignUsuarioRetornaListaId.FechaAsignColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FechaAsign\' in table \'spAsignUsuarioRetornaListaId\' is DBNu" +
-                                "ll.", e);
-                    }
-                }
-                set {
-                    this[this.tablespAsignUsuarioRetornaListaId.FechaAsignColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string FechafinAsign {
                 get {
                     try {
@@ -710,6 +708,39 @@ namespace FrontEnd.DataSources_Forms {
                 }
                 set {
                     this[this.tablespAsignUsuarioRetornaListaId.FechafinAsignColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Activo {
+                get {
+                    try {
+                        return ((string)(this[this.tablespAsignUsuarioRetornaListaId.ActivoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Activo\' in table \'spAsignUsuarioRetornaListaId\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablespAsignUsuarioRetornaListaId.ActivoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string FechaInicialAsign {
+                get {
+                    try {
+                        return ((string)(this[this.tablespAsignUsuarioRetornaListaId.FechaInicialAsignColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FechaInicialAsign\' in table \'spAsignUsuarioRetornaListaId\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablespAsignUsuarioRetornaListaId.FechaInicialAsignColumn] = value;
                 }
             }
             
@@ -739,18 +770,6 @@ namespace FrontEnd.DataSources_Forms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsFechaAsignNull() {
-                return this.IsNull(this.tablespAsignUsuarioRetornaListaId.FechaAsignColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetFechaAsignNull() {
-                this[this.tablespAsignUsuarioRetornaListaId.FechaAsignColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsFechafinAsignNull() {
                 return this.IsNull(this.tablespAsignUsuarioRetornaListaId.FechafinAsignColumn);
             }
@@ -759,6 +778,30 @@ namespace FrontEnd.DataSources_Forms {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetFechafinAsignNull() {
                 this[this.tablespAsignUsuarioRetornaListaId.FechafinAsignColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsActivoNull() {
+                return this.IsNull(this.tablespAsignUsuarioRetornaListaId.ActivoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetActivoNull() {
+                this[this.tablespAsignUsuarioRetornaListaId.ActivoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsFechaInicialAsignNull() {
+                return this.IsNull(this.tablespAsignUsuarioRetornaListaId.FechaInicialAsignColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetFechaInicialAsignNull() {
+                this[this.tablespAsignUsuarioRetornaListaId.FechaInicialAsignColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -925,8 +968,9 @@ namespace FrontEnd.DataSources_Forms.SEGTRANSADataSource_spActivosPorIdUsuarioTa
             tableMapping.ColumnMappings.Add("Cedula", "Cedula");
             tableMapping.ColumnMappings.Add("Usuario", "Usuario");
             tableMapping.ColumnMappings.Add("Codigo", "Codigo");
-            tableMapping.ColumnMappings.Add("FechaAsign", "FechaAsign");
             tableMapping.ColumnMappings.Add("FechafinAsign", "FechafinAsign");
+            tableMapping.ColumnMappings.Add("Activo", "Activo");
+            tableMapping.ColumnMappings.Add("FechaInicialAsign", "FechaInicialAsign");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

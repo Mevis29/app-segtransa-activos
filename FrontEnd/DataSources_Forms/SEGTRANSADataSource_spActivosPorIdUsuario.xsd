@@ -26,8 +26,9 @@
               <Mapping SourceColumn="Cedula" DataSetColumn="Cedula" />
               <Mapping SourceColumn="Usuario" DataSetColumn="Usuario" />
               <Mapping SourceColumn="Codigo" DataSetColumn="Codigo" />
-              <Mapping SourceColumn="FechaAsign" DataSetColumn="FechaAsign" />
               <Mapping SourceColumn="FechafinAsign" DataSetColumn="FechafinAsign" />
+              <Mapping SourceColumn="Activo" DataSetColumn="Activo" />
+              <Mapping SourceColumn="FechaInicialAsign" DataSetColumn="FechaInicialAsign" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -39,7 +40,7 @@
   <xs:element name="SEGTRANSADataSource_spActivosPorIdUsuario" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SEGTRANSADataSource_spActivosPorIdUsuario" msprop:Generator_UserDSName="SEGTRANSADataSource_spActivosPorIdUsuario">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="spAsignUsuarioRetornaListaId" msprop:Generator_TableClassName="spAsignUsuarioRetornaListaIdDataTable" msprop:Generator_TableVarName="tablespAsignUsuarioRetornaListaId" msprop:Generator_TablePropName="spAsignUsuarioRetornaListaId" msprop:Generator_RowDeletingName="spAsignUsuarioRetornaListaIdRowDeleting" msprop:Generator_RowChangingName="spAsignUsuarioRetornaListaIdRowChanging" msprop:Generator_RowEvHandlerName="spAsignUsuarioRetornaListaIdRowChangeEventHandler" msprop:Generator_RowDeletedName="spAsignUsuarioRetornaListaIdRowDeleted" msprop:Generator_UserTableName="spAsignUsuarioRetornaListaId" msprop:Generator_RowChangedName="spAsignUsuarioRetornaListaIdRowChanged" msprop:Generator_RowEvArgName="spAsignUsuarioRetornaListaIdRowChangeEvent" msprop:Generator_RowClassName="spAsignUsuarioRetornaListaIdRow">
+        <xs:element name="spAsignUsuarioRetornaListaId" msprop:Generator_TableClassName="spAsignUsuarioRetornaListaIdDataTable" msprop:Generator_TableVarName="tablespAsignUsuarioRetornaListaId" msprop:Generator_RowChangedName="spAsignUsuarioRetornaListaIdRowChanged" msprop:Generator_TablePropName="spAsignUsuarioRetornaListaId" msprop:Generator_RowDeletingName="spAsignUsuarioRetornaListaIdRowDeleting" msprop:Generator_RowChangingName="spAsignUsuarioRetornaListaIdRowChanging" msprop:Generator_RowEvHandlerName="spAsignUsuarioRetornaListaIdRowChangeEventHandler" msprop:Generator_RowDeletedName="spAsignUsuarioRetornaListaIdRowDeleted" msprop:Generator_RowClassName="spAsignUsuarioRetornaListaIdRow" msprop:Generator_UserTableName="spAsignUsuarioRetornaListaId" msprop:Generator_RowEvArgName="spAsignUsuarioRetornaListaIdRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -58,14 +59,21 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="FechaAsign" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFechaAsign" msprop:Generator_ColumnPropNameInRow="FechaAsign" msprop:Generator_ColumnPropNameInTable="FechaAsignColumn" msprop:Generator_UserColumnName="FechaAsign" minOccurs="0">
+              <xs:element name="FechafinAsign" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFechafinAsign" msprop:Generator_ColumnPropNameInRow="FechafinAsign" msprop:Generator_ColumnPropNameInTable="FechafinAsignColumn" msprop:Generator_UserColumnName="FechafinAsign" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="4000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="FechafinAsign" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFechafinAsign" msprop:Generator_ColumnPropNameInRow="FechafinAsign" msprop:Generator_ColumnPropNameInTable="FechafinAsignColumn" msprop:Generator_UserColumnName="FechafinAsign" minOccurs="0">
+              <xs:element name="Activo" msprop:Generator_ColumnVarNameInTable="columnActivo" msprop:Generator_ColumnPropNameInRow="Activo" msprop:Generator_ColumnPropNameInTable="ActivoColumn" msprop:Generator_UserColumnName="Activo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="90" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaInicialAsign" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFechaInicialAsign" msprop:Generator_ColumnPropNameInRow="FechaInicialAsign" msprop:Generator_ColumnPropNameInTable="FechaInicialAsignColumn" msprop:Generator_UserColumnName="FechaInicialAsign" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="4000" />
