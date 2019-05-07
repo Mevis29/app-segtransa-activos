@@ -800,6 +800,7 @@
     <None Include="Resources\Imagenes\big-loupe1.png" />
     <None Include="Resources\Imagenes\curved-arrows.png" />
     <None Include="Resources\Imagenes\minus-button.png" />
+    <None Include="Resources\Imagenes\database.png" />
     <Content Include="Resources\Imagenes\myassets.png" />
     <None Include="Resources\Imagenes\profile.png" />
     <None Include="Resources\Imagenes\projector.png" />

@@ -11,9 +11,10 @@ namespace Backend.Entities
 {
     using System;
     
-    public partial class spUsuariosRetornaListaEmpleado_Result
+    public partial class spAsignUsuarioRetornaDatosId1_Result
     {
-        public int Id { get; set; }
-        public string Empleado { get; set; }
+        public Nullable<int> Id { get; set; }
+        public Nullable<int> Usuario { get; set; }
+        public Nullable<int> Activo { get; set; }
     }
 }
