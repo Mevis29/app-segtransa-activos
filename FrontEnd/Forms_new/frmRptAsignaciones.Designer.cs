@@ -31,30 +31,30 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.spAsignUsuarioRetornaListaTotalBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.segtransaDataSet = new FrontEnd.DataSources_Reportes.SegtransaDataSet();
-            this.segtransaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.spAsignUsuarioRetornaListaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.spAsignUsuarioRetornaListaTableAdapter = new FrontEnd.DataSources_Reportes.SegtransaDataSetTableAdapters.spAsignUsuarioRetornaListaTableAdapter();
-            this.spAsignUsuarioRetornaListaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.spAsignUsuarioRetornaListaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.spAsignUsuarioRetornaListaBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.sEGTRANSADataSourcespListaTotalAsignacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sEGTRANSADataSource_spListaTotalAsignaciones = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_spListaTotalAsignaciones();
+            this.label2 = new System.Windows.Forms.Label();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.spAsignUsuarioRetornaListaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.spAsignUsuarioRetornaListaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.spAsignUsuarioRetornaListaBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.spAsignUsuarioRetornaListaTotalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.spAsignUsuarioRetornaListaTotalTableAdapter = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_spListaTotalAsignacionesTableAdapters.spAsignUsuarioRetornaListaTotalTableAdapter();
+            this.segtransaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.segtransaDataSet = new FrontEnd.DataSources_Reportes.SegtransaDataSet();
+            this.spAsignUsuarioRetornaListaTableAdapter = new FrontEnd.DataSources_Reportes.SegtransaDataSetTableAdapters.spAsignUsuarioRetornaListaTableAdapter();
+            this.spAsignUsuarioRetornaListaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.segtransaDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaTotalBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.segtransaDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.segtransaDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSourcespListaTotalAsignacionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSource_spListaTotalAsignaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaTotalBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.segtransaDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.segtransaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.segtransaDataSetBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +62,16 @@
             // 
             this.spAsignUsuarioRetornaListaTotalBindingSource1.DataMember = "spAsignUsuarioRetornaListaTotal";
             this.spAsignUsuarioRetornaListaTotalBindingSource1.DataSource = this.sEGTRANSADataSourcespListaTotalAsignacionesBindingSource;
+            // 
+            // sEGTRANSADataSourcespListaTotalAsignacionesBindingSource
+            // 
+            this.sEGTRANSADataSourcespListaTotalAsignacionesBindingSource.DataSource = this.sEGTRANSADataSource_spListaTotalAsignaciones;
+            this.sEGTRANSADataSourcespListaTotalAsignacionesBindingSource.Position = 0;
+            // 
+            // sEGTRANSADataSource_spListaTotalAsignaciones
+            // 
+            this.sEGTRANSADataSource_spListaTotalAsignaciones.DataSetName = "SEGTRANSADataSource_spListaTotalAsignaciones";
+            this.sEGTRANSADataSource_spListaTotalAsignaciones.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
             // 
@@ -78,59 +88,31 @@
             // reportViewer1
             // 
             reportDataSource1.Name = "spAsignUsuarioRetornaListaDS";
-            reportDataSource1.Value = this.segtransaDataSetBindingSource;
+            reportDataSource1.Value = this.spAsignUsuarioRetornaListaBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "FrontEnd.Reportes.rptAsignaciones.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(2, 50);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(786, 437);
             this.reportViewer1.TabIndex = 25;
-            // 
-            // segtransaDataSet
-            // 
-            this.segtransaDataSet.DataSetName = "SegtransaDataSet";
-            this.segtransaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // segtransaDataSetBindingSource
-            // 
-            this.segtransaDataSetBindingSource.DataSource = this.segtransaDataSet;
-            this.segtransaDataSetBindingSource.Position = 0;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // spAsignUsuarioRetornaListaBindingSource
             // 
             this.spAsignUsuarioRetornaListaBindingSource.DataMember = "spAsignUsuarioRetornaLista";
             this.spAsignUsuarioRetornaListaBindingSource.DataSource = this.segtransaDataSetBindingSource;
             // 
-            // spAsignUsuarioRetornaListaTableAdapter
-            // 
-            this.spAsignUsuarioRetornaListaTableAdapter.ClearBeforeFill = true;
-            // 
             // spAsignUsuarioRetornaListaBindingSource1
             // 
             this.spAsignUsuarioRetornaListaBindingSource1.DataMember = "spAsignUsuarioRetornaLista";
             this.spAsignUsuarioRetornaListaBindingSource1.DataSource = this.segtransaDataSetBindingSource;
             // 
-            // spAsignUsuarioRetornaListaBindingSource2
-            // 
-            this.spAsignUsuarioRetornaListaBindingSource2.DataMember = "spAsignUsuarioRetornaLista";
-            this.spAsignUsuarioRetornaListaBindingSource2.DataSource = this.segtransaDataSet;
-            // 
             // spAsignUsuarioRetornaListaBindingSource3
             // 
             this.spAsignUsuarioRetornaListaBindingSource3.DataMember = "spAsignUsuarioRetornaLista";
             this.spAsignUsuarioRetornaListaBindingSource3.DataSource = this.segtransaDataSetBindingSource;
-            // 
-            // sEGTRANSADataSourcespListaTotalAsignacionesBindingSource
-            // 
-            this.sEGTRANSADataSourcespListaTotalAsignacionesBindingSource.DataSource = this.sEGTRANSADataSource_spListaTotalAsignaciones;
-            this.sEGTRANSADataSourcespListaTotalAsignacionesBindingSource.Position = 0;
-            // 
-            // sEGTRANSADataSource_spListaTotalAsignaciones
-            // 
-            this.sEGTRANSADataSource_spListaTotalAsignaciones.DataSetName = "SEGTRANSADataSource_spListaTotalAsignaciones";
-            this.sEGTRANSADataSource_spListaTotalAsignaciones.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // spAsignUsuarioRetornaListaTotalBindingSource
             // 
@@ -140,6 +122,25 @@
             // spAsignUsuarioRetornaListaTotalTableAdapter
             // 
             this.spAsignUsuarioRetornaListaTotalTableAdapter.ClearBeforeFill = true;
+            // 
+            // segtransaDataSetBindingSource
+            // 
+            this.segtransaDataSetBindingSource.DataSource = this.segtransaDataSet;
+            this.segtransaDataSetBindingSource.Position = 0;
+            // 
+            // segtransaDataSet
+            // 
+            this.segtransaDataSet.DataSetName = "SegtransaDataSet";
+            this.segtransaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // spAsignUsuarioRetornaListaTableAdapter
+            // 
+            this.spAsignUsuarioRetornaListaTableAdapter.ClearBeforeFill = true;
+            // 
+            // spAsignUsuarioRetornaListaBindingSource2
+            // 
+            this.spAsignUsuarioRetornaListaBindingSource2.DataMember = "spAsignUsuarioRetornaLista";
+            this.spAsignUsuarioRetornaListaBindingSource2.DataSource = this.segtransaDataSet;
             // 
             // segtransaDataSetBindingSource1
             // 
@@ -154,20 +155,20 @@
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmRptAsignaciones";
             this.Text = "frmRptAsignaciones";
             this.Load += new System.EventHandler(this.frmRptAsignaciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaTotalBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.segtransaDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.segtransaDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSourcespListaTotalAsignacionesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSource_spListaTotalAsignaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaTotalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.segtransaDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.segtransaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.segtransaDataSetBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

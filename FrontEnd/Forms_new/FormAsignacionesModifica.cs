@@ -1,6 +1,7 @@
 ﻿using Backend.DAL;
 using Backend.Entities;
 using BackEnd.DAL;
+using FrontEnd.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,10 @@ namespace FrontEnd.Formularios
 {
     public partial class FormAsignacionesModifica : Form
     {
+        private IBitacoraDAL bitacoraDAL = new BitacoraImplDAL();
+        private Bitacora bitacora = new Bitacora();
+        string codigo = string.Empty;
+        string nombreEmpleado = string.Empty;
         #region definir variables, inicilizaciòn
         //definir variable para indicar IdAsignacion
         //IdAsignacion =  spAsignUsuarioRetornaDatosId_Result retornaIdAsignacionId(int pIdAsignacion)
@@ -134,7 +139,10 @@ namespace FrontEnd.Formularios
 
                     //metodo pr modificar adiccn x client existnt
                     Asignacion.ModificaAsignUsuario(this.IdAsignacion, IdUsuario, IdActivo, this.dtpFechInicialAsig.Value, this.dtpFechfinalAsig.Value);
-
+                    string detalleBitacora = "Se modificó la asignación del activo: " + codigo.Trim() + " al empleado: " + nombreEmpleado.Trim();
+                    bitacora.IdUsuario = ValoresAplicacion.idUsuario;
+                    bitacora.DetalleBitacora = detalleBitacora;
+                    bitacoraDAL.Add(bitacora);
                     MessageBox.Show("Registro modificado correctamente.",
                         "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -180,26 +188,33 @@ namespace FrontEnd.Formularios
         {
             AsignacionesImplDAL asignacionDal = new AsignacionesImplDAL();
             UsuariosImplDAL usuariosDal = new UsuariosImplDAL();
-
-            foreach (spAsignUsuarioRetornaLista_Result asignacion in asignacionDal.retornaListaAsignUsuario("", retornarFragmento(cboActivo.Text)))
+            string nombreEmpleado = retornarFragmento(cboEmpleado.Text)[1];
+            string codigoActivo = retornarFragmento(cboActivo.Text)[0];
+            string descripcionActivo = retornarFragmento(cboActivo.Text)[1];
+            int contadorAsignacion = 0;
+            foreach (spAsignUsuarioRetornaLista_Result asignacion in asignacionDal.retornaListaAsignUsuario("", descripcionActivo.Trim()))
             {
-                if (asignacion.Usuario.Trim().Equals(retornarFragmento(cboEmpleado.Text)))
+                if (asignacion.Usuario.Trim().Equals(nombreEmpleado.Trim()) && asignacion.Codigo.Trim().Equals(codigoActivo.Trim()))
                 {
                     MessageBox.Show("Esa asignación ya existe.");
                     return true;
                 }
+                if (asignacion.Codigo.Trim().Equals(codigoActivo.Trim()))
+                {
+                    contadorAsignacion++;
+                }
             }
-            if (asignacionDal.retornaListaAsignUsuario("", retornarFragmento(cboActivo.Text)).Count>1)
+            if (contadorAsignacion >= 1)
             {
-                MessageBox.Show("Alerta: Ese activo ya tiene una asignación.");
+                MessageBox.Show("Alerta: Ese activo ya tiene una asignación.", "Alerta");
             }
             return false;
         }
 
-        private string retornarFragmento(string concatenacion)
+        private string[] retornarFragmento(string concatenacion)
         {
             string[] tokens = concatenacion.Split('-');
-            return tokens[1].Trim();
+            return tokens;
         }
     }
 }

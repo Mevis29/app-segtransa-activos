@@ -124,10 +124,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>sp_RetornaReparacionesDS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSources_Reportes\SegtransaDataSet.cs">
+      <DependentUpon>SegtransaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSources_Reportes\SEGTRANSADataSetSp_RetornaBitacora.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SEGTRANSADataSetSp_RetornaBitacora.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources_Reportes\DepreciadosDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepreciadosDS.xsd</DependentUpon>
     </Compile>
     <Compile Include="Forms_new\FormAsignacionesInserta.cs">
       <SubType>Form</SubType>
@@ -170,12 +178,6 @@
     </Compile>
     <Compile Include="Forms_new\frmReparacionesModificar.designer.cs">
       <DependentUpon>frmReparacionesModificar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms_new\frmReparaciones_n.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms_new\frmReparaciones_n.designer.cs">
-      <DependentUpon>frmReparaciones_n.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms_new\frmMisActivos_n.cs">
       <SubType>Form</SubType>
@@ -242,6 +244,12 @@
     </Compile>
     <Compile Include="Forms_new\frmRptBitacora.designer.cs">
       <DependentUpon>frmRptBitacora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\frmRptDepreciados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\frmRptDepreciados.Designer.cs">
+      <DependentUpon>frmRptDepreciados.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms_new\frmRptReparaciones.cs">
       <SubType>Form</SubType>
@@ -390,9 +398,6 @@
     <EmbeddedResource Include="Forms_new\frmReparacionesModificar.resx">
       <DependentUpon>frmReparacionesModificar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms_new\frmReparaciones_n.resx">
-      <DependentUpon>frmReparaciones_n.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms_new\frmMisActivos_n.resx">
       <DependentUpon>frmMisActivos_n.cs</DependentUpon>
     </EmbeddedResource>
@@ -426,6 +431,9 @@
     <EmbeddedResource Include="Forms_new\frmRptBitacora.resx">
       <DependentUpon>frmRptBitacora.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\frmRptDepreciados.resx">
+      <DependentUpon>frmRptDepreciados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms_new\frmRptReparaciones.resx">
       <DependentUpon>frmRptReparaciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -457,6 +465,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptActivo.rdlc" />
     <EmbeddedResource Include="Reportes\rptAsignaciones.rdlc" />
+    <EmbeddedResource Include="Reportes\rptDepreciados.rdlc" />
     <EmbeddedResource Include="Reportes\rptProveedor.rdlc" />
     <EmbeddedResource Include="Reportes\rptReparacion.rdlc" />
     <EmbeddedResource Include="Reportes\rptRolUsuario.rdlc" />
@@ -506,6 +515,17 @@
     </None>
     <None Include="DataSources_Reportes\SEGTRANSADataSetSp_RetornaBitacora.xss">
       <DependentUpon>SEGTRANSADataSetSp_RetornaBitacora.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Reportes\DepreciadosDS.xsc">
+      <DependentUpon>DepreciadosDS.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Reportes\DepreciadosDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DepreciadosDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources_Reportes\DepreciadosDS.xss">
+      <DependentUpon>DepreciadosDS.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\FrontEnd.DataSources_Forms.SEGTRANSADataSource_spListaTotalAsignacionesTableAdapters.spAsignUsuarioRetornaListaTotalTableAdapter.datasource" />

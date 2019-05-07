@@ -60,10 +60,9 @@ namespace FrontEnd.Forms_new
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Location = new System.Drawing.Point(401, 18);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(301, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(249, 24);
+            this.label2.Size = new System.Drawing.Size(200, 18);
             this.label2.TabIndex = 23;
             this.label2.Text = "Reporte de Reparaciones";
             // 
@@ -74,11 +73,10 @@ namespace FrontEnd.Forms_new
             reportDataSource1.Value = this.spRetornaReparacionBindingSource;
             this.rpvReparaciones.LocalReport.DataSources.Add(reportDataSource1);
             this.rpvReparaciones.LocalReport.ReportEmbeddedResource = "FrontEnd.Reportes.rptReparacion.rdlc";
-            this.rpvReparaciones.Location = new System.Drawing.Point(3, 62);
-            this.rpvReparaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rpvReparaciones.Location = new System.Drawing.Point(2, 50);
             this.rpvReparaciones.Name = "rpvReparaciones";
             this.rpvReparaciones.ServerReport.BearerToken = null;
-            this.rpvReparaciones.Size = new System.Drawing.Size(1047, 537);
+            this.rpvReparaciones.Size = new System.Drawing.Size(786, 437);
             this.rpvReparaciones.TabIndex = 21;
             // 
             // sp_RetornaReparacionTableAdapter
@@ -97,13 +95,12 @@ namespace FrontEnd.Forms_new
             // 
             // frmRptReparaciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 619);
+            this.ClientSize = new System.Drawing.Size(800, 503);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.rpvReparaciones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmRptReparaciones";
             this.Text = "frmRptReparaciones";
             this.Load += new System.EventHandler(this.frmRptReparaciones_Load);

@@ -18,6 +18,8 @@ namespace FrontEnd.Formularios
     
          private IBitacoraDAL bitacoraDAL = new BitacoraImplDAL();
          private Bitacora bitacora = new Bitacora();
+        string codigo = string.Empty;
+        string nombreEmpleado = string.Empty;
 
         int IdAsignacion { set; get; }
        
@@ -112,7 +114,8 @@ namespace FrontEnd.Formularios
                 //selecciona los datos de la fila cn color pr ser tratados
                 //int filaSeleccionada = this.dgvLista.CurrentCell.RowIndex;
                 resultado = Convert.ToInt16(dgvLista.Rows[dgvLista.SelectedRows[0].Index].Cells[0].Value.ToString());
-
+                codigo = dgvLista.Rows[dgvLista.SelectedRows[0].Index].Cells[2].Value.ToString();
+                nombreEmpleado = dgvLista.Rows[dgvLista.SelectedRows[0].Index].Cells[3].Value.ToString();
             }
             catch (Exception)
             {
@@ -171,6 +174,10 @@ namespace FrontEnd.Formularios
                 //    if (valorSeleccionado > this.IdAsignacion)
                 {
                     this.EliminarDatos(valorSeleccionado);
+                    string detalleBitacora = "Se eliminó la asignación del activo: " + codigo.Trim() + " al empleado: " + nombreEmpleado.Trim();
+                    bitacora.IdUsuario = ValoresAplicacion.idUsuario;
+                    bitacora.DetalleBitacora = detalleBitacora;
+                    bitacoraDAL.Add(bitacora);
                     this.CargarDatos();                 
                     //   this.IdAsignacion = IdAsignacion;
                 }

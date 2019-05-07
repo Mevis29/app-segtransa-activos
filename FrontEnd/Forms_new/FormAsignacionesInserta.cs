@@ -1,6 +1,7 @@
 ﻿using Backend.DAL;
 using Backend.Entities;
 using BackEnd.DAL;
+using FrontEnd.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,8 +14,13 @@ using System.Windows.Forms;
 
 namespace FrontEnd.Formularios
 {
+
     public partial class FormAsignacionesInserta : Form
     {
+        private IBitacoraDAL bitacoraDAL = new BitacoraImplDAL();
+        private Bitacora bitacora = new Bitacora();
+        string codigo = string.Empty;
+        string nombreEmpleado = string.Empty;
         public FormAsignacionesInserta()
         {
             InitializeComponent();
@@ -52,7 +58,7 @@ namespace FrontEnd.Formularios
         //q carguen vacias esperando obtener valores
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (validarExisteAsignacion()==false)
+            if (validarExisteAsignacion() == false)
             {
                 this.InsertarDatos();
                 this.cboEmpleado.SelectedValue = "";
@@ -101,12 +107,15 @@ namespace FrontEnd.Formularios
                     //convierte los valores de los datos pr ser ingresados
                     IdUsuario = Convert.ToInt16(this.cboEmpleado.SelectedValue);
                     IdActivo = Convert.ToInt16(this.cboActivo.SelectedValue);
-
-
+                    codigo = this.cboActivo.SelectedText;
+                    nombreEmpleado = this.cboEmpleado.SelectedText;
                     //mètodo pr insertar nvo  activo x empleado
                     Asignacion.InsertaAsignUsuario(IdUsuario, IdActivo,
                                this.dtpFechInicialAsig.Value, this.dtpFechfinalAsig.Value);
-
+                    string detalleBitacora = "Se agregó la asignación del activo: " + codigo.Trim() + " al empleado: " + nombreEmpleado.Trim();
+                    bitacora.IdUsuario = ValoresAplicacion.idUsuario;
+                    bitacora.DetalleBitacora = detalleBitacora;
+                    bitacoraDAL.Add(bitacora);
                     MessageBox.Show("Registro insertado correctamente.",
                         "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -147,7 +156,7 @@ namespace FrontEnd.Formularios
                 mensaje += "\nLa fecha inicial no puede ser mayor a la fecha final.";
             }
 
-                if (mensaje != "")
+            if (mensaje != "")
             {
                 MessageBox.Show(mensaje, "Error de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 resultado = false;
@@ -161,26 +170,33 @@ namespace FrontEnd.Formularios
         {
             AsignacionesImplDAL asignacionDal = new AsignacionesImplDAL();
             UsuariosImplDAL usuariosDal = new UsuariosImplDAL();
-
-            foreach (spAsignUsuarioRetornaLista_Result asignacion in asignacionDal.retornaListaAsignUsuario("", retornarFragmento(cboActivo.Text)))
+            string nombreEmpleado = retornarFragmento(cboEmpleado.Text)[1];
+            string codigoActivo = retornarFragmento(cboActivo.Text)[0];
+            string descripcionActivo = retornarFragmento(cboActivo.Text)[1];
+            int contadorAsignacion = 0;
+            foreach (spAsignUsuarioRetornaLista_Result asignacion in asignacionDal.retornaListaAsignUsuario("", descripcionActivo.Trim()))
             {
-                if (asignacion.Usuario.Trim().Equals(retornarFragmento(cboEmpleado.Text)))
+                if (asignacion.Usuario.Trim().Equals(nombreEmpleado.Trim()) && asignacion.Codigo.Trim().Equals(codigoActivo.Trim()))
                 {
                     MessageBox.Show("Esa asignación ya existe.");
                     return true;
                 }
+                if (asignacion.Codigo.Trim().Equals(codigoActivo.Trim()))
+                {
+                    contadorAsignacion++;
+                }
             }
-            if (asignacionDal.retornaListaAsignUsuario("", retornarFragmento(cboActivo.Text)).Count >= 1)
+            if (contadorAsignacion >= 1)
             {
                 MessageBox.Show("Alerta: Ese activo ya tiene una asignación.", "Alerta");
             }
             return false;
         }
 
-        private string retornarFragmento(string concatenacion)
+        private string[] retornarFragmento(string concatenacion)
         {
             string[] tokens = concatenacion.Split('-');
-            return tokens[1].Trim();
+            return tokens;
         }
     }
 }

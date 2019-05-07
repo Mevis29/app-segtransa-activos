@@ -965,7 +965,7 @@
           <Parameter Name="IdActivo" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="spAsignUsuarioEliminaDatos">
-            <Parameter Name="IdAsignacion" Mode="In" Type="Int32" />
+          <Parameter Name="IdAsignacion" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="spAsignUsuarioInsertaDatos">
             <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
@@ -981,14 +981,14 @@
             <Parameter Name="FechafinalAsignacion" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="spAsignUsuarioRetornaDatosId" ReturnType="Collection(SegtransaModel.spAsignUsuarioRetornaDatosId_Result)">
-            <Parameter Name="IdAsignacion" Mode="In" Type="Int32" />
+          <Parameter Name="IdAsignacion" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="spAsignUsuarioRetornaLista" ReturnType="Collection(SegtransaModel.spAsignUsuarioRetornaLista_Result)">
             <Parameter Name="Nombre" Mode="In" Type="String" />
             <Parameter Name="Descripcion" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="spAsignUsuarioRetornaListaId" ReturnType="Collection(SegtransaModel.spAsignUsuarioRetornaListaId_Result)">
-            <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
+          <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_BuscarActivos_Result">

@@ -76,5 +76,10 @@ namespace FrontEnd.Forms_new
         {
             this.Close();
         }
+
+        private void reporteDeDepreciadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirFormInPanel(new frmRptDepreciados());
+        }
     }
 }

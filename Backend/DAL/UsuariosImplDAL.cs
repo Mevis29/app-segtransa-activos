@@ -200,10 +200,13 @@ public class UsuariosImplDAL : IUsuariosDAL
     #region  Método para retornar lista completa de Usuarios
     public List<spUsuariosRetornaLista_Result> retornaListaUsuarios(string pCedula, string pNombre, string pCorreo)
     {
-
         List<spUsuariosRetornaLista_Result> resultado = new List<spUsuariosRetornaLista_Result>();
-
-        resultado = this.context.spUsuariosRetornaLista(pCedula, pNombre, pCorreo).ToList();
+        using (context = new BDContext())
+        {
+   
+            resultado = this.context.spUsuariosRetornaLista(pCedula, pNombre, pCorreo).ToList();
+        }
+            
 
         return resultado;
     }
@@ -214,10 +217,12 @@ public class UsuariosImplDAL : IUsuariosDAL
     public List<spUsuariosRetornaListaEmpleado_Result> retornaListaEmpleados(int? pIdEmpleado)
     {
         List<spUsuariosRetornaListaEmpleado_Result> resultado = new List<spUsuariosRetornaListaEmpleado_Result>();
+        using (context = new BDContext())
+        {
+            resultado = this.context.spUsuariosRetornaListaEmpleado(pIdEmpleado).ToList();
 
-        resultado = this.context.spUsuariosRetornaListaEmpleado(pIdEmpleado).ToList();
-
-        return resultado;
+            return resultado;
+        }
     }
     #endregion
 
@@ -225,8 +230,10 @@ public class UsuariosImplDAL : IUsuariosDAL
     public spUsuariosRetornaListaEmpleado_Result retornaEmpleadoId(int pIdEmpleado)
     {
         spUsuariosRetornaListaEmpleado_Result resultado = new spUsuariosRetornaListaEmpleado_Result();
-
-        resultado = this.context.spUsuariosRetornaListaEmpleado(pIdEmpleado).FirstOrDefault();
+        using (context = new BDContext())
+        {
+            resultado = this.context.spUsuariosRetornaListaEmpleado(pIdEmpleado).FirstOrDefault();
+        }
 
         return resultado;
     }
