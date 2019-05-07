@@ -25,7 +25,7 @@ namespace FrontEnd
         private void frmRepActivo_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'SEGTRANSADataSetActivo.Activos' table. You can move, or remove it, as needed.
-            this.ActivosTableAdapter.Fill(this.SEGTRANSADataSetActivo.Activos);
+            this.sp_ObtenerActivosTableAdapter.Fill(this.SEGTRANSADataSetActivo.sp_obtenerActivos);
 
             this.reportViewer1.RefreshReport();
         }

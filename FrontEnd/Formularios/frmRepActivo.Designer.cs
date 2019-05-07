@@ -35,7 +35,7 @@ namespace FrontEnd
             this.ActivosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SEGTRANSADataSetActivo = new FrontEnd.DataSources_Reportes.SEGTRANSADataSetActivo();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.ActivosTableAdapter = new FrontEnd.DataSources_Reportes.SEGTRANSADataSetActivoTableAdapters.ActivosTableAdapter();
+            this.sp_ObtenerActivosTableAdapter = new FrontEnd.DataSources_Reportes.SEGTRANSADataSetActivoTableAdapters.sp_obtenerActivosTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ActivosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SEGTRANSADataSetActivo)).BeginInit();
@@ -65,7 +65,7 @@ namespace FrontEnd
             // 
             // ActivosTableAdapter
             // 
-            this.ActivosTableAdapter.ClearBeforeFill = true;
+            this.sp_ObtenerActivosTableAdapter.ClearBeforeFill = true;
             // 
             // button1
             // 
@@ -98,7 +98,7 @@ namespace FrontEnd
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource ActivosBindingSource;
         private SEGTRANSADataSetActivo SEGTRANSADataSetActivo;
-        private DataSources_Reportes.SEGTRANSADataSetActivoTableAdapters.ActivosTableAdapter ActivosTableAdapter;
+        private DataSources_Reportes.SEGTRANSADataSetActivoTableAdapters.sp_obtenerActivosTableAdapter sp_ObtenerActivosTableAdapter;
         private System.Windows.Forms.Button button1;
     }
 }

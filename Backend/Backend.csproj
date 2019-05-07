@@ -139,22 +139,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Segtransa.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Entities\spAsignUsuarioRetornaDatosId1_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
-    </Compile>
     <Compile Include="Entities\spAsignUsuarioRetornaDatosId_Result.cs">
       <DependentUpon>Segtransa.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\spAsignUsuarioRetornaLista1_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\spAsignUsuarioRetornaListaId1_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
-    </Compile>
     <Compile Include="Entities\spAsignUsuarioRetornaListaId_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\spAsignUsuarioRetornaListaTotal1_Result.cs">
       <DependentUpon>Segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\spAsignUsuarioRetornaListaTotal_Result.cs">
@@ -251,6 +239,5 @@
       <LastGenOutput>Segtransa.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

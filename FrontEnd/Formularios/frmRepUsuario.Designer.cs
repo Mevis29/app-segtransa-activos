@@ -35,7 +35,7 @@ namespace FrontEnd
             this.UsuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SEGTRANSADataSetUsuarios = new FrontEnd.DataSources_Reportes.SEGTRANSADataSetUsuarios();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.UsuariosTableAdapter = new FrontEnd.DataSources_Reportes.SEGTRANSADataSetUsuariosTableAdapters.UsuariosTableAdapter();
+            this.SpUsuariosRetornaListaTableAdapter = new FrontEnd.DataSources_Reportes.SEGTRANSADataSetUsuariosTableAdapters.spUsuariosRetornaListaTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SEGTRANSADataSetUsuarios)).BeginInit();
@@ -65,7 +65,7 @@ namespace FrontEnd
             // 
             // UsuariosTableAdapter
             // 
-            this.UsuariosTableAdapter.ClearBeforeFill = true;
+            this.SpUsuariosRetornaListaTableAdapter.ClearBeforeFill = true;
             // 
             // button1
             // 
@@ -98,7 +98,7 @@ namespace FrontEnd
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource UsuariosBindingSource;
         private SEGTRANSADataSetUsuarios SEGTRANSADataSetUsuarios;
-        private DataSources_Reportes.SEGTRANSADataSetUsuariosTableAdapters.UsuariosTableAdapter UsuariosTableAdapter;
+        private DataSources_Reportes.SEGTRANSADataSetUsuariosTableAdapters.spUsuariosRetornaListaTableAdapter SpUsuariosRetornaListaTableAdapter;
         private System.Windows.Forms.Button button1;
     }
 }

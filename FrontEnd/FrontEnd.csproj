@@ -325,6 +325,12 @@
     <Compile Include="Formularios\frmActivosUpdate.designer.cs">
       <DependentUpon>frmActivosUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmRepActivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmRepActivo.Designer.cs">
+      <DependentUpon>frmRepActivo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmRepBitacora.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -342,6 +348,12 @@
     </Compile>
     <Compile Include="Formularios\frmRepRolUsuario.Designer.cs">
       <DependentUpon>frmRepRolUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmRepUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmRepUsuario.Designer.cs">
+      <DependentUpon>frmRepUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmUsuariosAgrega.cs">
       <SubType>Form</SubType>
@@ -539,6 +551,9 @@
     <EmbeddedResource Include="Formularios\frmMisDatos.resx">
       <DependentUpon>frmMisDatos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmRepActivo.resx">
+      <DependentUpon>frmRepActivo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmRepBitacora.resx">
       <DependentUpon>frmRepBitacora.cs</DependentUpon>
     </EmbeddedResource>
@@ -553,6 +568,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmRepRolUsuario.resx">
       <DependentUpon>frmRepRolUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmRepUsuario.resx">
+      <DependentUpon>frmRepUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
