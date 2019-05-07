@@ -17,7 +17,8 @@ namespace Backend.Entities
         public int Cedula { get; set; }
         public string Usuario { get; set; }
         public string Codigo { get; set; }
-        public string FechaAsign { get; set; }
+        public string Activo { get; set; }
+        public string FechaInicialAsign { get; set; }
         public string FechafinAsign { get; set; }
     }
 }

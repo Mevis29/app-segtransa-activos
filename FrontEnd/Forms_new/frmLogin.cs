@@ -72,59 +72,61 @@ namespace FrontEnd
                     /*Validanado usuario*/
                     if (usuariosDal.isRealUser(correo))
                     {
-                        
-                        if (usuariosDal.isValidPassword(pass, correo))
-                        {
-                            /*Validado usuario y password se le da acceso a un menu de opciones de acuerdo a su roll, admin o cualquier otro*/
-                            user = usuariosDal.Getcorreo(correo);
-                            ValoresAplicacion.correoUsuario = user.Correo;
-                            ValoresAplicacion.idUsuario = user.IdUsuario;
-
-                            //Actualiza el campo del ultimo Login
-
-                            if (user.FechaUltLogin.ToString().Contains("2000"))
+                        try {
+                            if (usuariosDal.isValidPassword(pass, correo))
                             {
-                                //mostrar mensaje con datos de usuario y último login
-                                MessageBox.Show("Bienvenido " + user.Nombre + "." + Environment.NewLine +
-                                "Esta es la primera vez que ingresa al Sistema.",
-                                "Ingreso al Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                /*Validado usuario y password se le da acceso a un menu de opciones de acuerdo a su roll, admin o cualquier otro*/
+                                user = usuariosDal.Getcorreo(correo);
+                                ValoresAplicacion.correoUsuario = user.Correo;
+                                ValoresAplicacion.idUsuario = user.IdUsuario;
+
+                                //Actualiza el campo del ultimo Login
+
+                                if (user.FechaUltLogin.ToString().Contains("2000"))
+                                {
+                                    //mostrar mensaje con datos de usuario y último login
+                                    MessageBox.Show("Bienvenido " + user.Nombre + "." + Environment.NewLine +
+                                    "Esta es la primera vez que ingresa al Sistema.",
+                                    "Ingreso al Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                else
+                                {
+                                    //mostrar mensaje con datos de usuario y último login
+                                    MessageBox.Show("Bienvenido " + user.Nombre + "." + Environment.NewLine +
+                                    "Usted ingresó por última vez el " + user.FechaUltLogin.ToString(),
+                                    "Ingreso al Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+
+                                //actualizar fecha y hora de último login del usuario
+                                usuariosDal.actualizaDatosLogin(user.IdUsuario);
+                                string detalleBitacora = "El usuario " + user.Nombre + " " + user.Apellido + " inició sesión";
+                                bitacora.DetalleBitacora = detalleBitacora;
+                                bitacora.IdUsuario = ValoresAplicacion.idUsuario;
+                                bitacoraDAL.Add(bitacora);
+
+
+
+                                // abrir form Menu Principal
+
+
+                                FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(user);
+                                menuPrincipal.Show();
+                                tbxUserId.Clear();
+                                tbxPassword.Clear();
+                                this.Hide();
                             }
                             else
                             {
-                                //mostrar mensaje con datos de usuario y último login
-                                MessageBox.Show("Bienvenido " + user.Nombre + "." + Environment.NewLine +
-                                "Usted ingresó por última vez el " + user.FechaUltLogin.ToString(),
-                                "Ingreso al Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-
-                            //actualizar fecha y hora de último login del usuario
-                            usuariosDal.actualizaDatosLogin(user.IdUsuario);
-                            string detalleBitacora = "El usuario " + user.Nombre + " " + user.Apellido + " inició sesión";
-                            bitacora.DetalleBitacora = detalleBitacora;
-                            bitacora.IdUsuario = ValoresAplicacion.idUsuario;
-                            bitacoraDAL.Add(bitacora);
-
-
-
-                            // abrir form Menu Principal
-
-
-                            FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(user);
-                            menuPrincipal.Show();
-                            tbxUserId.Clear();
-                            tbxPassword.Clear();
-                            this.Hide();
-                        }
-                        else
-                        {
-                            tbxUserId.Clear();
-                            tbxPassword.Clear();
-                            showInfo("Los datos ingresados no son correctos! \nPor favor ingrese sus datos!");
-                            if (contadorIntentos > 5)
-                            {
-                                showInfo("Alcanzo el numero maximo de Intentos! \nPor favor comuniquese con el departamento de Informatica!");
-                                Close();
-                            }
+                                tbxUserId.Clear();
+                                tbxPassword.Clear();
+                                showInfo("Los datos ingresados no son correctos! \nPor favor ingrese sus datos!");
+                                if (contadorIntentos > 5)
+                                {
+                                    showInfo("Alcanzo el numero maximo de Intentos! \nPor favor comuniquese con el departamento de Informatica!");
+                                    Close();
+                                }
+                            } } catch (Exception ex){
+                            Console.Out.WriteLine(ex.ToString());
                         }
                     }
                     else
@@ -138,7 +140,7 @@ namespace FrontEnd
                             Close();
                         }
                     }
-                }
+                } 
             }
         }
 

@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using Frontend;
 using Backend.Entities;
 using FrontEnd.Forms_new;
+using FrontEnd.Formularios;
 
 namespace FrontEnd
 {
@@ -182,12 +183,12 @@ namespace FrontEnd
 
         private void btnActivos_Click(object sender, EventArgs e)
         {
-            abrirFormInPanel(new FrmActivos_n());
+            abrirFormInPanel(new frmMenuPrincipal_n());
         }
 
         private void btnAsignaciones_Click(object sender, EventArgs e)
         {
-            abrirFormInPanel(new FrmAsignaciones_n());
+            abrirFormInPanel(new FormAsignacionesLista());
         }
 
         private void btnProveedores_Click(object sender, EventArgs e)

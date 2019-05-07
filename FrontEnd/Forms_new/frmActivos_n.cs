@@ -15,14 +15,14 @@ using System.Windows.Forms;
 
 namespace Frontend
 {
-    public partial class FrmActivos_n : Form
+    public partial class frmMenuPrincipal_n : Form
     {
         private IActivosDAL activoDAL = new ActivosImplDAL();
         private IDepreciacionDAL depreciacionDAL = new DepreciacionDALImpl();
         private IBitacoraDAL bitacoraDAL = new BitacoraImplDAL();
         private Bitacora bitacora = new Bitacora();
         int idActivo;
-        public FrmActivos_n()
+        public frmMenuPrincipal_n()
         {
             InitializeComponent();
         }

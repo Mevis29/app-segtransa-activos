@@ -102,7 +102,8 @@ public class UsuariosImplDAL : IUsuariosDAL
     {
         try
         {
-            Usuarios result;
+            Usuarios result = new Usuarios();
+            
             using (context = new BDContext())
             {
                 result = (from c in context.Usuarios
@@ -137,15 +138,11 @@ public class UsuariosImplDAL : IUsuariosDAL
     }
 
 
-
-
-
-
-
     public bool isRealUser(string correo)
     {
         bool real = false;
-        Usuarios usuarios = Getcorreo(correo);
+        Usuarios usuarios = new Usuarios();
+        usuarios = Getcorreo(correo);
         if (usuarios.Correo == correo)
         {
             real = true;
@@ -198,6 +195,50 @@ public class UsuariosImplDAL : IUsuariosDAL
     }
     #endregion
 
+    #region METODOS PARA ASIGNACIONES - ACTIVOS - USUARIOS
 
+    #region  Método para retornar lista completa de Usuarios
+    public List<spUsuariosRetornaLista_Result> retornaListaUsuarios(string pCedula, string pNombre, string pCorreo)
+    {
+        List<spUsuariosRetornaLista_Result> resultado = new List<spUsuariosRetornaLista_Result>();
+        using (context = new BDContext())
+        {
+   
+            resultado = this.context.spUsuariosRetornaLista(pCedula, pNombre, pCorreo).ToList();
+        }
+            
+
+        return resultado;
+    }
+    #endregion
+
+
+    #region Método para retornar lista de solo Empleados asignados
+    public List<spUsuariosRetornaListaEmpleado_Result> retornaListaEmpleados(int? pIdEmpleado)
+    {
+        List<spUsuariosRetornaListaEmpleado_Result> resultado = new List<spUsuariosRetornaListaEmpleado_Result>();
+        using (context = new BDContext())
+        {
+            resultado = this.context.spUsuariosRetornaListaEmpleado(pIdEmpleado).ToList();
+
+            return resultado;
+        }
+    }
+    #endregion
+
+    #region Método para retornar Empleado por Id
+    public spUsuariosRetornaListaEmpleado_Result retornaEmpleadoId(int pIdEmpleado)
+    {
+        spUsuariosRetornaListaEmpleado_Result resultado = new spUsuariosRetornaListaEmpleado_Result();
+        using (context = new BDContext())
+        {
+            resultado = this.context.spUsuariosRetornaListaEmpleado(pIdEmpleado).FirstOrDefault();
+        }
+
+        return resultado;
+    }
+    #endregion
+
+    #endregion
 }
 

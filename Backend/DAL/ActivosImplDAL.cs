@@ -16,7 +16,8 @@ namespace BackEnd.DAL
     public class ActivosImplDAL : IActivosDAL
     {
 
-        private BDContext context;
+        //private BDContext context;
+        BDContext context = new BDContext();
 
         public ActivosImplDAL()
         {
@@ -175,8 +176,88 @@ namespace BackEnd.DAL
     }
 
 
-   
+        //SE AGREGARON LAS LLAMADAS DE LOS SPS DE IACTIVOSDAL -
+        // SPs para Asignaciones - Usuarios - Activos
+        #region Todos los llamados pr Asignacion de Activos
 
+        #region  Método para retornar Cantidad de Activos por IdUsuario
+        /// <summary>
+        /// Método para retornar Cantidad de Activos por IdUsuario
+        /// </summary>
+        public int? CalculaCantActivos(int pIdUsuario)
+
+
+        {
+            int? resultado;
+            try
+            {
+                resultado = context.spActivosCalcularCant(pIdUsuario).FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return resultado;
+
+        }
+        #endregion
+
+        //este metodo no esta en uso aun
+        #region  Método para retornar Activo por Id
+        /// <summary>
+        /// Método para retornar Activo por Id
+        /// </summary>
+        public spActivosRetornaDatosId_Result retornaActivoId(int pIdActivo)
+        {
+            spActivosRetornaDatosId_Result resultado = new spActivosRetornaDatosId_Result();
+
+            resultado = this.context.spActivosRetornaDatosId(pIdActivo).FirstOrDefault();
+
+            return resultado;
+        }
+
+        #endregion
+
+        ///Todos los llamados pr Asignacion de Activos
+        #region  Método para retornar lista completa de activos
+        /// <summary>
+        /// Método para retornar lista completa de Activos
+        /// </summary>
+        public List<spActivosRetornaLista_Result> retornaListaActivos(string pCodigo, string pDescripcion)
+        {
+            List<spActivosRetornaLista_Result> resultado = new List<spActivosRetornaLista_Result>();
+
+            resultado = this.context.spActivosRetornaLista(pCodigo, pDescripcion).ToList();
+
+            return resultado;
+        }
+        #endregion
+
+
+        #region Método para retornar resumen de Activos por Id
+        public spActivosRetornaListaResumen_Result retornaActivosResumenId(int pIdActivo)
+        {
+            spActivosRetornaListaResumen_Result resultado = new spActivosRetornaListaResumen_Result();
+
+            resultado = this.context.spActivosRetornaListaResumen(pIdActivo).FirstOrDefault();
+
+            return resultado;
+        }
+        #endregion
+
+        #region Método para retornar lista resumen de Activos
+        public List<spActivosRetornaListaResumen_Result> retornaListaActivosResumen(int? pIdActivo)
+        {
+            List<spActivosRetornaListaResumen_Result> resultado = new List<spActivosRetornaListaResumen_Result>();
+
+            resultado = this.context.spActivosRetornaListaResumen(pIdActivo).ToList();
+
+            return resultado;
+
+        }
+        #endregion
+
+        #endregion Todos los llamados pr Asignacion de Activos
 
 
     }

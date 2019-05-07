@@ -16,5 +16,7 @@ namespace Backend.Entities
         public Nullable<int> Id { get; set; }
         public Nullable<int> Usuario { get; set; }
         public Nullable<int> Activo { get; set; }
+        public string FechaInicialAsig { get; set; }
+        public string FechafinAsig { get; set; }
     }
 }

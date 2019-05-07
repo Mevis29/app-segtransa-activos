@@ -19,7 +19,7 @@
           <Property Name="Proveedor" Type="int" />
           <Property Name="EstadoActivo" Type="int" />
           <Property Name="Garantia" Type="int" />
-          <Property Name="MesesDepreciacion" Type="int" />
+          <Property Name="MesesDepreciacion" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Bitacora">
           <Key>
@@ -115,7 +115,9 @@
           <Property Name="FechaUltLogin" Type="datetime" />
         </EntityType>
         <Association Name="FK_Activo_Depc">
-          <End Role="Activos" Type="Self.Activos" Multiplicity="1" />
+          <End Role="Activos" Type="Self.Activos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Depreciacion" Type="Self.Depreciacion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Activos">
@@ -175,7 +177,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_IdActivo_THR">
-          <End Role="Activos" Type="Self.Activos" Multiplicity="0..1" />
+          <End Role="Activos" Type="Self.Activos" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="THReparaciones" Type="Self.THReparaciones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Activos">
@@ -316,6 +320,11 @@
           <Parameter Name="fechaDepreciacion" Type="datetime" Mode="In" />
           <Parameter Name="valor" Type="float" Mode="In" />
         </Function>
+        <Function Name="sp_modificaReparacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idReparacion" Type="int" Mode="In" />
+          <Parameter Name="fechaInicialReparacion" Type="datetime" Mode="In" />
+          <Parameter Name="fechaFinalReparacion" Type="datetime" Mode="In" />
+        </Function>
         <Function Name="sp_mostrarActivo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_mostrarCategoriasDiferentes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_mostrarCodActivo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -332,29 +341,48 @@
         <Function Name="sp_RetornaReparacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="string_busqueda" Type="varchar(max)" Mode="In" />
         </Function>
+        <Function Name="spActivosCalcularCant" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdUsuario" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spActivosRetornaDatosId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdActivo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spActivosRetornaLista" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="varchar" Mode="In" />
+          <Parameter Name="descripcion" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spActivosRetornaListaId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdActivo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spActivosRetornaListaResumen" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdActivo" Type="int" Mode="In" />
+        </Function>
         <Function Name="spAsignUsuarioEliminaDatos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IdAsignacion" Type="int" Mode="In" />
         </Function>
         <Function Name="spAsignUsuarioInsertaDatos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IdUsuario" Type="int" Mode="In" />
           <Parameter Name="IdActivo" Type="int" Mode="In" />
+          <Parameter Name="FechaInicialAsignacion" Type="date" Mode="In" />
+          <Parameter Name="FechafinalAsignacion" Type="date" Mode="In" />
         </Function>
         <Function Name="spAsignUsuarioModificaDatos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IdAsignacion" Type="int" Mode="In" />
           <Parameter Name="IdUsuario" Type="int" Mode="In" />
           <Parameter Name="IdActivo" Type="int" Mode="In" />
+          <Parameter Name="FechaInicialAsignacion" Type="date" Mode="In" />
+          <Parameter Name="FechafinalAsignacion" Type="date" Mode="In" />
         </Function>
         <Function Name="spAsignUsuarioRetornaDatosId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IdAsignacion" Type="int" Mode="In" />
         </Function>
         <Function Name="spAsignUsuarioRetornaLista" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="NombreUsuario" Type="nvarchar" Mode="In" />
-          <Parameter Name="CodigoActivo" Type="nvarchar" Mode="In" />
+          <Parameter Name="Nombre" Type="nvarchar" Mode="In" />
+          <Parameter Name="Descripcion" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="spAsignUsuarioRetornaListaId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IdUsuario" Type="int" Mode="In" />
         </Function>
-        <Function Name="spAsignUsuarioRetornaListaTotal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="spEstadoActivosRetornaLista" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="spEstadoUsuariosRetornaLista" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="spRolesRetornaLista" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -478,7 +506,7 @@
           <Property Name="Proveedor" Type="Int32" />
           <Property Name="EstadoActivo" Type="Int32" />
           <Property Name="Garantia" Type="Int32" />
-          <Property Name="MesesDepreciacion" Type="Int32" />
+          <Property Name="MesesDepreciacion" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Depreciacion" Relationship="Self.FK_Activo_Depc" FromRole="Activos" ToRole="Depreciacion" />
           <NavigationProperty Name="Categorias" Relationship="Self.FK_Categ_Act" FromRole="Activos" ToRole="Categorias" />
           <NavigationProperty Name="EstadoActivos" Relationship="Self.FK_EstActivo_US" FromRole="Activos" ToRole="EstadoActivos" />
@@ -863,29 +891,6 @@
           <FunctionImport Name="sp_RetornaReparacion" ReturnType="Collection(SegtransaModel.sp_RetornaReparacion_Result)">
           <Parameter Name="string_busqueda" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="spAsignUsuarioEliminaDatos">
-            <Parameter Name="IdAsignacion" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spAsignUsuarioInsertaDatos">
-            <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
-            <Parameter Name="IdActivo" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spAsignUsuarioModificaDatos">
-            <Parameter Name="IdAsignacion" Mode="In" Type="Int32" />
-            <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
-            <Parameter Name="IdActivo" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spAsignUsuarioRetornaDatosId" ReturnType="Collection(SegtransaModel.spAsignUsuarioRetornaDatosId_Result)">
-            <Parameter Name="IdAsignacion" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spAsignUsuarioRetornaLista" ReturnType="Collection(SegtransaModel.spAsignUsuarioRetornaLista_Result)">
-            <Parameter Name="NombreUsuario" Mode="In" Type="String" />
-            <Parameter Name="CodigoActivo" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="spAsignUsuarioRetornaListaId" ReturnType="Collection(SegtransaModel.spAsignUsuarioRetornaListaId_Result)">
-            <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spAsignUsuarioRetornaListaTotal" ReturnType="Collection(SegtransaModel.spAsignUsuarioRetornaListaTotal_Result)" />
           <FunctionImport Name="spEstadoActivosRetornaLista" ReturnType="Collection(SegtransaModel.spEstadoActivosRetornaLista_Result)" />
           <FunctionImport Name="spEstadoUsuariosRetornaLista" ReturnType="Collection(SegtransaModel.spEstadoUsuariosRetornaLista_Result)" />
           <FunctionImport Name="spRolesRetornaLista" ReturnType="Collection(SegtransaModel.spRolesRetornaLista_Result)" />
@@ -943,29 +948,48 @@
             <Parameter Name="fechaInicialReparacion" Mode="In" Type="DateTime" />
             <Parameter Name="fechaFinalReparacion" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="spAsignUsuarioEliminaDatos1">
-            <Parameter Name="IdAsignacion" Mode="In" Type="Int32" />
+          <FunctionImport Name="spActivosCalcularCant" ReturnType="Collection(Int32)">
+          <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="spAsignUsuarioInsertaDatos1">
+          <FunctionImport Name="spActivosRetornaDatosId" ReturnType="Collection(SegtransaModel.spActivosRetornaDatosId_Result)">
+          <Parameter Name="IdActivo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spActivosRetornaLista" ReturnType="Collection(SegtransaModel.spActivosRetornaLista_Result)">
+            <Parameter Name="codigo" Mode="In" Type="String" />
+            <Parameter Name="descripcion" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spActivosRetornaListaId" ReturnType="Collection(SegtransaModel.spActivosRetornaListaId_Result)">
+          <Parameter Name="IdActivo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spActivosRetornaListaResumen" ReturnType="Collection(SegtransaModel.spActivosRetornaListaResumen_Result)">
+          <Parameter Name="IdActivo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spAsignUsuarioEliminaDatos">
+          <Parameter Name="IdAsignacion" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spAsignUsuarioInsertaDatos">
             <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
             <Parameter Name="IdActivo" Mode="In" Type="Int32" />
+            <Parameter Name="FechaInicialAsignacion" Mode="In" Type="DateTime" />
+            <Parameter Name="FechafinalAsignacion" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="spAsignUsuarioModificaDatos1">
+          <FunctionImport Name="spAsignUsuarioModificaDatos">
             <Parameter Name="IdAsignacion" Mode="In" Type="Int32" />
             <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
             <Parameter Name="IdActivo" Mode="In" Type="Int32" />
+            <Parameter Name="FechaInicialAsignacion" Mode="In" Type="DateTime" />
+            <Parameter Name="FechafinalAsignacion" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="spAsignUsuarioRetornaDatosId1" ReturnType="Collection(SegtransaModel.spAsignUsuarioRetornaDatosId1_Result)">
-            <Parameter Name="IdAsignacion" Mode="In" Type="Int32" />
+          <FunctionImport Name="spAsignUsuarioRetornaDatosId" ReturnType="Collection(SegtransaModel.spAsignUsuarioRetornaDatosId_Result)">
+          <Parameter Name="IdAsignacion" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="spAsignUsuarioRetornaLista1" ReturnType="Collection(SegtransaModel.spAsignUsuarioRetornaLista1_Result)">
-            <Parameter Name="NombreUsuario" Mode="In" Type="String" />
-            <Parameter Name="CodigoActivo" Mode="In" Type="String" />
+          <FunctionImport Name="spAsignUsuarioRetornaLista" ReturnType="Collection(SegtransaModel.spAsignUsuarioRetornaLista_Result)">
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Descripcion" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="spAsignUsuarioRetornaListaId1" ReturnType="Collection(SegtransaModel.spAsignUsuarioRetornaListaId1_Result)">
-            <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
+          <FunctionImport Name="spAsignUsuarioRetornaListaId" ReturnType="Collection(SegtransaModel.spAsignUsuarioRetornaListaId_Result)">
+          <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="spAsignUsuarioRetornaListaTotal1" ReturnType="Collection(SegtransaModel.spAsignUsuarioRetornaListaTotal1_Result)" />
         </EntityContainer>
         <ComplexType Name="sp_BuscarActivos_Result">
           <Property Type="Int32" Name="IdActivo" Nullable="false" />
@@ -1040,36 +1064,6 @@
           <Property Type="DateTime" Name="FechafinalReparacion" Nullable="true" Precision="23" />
           <Property Type="String" Name="NombreProveedor" Nullable="false" MaxLength="90" />
         </ComplexType>
-        <ComplexType Name="spAsignUsuarioRetornaDatosId_Result">
-          <Property Type="Int32" Name="Id" Nullable="true" />
-          <Property Type="Int32" Name="Usuario" Nullable="true" />
-          <Property Type="Int32" Name="Activo" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="spAsignUsuarioRetornaLista_Result">
-          <Property Type="Int32" Name="Id" Nullable="false" />
-          <Property Type="Int32" Name="Cedula" Nullable="false" />
-          <Property Type="String" Name="Usuario" Nullable="false" MaxLength="101" />
-          <Property Type="String" Name="Codigo" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="FechaAsign" Nullable="true" MaxLength="4000" />
-          <Property Type="String" Name="FechafinAsign" Nullable="true" MaxLength="4000" />
-        </ComplexType>
-        <ComplexType Name="spAsignUsuarioRetornaListaId_Result">
-          <Property Type="Int32" Name="Id" Nullable="false" />
-          <Property Type="Int32" Name="Cedula" Nullable="false" />
-          <Property Type="String" Name="Usuario" Nullable="false" MaxLength="101" />
-          <Property Type="String" Name="Codigo" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="FechaAsign" Nullable="true" MaxLength="4000" />
-          <Property Type="String" Name="FechafinAsign" Nullable="true" MaxLength="4000" />
-        </ComplexType>
-        <ComplexType Name="spAsignUsuarioRetornaListaTotal_Result">
-          <Property Type="Int32" Name="Id" Nullable="false" />
-          <Property Type="Int32" Name="Cedula" Nullable="false" />
-          <Property Type="String" Name="Usuario" Nullable="false" MaxLength="101" />
-          <Property Type="String" Name="Codigo" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="90" />
-          <Property Type="String" Name="FechaAsign" Nullable="true" MaxLength="4000" />
-          <Property Type="String" Name="FechafinAsign" Nullable="true" MaxLength="4000" />
-        </ComplexType>
         <ComplexType Name="spEstadoActivosRetornaLista_Result">
           <Property Type="Int32" Name="Id" Nullable="false" />
           <Property Type="String" Name="Nombre" Nullable="true" MaxLength="20" />
@@ -1134,34 +1128,66 @@
           <Property Type="String" Name="Direccion" Nullable="true" MaxLength="75" />
           <Property Type="String" Name="Telefono" Nullable="true" MaxLength="50" />
         </ComplexType>
-        <ComplexType Name="spAsignUsuarioRetornaDatosId1_Result">
+        <ComplexType Name="spActivosRetornaDatosId_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Codigo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="90" />
+          <Property Type="Decimal" Name="PrecioInic" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="PrecioAct" Nullable="true" Precision="19" />
+          <Property Type="String" Name="FchCompra" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="Proveedr" Nullable="true" />
+          <Property Type="Int32" Name="EstadActvo" Nullable="true" />
+          <Property Type="Int32" Name="Garantia" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spActivosRetornaLista_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Codigo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="90" />
+          <Property Type="Decimal" Name="PrecioInic" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="PrecioAct" Nullable="true" Precision="19" />
+          <Property Type="String" Name="FchCompra" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="Proveedr" Nullable="true" />
+          <Property Type="Int32" Name="EstadActvo" Nullable="true" />
+          <Property Type="Int32" Name="Garantia" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spActivosRetornaListaId_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Codigo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="90" />
+          <Property Type="Decimal" Name="PrecioInic" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="PrecioAct" Nullable="true" Precision="19" />
+          <Property Type="String" Name="FchCompra" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="Proveedr" Nullable="true" />
+          <Property Type="Int32" Name="EstadActvo" Nullable="true" />
+          <Property Type="Int32" Name="Garantia" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spActivosRetornaListaResumen_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Activo" Nullable="true" MaxLength="143" />
+        </ComplexType>
+        <ComplexType Name="spAsignUsuarioRetornaDatosId_Result">
           <Property Type="Int32" Name="Id" Nullable="true" />
           <Property Type="Int32" Name="Usuario" Nullable="true" />
           <Property Type="Int32" Name="Activo" Nullable="true" />
+          <Property Type="String" Name="FechaInicialAsig" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="FechafinAsig" Nullable="true" MaxLength="4000" />
         </ComplexType>
-        <ComplexType Name="spAsignUsuarioRetornaLista1_Result">
+        <ComplexType Name="spAsignUsuarioRetornaLista_Result">
           <Property Type="Int32" Name="Id" Nullable="false" />
           <Property Type="Int32" Name="Cedula" Nullable="false" />
           <Property Type="String" Name="Usuario" Nullable="false" MaxLength="101" />
           <Property Type="String" Name="Codigo" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="FechaAsign" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Activo" Nullable="true" MaxLength="90" />
+          <Property Type="String" Name="FechaInicialAsign" Nullable="true" MaxLength="4000" />
           <Property Type="String" Name="FechafinAsign" Nullable="true" MaxLength="4000" />
         </ComplexType>
-        <ComplexType Name="spAsignUsuarioRetornaListaId1_Result">
+        <ComplexType Name="spAsignUsuarioRetornaListaId_Result">
           <Property Type="Int32" Name="Id" Nullable="false" />
           <Property Type="Int32" Name="Cedula" Nullable="false" />
           <Property Type="String" Name="Usuario" Nullable="false" MaxLength="101" />
           <Property Type="String" Name="Codigo" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="FechaAsign" Nullable="true" MaxLength="4000" />
-          <Property Type="String" Name="FechafinAsign" Nullable="true" MaxLength="4000" />
-        </ComplexType>
-        <ComplexType Name="spAsignUsuarioRetornaListaTotal1_Result">
-          <Property Type="Int32" Name="Id" Nullable="false" />
-          <Property Type="Int32" Name="Cedula" Nullable="false" />
-          <Property Type="String" Name="Usuario" Nullable="false" MaxLength="101" />
-          <Property Type="String" Name="Codigo" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="90" />
-          <Property Type="String" Name="FechaAsign" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Activo" Nullable="true" MaxLength="90" />
+          <Property Type="String" Name="FechaInicialAsign" Nullable="true" MaxLength="4000" />
           <Property Type="String" Name="FechafinAsign" Nullable="true" MaxLength="4000" />
         </ComplexType>
       </Schema>
@@ -1519,51 +1545,97 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="spAsignUsuarioEliminaDatos1" FunctionName="SegtransaModel.Store.spAsignUsuarioEliminaDatos" />
-          <FunctionImportMapping FunctionImportName="spAsignUsuarioInsertaDatos1" FunctionName="SegtransaModel.Store.spAsignUsuarioInsertaDatos" />
-          <FunctionImportMapping FunctionImportName="spAsignUsuarioModificaDatos1" FunctionName="SegtransaModel.Store.spAsignUsuarioModificaDatos" />
-          <FunctionImportMapping FunctionImportName="spAsignUsuarioRetornaDatosId1" FunctionName="SegtransaModel.Store.spAsignUsuarioRetornaDatosId">
+          <FunctionImportMapping FunctionImportName="sp_modificaReparacion" FunctionName="SegtransaModel.Store.sp_modificaReparacion" />
+          <FunctionImportMapping FunctionImportName="spActivosCalcularCant" FunctionName="SegtransaModel.Store.spActivosCalcularCant" />
+          <FunctionImportMapping FunctionImportName="spActivosRetornaDatosId" FunctionName="SegtransaModel.Store.spActivosRetornaDatosId">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="SegtransaModel.spAsignUsuarioRetornaDatosId1_Result">
+              <ComplexTypeMapping TypeName="SegtransaModel.spActivosRetornaDatosId_Result">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="PrecioInic" ColumnName="PrecioInic" />
+                <ScalarProperty Name="PrecioAct" ColumnName="PrecioAct" />
+                <ScalarProperty Name="FchCompra" ColumnName="FchCompra" />
+                <ScalarProperty Name="Proveedr" ColumnName="Proveedr" />
+                <ScalarProperty Name="EstadActvo" ColumnName="EstadActvo" />
+                <ScalarProperty Name="Garantia" ColumnName="Garantia" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spActivosRetornaLista" FunctionName="SegtransaModel.Store.spActivosRetornaLista">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SegtransaModel.spActivosRetornaLista_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="PrecioInic" ColumnName="PrecioInic" />
+                <ScalarProperty Name="PrecioAct" ColumnName="PrecioAct" />
+                <ScalarProperty Name="FchCompra" ColumnName="FchCompra" />
+                <ScalarProperty Name="Proveedr" ColumnName="Proveedr" />
+                <ScalarProperty Name="EstadActvo" ColumnName="EstadActvo" />
+                <ScalarProperty Name="Garantia" ColumnName="Garantia" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spActivosRetornaListaId" FunctionName="SegtransaModel.Store.spActivosRetornaListaId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SegtransaModel.spActivosRetornaListaId_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="PrecioInic" ColumnName="PrecioInic" />
+                <ScalarProperty Name="PrecioAct" ColumnName="PrecioAct" />
+                <ScalarProperty Name="FchCompra" ColumnName="FchCompra" />
+                <ScalarProperty Name="Proveedr" ColumnName="Proveedr" />
+                <ScalarProperty Name="EstadActvo" ColumnName="EstadActvo" />
+                <ScalarProperty Name="Garantia" ColumnName="Garantia" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spActivosRetornaListaResumen" FunctionName="SegtransaModel.Store.spActivosRetornaListaResumen">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SegtransaModel.spActivosRetornaListaResumen_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Activo" ColumnName="Activo" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="spAsignUsuarioRetornaLista1" FunctionName="SegtransaModel.Store.spAsignUsuarioRetornaLista">
+          <FunctionImportMapping FunctionImportName="spAsignUsuarioEliminaDatos" FunctionName="SegtransaModel.Store.spAsignUsuarioEliminaDatos" />
+          <FunctionImportMapping FunctionImportName="spAsignUsuarioInsertaDatos" FunctionName="SegtransaModel.Store.spAsignUsuarioInsertaDatos" />
+          <FunctionImportMapping FunctionImportName="spAsignUsuarioModificaDatos" FunctionName="SegtransaModel.Store.spAsignUsuarioModificaDatos" />
+          <FunctionImportMapping FunctionImportName="spAsignUsuarioRetornaDatosId" FunctionName="SegtransaModel.Store.spAsignUsuarioRetornaDatosId">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="SegtransaModel.spAsignUsuarioRetornaLista1_Result">
+              <ComplexTypeMapping TypeName="SegtransaModel.spAsignUsuarioRetornaDatosId_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="FechaInicialAsig" ColumnName="FechaInicialAsig" />
+                <ScalarProperty Name="FechafinAsig" ColumnName="FechafinAsig" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spAsignUsuarioRetornaLista" FunctionName="SegtransaModel.Store.spAsignUsuarioRetornaLista">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SegtransaModel.spAsignUsuarioRetornaLista_Result">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Cedula" ColumnName="Cedula" />
                 <ScalarProperty Name="Usuario" ColumnName="Usuario" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
-                <ScalarProperty Name="FechaAsign" ColumnName="FechaAsign" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="FechaInicialAsign" ColumnName="FechaInicialAsign" />
                 <ScalarProperty Name="FechafinAsign" ColumnName="FechafinAsign" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="spAsignUsuarioRetornaListaId1" FunctionName="SegtransaModel.Store.spAsignUsuarioRetornaListaId">
+          <FunctionImportMapping FunctionImportName="spAsignUsuarioRetornaListaId" FunctionName="SegtransaModel.Store.spAsignUsuarioRetornaListaId">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="SegtransaModel.spAsignUsuarioRetornaListaId1_Result">
+              <ComplexTypeMapping TypeName="SegtransaModel.spAsignUsuarioRetornaListaId_Result">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Cedula" ColumnName="Cedula" />
                 <ScalarProperty Name="Usuario" ColumnName="Usuario" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
-                <ScalarProperty Name="FechaAsign" ColumnName="FechaAsign" />
-                <ScalarProperty Name="FechafinAsign" ColumnName="FechafinAsign" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="spAsignUsuarioRetornaListaTotal1" FunctionName="SegtransaModel.Store.spAsignUsuarioRetornaListaTotal">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="SegtransaModel.spAsignUsuarioRetornaListaTotal1_Result">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
-                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
-                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
-                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="FechaAsign" ColumnName="FechaAsign" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="FechaInicialAsign" ColumnName="FechaInicialAsign" />
                 <ScalarProperty Name="FechafinAsign" ColumnName="FechafinAsign" />
               </ComplexTypeMapping>
             </ResultMapping>
@@ -1582,7 +1654,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
