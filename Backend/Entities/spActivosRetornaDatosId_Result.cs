@@ -11,14 +11,16 @@ namespace Backend.Entities
 {
     using System;
     
-    public partial class spAsignUsuarioRetornaListaId_Result
+    public partial class spActivosRetornaDatosId_Result
     {
         public int Id { get; set; }
-        public int Cedula { get; set; }
-        public string Usuario { get; set; }
         public string Codigo { get; set; }
-        public string Activo { get; set; }
-        public string FechaInicialAsign { get; set; }
-        public string FechafinAsign { get; set; }
+        public string Descripcion { get; set; }
+        public Nullable<decimal> PrecioInic { get; set; }
+        public Nullable<decimal> PrecioAct { get; set; }
+        public string FchCompra { get; set; }
+        public Nullable<int> Proveedr { get; set; }
+        public Nullable<int> EstadActvo { get; set; }
+        public Nullable<int> Garantia { get; set; }
     }
 }

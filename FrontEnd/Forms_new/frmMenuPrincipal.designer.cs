@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
             this.menuVertical = new System.Windows.Forms.Panel();
+            this.btnFormRespaldos = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.pnlAdmin = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.contentPnl = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
-            this.btnFormRespaldos = new System.Windows.Forms.Button();
             this.menuVertical.SuspendLayout();
             this.pnlAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -82,6 +82,16 @@
             this.menuVertical.Name = "menuVertical";
             this.menuVertical.Size = new System.Drawing.Size(203, 570);
             this.menuVertical.TabIndex = 0;
+            // 
+            // btnFormRespaldos
+            // 
+            this.btnFormRespaldos.Location = new System.Drawing.Point(38, 481);
+            this.btnFormRespaldos.Name = "btnFormRespaldos";
+            this.btnFormRespaldos.Size = new System.Drawing.Size(120, 23);
+            this.btnFormRespaldos.TabIndex = 11;
+            this.btnFormRespaldos.Text = "Respaldar datos";
+            this.btnFormRespaldos.UseVisualStyleBackColor = true;
+            this.btnFormRespaldos.Click += new System.EventHandler(this.btnFormRespaldos_Click);
             // 
             // btnSalir
             // 
@@ -423,16 +433,6 @@
             this.entityCommand1.Connection = null;
             this.entityCommand1.EnablePlanCaching = true;
             this.entityCommand1.Transaction = null;
-            // 
-            // btnFormRespaldos
-            // 
-            this.btnFormRespaldos.Location = new System.Drawing.Point(38, 481);
-            this.btnFormRespaldos.Name = "btnFormRespaldos";
-            this.btnFormRespaldos.Size = new System.Drawing.Size(120, 23);
-            this.btnFormRespaldos.TabIndex = 11;
-            this.btnFormRespaldos.Text = "Respaldar datos";
-            this.btnFormRespaldos.UseVisualStyleBackColor = true;
-            this.btnFormRespaldos.Click += new System.EventHandler(this.btnFormRespaldos_Click);
             // 
             // FrmMenuPrincipal
             // 

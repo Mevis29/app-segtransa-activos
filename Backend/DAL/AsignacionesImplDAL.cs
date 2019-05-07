@@ -10,111 +10,125 @@ using System.Data.Entity;
 public class AsignacionesImplDAL : IAsignacionesDAL
 {
 
-    private BDContext context;
+    // Crear una instancia del modelo de la BD
+    BDContext context = new BDContext();
 
-    public void Add(THAsignaciones Asignacion)
+    #region Método para retornar Asignacion por Usuario-Empleado por Id Datos Asignaciones
+    /// <summary>
+    /// Método para retornar Asignacion por Usuario-Empleado por Id
+    /// </summary>
+    public spAsignUsuarioRetornaDatosId_Result retornaAsignUsuarioId(int pIdAsignacion)
     {
-        using (context = new BDContext())
-        {
-            context.THAsignaciones.Add(Asignacion);
-            context.SaveChanges();
-        }
-    }
+        spAsignUsuarioRetornaDatosId_Result resultado = new spAsignUsuarioRetornaDatosId_Result();
 
-    public void Delete(int idAsignacion)
+        resultado = this.context.spAsignUsuarioRetornaDatosId(pIdAsignacion).FirstOrDefault();
+
+        return resultado;
+    }
+    #endregion
+
+    #region Método para retornar lista completa de Asignacion por Usuario-Empleado
+
+    /// <summary>
+    /// Método para retornar lista completa de Asignacions por Usuario-Empleado
+    /// </summary>
+    public List<spAsignUsuarioRetornaLista_Result> retornaListaAsignUsuario(string pEmpleado, string pActivo)
     {
-        THAsignaciones Asignacion = this.GetAsignacion(idAsignacion);
-        using (context = new BDContext())
-        {
-            context.THAsignaciones.Attach(Asignacion);
-            context.THAsignaciones.Remove(Asignacion);
-            context.SaveChanges();
-        }
+        List<spAsignUsuarioRetornaLista_Result> resultado = new List<spAsignUsuarioRetornaLista_Result>();
+
+        resultado = this.context.spAsignUsuarioRetornaLista(pEmpleado, pActivo).ToList();
+
+        return resultado;
     }
+    #endregion
 
-    public void Dispose()
-    {
-        throw new NotImplementedException();
-    }
-
-    public List<THAsignaciones> GetAsignaciones()
-    {
-        List<THAsignaciones> result;
-        using (context = new BDContext())
-        {
-            result = (from c in context.THAsignaciones
-                      select c).ToList();
-        }
-        return result;
-    }
-
-    public List<THAsignaciones> GetAsignaciones(int idUsuario)
-    {
-        List<THAsignaciones> result;
-        using (context = new BDContext())
-        {
-            result = (from c in context.THAsignaciones
-                      where c.IdUsuario == idUsuario
-                      select c).ToList();
-        }
-        return result;
-    }
-
-    public THAsignaciones GetAsignacion(int idAsignacion)
-    {
-        THAsignaciones result;
-        using (context = new BDContext())
-        {
-            result = (from c in context.THAsignaciones
-                      where c.IdAsignacion == idAsignacion
-                      select c).First();
-        }
-        return result;
-    }
-
-    public void Update(THAsignaciones Asignacion)
-    {
-        try
-        {
-            using (context = new BDContext())
-            {
-                context.Entry(Asignacion).State = EntityState.Modified;
-                context.SaveChanges();
-            }
-
-        }
-        catch (Exception)
-        {
-            throw;
-        }
-    }
-
+    #region Método para retornar lista completa de Asignacion por ID de Usuario-Empleado
     /// <summary>
     /// Método para retornar lista de Asignacions por Usuario-Empleado por Id
     /// </summary>
     public List<spAsignUsuarioRetornaListaId_Result> retornaListaAsignUsuarioId(int pIdUsuario)
     {
-        List<spAsignUsuarioRetornaListaId_Result> resultado;
+        List<spAsignUsuarioRetornaListaId_Result> resultado = new List<spAsignUsuarioRetornaListaId_Result>();
 
-        using(context = new BDContext())
-        {
-            resultado = this.context.spAsignUsuarioRetornaListaId(pIdUsuario).ToList();
-        }
-       
+        resultado = this.context.spAsignUsuarioRetornaListaId(pIdUsuario).ToList();
+
         return resultado;
     }
 
-    public List<spAsignUsuarioRetornaListaTotal_Result> retornaListaAsignUsuarioTotal()
+    #endregion
+
+    #region Método para insertar nueva Asignacion por Usuario-Empleado
+    /// <summary>
+    /// Método para insertar nueva Asignacion por Usuario-Empleado
+    /// </summary>
+    public bool InsertaAsignUsuario(int pIdUsuario, int pIdActivo, DateTime pFechaInicialAsignacion, DateTime pFechafinalAsignacion)
     {
-        List<spAsignUsuarioRetornaListaTotal_Result> resultado;
-
-        using (context = new BDContext())
+        bool resultado = false;
+        try
         {
-            resultado = this.context.spAsignUsuarioRetornaListaTotal().ToList();
-        }
+            int registrosAfectados = this.context.spAsignUsuarioInsertaDatos(pIdUsuario, pIdActivo, pFechaInicialAsignacion, pFechafinalAsignacion);
 
+            if (registrosAfectados > 0)
+            {
+                resultado = true;
+            }
+        }
+        catch (Exception)
+        {
+            throw;
+        }
         return resultado;
     }
+
+    #endregion
+
+    #region  Método para modificar Asignacion por Usuario-Empleado existente
+    /// <summary>
+    /// Método para modificar Asignacion por Usuario-Empleado existente
+    /// </summary>
+    public bool ModificaAsignUsuario(int pIdAsignacion, int pIdUsuario, int pIdActivo, DateTime pFechaInicialAsignacion, DateTime pFechafinalAsignacion)
+    {
+        bool resultado = false;
+        try
+        {
+            int registrosAfectados = this.context.spAsignUsuarioModificaDatos(pIdAsignacion, pIdUsuario, pIdActivo, pFechaInicialAsignacion, pFechafinalAsignacion);
+
+            if (registrosAfectados > 0)
+            {
+                resultado = true;
+            }
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+        return resultado;
+    }
+    #endregion
+
+    #region Método para eliminar Asignacion por Usuario-Empleado existente
+    /// <summary>
+    /// Método para eliminar Asignacion por Usuario-Empleado existente
+    /// </summary>
+    public bool EliminaAsignUsuario(int pIdAsignacion)
+    {
+        bool resultado = false;
+        try
+        {
+            int registrosAfectados = this.context.spAsignUsuarioEliminaDatos(pIdAsignacion);
+
+            if (registrosAfectados > 0)
+            {
+                resultado = true;
+            }
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+        return resultado;
+    }
+    #endregion
 
 }
 

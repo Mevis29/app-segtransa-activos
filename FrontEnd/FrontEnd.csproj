@@ -107,8 +107,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ActivosDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSources_Forms\SEGTRANSADataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SEGTRANSADataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSources_Forms\SEGTRANSADataSource_REPARACIONES.cs">
       <DependentUpon>SEGTRANSADataSource_REPARACIONES.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources_Forms\SEGTRANSADataSource_spListaTotalAsignaciones.cs">
+      <DependentUpon>SEGTRANSADataSource_spListaTotalAsignaciones.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSources_Forms\sp_RetornaReparacionesDS.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -119,6 +127,24 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SEGTRANSADataSetSp_RetornaBitacora.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\FormAsignacionesInserta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\FormAsignacionesInserta.designer.cs">
+      <DependentUpon>FormAsignacionesInserta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\FormAsignacionesLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\FormAsignacionesLista.designer.cs">
+      <DependentUpon>FormAsignacionesLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_new\FormAsignacionesModifica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_new\FormAsignacionesModifica.designer.cs">
+      <DependentUpon>FormAsignacionesModifica.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms_new\frmMenuReportes.cs">
       <SubType>Form</SubType>
@@ -149,24 +175,6 @@
     </Compile>
     <Compile Include="Forms_new\frmReparaciones_n.designer.cs">
       <DependentUpon>frmReparaciones_n.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms_new\frmAsignacionesModificar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms_new\frmAsignacionesModificar.designer.cs">
-      <DependentUpon>frmAsignacionesModificar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms_new\frmAsignacionesAgregar_n.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms_new\frmAsignacionesAgregar_n.designer.cs">
-      <DependentUpon>frmAsignacionesAgregar_n.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms_new\frmAsignaciones_n.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms_new\frmAsignaciones_n.designer.cs">
-      <DependentUpon>frmAsignaciones_n.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms_new\frmMisActivos_n.cs">
       <SubType>Form</SubType>
@@ -276,98 +284,14 @@
     <Compile Include="Forms_new\frmUsuarios_n.designer.cs">
       <DependentUpon>frmUsuarios_n.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmActivos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmActivos.Designer.cs">
-      <DependentUpon>frmActivos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmActivosAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmActivosAdd.Designer.cs">
-      <DependentUpon>frmActivosAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmActivosSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmActivosSearch.Designer.cs">
-      <DependentUpon>frmActivosSearch.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms_new\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms_new\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmMenu.Designer.cs">
-      <DependentUpon>frmMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmMisActivos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmMisActivos.Designer.cs">
-      <DependentUpon>frmMisActivos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmMisDatos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmMisDatos.Designer.cs">
-      <DependentUpon>frmMisDatos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmActivosUpdate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmActivosUpdate.designer.cs">
-      <DependentUpon>frmActivosUpdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmRepBitacora.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmRepBitacora.Designer.cs">
-      <DependentUpon>frmRepBitacora.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmRepProveedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmRepProveedor.Designer.cs">
-      <DependentUpon>frmRepProveedor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmRepRolUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmRepRolUsuario.Designer.cs">
-      <DependentUpon>frmRepRolUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmUsuariosAgrega.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmUsuariosAgrega.Designer.cs">
-      <DependentUpon>frmUsuariosAgrega.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmUsuariosModifica.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmUsuariosModifica.Designer.cs">
-      <DependentUpon>frmUsuariosModifica.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Formularios\frmReportes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmReportes.Designer.cs">
-      <DependentUpon>frmReportes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmUsuarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmUsuarios.Designer.cs">
-      <DependentUpon>frmUsuarios.cs</DependentUpon>
-    </Compile>
     <Compile Include="DataSources_Reportes\SEGTRANSADataSetActivo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -438,7 +362,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SEGTRANSADataSource_REPARACIONES.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSources_Reportes\SegtransaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SegtransaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Forms_new\FormAsignacionesInserta.resx">
+      <DependentUpon>FormAsignacionesInserta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\FormAsignacionesLista.resx">
+      <DependentUpon>FormAsignacionesLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_new\FormAsignacionesModifica.resx">
+      <DependentUpon>FormAsignacionesModifica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms_new\frmMenuReportes.resx">
       <DependentUpon>frmMenuReportes.cs</DependentUpon>
     </EmbeddedResource>
@@ -453,15 +391,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_new\frmReparaciones_n.resx">
       <DependentUpon>frmReparaciones_n.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms_new\frmAsignacionesModificar.resx">
-      <DependentUpon>frmAsignacionesModificar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms_new\frmAsignacionesAgregar_n.resx">
-      <DependentUpon>frmAsignacionesAgregar_n.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms_new\frmAsignaciones_n.resx">
-      <DependentUpon>frmAsignaciones_n.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_new\frmMisActivos_n.resx">
       <DependentUpon>frmMisActivos_n.cs</DependentUpon>
@@ -517,50 +446,8 @@
     <EmbeddedResource Include="Forms_new\frmUsuarios_n.resx">
       <DependentUpon>frmUsuarios_n.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmActivos.resx">
-      <DependentUpon>frmActivos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmActivosAdd.resx">
-      <DependentUpon>frmActivosAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmActivosSearch.resx">
-      <DependentUpon>frmActivosSearch.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms_new\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmMenu.resx">
-      <DependentUpon>frmMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmMisActivos.resx">
-      <DependentUpon>frmMisActivos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmMisDatos.resx">
-      <DependentUpon>frmMisDatos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmRepBitacora.resx">
-      <DependentUpon>frmRepBitacora.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmReportes.resx">
-      <DependentUpon>frmReportes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmActivosUpdate.resx">
-      <DependentUpon>frmActivosUpdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmRepProveedor.resx">
-      <DependentUpon>frmRepProveedor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmRepRolUsuario.resx">
-      <DependentUpon>frmRepRolUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmUsuarios.resx">
-      <DependentUpon>frmUsuarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmUsuariosAgrega.resx">
-      <DependentUpon>frmUsuariosAgrega.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmUsuariosModifica.resx">
-      <DependentUpon>frmUsuariosModifica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -585,6 +472,17 @@
     </None>
     <None Include="DataSources_Forms\ActivosDataSet.xss">
       <DependentUpon>ActivosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSet.xsc">
+      <DependentUpon>SEGTRANSADataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SEGTRANSADataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources_Forms\SEGTRANSADataSet.xss">
+      <DependentUpon>SEGTRANSADataSet.xsd</DependentUpon>
     </None>
     <None Include="DataSources_Forms\sp_RetornaReparacionesDS.xsc">
       <DependentUpon>sp_RetornaReparacionesDS.xsd</DependentUpon>
@@ -763,6 +661,17 @@
     </None>
     <None Include="DataSources_Forms\SEGTRANSADataSource_REPARACIONES.xss">
       <DependentUpon>SEGTRANSADataSource_REPARACIONES.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Reportes\SegtransaDataSet.xsc">
+      <DependentUpon>SegtransaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources_Reportes\SegtransaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SegtransaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources_Reportes\SegtransaDataSet.xss">
+      <DependentUpon>SegtransaDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

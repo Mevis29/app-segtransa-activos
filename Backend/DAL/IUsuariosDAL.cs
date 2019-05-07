@@ -30,5 +30,22 @@ namespace Backend.DAL
         /// Método para actualizar fecha/hora de login del Usuario
         /// </summary>
         bool actualizaDatosLogin(int IdUsuario);
+
+        ///SPS pr ASIGNACIONES
+        /// <summary>
+        /// Método para retornar lista completa de Usuarios
+        /// </summary>
+        List<spUsuariosRetornaLista_Result> retornaListaUsuarios(string pCedula, string pNombre, string pCorreo);
+
+        /// <summary>
+        /// Método para retornar lista de solo Empleados asignados
+        /// </summary>
+        List<spUsuariosRetornaListaEmpleado_Result> retornaListaEmpleados(int? pIdEmpleado);
+
+
+        /// <summary>
+        /// Método para retornar Empleado por Id
+        /// </summary>
+        spUsuariosRetornaListaEmpleado_Result retornaEmpleadoId(int pIdEmpleado);
     }
 }

@@ -139,13 +139,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Segtransa.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entities\spActivosRetornaDatosId_Result.cs">
+      <DependentUpon>Segtransa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\spActivosRetornaListaId_Result.cs">
+      <DependentUpon>Segtransa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\spActivosRetornaListaResumen_Result.cs">
+      <DependentUpon>Segtransa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\spActivosRetornaLista_Result.cs">
+      <DependentUpon>Segtransa.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\spAsignUsuarioRetornaDatosId_Result.cs">
       <DependentUpon>Segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\spAsignUsuarioRetornaListaId_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\spAsignUsuarioRetornaListaTotal_Result.cs">
       <DependentUpon>Segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\spAsignUsuarioRetornaLista_Result.cs">

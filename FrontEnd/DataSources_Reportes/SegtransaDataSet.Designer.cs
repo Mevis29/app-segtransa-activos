@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace FrontEnd.DataSources_Forms {
+namespace FrontEnd.DataSources_Reportes {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace FrontEnd.DataSources_Forms {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("SEGTRANSADataSource_spListaTotalAsignaciones")]
+    [global::System.Xml.Serialization.XmlRootAttribute("SegtransaDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class SEGTRANSADataSource_spListaTotalAsignaciones : global::System.Data.DataSet {
+    public partial class SegtransaDataSet : global::System.Data.DataSet {
         
-        private spAsignUsuarioRetornaListaTotalDataTable tablespAsignUsuarioRetornaListaTotal;
+        private spAsignUsuarioRetornaListaDataTable tablespAsignUsuarioRetornaLista;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public SEGTRANSADataSource_spListaTotalAsignaciones() {
+        public SegtransaDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace FrontEnd.DataSources_Forms {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected SEGTRANSADataSource_spListaTotalAsignaciones(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected SegtransaDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace FrontEnd.DataSources_Forms {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["spAsignUsuarioRetornaListaTotal"] != null)) {
-                    base.Tables.Add(new spAsignUsuarioRetornaListaTotalDataTable(ds.Tables["spAsignUsuarioRetornaListaTotal"]));
+                if ((ds.Tables["spAsignUsuarioRetornaLista"] != null)) {
+                    base.Tables.Add(new spAsignUsuarioRetornaListaDataTable(ds.Tables["spAsignUsuarioRetornaLista"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace FrontEnd.DataSources_Forms {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public spAsignUsuarioRetornaListaTotalDataTable spAsignUsuarioRetornaListaTotal {
+        public spAsignUsuarioRetornaListaDataTable spAsignUsuarioRetornaLista {
             get {
-                return this.tablespAsignUsuarioRetornaListaTotal;
+                return this.tablespAsignUsuarioRetornaLista;
             }
         }
         
@@ -127,7 +127,7 @@ namespace FrontEnd.DataSources_Forms {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            SEGTRANSADataSource_spListaTotalAsignaciones cln = ((SEGTRANSADataSource_spListaTotalAsignaciones)(base.Clone()));
+            SegtransaDataSet cln = ((SegtransaDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace FrontEnd.DataSources_Forms {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["spAsignUsuarioRetornaListaTotal"] != null)) {
-                    base.Tables.Add(new spAsignUsuarioRetornaListaTotalDataTable(ds.Tables["spAsignUsuarioRetornaListaTotal"]));
+                if ((ds.Tables["spAsignUsuarioRetornaLista"] != null)) {
+                    base.Tables.Add(new spAsignUsuarioRetornaListaDataTable(ds.Tables["spAsignUsuarioRetornaLista"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace FrontEnd.DataSources_Forms {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablespAsignUsuarioRetornaListaTotal = ((spAsignUsuarioRetornaListaTotalDataTable)(base.Tables["spAsignUsuarioRetornaListaTotal"]));
+            this.tablespAsignUsuarioRetornaLista = ((spAsignUsuarioRetornaListaDataTable)(base.Tables["spAsignUsuarioRetornaLista"]));
             if ((initTable == true)) {
-                if ((this.tablespAsignUsuarioRetornaListaTotal != null)) {
-                    this.tablespAsignUsuarioRetornaListaTotal.InitVars();
+                if ((this.tablespAsignUsuarioRetornaLista != null)) {
+                    this.tablespAsignUsuarioRetornaLista.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace FrontEnd.DataSources_Forms {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "SEGTRANSADataSource_spListaTotalAsignaciones";
+            this.DataSetName = "SegtransaDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/SEGTRANSADataSource_spListaTotalAsignaciones.xsd";
+            this.Namespace = "http://tempuri.org/SegtransaDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablespAsignUsuarioRetornaListaTotal = new spAsignUsuarioRetornaListaTotalDataTable();
-            base.Tables.Add(this.tablespAsignUsuarioRetornaListaTotal);
+            this.tablespAsignUsuarioRetornaLista = new spAsignUsuarioRetornaListaDataTable();
+            base.Tables.Add(this.tablespAsignUsuarioRetornaLista);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializespAsignUsuarioRetornaListaTotal() {
+        private bool ShouldSerializespAsignUsuarioRetornaLista() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace FrontEnd.DataSources_Forms {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            SEGTRANSADataSource_spListaTotalAsignaciones ds = new SEGTRANSADataSource_spListaTotalAsignaciones();
+            SegtransaDataSet ds = new SegtransaDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,14 +270,14 @@ namespace FrontEnd.DataSources_Forms {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void spAsignUsuarioRetornaListaTotalRowChangeEventHandler(object sender, spAsignUsuarioRetornaListaTotalRowChangeEvent e);
+        public delegate void spAsignUsuarioRetornaListaRowChangeEventHandler(object sender, spAsignUsuarioRetornaListaRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class spAsignUsuarioRetornaListaTotalDataTable : global::System.Data.TypedTableBase<spAsignUsuarioRetornaListaTotalRow> {
+        public partial class spAsignUsuarioRetornaListaDataTable : global::System.Data.TypedTableBase<spAsignUsuarioRetornaListaRow> {
             
             private global::System.Data.DataColumn columnId;
             
@@ -287,16 +287,16 @@ namespace FrontEnd.DataSources_Forms {
             
             private global::System.Data.DataColumn columnCodigo;
             
-            private global::System.Data.DataColumn columnDescripcion;
+            private global::System.Data.DataColumn columnActivo;
             
-            private global::System.Data.DataColumn columnFechaAsign;
+            private global::System.Data.DataColumn columnFechaInicialAsign;
             
             private global::System.Data.DataColumn columnFechafinAsign;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public spAsignUsuarioRetornaListaTotalDataTable() {
-                this.TableName = "spAsignUsuarioRetornaListaTotal";
+            public spAsignUsuarioRetornaListaDataTable() {
+                this.TableName = "spAsignUsuarioRetornaLista";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -304,7 +304,7 @@ namespace FrontEnd.DataSources_Forms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal spAsignUsuarioRetornaListaTotalDataTable(global::System.Data.DataTable table) {
+            internal spAsignUsuarioRetornaListaDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -321,7 +321,7 @@ namespace FrontEnd.DataSources_Forms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected spAsignUsuarioRetornaListaTotalDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected spAsignUsuarioRetornaListaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -360,17 +360,17 @@ namespace FrontEnd.DataSources_Forms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn DescripcionColumn {
+            public global::System.Data.DataColumn ActivoColumn {
                 get {
-                    return this.columnDescripcion;
+                    return this.columnActivo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn FechaAsignColumn {
+            public global::System.Data.DataColumn FechaInicialAsignColumn {
                 get {
-                    return this.columnFechaAsign;
+                    return this.columnFechaInicialAsign;
                 }
             }
             
@@ -393,58 +393,58 @@ namespace FrontEnd.DataSources_Forms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public spAsignUsuarioRetornaListaTotalRow this[int index] {
+            public spAsignUsuarioRetornaListaRow this[int index] {
                 get {
-                    return ((spAsignUsuarioRetornaListaTotalRow)(this.Rows[index]));
+                    return ((spAsignUsuarioRetornaListaRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event spAsignUsuarioRetornaListaTotalRowChangeEventHandler spAsignUsuarioRetornaListaTotalRowChanging;
+            public event spAsignUsuarioRetornaListaRowChangeEventHandler spAsignUsuarioRetornaListaRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event spAsignUsuarioRetornaListaTotalRowChangeEventHandler spAsignUsuarioRetornaListaTotalRowChanged;
+            public event spAsignUsuarioRetornaListaRowChangeEventHandler spAsignUsuarioRetornaListaRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event spAsignUsuarioRetornaListaTotalRowChangeEventHandler spAsignUsuarioRetornaListaTotalRowDeleting;
+            public event spAsignUsuarioRetornaListaRowChangeEventHandler spAsignUsuarioRetornaListaRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event spAsignUsuarioRetornaListaTotalRowChangeEventHandler spAsignUsuarioRetornaListaTotalRowDeleted;
+            public event spAsignUsuarioRetornaListaRowChangeEventHandler spAsignUsuarioRetornaListaRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddspAsignUsuarioRetornaListaTotalRow(spAsignUsuarioRetornaListaTotalRow row) {
+            public void AddspAsignUsuarioRetornaListaRow(spAsignUsuarioRetornaListaRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public spAsignUsuarioRetornaListaTotalRow AddspAsignUsuarioRetornaListaTotalRow(int Cedula, string Usuario, string Codigo, string Descripcion, string FechaAsign, string FechafinAsign) {
-                spAsignUsuarioRetornaListaTotalRow rowspAsignUsuarioRetornaListaTotalRow = ((spAsignUsuarioRetornaListaTotalRow)(this.NewRow()));
+            public spAsignUsuarioRetornaListaRow AddspAsignUsuarioRetornaListaRow(int Cedula, string Usuario, string Codigo, string Activo, string FechaInicialAsign, string FechafinAsign) {
+                spAsignUsuarioRetornaListaRow rowspAsignUsuarioRetornaListaRow = ((spAsignUsuarioRetornaListaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Cedula,
                         Usuario,
                         Codigo,
-                        Descripcion,
-                        FechaAsign,
+                        Activo,
+                        FechaInicialAsign,
                         FechafinAsign};
-                rowspAsignUsuarioRetornaListaTotalRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowspAsignUsuarioRetornaListaTotalRow);
-                return rowspAsignUsuarioRetornaListaTotalRow;
+                rowspAsignUsuarioRetornaListaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowspAsignUsuarioRetornaListaRow);
+                return rowspAsignUsuarioRetornaListaRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public spAsignUsuarioRetornaListaTotalRow FindById(int Id) {
-                return ((spAsignUsuarioRetornaListaTotalRow)(this.Rows.Find(new object[] {
+            public spAsignUsuarioRetornaListaRow FindById(int Id) {
+                return ((spAsignUsuarioRetornaListaRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                spAsignUsuarioRetornaListaTotalDataTable cln = ((spAsignUsuarioRetornaListaTotalDataTable)(base.Clone()));
+                spAsignUsuarioRetornaListaDataTable cln = ((spAsignUsuarioRetornaListaDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -452,7 +452,7 @@ namespace FrontEnd.DataSources_Forms {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new spAsignUsuarioRetornaListaTotalDataTable();
+                return new spAsignUsuarioRetornaListaDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -462,8 +462,8 @@ namespace FrontEnd.DataSources_Forms {
                 this.columnCedula = base.Columns["Cedula"];
                 this.columnUsuario = base.Columns["Usuario"];
                 this.columnCodigo = base.Columns["Codigo"];
-                this.columnDescripcion = base.Columns["Descripcion"];
-                this.columnFechaAsign = base.Columns["FechaAsign"];
+                this.columnActivo = base.Columns["Activo"];
+                this.columnFechaInicialAsign = base.Columns["FechaInicialAsign"];
                 this.columnFechafinAsign = base.Columns["FechafinAsign"];
             }
             
@@ -478,10 +478,10 @@ namespace FrontEnd.DataSources_Forms {
                 base.Columns.Add(this.columnUsuario);
                 this.columnCodigo = new global::System.Data.DataColumn("Codigo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCodigo);
-                this.columnDescripcion = new global::System.Data.DataColumn("Descripcion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescripcion);
-                this.columnFechaAsign = new global::System.Data.DataColumn("FechaAsign", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFechaAsign);
+                this.columnActivo = new global::System.Data.DataColumn("Activo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActivo);
+                this.columnFechaInicialAsign = new global::System.Data.DataColumn("FechaInicialAsign", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaInicialAsign);
                 this.columnFechafinAsign = new global::System.Data.DataColumn("FechafinAsign", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFechafinAsign);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -494,37 +494,37 @@ namespace FrontEnd.DataSources_Forms {
                 this.columnUsuario.ReadOnly = true;
                 this.columnUsuario.MaxLength = 101;
                 this.columnCodigo.MaxLength = 50;
-                this.columnDescripcion.MaxLength = 90;
-                this.columnFechaAsign.ReadOnly = true;
-                this.columnFechaAsign.MaxLength = 4000;
+                this.columnActivo.MaxLength = 90;
+                this.columnFechaInicialAsign.ReadOnly = true;
+                this.columnFechaInicialAsign.MaxLength = 4000;
                 this.columnFechafinAsign.ReadOnly = true;
                 this.columnFechafinAsign.MaxLength = 4000;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public spAsignUsuarioRetornaListaTotalRow NewspAsignUsuarioRetornaListaTotalRow() {
-                return ((spAsignUsuarioRetornaListaTotalRow)(this.NewRow()));
+            public spAsignUsuarioRetornaListaRow NewspAsignUsuarioRetornaListaRow() {
+                return ((spAsignUsuarioRetornaListaRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new spAsignUsuarioRetornaListaTotalRow(builder);
+                return new spAsignUsuarioRetornaListaRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(spAsignUsuarioRetornaListaTotalRow);
+                return typeof(spAsignUsuarioRetornaListaRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.spAsignUsuarioRetornaListaTotalRowChanged != null)) {
-                    this.spAsignUsuarioRetornaListaTotalRowChanged(this, new spAsignUsuarioRetornaListaTotalRowChangeEvent(((spAsignUsuarioRetornaListaTotalRow)(e.Row)), e.Action));
+                if ((this.spAsignUsuarioRetornaListaRowChanged != null)) {
+                    this.spAsignUsuarioRetornaListaRowChanged(this, new spAsignUsuarioRetornaListaRowChangeEvent(((spAsignUsuarioRetornaListaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -532,8 +532,8 @@ namespace FrontEnd.DataSources_Forms {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.spAsignUsuarioRetornaListaTotalRowChanging != null)) {
-                    this.spAsignUsuarioRetornaListaTotalRowChanging(this, new spAsignUsuarioRetornaListaTotalRowChangeEvent(((spAsignUsuarioRetornaListaTotalRow)(e.Row)), e.Action));
+                if ((this.spAsignUsuarioRetornaListaRowChanging != null)) {
+                    this.spAsignUsuarioRetornaListaRowChanging(this, new spAsignUsuarioRetornaListaRowChangeEvent(((spAsignUsuarioRetornaListaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -541,8 +541,8 @@ namespace FrontEnd.DataSources_Forms {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.spAsignUsuarioRetornaListaTotalRowDeleted != null)) {
-                    this.spAsignUsuarioRetornaListaTotalRowDeleted(this, new spAsignUsuarioRetornaListaTotalRowChangeEvent(((spAsignUsuarioRetornaListaTotalRow)(e.Row)), e.Action));
+                if ((this.spAsignUsuarioRetornaListaRowDeleted != null)) {
+                    this.spAsignUsuarioRetornaListaRowDeleted(this, new spAsignUsuarioRetornaListaRowChangeEvent(((spAsignUsuarioRetornaListaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -550,14 +550,14 @@ namespace FrontEnd.DataSources_Forms {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.spAsignUsuarioRetornaListaTotalRowDeleting != null)) {
-                    this.spAsignUsuarioRetornaListaTotalRowDeleting(this, new spAsignUsuarioRetornaListaTotalRowChangeEvent(((spAsignUsuarioRetornaListaTotalRow)(e.Row)), e.Action));
+                if ((this.spAsignUsuarioRetornaListaRowDeleting != null)) {
+                    this.spAsignUsuarioRetornaListaRowDeleting(this, new spAsignUsuarioRetornaListaRowChangeEvent(((spAsignUsuarioRetornaListaRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemovespAsignUsuarioRetornaListaTotalRow(spAsignUsuarioRetornaListaTotalRow row) {
+            public void RemovespAsignUsuarioRetornaListaRow(spAsignUsuarioRetornaListaRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -566,7 +566,7 @@ namespace FrontEnd.DataSources_Forms {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SEGTRANSADataSource_spListaTotalAsignaciones ds = new SEGTRANSADataSource_spListaTotalAsignaciones();
+                SegtransaDataSet ds = new SegtransaDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -584,7 +584,7 @@ namespace FrontEnd.DataSources_Forms {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "spAsignUsuarioRetornaListaTotalDataTable";
+                attribute2.FixedValue = "spAsignUsuarioRetornaListaDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -628,25 +628,25 @@ namespace FrontEnd.DataSources_Forms {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class spAsignUsuarioRetornaListaTotalRow : global::System.Data.DataRow {
+        public partial class spAsignUsuarioRetornaListaRow : global::System.Data.DataRow {
             
-            private spAsignUsuarioRetornaListaTotalDataTable tablespAsignUsuarioRetornaListaTotal;
+            private spAsignUsuarioRetornaListaDataTable tablespAsignUsuarioRetornaLista;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal spAsignUsuarioRetornaListaTotalRow(global::System.Data.DataRowBuilder rb) : 
+            internal spAsignUsuarioRetornaListaRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablespAsignUsuarioRetornaListaTotal = ((spAsignUsuarioRetornaListaTotalDataTable)(this.Table));
+                this.tablespAsignUsuarioRetornaLista = ((spAsignUsuarioRetornaListaDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int Id {
                 get {
-                    return ((int)(this[this.tablespAsignUsuarioRetornaListaTotal.IdColumn]));
+                    return ((int)(this[this.tablespAsignUsuarioRetornaLista.IdColumn]));
                 }
                 set {
-                    this[this.tablespAsignUsuarioRetornaListaTotal.IdColumn] = value;
+                    this[this.tablespAsignUsuarioRetornaLista.IdColumn] = value;
                 }
             }
             
@@ -654,10 +654,10 @@ namespace FrontEnd.DataSources_Forms {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int Cedula {
                 get {
-                    return ((int)(this[this.tablespAsignUsuarioRetornaListaTotal.CedulaColumn]));
+                    return ((int)(this[this.tablespAsignUsuarioRetornaLista.CedulaColumn]));
                 }
                 set {
-                    this[this.tablespAsignUsuarioRetornaListaTotal.CedulaColumn] = value;
+                    this[this.tablespAsignUsuarioRetornaLista.CedulaColumn] = value;
                 }
             }
             
@@ -666,15 +666,15 @@ namespace FrontEnd.DataSources_Forms {
             public string Usuario {
                 get {
                     try {
-                        return ((string)(this[this.tablespAsignUsuarioRetornaListaTotal.UsuarioColumn]));
+                        return ((string)(this[this.tablespAsignUsuarioRetornaLista.UsuarioColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Usuario\' de la tabla \'spAsignUsuarioRetornaListaTotal\' es" +
-                                " DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Usuario\' de la tabla \'spAsignUsuarioRetornaLista\' es DBNu" +
+                                "ll.", e);
                     }
                 }
                 set {
-                    this[this.tablespAsignUsuarioRetornaListaTotal.UsuarioColumn] = value;
+                    this[this.tablespAsignUsuarioRetornaLista.UsuarioColumn] = value;
                 }
             }
             
@@ -683,49 +683,49 @@ namespace FrontEnd.DataSources_Forms {
             public string Codigo {
                 get {
                     try {
-                        return ((string)(this[this.tablespAsignUsuarioRetornaListaTotal.CodigoColumn]));
+                        return ((string)(this[this.tablespAsignUsuarioRetornaLista.CodigoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Codigo\' de la tabla \'spAsignUsuarioRetornaListaTotal\' es " +
-                                "DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Codigo\' de la tabla \'spAsignUsuarioRetornaLista\' es DBNul" +
+                                "l.", e);
                     }
                 }
                 set {
-                    this[this.tablespAsignUsuarioRetornaListaTotal.CodigoColumn] = value;
+                    this[this.tablespAsignUsuarioRetornaLista.CodigoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Descripcion {
+            public string Activo {
                 get {
                     try {
-                        return ((string)(this[this.tablespAsignUsuarioRetornaListaTotal.DescripcionColumn]));
+                        return ((string)(this[this.tablespAsignUsuarioRetornaLista.ActivoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Descripcion\' de la tabla \'spAsignUsuarioRetornaListaTotal" +
-                                "\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Activo\' de la tabla \'spAsignUsuarioRetornaLista\' es DBNul" +
+                                "l.", e);
                     }
                 }
                 set {
-                    this[this.tablespAsignUsuarioRetornaListaTotal.DescripcionColumn] = value;
+                    this[this.tablespAsignUsuarioRetornaLista.ActivoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string FechaAsign {
+            public string FechaInicialAsign {
                 get {
                     try {
-                        return ((string)(this[this.tablespAsignUsuarioRetornaListaTotal.FechaAsignColumn]));
+                        return ((string)(this[this.tablespAsignUsuarioRetornaLista.FechaInicialAsignColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FechaAsign\' de la tabla \'spAsignUsuarioRetornaListaTotal\'" +
-                                " es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FechaInicialAsign\' de la tabla \'spAsignUsuarioRetornaList" +
+                                "a\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablespAsignUsuarioRetornaListaTotal.FechaAsignColumn] = value;
+                    this[this.tablespAsignUsuarioRetornaLista.FechaInicialAsignColumn] = value;
                 }
             }
             
@@ -734,76 +734,76 @@ namespace FrontEnd.DataSources_Forms {
             public string FechafinAsign {
                 get {
                     try {
-                        return ((string)(this[this.tablespAsignUsuarioRetornaListaTotal.FechafinAsignColumn]));
+                        return ((string)(this[this.tablespAsignUsuarioRetornaLista.FechafinAsignColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FechafinAsign\' de la tabla \'spAsignUsuarioRetornaListaTot" +
-                                "al\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FechafinAsign\' de la tabla \'spAsignUsuarioRetornaLista\' e" +
+                                "s DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablespAsignUsuarioRetornaListaTotal.FechafinAsignColumn] = value;
+                    this[this.tablespAsignUsuarioRetornaLista.FechafinAsignColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsUsuarioNull() {
-                return this.IsNull(this.tablespAsignUsuarioRetornaListaTotal.UsuarioColumn);
+                return this.IsNull(this.tablespAsignUsuarioRetornaLista.UsuarioColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetUsuarioNull() {
-                this[this.tablespAsignUsuarioRetornaListaTotal.UsuarioColumn] = global::System.Convert.DBNull;
+                this[this.tablespAsignUsuarioRetornaLista.UsuarioColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsCodigoNull() {
-                return this.IsNull(this.tablespAsignUsuarioRetornaListaTotal.CodigoColumn);
+                return this.IsNull(this.tablespAsignUsuarioRetornaLista.CodigoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetCodigoNull() {
-                this[this.tablespAsignUsuarioRetornaListaTotal.CodigoColumn] = global::System.Convert.DBNull;
+                this[this.tablespAsignUsuarioRetornaLista.CodigoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsDescripcionNull() {
-                return this.IsNull(this.tablespAsignUsuarioRetornaListaTotal.DescripcionColumn);
+            public bool IsActivoNull() {
+                return this.IsNull(this.tablespAsignUsuarioRetornaLista.ActivoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetDescripcionNull() {
-                this[this.tablespAsignUsuarioRetornaListaTotal.DescripcionColumn] = global::System.Convert.DBNull;
+            public void SetActivoNull() {
+                this[this.tablespAsignUsuarioRetornaLista.ActivoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsFechaAsignNull() {
-                return this.IsNull(this.tablespAsignUsuarioRetornaListaTotal.FechaAsignColumn);
+            public bool IsFechaInicialAsignNull() {
+                return this.IsNull(this.tablespAsignUsuarioRetornaLista.FechaInicialAsignColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetFechaAsignNull() {
-                this[this.tablespAsignUsuarioRetornaListaTotal.FechaAsignColumn] = global::System.Convert.DBNull;
+            public void SetFechaInicialAsignNull() {
+                this[this.tablespAsignUsuarioRetornaLista.FechaInicialAsignColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsFechafinAsignNull() {
-                return this.IsNull(this.tablespAsignUsuarioRetornaListaTotal.FechafinAsignColumn);
+                return this.IsNull(this.tablespAsignUsuarioRetornaLista.FechafinAsignColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetFechafinAsignNull() {
-                this[this.tablespAsignUsuarioRetornaListaTotal.FechafinAsignColumn] = global::System.Convert.DBNull;
+                this[this.tablespAsignUsuarioRetornaLista.FechafinAsignColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -811,22 +811,22 @@ namespace FrontEnd.DataSources_Forms {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class spAsignUsuarioRetornaListaTotalRowChangeEvent : global::System.EventArgs {
+        public class spAsignUsuarioRetornaListaRowChangeEvent : global::System.EventArgs {
             
-            private spAsignUsuarioRetornaListaTotalRow eventRow;
+            private spAsignUsuarioRetornaListaRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public spAsignUsuarioRetornaListaTotalRowChangeEvent(spAsignUsuarioRetornaListaTotalRow row, global::System.Data.DataRowAction action) {
+            public spAsignUsuarioRetornaListaRowChangeEvent(spAsignUsuarioRetornaListaRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public spAsignUsuarioRetornaListaTotalRow Row {
+            public spAsignUsuarioRetornaListaRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -842,7 +842,7 @@ namespace FrontEnd.DataSources_Forms {
         }
     }
 }
-namespace FrontEnd.DataSources_Forms.SEGTRANSADataSource_spListaTotalAsignacionesTableAdapters {
+namespace FrontEnd.DataSources_Reportes.SegtransaDataSetTableAdapters {
     
     
     /// <summary>
@@ -854,7 +854,7 @@ namespace FrontEnd.DataSources_Forms.SEGTRANSADataSource_spListaTotalAsignacione
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class spAsignUsuarioRetornaListaTotalTableAdapter : global::System.ComponentModel.Component {
+    public partial class spAsignUsuarioRetornaListaTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -868,7 +868,7 @@ namespace FrontEnd.DataSources_Forms.SEGTRANSADataSource_spListaTotalAsignacione
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public spAsignUsuarioRetornaListaTotalTableAdapter() {
+        public spAsignUsuarioRetornaListaTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -965,13 +965,13 @@ namespace FrontEnd.DataSources_Forms.SEGTRANSADataSource_spListaTotalAsignacione
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "spAsignUsuarioRetornaListaTotal";
+            tableMapping.DataSetTable = "spAsignUsuarioRetornaLista";
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Cedula", "Cedula");
             tableMapping.ColumnMappings.Add("Usuario", "Usuario");
             tableMapping.ColumnMappings.Add("Codigo", "Codigo");
-            tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
-            tableMapping.ColumnMappings.Add("FechaAsign", "FechaAsign");
+            tableMapping.ColumnMappings.Add("Activo", "Activo");
+            tableMapping.ColumnMappings.Add("FechaInicialAsign", "FechaInicialAsign");
             tableMapping.ColumnMappings.Add("FechafinAsign", "FechafinAsign");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -980,7 +980,7 @@ namespace FrontEnd.DataSources_Forms.SEGTRANSADataSource_spListaTotalAsignacione
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FrontEnd.Properties.Settings.Default.SEGTRANSAConnectionString;
+            this._connection.ConnectionString = "Data Source=VANNE;Initial Catalog=Segtransa;User ID=Jorge";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -989,17 +989,31 @@ namespace FrontEnd.DataSources_Forms.SEGTRANSADataSource_spListaTotalAsignacione
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.spAsignUsuarioRetornaListaTotal";
+            this._commandCollection[0].CommandText = "dbo.spAsignUsuarioRetornaLista";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.NVarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descripcion", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SEGTRANSADataSource_spListaTotalAsignaciones.spAsignUsuarioRetornaListaTotalDataTable dataTable) {
+        public virtual int Fill(SegtransaDataSet.spAsignUsuarioRetornaListaDataTable dataTable, string Nombre, string Descripcion) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Nombre == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Nombre));
+            }
+            if ((Descripcion == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Descripcion));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1011,9 +1025,21 @@ namespace FrontEnd.DataSources_Forms.SEGTRANSADataSource_spListaTotalAsignacione
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SEGTRANSADataSource_spListaTotalAsignaciones.spAsignUsuarioRetornaListaTotalDataTable GetData() {
+        public virtual SegtransaDataSet.spAsignUsuarioRetornaListaDataTable GetData(string Nombre, string Descripcion) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SEGTRANSADataSource_spListaTotalAsignaciones.spAsignUsuarioRetornaListaTotalDataTable dataTable = new SEGTRANSADataSource_spListaTotalAsignaciones.spAsignUsuarioRetornaListaTotalDataTable();
+            if ((Nombre == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Nombre));
+            }
+            if ((Descripcion == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Descripcion));
+            }
+            SegtransaDataSet.spAsignUsuarioRetornaListaDataTable dataTable = new SegtransaDataSet.spAsignUsuarioRetornaListaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1087,7 +1113,7 @@ namespace FrontEnd.DataSources_Forms.SEGTRANSADataSource_spListaTotalAsignacione
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(SEGTRANSADataSource_spListaTotalAsignaciones dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(SegtransaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1097,7 +1123,7 @@ namespace FrontEnd.DataSources_Forms.SEGTRANSADataSource_spListaTotalAsignacione
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(SEGTRANSADataSource_spListaTotalAsignaciones dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(SegtransaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1107,7 +1133,7 @@ namespace FrontEnd.DataSources_Forms.SEGTRANSADataSource_spListaTotalAsignacione
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(SEGTRANSADataSource_spListaTotalAsignaciones dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(SegtransaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1141,7 +1167,7 @@ namespace FrontEnd.DataSources_Forms.SEGTRANSADataSource_spListaTotalAsignacione
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(SEGTRANSADataSource_spListaTotalAsignaciones dataSet) {
+        public virtual int UpdateAll(SegtransaDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

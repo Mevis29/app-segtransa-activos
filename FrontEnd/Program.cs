@@ -1,4 +1,6 @@
-﻿using FrontEnd;
+﻿using Frontend;
+using FrontEnd;
+using FrontEnd.Formularios;
 using System;
 using System.Collections.Generic;
 using System.Linq;

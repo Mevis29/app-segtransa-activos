@@ -1,6 +1,6 @@
 ﻿namespace Frontend
 {
-    partial class FrmActivos_n
+    partial class frmMenuPrincipal_n
     {
         /// <summary>
         /// Required designer variable.
