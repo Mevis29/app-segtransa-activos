@@ -31,6 +31,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.opcionRptBitacora = new System.Windows.Forms.ToolStripMenuItem();
             this.optionRptReparaciones = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeActivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTitulo = new System.Windows.Forms.Label();
@@ -72,6 +75,27 @@
             this.optionRptReparaciones.Size = new System.Drawing.Size(184, 24);
             this.optionRptReparaciones.Text = "Reporte de reparaciones";
             this.optionRptReparaciones.Click += new System.EventHandler(this.optionRptReparaciones_Click);
+            // 
+            // reporteDeToolStripMenuItem
+            // 
+            this.reporteDeToolStripMenuItem.Name = "reporteDeToolStripMenuItem";
+            this.reporteDeToolStripMenuItem.Size = new System.Drawing.Size(188, 24);
+            this.reporteDeToolStripMenuItem.Text = "Reporte de asignaciones ";
+            this.reporteDeToolStripMenuItem.Click += new System.EventHandler(this.optionRptAsignaciones_Click);
+            // 
+            // reporteDeActivosToolStripMenuItem
+            // 
+            this.reporteDeActivosToolStripMenuItem.Name = "reporteDeActivosToolStripMenuItem";
+            this.reporteDeActivosToolStripMenuItem.Size = new System.Drawing.Size(145, 24);
+            this.reporteDeActivosToolStripMenuItem.Text = "Reporte de activos";
+            this.reporteDeActivosToolStripMenuItem.Click += new System.EventHandler(this.optionRptActivos_Click);
+            // 
+            // reporteDeUsuariosToolStripMenuItem
+            // 
+            this.reporteDeUsuariosToolStripMenuItem.Name = "reporteDeUsuariosToolStripMenuItem";
+            this.reporteDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(153, 24);
+            this.reporteDeUsuariosToolStripMenuItem.Text = "Reporte de usuarios";
+            this.reporteDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.optionRptUsuarios_Click);
             // 
             // cerrarToolStripMenuItem
             // 

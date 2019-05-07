@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace FrontEnd.Forms_new
 {
@@ -19,6 +20,7 @@ namespace FrontEnd.Forms_new
 
         private void frmRptActivo_Load(object sender, EventArgs e)
         {
+
             // TODO: This line of code loads data into the 'sEGTRANSADataSetActivo.sp_obtenerActivos' table. You can move, or remove it, as needed.
             this.sp_obtenerActivosTableAdapter.Fill(this.sEGTRANSADataSetActivo.sp_obtenerActivos);
             // TODO: This line of code loads data into the 'sEGTRANSADataSource_ACTIVOS.Activos' table. You can move, or remove it, as needed.
