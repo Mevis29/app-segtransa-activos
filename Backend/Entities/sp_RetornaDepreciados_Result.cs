@@ -11,9 +11,12 @@ namespace Backend.Entities
 {
     using System;
     
-    public partial class spUsuariosRetornaListaEmpleado_Result
+    public partial class sp_RetornaDepreciados_Result
     {
-        public int Id { get; set; }
-        public string Empleado { get; set; }
+        public string CodActivo { get; set; }
+        public string Descripcion { get; set; }
+        public Nullable<decimal> PrecioInicial { get; set; }
+        public Nullable<decimal> PrecioActual { get; set; }
+        public System.DateTime FechaDepreciacion { get; set; }
     }
 }

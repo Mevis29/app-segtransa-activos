@@ -338,6 +338,7 @@
         <Function Name="sp_RetornaDepreciacionId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idActivo" Type="int" Mode="In" />
         </Function>
+        <Function Name="sp_RetornaDepreciados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_RetornaReparacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="string_busqueda" Type="varchar(max)" Mode="In" />
         </Function>
@@ -990,6 +991,7 @@
           <FunctionImport Name="spAsignUsuarioRetornaListaId" ReturnType="Collection(SegtransaModel.spAsignUsuarioRetornaListaId_Result)">
           <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="sp_RetornaDepreciados" ReturnType="Collection(SegtransaModel.sp_RetornaDepreciados_Result)" />
         </EntityContainer>
         <ComplexType Name="sp_BuscarActivos_Result">
           <Property Type="Int32" Name="IdActivo" Nullable="false" />
@@ -1189,6 +1191,13 @@
           <Property Type="String" Name="Activo" Nullable="true" MaxLength="90" />
           <Property Type="String" Name="FechaInicialAsign" Nullable="true" MaxLength="4000" />
           <Property Type="String" Name="FechafinAsign" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="sp_RetornaDepreciados_Result">
+          <Property Type="String" Name="CodActivo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="90" />
+          <Property Type="Decimal" Name="PrecioInicial" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="PrecioActual" Nullable="true" Precision="19" />
+          <Property Type="DateTime" Name="FechaDepreciacion" Nullable="false" Precision="23" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1640,6 +1649,17 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_RetornaDepreciados" FunctionName="SegtransaModel.Store.sp_RetornaDepreciados">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SegtransaModel.sp_RetornaDepreciados_Result">
+                <ScalarProperty Name="CodActivo" ColumnName="CodActivo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="PrecioInicial" ColumnName="PrecioInicial" />
+                <ScalarProperty Name="PrecioActual" ColumnName="PrecioActual" />
+                <ScalarProperty Name="FechaDepreciacion" ColumnName="FechaDepreciacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1654,7 +1674,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

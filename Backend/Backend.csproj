@@ -208,6 +208,9 @@
     <Compile Include="Entities\sp_RetornaDepreciacion_Result.cs">
       <DependentUpon>Segtransa.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\sp_RetornaDepreciados_Result.cs">
+      <DependentUpon>Segtransa.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\sp_RetornaReparacion_Result.cs">
       <DependentUpon>Segtransa.tt</DependentUpon>
     </Compile>
