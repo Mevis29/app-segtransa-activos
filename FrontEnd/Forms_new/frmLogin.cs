@@ -70,9 +70,11 @@ namespace FrontEnd
                     /*user = usuariosDal.GetUsuario(id);*/
                     //showInfo("Password: " + tbxPassword.Text + " Encryptada: " + pass);
                     /*Validanado usuario*/
-                    if (usuariosDal.isRealUser(correo))
+                    try
                     {
-                        try {
+                        if (usuariosDal.isRealUser(correo))
+                        {
+
                             if (usuariosDal.isValidPassword(pass, correo))
                             {
                                 /*Validado usuario y password se le da acceso a un menu de opciones de acuerdo a su roll, admin o cualquier otro*/
@@ -125,21 +127,25 @@ namespace FrontEnd
                                     showInfo("Alcanzo el numero maximo de Intentos! \nPor favor comuniquese con el departamento de Informatica!");
                                     Close();
                                 }
-                            } } catch (Exception ex){
-                            Console.Out.WriteLine(ex.ToString());
+                            }
                         }
-                    }
-                    else
-                    {
-                        tbxUserId.Clear();
-                        tbxPassword.Clear();
-                        showInfo("Los datos ingresados no son correctos! \nPor favor ingrese sus datos!");
-                        if (contadorIntentos > 5)
+                        else
                         {
-                            showInfo("Alcanzo el numero maximo de Intentos! \nPor favor comuniquese con el departamento de Informatica!");
-                            Close();
+                            tbxUserId.Clear();
+                            tbxPassword.Clear();
+                            showInfo("Los datos ingresados no son correctos! \nPor favor ingrese sus datos!");
+                            if (contadorIntentos > 5)
+                            {
+                                showInfo("Alcanzo el numero maximo de Intentos! \nPor favor comuniquese con el departamento de Informatica!");
+                                Close();
+                            }
                         }
                     }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Verifique que las credenciales de usuario sean correctas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
                 } 
             }
         }

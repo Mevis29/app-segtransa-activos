@@ -30,16 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.sp_RetornaDepreciadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.depreciadosDS = new FrontEnd.DataSources_Reportes.DepreciadosDS();
             this.label2 = new System.Windows.Forms.Label();
             this.rpvDepreciados = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.depreciadosDS = new FrontEnd.DataSources_Reportes.DepreciadosDS();
             this.spRetornaDepreciadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sp_RetornaDepreciadosTableAdapter = new FrontEnd.DataSources_Reportes.DepreciadosDSTableAdapters.sp_RetornaDepreciadosTableAdapter();
-            this.sp_RetornaDepreciadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.sp_RetornaDepreciadosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.depreciadosDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spRetornaDepreciadosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sp_RetornaDepreciadosBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // sp_RetornaDepreciadosBindingSource
+            // 
+            this.sp_RetornaDepreciadosBindingSource.DataMember = "sp_RetornaDepreciados";
+            this.sp_RetornaDepreciadosBindingSource.DataSource = this.depreciadosDS;
+            // 
+            // depreciadosDS
+            // 
+            this.depreciadosDS.DataSetName = "DepreciadosDS";
+            this.depreciadosDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
             // 
@@ -65,11 +75,6 @@
             this.rpvDepreciados.Size = new System.Drawing.Size(786, 437);
             this.rpvDepreciados.TabIndex = 24;
             // 
-            // depreciadosDS
-            // 
-            this.depreciadosDS.DataSetName = "DepreciadosDS";
-            this.depreciadosDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // spRetornaDepreciadosBindingSource
             // 
             this.spRetornaDepreciadosBindingSource.DataMember = "sp_RetornaDepreciados";
@@ -79,11 +84,6 @@
             // 
             this.sp_RetornaDepreciadosTableAdapter.ClearBeforeFill = true;
             // 
-            // sp_RetornaDepreciadosBindingSource
-            // 
-            this.sp_RetornaDepreciadosBindingSource.DataMember = "sp_RetornaDepreciados";
-            this.sp_RetornaDepreciadosBindingSource.DataSource = this.depreciadosDS;
-            // 
             // frmRptDepreciados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -91,12 +91,13 @@
             this.ClientSize = new System.Drawing.Size(800, 495);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.rpvDepreciados);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmRptDepreciados";
             this.Text = "frmRptDepreciados";
             this.Load += new System.EventHandler(this.frmRptDepreciados_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.sp_RetornaDepreciadosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.depreciadosDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spRetornaDepreciadosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sp_RetornaDepreciadosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

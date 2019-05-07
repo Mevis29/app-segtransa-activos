@@ -69,7 +69,6 @@ namespace Frontend
                         depreciacionDAL.Update(depreciacion); //Se actualiza la depreciación correspondiente y se continúa con el recorrido.
                         depreciado = false;
                     }
-
                 }
             }
         }
