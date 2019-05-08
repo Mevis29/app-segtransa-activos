@@ -63,7 +63,7 @@
             this.lblAgregarUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblAgregarUsuario.AutoSize = true;
             this.lblAgregarUsuario.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgregarUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblAgregarUsuario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblAgregarUsuario.Location = new System.Drawing.Point(222, 18);
             this.lblAgregarUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAgregarUsuario.Name = "lblAgregarUsuario";
@@ -92,7 +92,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nombreLbl.AutoSize = true;
             this.nombreLbl.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombreLbl.ForeColor = System.Drawing.Color.White;
+            this.nombreLbl.ForeColor = System.Drawing.Color.Black;
             this.nombreLbl.Location = new System.Drawing.Point(19, 37);
             this.nombreLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nombreLbl.Name = "nombreLbl";
@@ -169,7 +169,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblApellido.AutoSize = true;
             this.lblApellido.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellido.ForeColor = System.Drawing.Color.White;
+            this.lblApellido.ForeColor = System.Drawing.Color.Black;
             this.lblApellido.Location = new System.Drawing.Point(19, 89);
             this.lblApellido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblApellido.Name = "lblApellido";
@@ -197,7 +197,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRol.AutoSize = true;
             this.lblRol.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRol.ForeColor = System.Drawing.Color.White;
+            this.lblRol.ForeColor = System.Drawing.Color.Black;
             this.lblRol.Location = new System.Drawing.Point(14, 34);
             this.lblRol.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRol.Name = "lblRol";
@@ -212,7 +212,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblContrasena.AutoSize = true;
             this.lblContrasena.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContrasena.ForeColor = System.Drawing.Color.White;
+            this.lblContrasena.ForeColor = System.Drawing.Color.Black;
             this.lblContrasena.Location = new System.Drawing.Point(14, 87);
             this.lblContrasena.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblContrasena.Name = "lblContrasena";
@@ -230,6 +230,7 @@
             this.txtContrasena.Location = new System.Drawing.Point(113, 84);
             this.txtContrasena.Margin = new System.Windows.Forms.Padding(2);
             this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.PasswordChar = '*';
             this.txtContrasena.Size = new System.Drawing.Size(136, 22);
             this.txtContrasena.TabIndex = 14;
             // 
@@ -251,7 +252,7 @@
             this.groupBoxDatosPers.Controls.Add(this.lblApellido);
             this.groupBoxDatosPers.Controls.Add(this.txtApellido1);
             this.groupBoxDatosPers.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxDatosPers.ForeColor = System.Drawing.Color.White;
+            this.groupBoxDatosPers.ForeColor = System.Drawing.Color.Black;
             this.groupBoxDatosPers.Location = new System.Drawing.Point(12, 62);
             this.groupBoxDatosPers.Name = "groupBoxDatosPers";
             this.groupBoxDatosPers.Size = new System.Drawing.Size(350, 320);
@@ -327,7 +328,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDireccion.AutoSize = true;
             this.lblDireccion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDireccion.ForeColor = System.Drawing.Color.White;
+            this.lblDireccion.ForeColor = System.Drawing.Color.Black;
             this.lblDireccion.Location = new System.Drawing.Point(12, 271);
             this.lblDireccion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDireccion.Name = "lblDireccion";
@@ -355,7 +356,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCorreo.AutoSize = true;
             this.lblCorreo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorreo.ForeColor = System.Drawing.Color.White;
+            this.lblCorreo.ForeColor = System.Drawing.Color.Black;
             this.lblCorreo.Location = new System.Drawing.Point(16, 231);
             this.lblCorreo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCorreo.Name = "lblCorreo";
@@ -383,7 +384,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefono.ForeColor = System.Drawing.Color.White;
+            this.lblTelefono.ForeColor = System.Drawing.Color.Black;
             this.lblTelefono.Location = new System.Drawing.Point(12, 185);
             this.lblTelefono.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTelefono.Name = "lblTelefono";
@@ -411,7 +412,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCedula.AutoSize = true;
             this.lblCedula.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCedula.ForeColor = System.Drawing.Color.White;
+            this.lblCedula.ForeColor = System.Drawing.Color.Black;
             this.lblCedula.Location = new System.Drawing.Point(12, 131);
             this.lblCedula.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCedula.Name = "lblCedula";
@@ -427,7 +428,7 @@
             this.groupBoxDatosAcceso.Controls.Add(this.txtContrasena);
             this.groupBoxDatosAcceso.Controls.Add(this.lblContrasena);
             this.groupBoxDatosAcceso.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxDatosAcceso.ForeColor = System.Drawing.Color.White;
+            this.groupBoxDatosAcceso.ForeColor = System.Drawing.Color.Black;
             this.groupBoxDatosAcceso.Location = new System.Drawing.Point(405, 62);
             this.groupBoxDatosAcceso.Name = "groupBoxDatosAcceso";
             this.groupBoxDatosAcceso.Size = new System.Drawing.Size(278, 137);
@@ -455,7 +456,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.CadetBlue;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(713, 407);
             this.Controls.Add(this.groupBoxDatosAcceso);
             this.Controls.Add(this.groupBoxDatosPers);
@@ -463,6 +464,7 @@
             this.Controls.Add(this.btnAgregaUsuario);
             this.Controls.Add(this.lblAgregarUsuario);
             this.Controls.Add(this.errorLbl);
+            this.ForeColor = System.Drawing.SystemColors.Control;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmUsuariosAgregar_n";
