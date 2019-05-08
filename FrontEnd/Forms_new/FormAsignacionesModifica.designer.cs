@@ -47,7 +47,7 @@
             this.lblActivo.Location = new System.Drawing.Point(35, 145);
             this.lblActivo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblActivo.Name = "lblActivo";
-            this.lblActivo.Size = new System.Drawing.Size(231, 24);
+            this.lblActivo.Size = new System.Drawing.Size(183, 18);
             this.lblActivo.TabIndex = 36;
             this.lblActivo.Text = "Modificar Activo Asociado:";
             // 
@@ -60,7 +60,7 @@
             this.cboActivo.Location = new System.Drawing.Point(35, 185);
             this.cboActivo.Margin = new System.Windows.Forms.Padding(4);
             this.cboActivo.Name = "cboActivo";
-            this.cboActivo.Size = new System.Drawing.Size(383, 30);
+            this.cboActivo.Size = new System.Drawing.Size(383, 26);
             this.cboActivo.TabIndex = 35;
             this.cboActivo.ValueMember = "Id";
             // 
@@ -95,7 +95,7 @@
             this.lblEmpleado.Location = new System.Drawing.Point(35, 45);
             this.lblEmpleado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmpleado.Name = "lblEmpleado";
-            this.lblEmpleado.Size = new System.Drawing.Size(203, 24);
+            this.lblEmpleado.Size = new System.Drawing.Size(157, 18);
             this.lblEmpleado.TabIndex = 32;
             this.lblEmpleado.Text = "Nombre de Empleado:";
             // 
@@ -108,7 +108,7 @@
             this.cboEmpleado.Location = new System.Drawing.Point(39, 82);
             this.cboEmpleado.Margin = new System.Windows.Forms.Padding(4);
             this.cboEmpleado.Name = "cboEmpleado";
-            this.cboEmpleado.Size = new System.Drawing.Size(379, 30);
+            this.cboEmpleado.Size = new System.Drawing.Size(379, 26);
             this.cboEmpleado.TabIndex = 31;
             this.cboEmpleado.ValueMember = "Id";
             // 
@@ -119,7 +119,7 @@
             this.dtpFechfinalAsig.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechfinalAsig.Location = new System.Drawing.Point(171, 334);
             this.dtpFechfinalAsig.Name = "dtpFechfinalAsig";
-            this.dtpFechfinalAsig.Size = new System.Drawing.Size(247, 28);
+            this.dtpFechfinalAsig.Size = new System.Drawing.Size(247, 24);
             this.dtpFechfinalAsig.TabIndex = 40;
             // 
             // dtpFechInicialAsig
@@ -129,7 +129,7 @@
             this.dtpFechInicialAsig.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechInicialAsig.Location = new System.Drawing.Point(171, 269);
             this.dtpFechInicialAsig.Name = "dtpFechInicialAsig";
-            this.dtpFechInicialAsig.Size = new System.Drawing.Size(247, 28);
+            this.dtpFechInicialAsig.Size = new System.Drawing.Size(247, 24);
             this.dtpFechInicialAsig.TabIndex = 39;
             // 
             // lblFechFinalAsg
@@ -139,7 +139,7 @@
             this.lblFechFinalAsg.Location = new System.Drawing.Point(35, 338);
             this.lblFechFinalAsg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFechFinalAsg.Name = "lblFechFinalAsg";
-            this.lblFechFinalAsg.Size = new System.Drawing.Size(115, 24);
+            this.lblFechFinalAsg.Size = new System.Drawing.Size(88, 18);
             this.lblFechFinalAsg.TabIndex = 38;
             this.lblFechFinalAsg.Text = "Fecha Final:";
             // 
@@ -150,14 +150,14 @@
             this.lblFechInicioAsg.Location = new System.Drawing.Point(35, 269);
             this.lblFechInicioAsg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFechInicioAsg.Name = "lblFechInicioAsg";
-            this.lblFechInicioAsg.Size = new System.Drawing.Size(118, 24);
+            this.lblFechInicioAsg.Size = new System.Drawing.Size(91, 18);
             this.lblFechInicioAsg.TabIndex = 37;
             this.lblFechInicioAsg.Text = "Fecha Inicio:";
             // 
             // FormAsignacionesModifica
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(468, 515);
             this.Controls.Add(this.dtpFechfinalAsig);
             this.Controls.Add(this.dtpFechInicialAsig);

@@ -48,6 +48,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblAsignaciones = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.grpBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
@@ -261,11 +262,26 @@
             this.Column7.ReadOnly = true;
             this.Column7.Width = 125;
             // 
+            // lblAsignaciones
+            // 
+            this.lblAsignaciones.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblAsignaciones.AutoSize = true;
+            this.lblAsignaciones.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAsignaciones.ForeColor = System.Drawing.Color.Navy;
+            this.lblAsignaciones.Location = new System.Drawing.Point(20, 45);
+            this.lblAsignaciones.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAsignaciones.Name = "lblAsignaciones";
+            this.lblAsignaciones.Size = new System.Drawing.Size(205, 36);
+            this.lblAsignaciones.TabIndex = 19;
+            this.lblAsignaciones.Text = "Asignaciones";
+            this.lblAsignaciones.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // FormAsignacionesLista
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(806, 518);
+            this.Controls.Add(this.lblAsignaciones);
             this.Controls.Add(this.dgvLista);
             this.Controls.Add(this.grpBuscar);
             this.Controls.Add(this.menuStrip);
@@ -307,5 +323,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.Label lblAsignaciones;
     }
 }

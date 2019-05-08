@@ -41,6 +41,7 @@ namespace FrontEnd.Forms_new
 
         private void cargarActivos()
         {
+
             this.tablaActivos.Columns[3].DefaultCellStyle.Format = "MM/dd/yyyy";
             this.tablaActivos.DataSource = null;
             this.tablaActivos.DataSource = activosDAL.obtenerActivos();

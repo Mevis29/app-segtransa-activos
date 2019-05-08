@@ -22,8 +22,8 @@ namespace FronEnd
         private IBitacoraDAL bitacoraDAL = new BitacoraImplDAL();
         private Bitacora bitacora = new Bitacora();
         private Usuarios Usuario;
-
-      public FrmUsuariosModificar_n()
+        CryptoEngine aux = new CryptoEngine();
+        public FrmUsuariosModificar_n()
         {
             InitializeComponent();
         }
@@ -63,7 +63,7 @@ namespace FronEnd
             CargaComboRoles();
             txtNombreA.Text = Usuario.Nombre;
             txtApellido1A.Text = Usuario.Apellido;
-            txtContrasenaA.Text = Usuario.Contrasena;
+            txtContrasenaA.Text = aux.Decrypt(Usuario.Contrasena);
             txtDireccionA.Text = Usuario.Direccion;
             txtCorreoA.Text = Usuario.Correo;
             txtTelefonoA.Text = Usuario.Telefono;
@@ -78,10 +78,11 @@ namespace FronEnd
         {
             try
             {
+                
                 String nombre = this.txtNombreA.Text;
                 String apellido = this.txtApellido1A.Text;
                 String cedula = txtCedulaA.Text;
-                String contrasena = txtContrasenaA.Text;
+                String contrasena = aux.Encrypt(txtContrasenaA.Text);
 
                 // Valida que los campos requeridos tengan valores (Nombre, Apellido y/o Cedula)
 
@@ -103,7 +104,7 @@ namespace FronEnd
                     this.lblErrorCed.Visible = false;
 
                     //Usuario = new Usuarios();
-
+                    
                     Usuario.Nombre = txtNombreA.Text;
                     Usuario.Apellido = txtApellido1A.Text;
                     Usuario.Telefono = txtTelefonoA.Text;
@@ -112,7 +113,23 @@ namespace FronEnd
                     Usuario.Direccion = txtDireccionA.Text;
                     Usuario.RolUsuario = (int)cmbBoxRolA.SelectedValue;
                     Usuario.RolUsuarios = (RolUsuarios)cmbBoxRolA.SelectedItem;
-                    Usuario.Contrasena = txtContrasenaA.Text;
+                    Usuario.Contrasena = aux.Encrypt(txtContrasenaA.Text);
+                    //Si la contrasena en el txtContrasenaA es igual a la del usuario en bd
+                    /*if (aux.Decrypt(txtContrasenaA.Text).Equals(aux.Decrypt(usuariosDAL.Getcorreo(Usuario.Correo).Contrasena)))
+                    {
+                        //mandarla como esta en el cuadro, ahi ya esta encriptada.
+                       
+                        Usuario.Contrasena = txtContrasenaA.Text;
+                    }
+                    else if (txtContrasenaA.Text.Equals(aux.Decrypt(usuariosDAL.Getcorreo(Usuario.Correo).Contrasena)))
+                    {
+                        Usuario.Contrasena = aux.Encrypt(txtContrasenaA.Text);
+                    }else
+                    {
+                        //Si no, significa que cambio. Entonces aplicamos encripcion y la guardamos.
+                        Usuario.Contrasena = aux.Encrypt(txtContrasenaA.Text);
+                    }*/
+
                     Usuario.EstadoUsuario = (int)cmbBoxEstadoA.SelectedValue;
                     Usuario.EstadoUsuarios = (EstadoUsuarios)cmbBoxEstadoA.SelectedItem;
                     

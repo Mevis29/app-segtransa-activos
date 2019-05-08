@@ -34,19 +34,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMiPerfil = new System.Windows.Forms.Label();
             this.tblMisActivos = new System.Windows.Forms.DataGridView();
-            this.btnSolicitarRep = new System.Windows.Forms.Button();
-            this.sEGTRANSADataSource_spActivosPorIdUsuario = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_spActivosPorIdUsuario();
-            this.spAsignUsuarioRetornaListaIdBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.spAsignUsuarioRetornaListaIdTableAdapter = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_spActivosPorIdUsuarioTableAdapters.spAsignUsuarioRetornaListaIdTableAdapter();
             this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechafinAsignDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaInicialAsignDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.spAsignUsuarioRetornaListaIdBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sEGTRANSADataSource_spActivosPorIdUsuario = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_spActivosPorIdUsuario();
+            this.btnSolicitarRep = new System.Windows.Forms.Button();
+            this.spAsignUsuarioRetornaListaIdTableAdapter = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_spActivosPorIdUsuarioTableAdapters.spAsignUsuarioRetornaListaIdTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tblMisActivos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSource_spActivosPorIdUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaIdBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSource_spActivosPorIdUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMiPerfil
@@ -124,29 +124,6 @@
             this.tblMisActivos.Size = new System.Drawing.Size(695, 326);
             this.tblMisActivos.TabIndex = 3;
             // 
-            // btnSolicitarRep
-            // 
-            this.btnSolicitarRep.Location = new System.Drawing.Point(601, 445);
-            this.btnSolicitarRep.Name = "btnSolicitarRep";
-            this.btnSolicitarRep.Size = new System.Drawing.Size(132, 37);
-            this.btnSolicitarRep.TabIndex = 4;
-            this.btnSolicitarRep.Text = "Solicitar Reparación";
-            this.btnSolicitarRep.UseVisualStyleBackColor = true;
-            // 
-            // sEGTRANSADataSource_spActivosPorIdUsuario
-            // 
-            this.sEGTRANSADataSource_spActivosPorIdUsuario.DataSetName = "SEGTRANSADataSource_spActivosPorIdUsuario";
-            this.sEGTRANSADataSource_spActivosPorIdUsuario.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // spAsignUsuarioRetornaListaIdBindingSource
-            // 
-            this.spAsignUsuarioRetornaListaIdBindingSource.DataMember = "spAsignUsuarioRetornaListaId";
-            this.spAsignUsuarioRetornaListaIdBindingSource.DataSource = this.sEGTRANSADataSource_spActivosPorIdUsuario;
-            // 
-            // spAsignUsuarioRetornaListaIdTableAdapter
-            // 
-            this.spAsignUsuarioRetornaListaIdTableAdapter.ClearBeforeFill = true;
-            // 
             // cedulaDataGridViewTextBoxColumn
             // 
             this.cedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula";
@@ -189,6 +166,31 @@
             this.fechaInicialAsignDataGridViewTextBoxColumn.Name = "fechaInicialAsignDataGridViewTextBoxColumn";
             this.fechaInicialAsignDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // spAsignUsuarioRetornaListaIdBindingSource
+            // 
+            this.spAsignUsuarioRetornaListaIdBindingSource.DataMember = "spAsignUsuarioRetornaListaId";
+            this.spAsignUsuarioRetornaListaIdBindingSource.DataSource = this.sEGTRANSADataSource_spActivosPorIdUsuario;
+            // 
+            // sEGTRANSADataSource_spActivosPorIdUsuario
+            // 
+            this.sEGTRANSADataSource_spActivosPorIdUsuario.DataSetName = "SEGTRANSADataSource_spActivosPorIdUsuario";
+            this.sEGTRANSADataSource_spActivosPorIdUsuario.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnSolicitarRep
+            // 
+            this.btnSolicitarRep.Location = new System.Drawing.Point(601, 445);
+            this.btnSolicitarRep.Name = "btnSolicitarRep";
+            this.btnSolicitarRep.Size = new System.Drawing.Size(132, 37);
+            this.btnSolicitarRep.TabIndex = 4;
+            this.btnSolicitarRep.Text = "Solicitar Reparación";
+            this.btnSolicitarRep.UseVisualStyleBackColor = true;
+            this.btnSolicitarRep.Visible = false;
+            this.btnSolicitarRep.Click += new System.EventHandler(this.btnSolicitarRep_Click);
+            // 
+            // spAsignUsuarioRetornaListaIdTableAdapter
+            // 
+            this.spAsignUsuarioRetornaListaIdTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmMisActivos_n
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,8 +205,8 @@
             this.Name = "FrmMisActivos_n";
             this.Load += new System.EventHandler(this.FrmMisActivos_n_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tblMisActivos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSource_spActivosPorIdUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spAsignUsuarioRetornaListaIdBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSource_spActivosPorIdUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

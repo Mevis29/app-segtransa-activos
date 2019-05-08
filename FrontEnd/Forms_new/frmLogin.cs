@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Backend.DAL;
@@ -40,9 +41,9 @@ namespace FrontEnd
             int id = -1;
             string pass;
             string correo;
-            if ((string.IsNullOrEmpty(tbxUserId.Text) || string.IsNullOrWhiteSpace(tbxUserId.Text)))
+            if ((string.IsNullOrEmpty(tbxUserId.Text) || string.IsNullOrWhiteSpace(tbxUserId.Text) || !validarCorreo()))
             {
-                showInfo("El campo de Id usuario vacio o con formato equivocado! \nPor favor ingrese unicamente numeros!");
+                showInfo("El campo de usuario vacio o con formato equivocado! \nPor favor ingrese su correo!");
                 tbxUserId.Clear();
                 if (contadorIntentos > 5)
                 {
@@ -77,10 +78,20 @@ namespace FrontEnd
 
                             if (usuariosDal.isValidPassword(pass, correo))
                             {
+                                string rolDescripcion= string.Empty;
                                 /*Validado usuario y password se le da acceso a un menu de opciones de acuerdo a su roll, admin o cualquier otro*/
                                 user = usuariosDal.Getcorreo(correo);
                                 ValoresAplicacion.correoUsuario = user.Correo;
                                 ValoresAplicacion.idUsuario = user.IdUsuario;
+                                if (user.RolUsuario==1)
+                                {
+                                    rolDescripcion = "Administrador";
+                                }
+                                else if (user.RolUsuario == 2)
+                                {
+                                    rolDescripcion = "Empleado";
+                                }
+                                ValoresAplicacion.rolUsuario = rolDescripcion;
 
                                 //Actualiza el campo del ultimo Login
 
@@ -148,6 +159,12 @@ namespace FrontEnd
                     
                 } 
             }
+        }
+
+        private bool validarCorreo()
+        {
+            bool isEmail = Regex.IsMatch(tbxUserId.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
+            return isEmail;
         }
 
         private void tbxUserId_Enter(object sender, EventArgs e)

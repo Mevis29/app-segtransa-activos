@@ -2,6 +2,8 @@
 using Backend.Entities;
 using BackEnd.DAL;
 using FronEnd;
+using FrontEnd.Clases;
+using FrontEnd.Forms_new;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,6 +45,11 @@ namespace Frontend
             columnFechaFin.Width = 160;
             cargarMisActivos();
 
+            if (ValoresAplicacion.rolUsuario.Equals("Administrador"))
+            {
+                btnSolicitarRep.Visible = true;
+            }
+
         }
 
         private void cargarMisActivos()
@@ -61,7 +68,11 @@ namespace Frontend
             }
         }
 
-    
+        private void btnSolicitarRep_Click(object sender, EventArgs e)
+        {
+            frmReparacionesAgregar formReparacionesInsertar = new frmReparacionesAgregar();
+           
+        }
     }
 }
 

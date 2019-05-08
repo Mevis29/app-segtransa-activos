@@ -152,9 +152,9 @@ public class UsuariosImplDAL : IUsuariosDAL
     public bool isValidPassword(string passUser, string correo)
     {
         CryptoEngine cryptoEngine = new CryptoEngine();
-        string passDecrypted = cryptoEngine.Decrypt(passUser);
+       // string passDecrypted = cryptoEngine.Decrypt(passUser);
         bool valid = false;
-        if (this.Getcorreo(correo).Contrasena.Equals(passDecrypted))
+        if (this.Getcorreo(correo).Contrasena.Equals(passUser))
         {
             valid = true;
         }
