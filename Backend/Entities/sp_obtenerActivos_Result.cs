@@ -23,6 +23,6 @@ namespace Backend.Entities
         public Nullable<int> Proveedor { get; set; }
         public Nullable<int> EstadoActivo { get; set; }
         public Nullable<int> Garantia { get; set; }
-        public Nullable<int> MesesDepreciacion { get; set; }
+        public int MesesDepreciacion { get; set; }
     }
 }

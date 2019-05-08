@@ -239,6 +239,7 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Entities\Segtransa.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -251,6 +252,5 @@
       <LastGenOutput>Segtransa.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
