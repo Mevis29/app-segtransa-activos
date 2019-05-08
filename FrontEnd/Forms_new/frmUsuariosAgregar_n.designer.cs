@@ -122,11 +122,11 @@
             // cancelarBtn
             // 
             this.cancelarBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelarBtn.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.cancelarBtn.BackColor = System.Drawing.Color.DarkGray;
             this.cancelarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cancelarBtn.FlatAppearance.BorderSize = 0;
             this.cancelarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelarBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelarBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelarBtn.ForeColor = System.Drawing.Color.White;
             this.cancelarBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cancelarBtn.Location = new System.Drawing.Point(586, 355);

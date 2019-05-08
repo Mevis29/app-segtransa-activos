@@ -107,8 +107,9 @@ public class UsuariosImplDAL : IUsuariosDAL
             using (context = new BDContext())
             {
                 result = (from c in context.Usuarios
-                          where c.Correo == correo
-                          select c).First();
+                          where c.Correo.Equals(correo)
+                          select c).FirstOrDefault();
+                          //select c).First();
             }
             return result;
         }
@@ -143,7 +144,7 @@ public class UsuariosImplDAL : IUsuariosDAL
         bool real = false;
         Usuarios usuarios = new Usuarios();
         usuarios = Getcorreo(correo);
-        if (usuarios.Correo == correo)
+        if (usuarios.Correo.Equals(correo))
         {
             real = true;
         }

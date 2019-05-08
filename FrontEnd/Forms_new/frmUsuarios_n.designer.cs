@@ -34,15 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblUsuarios = new System.Windows.Forms.Label();
             this.tblDatosUsuarios = new System.Windows.Forms.DataGridView();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sEGTRANSADataSource_USUARIOS = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_USUARIOS();
-            this.sEGTRANSADataSourceUSUARIOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usuariosTableAdapter = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_USUARIOSTableAdapters.UsuariosTableAdapter();
-            this.txtBusquedaU = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnUsuarioModificar = new System.Windows.Forms.Button();
-            this.btnUsuarioEliminar = new System.Windows.Forms.Button();
-            this.btnUsuarioAgregar = new System.Windows.Forms.Button();
             this.idUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +44,15 @@
             this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaCreacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaUltLoginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sEGTRANSADataSource_USUARIOS = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_USUARIOS();
+            this.sEGTRANSADataSourceUSUARIOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuariosTableAdapter = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_USUARIOSTableAdapters.UsuariosTableAdapter();
+            this.txtBusquedaU = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnUsuarioModificar = new System.Windows.Forms.Button();
+            this.btnUsuarioEliminar = new System.Windows.Forms.Button();
+            this.btnUsuarioAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSource_USUARIOS)).BeginInit();
@@ -64,12 +64,12 @@
             // 
             this.lblUsuarios.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblUsuarios.AutoSize = true;
-            this.lblUsuarios.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuarios.ForeColor = System.Drawing.Color.Navy;
-            this.lblUsuarios.Location = new System.Drawing.Point(32, 21);
+            this.lblUsuarios.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuarios.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUsuarios.Location = new System.Drawing.Point(42, 18);
             this.lblUsuarios.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsuarios.Name = "lblUsuarios";
-            this.lblUsuarios.Size = new System.Drawing.Size(118, 33);
+            this.lblUsuarios.Size = new System.Drawing.Size(115, 34);
             this.lblUsuarios.TabIndex = 2;
             this.lblUsuarios.Text = "Usuarios";
             this.lblUsuarios.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -134,6 +134,76 @@
             this.tblDatosUsuarios.Size = new System.Drawing.Size(703, 326);
             this.tblDatosUsuarios.TabIndex = 4;
             // 
+            // idUsuarioDataGridViewTextBoxColumn
+            // 
+            this.idUsuarioDataGridViewTextBoxColumn.DataPropertyName = "IdUsuario";
+            this.idUsuarioDataGridViewTextBoxColumn.HeaderText = "Id Usuario";
+            this.idUsuarioDataGridViewTextBoxColumn.Name = "idUsuarioDataGridViewTextBoxColumn";
+            this.idUsuarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            this.apellidoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cedulaDataGridViewTextBoxColumn
+            // 
+            this.cedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula";
+            this.cedulaDataGridViewTextBoxColumn.HeaderText = "Cédula";
+            this.cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
+            this.cedulaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // contrasenaDataGridViewTextBoxColumn
+            // 
+            this.contrasenaDataGridViewTextBoxColumn.DataPropertyName = "Contrasena";
+            this.contrasenaDataGridViewTextBoxColumn.HeaderText = "Contraseña";
+            this.contrasenaDataGridViewTextBoxColumn.Name = "contrasenaDataGridViewTextBoxColumn";
+            this.contrasenaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Teléfono";
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // correoDataGridViewTextBoxColumn
+            // 
+            this.correoDataGridViewTextBoxColumn.DataPropertyName = "Correo";
+            this.correoDataGridViewTextBoxColumn.HeaderText = "Correo";
+            this.correoDataGridViewTextBoxColumn.Name = "correoDataGridViewTextBoxColumn";
+            this.correoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // direccionDataGridViewTextBoxColumn
+            // 
+            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
+            this.direccionDataGridViewTextBoxColumn.HeaderText = "Dirección";
+            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaCreacionDataGridViewTextBoxColumn
+            // 
+            this.fechaCreacionDataGridViewTextBoxColumn.DataPropertyName = "FechaCreacion";
+            this.fechaCreacionDataGridViewTextBoxColumn.HeaderText = "Fecha de Creación";
+            this.fechaCreacionDataGridViewTextBoxColumn.Name = "fechaCreacionDataGridViewTextBoxColumn";
+            this.fechaCreacionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaUltLoginDataGridViewTextBoxColumn
+            // 
+            this.fechaUltLoginDataGridViewTextBoxColumn.DataPropertyName = "FechaUltLogin";
+            this.fechaUltLoginDataGridViewTextBoxColumn.HeaderText = "Última Visita";
+            this.fechaUltLoginDataGridViewTextBoxColumn.Name = "fechaUltLoginDataGridViewTextBoxColumn";
+            this.fechaUltLoginDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // usuariosBindingSource
             // 
             this.usuariosBindingSource.DataMember = "Usuarios";
@@ -157,6 +227,7 @@
             // 
             this.txtBusquedaU.Location = new System.Drawing.Point(489, 33);
             this.txtBusquedaU.Name = "txtBusquedaU";
+            this.txtBusquedaU.ReadOnly = true;
             this.txtBusquedaU.Size = new System.Drawing.Size(189, 20);
             this.txtBusquedaU.TabIndex = 10;
             this.txtBusquedaU.TextChanged += new System.EventHandler(this.txtBusquedaU_TextChanged);
@@ -232,76 +303,6 @@
             this.btnUsuarioAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUsuarioAgregar.UseVisualStyleBackColor = false;
             this.btnUsuarioAgregar.Click += new System.EventHandler(this.btnUsuarioAgregar_Click);
-            // 
-            // idUsuarioDataGridViewTextBoxColumn
-            // 
-            this.idUsuarioDataGridViewTextBoxColumn.DataPropertyName = "IdUsuario";
-            this.idUsuarioDataGridViewTextBoxColumn.HeaderText = "Id Usuario";
-            this.idUsuarioDataGridViewTextBoxColumn.Name = "idUsuarioDataGridViewTextBoxColumn";
-            this.idUsuarioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // apellidoDataGridViewTextBoxColumn
-            // 
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            this.apellidoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cedulaDataGridViewTextBoxColumn
-            // 
-            this.cedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula";
-            this.cedulaDataGridViewTextBoxColumn.HeaderText = "Cédula";
-            this.cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
-            this.cedulaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // contrasenaDataGridViewTextBoxColumn
-            // 
-            this.contrasenaDataGridViewTextBoxColumn.DataPropertyName = "Contrasena";
-            this.contrasenaDataGridViewTextBoxColumn.HeaderText = "Contraseña";
-            this.contrasenaDataGridViewTextBoxColumn.Name = "contrasenaDataGridViewTextBoxColumn";
-            this.contrasenaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Teléfono";
-            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // correoDataGridViewTextBoxColumn
-            // 
-            this.correoDataGridViewTextBoxColumn.DataPropertyName = "Correo";
-            this.correoDataGridViewTextBoxColumn.HeaderText = "Correo";
-            this.correoDataGridViewTextBoxColumn.Name = "correoDataGridViewTextBoxColumn";
-            this.correoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // direccionDataGridViewTextBoxColumn
-            // 
-            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
-            this.direccionDataGridViewTextBoxColumn.HeaderText = "Dirección";
-            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
-            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaCreacionDataGridViewTextBoxColumn
-            // 
-            this.fechaCreacionDataGridViewTextBoxColumn.DataPropertyName = "FechaCreacion";
-            this.fechaCreacionDataGridViewTextBoxColumn.HeaderText = "Fecha de Creación";
-            this.fechaCreacionDataGridViewTextBoxColumn.Name = "fechaCreacionDataGridViewTextBoxColumn";
-            this.fechaCreacionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaUltLoginDataGridViewTextBoxColumn
-            // 
-            this.fechaUltLoginDataGridViewTextBoxColumn.DataPropertyName = "FechaUltLogin";
-            this.fechaUltLoginDataGridViewTextBoxColumn.HeaderText = "Última Visita";
-            this.fechaUltLoginDataGridViewTextBoxColumn.Name = "fechaUltLoginDataGridViewTextBoxColumn";
-            this.fechaUltLoginDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FrmUsuarios_n
             // 

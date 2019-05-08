@@ -310,6 +310,23 @@ namespace Backend.Entities
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ModificaDepreciacion", activoParameter, fechaDepreciacionParameter, valorParameter);
         }
     
+        public virtual int sp_modificaReparacion(Nullable<int> idReparacion, Nullable<System.DateTime> fechaInicialReparacion, Nullable<System.DateTime> fechaFinalReparacion)
+        {
+            var idReparacionParameter = idReparacion.HasValue ?
+                new ObjectParameter("idReparacion", idReparacion) :
+                new ObjectParameter("idReparacion", typeof(int));
+    
+            var fechaInicialReparacionParameter = fechaInicialReparacion.HasValue ?
+                new ObjectParameter("fechaInicialReparacion", fechaInicialReparacion) :
+                new ObjectParameter("fechaInicialReparacion", typeof(System.DateTime));
+    
+            var fechaFinalReparacionParameter = fechaFinalReparacion.HasValue ?
+                new ObjectParameter("fechaFinalReparacion", fechaFinalReparacion) :
+                new ObjectParameter("fechaFinalReparacion", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_modificaReparacion", idReparacionParameter, fechaInicialReparacionParameter, fechaFinalReparacionParameter);
+        }
+    
         public virtual ObjectResult<sp_mostrarActivo_Result> sp_mostrarActivo()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_mostrarActivo_Result>("sp_mostrarActivo");
@@ -363,6 +380,11 @@ namespace Backend.Entities
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaDepreciacionId_Result>("sp_RetornaDepreciacionId", idActivoParameter);
         }
     
+        public virtual ObjectResult<sp_RetornaDepreciados_Result> sp_RetornaDepreciados()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaDepreciados_Result>("sp_RetornaDepreciados");
+        }
+    
         public virtual ObjectResult<sp_RetornaReparacion_Result> sp_RetornaReparacion(string string_busqueda)
         {
             var string_busquedaParameter = string_busqueda != null ?
@@ -370,6 +392,141 @@ namespace Backend.Entities
                 new ObjectParameter("string_busqueda", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaReparacion_Result>("sp_RetornaReparacion", string_busquedaParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> spActivosCalcularCant(Nullable<int> idUsuario)
+        {
+            var idUsuarioParameter = idUsuario.HasValue ?
+                new ObjectParameter("IdUsuario", idUsuario) :
+                new ObjectParameter("IdUsuario", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("spActivosCalcularCant", idUsuarioParameter);
+        }
+    
+        public virtual ObjectResult<spActivosRetornaDatosId_Result> spActivosRetornaDatosId(Nullable<int> idActivo)
+        {
+            var idActivoParameter = idActivo.HasValue ?
+                new ObjectParameter("IdActivo", idActivo) :
+                new ObjectParameter("IdActivo", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spActivosRetornaDatosId_Result>("spActivosRetornaDatosId", idActivoParameter);
+        }
+    
+        public virtual ObjectResult<spActivosRetornaLista_Result> spActivosRetornaLista(string codigo, string descripcion)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            var descripcionParameter = descripcion != null ?
+                new ObjectParameter("descripcion", descripcion) :
+                new ObjectParameter("descripcion", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spActivosRetornaLista_Result>("spActivosRetornaLista", codigoParameter, descripcionParameter);
+        }
+    
+        public virtual ObjectResult<spActivosRetornaListaId_Result> spActivosRetornaListaId(Nullable<int> idActivo)
+        {
+            var idActivoParameter = idActivo.HasValue ?
+                new ObjectParameter("IdActivo", idActivo) :
+                new ObjectParameter("IdActivo", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spActivosRetornaListaId_Result>("spActivosRetornaListaId", idActivoParameter);
+        }
+    
+        public virtual ObjectResult<spActivosRetornaListaResumen_Result> spActivosRetornaListaResumen(Nullable<int> idActivo)
+        {
+            var idActivoParameter = idActivo.HasValue ?
+                new ObjectParameter("IdActivo", idActivo) :
+                new ObjectParameter("IdActivo", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spActivosRetornaListaResumen_Result>("spActivosRetornaListaResumen", idActivoParameter);
+        }
+    
+        public virtual int spAsignUsuarioEliminaDatos(Nullable<int> idAsignacion)
+        {
+            var idAsignacionParameter = idAsignacion.HasValue ?
+                new ObjectParameter("IdAsignacion", idAsignacion) :
+                new ObjectParameter("IdAsignacion", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spAsignUsuarioEliminaDatos", idAsignacionParameter);
+        }
+    
+        public virtual int spAsignUsuarioInsertaDatos(Nullable<int> idUsuario, Nullable<int> idActivo, Nullable<System.DateTime> fechaInicialAsignacion, Nullable<System.DateTime> fechafinalAsignacion)
+        {
+            var idUsuarioParameter = idUsuario.HasValue ?
+                new ObjectParameter("IdUsuario", idUsuario) :
+                new ObjectParameter("IdUsuario", typeof(int));
+    
+            var idActivoParameter = idActivo.HasValue ?
+                new ObjectParameter("IdActivo", idActivo) :
+                new ObjectParameter("IdActivo", typeof(int));
+    
+            var fechaInicialAsignacionParameter = fechaInicialAsignacion.HasValue ?
+                new ObjectParameter("FechaInicialAsignacion", fechaInicialAsignacion) :
+                new ObjectParameter("FechaInicialAsignacion", typeof(System.DateTime));
+    
+            var fechafinalAsignacionParameter = fechafinalAsignacion.HasValue ?
+                new ObjectParameter("FechafinalAsignacion", fechafinalAsignacion) :
+                new ObjectParameter("FechafinalAsignacion", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spAsignUsuarioInsertaDatos", idUsuarioParameter, idActivoParameter, fechaInicialAsignacionParameter, fechafinalAsignacionParameter);
+        }
+    
+        public virtual int spAsignUsuarioModificaDatos(Nullable<int> idAsignacion, Nullable<int> idUsuario, Nullable<int> idActivo, Nullable<System.DateTime> fechaInicialAsignacion, Nullable<System.DateTime> fechafinalAsignacion)
+        {
+            var idAsignacionParameter = idAsignacion.HasValue ?
+                new ObjectParameter("IdAsignacion", idAsignacion) :
+                new ObjectParameter("IdAsignacion", typeof(int));
+    
+            var idUsuarioParameter = idUsuario.HasValue ?
+                new ObjectParameter("IdUsuario", idUsuario) :
+                new ObjectParameter("IdUsuario", typeof(int));
+    
+            var idActivoParameter = idActivo.HasValue ?
+                new ObjectParameter("IdActivo", idActivo) :
+                new ObjectParameter("IdActivo", typeof(int));
+    
+            var fechaInicialAsignacionParameter = fechaInicialAsignacion.HasValue ?
+                new ObjectParameter("FechaInicialAsignacion", fechaInicialAsignacion) :
+                new ObjectParameter("FechaInicialAsignacion", typeof(System.DateTime));
+    
+            var fechafinalAsignacionParameter = fechafinalAsignacion.HasValue ?
+                new ObjectParameter("FechafinalAsignacion", fechafinalAsignacion) :
+                new ObjectParameter("FechafinalAsignacion", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spAsignUsuarioModificaDatos", idAsignacionParameter, idUsuarioParameter, idActivoParameter, fechaInicialAsignacionParameter, fechafinalAsignacionParameter);
+        }
+    
+        public virtual ObjectResult<spAsignUsuarioRetornaDatosId_Result> spAsignUsuarioRetornaDatosId(Nullable<int> idAsignacion)
+        {
+            var idAsignacionParameter = idAsignacion.HasValue ?
+                new ObjectParameter("IdAsignacion", idAsignacion) :
+                new ObjectParameter("IdAsignacion", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spAsignUsuarioRetornaDatosId_Result>("spAsignUsuarioRetornaDatosId", idAsignacionParameter);
+        }
+    
+        public virtual ObjectResult<spAsignUsuarioRetornaLista_Result> spAsignUsuarioRetornaLista(string nombre, string descripcion)
+        {
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var descripcionParameter = descripcion != null ?
+                new ObjectParameter("Descripcion", descripcion) :
+                new ObjectParameter("Descripcion", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spAsignUsuarioRetornaLista_Result>("spAsignUsuarioRetornaLista", nombreParameter, descripcionParameter);
+        }
+    
+        public virtual ObjectResult<spAsignUsuarioRetornaListaId_Result> spAsignUsuarioRetornaListaId(Nullable<int> idUsuario)
+        {
+            var idUsuarioParameter = idUsuario.HasValue ?
+                new ObjectParameter("IdUsuario", idUsuario) :
+                new ObjectParameter("IdUsuario", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spAsignUsuarioRetornaListaId_Result>("spAsignUsuarioRetornaListaId", idUsuarioParameter);
         }
     
         public virtual ObjectResult<spEstadoActivosRetornaLista_Result> spEstadoActivosRetornaLista()
@@ -554,163 +711,6 @@ namespace Backend.Entities
                 new ObjectParameter("IdUsuario", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spUsuariosRetornaListaId_Result>("spUsuariosRetornaListaId", idUsuarioParameter);
-        }
-    
-        public virtual int sp_modificaReparacion(Nullable<int> idReparacion, Nullable<System.DateTime> fechaInicialReparacion, Nullable<System.DateTime> fechaFinalReparacion)
-        {
-            var idReparacionParameter = idReparacion.HasValue ?
-                new ObjectParameter("idReparacion", idReparacion) :
-                new ObjectParameter("idReparacion", typeof(int));
-    
-            var fechaInicialReparacionParameter = fechaInicialReparacion.HasValue ?
-                new ObjectParameter("fechaInicialReparacion", fechaInicialReparacion) :
-                new ObjectParameter("fechaInicialReparacion", typeof(System.DateTime));
-    
-            var fechaFinalReparacionParameter = fechaFinalReparacion.HasValue ?
-                new ObjectParameter("fechaFinalReparacion", fechaFinalReparacion) :
-                new ObjectParameter("fechaFinalReparacion", typeof(System.DateTime));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_modificaReparacion", idReparacionParameter, fechaInicialReparacionParameter, fechaFinalReparacionParameter);
-        }
-    
-        public virtual ObjectResult<Nullable<int>> spActivosCalcularCant(Nullable<int> idUsuario)
-        {
-            var idUsuarioParameter = idUsuario.HasValue ?
-                new ObjectParameter("IdUsuario", idUsuario) :
-                new ObjectParameter("IdUsuario", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("spActivosCalcularCant", idUsuarioParameter);
-        }
-    
-        public virtual ObjectResult<spActivosRetornaDatosId_Result> spActivosRetornaDatosId(Nullable<int> idActivo)
-        {
-            var idActivoParameter = idActivo.HasValue ?
-                new ObjectParameter("IdActivo", idActivo) :
-                new ObjectParameter("IdActivo", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spActivosRetornaDatosId_Result>("spActivosRetornaDatosId", idActivoParameter);
-        }
-    
-        public virtual ObjectResult<spActivosRetornaLista_Result> spActivosRetornaLista(string codigo, string descripcion)
-        {
-            var codigoParameter = codigo != null ?
-                new ObjectParameter("codigo", codigo) :
-                new ObjectParameter("codigo", typeof(string));
-    
-            var descripcionParameter = descripcion != null ?
-                new ObjectParameter("descripcion", descripcion) :
-                new ObjectParameter("descripcion", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spActivosRetornaLista_Result>("spActivosRetornaLista", codigoParameter, descripcionParameter);
-        }
-    
-        public virtual ObjectResult<spActivosRetornaListaId_Result> spActivosRetornaListaId(Nullable<int> idActivo)
-        {
-            var idActivoParameter = idActivo.HasValue ?
-                new ObjectParameter("IdActivo", idActivo) :
-                new ObjectParameter("IdActivo", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spActivosRetornaListaId_Result>("spActivosRetornaListaId", idActivoParameter);
-        }
-    
-        public virtual ObjectResult<spActivosRetornaListaResumen_Result> spActivosRetornaListaResumen(Nullable<int> idActivo)
-        {
-            var idActivoParameter = idActivo.HasValue ?
-                new ObjectParameter("IdActivo", idActivo) :
-                new ObjectParameter("IdActivo", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spActivosRetornaListaResumen_Result>("spActivosRetornaListaResumen", idActivoParameter);
-        }
-    
-        public virtual int spAsignUsuarioEliminaDatos(Nullable<int> idAsignacion)
-        {
-            var idAsignacionParameter = idAsignacion.HasValue ?
-                new ObjectParameter("IdAsignacion", idAsignacion) :
-                new ObjectParameter("IdAsignacion", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spAsignUsuarioEliminaDatos", idAsignacionParameter);
-        }
-    
-        public virtual int spAsignUsuarioInsertaDatos(Nullable<int> idUsuario, Nullable<int> idActivo, Nullable<System.DateTime> fechaInicialAsignacion, Nullable<System.DateTime> fechafinalAsignacion)
-        {
-            var idUsuarioParameter = idUsuario.HasValue ?
-                new ObjectParameter("IdUsuario", idUsuario) :
-                new ObjectParameter("IdUsuario", typeof(int));
-    
-            var idActivoParameter = idActivo.HasValue ?
-                new ObjectParameter("IdActivo", idActivo) :
-                new ObjectParameter("IdActivo", typeof(int));
-    
-            var fechaInicialAsignacionParameter = fechaInicialAsignacion.HasValue ?
-                new ObjectParameter("FechaInicialAsignacion", fechaInicialAsignacion) :
-                new ObjectParameter("FechaInicialAsignacion", typeof(System.DateTime));
-    
-            var fechafinalAsignacionParameter = fechafinalAsignacion.HasValue ?
-                new ObjectParameter("FechafinalAsignacion", fechafinalAsignacion) :
-                new ObjectParameter("FechafinalAsignacion", typeof(System.DateTime));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spAsignUsuarioInsertaDatos", idUsuarioParameter, idActivoParameter, fechaInicialAsignacionParameter, fechafinalAsignacionParameter);
-        }
-    
-        public virtual int spAsignUsuarioModificaDatos(Nullable<int> idAsignacion, Nullable<int> idUsuario, Nullable<int> idActivo, Nullable<System.DateTime> fechaInicialAsignacion, Nullable<System.DateTime> fechafinalAsignacion)
-        {
-            var idAsignacionParameter = idAsignacion.HasValue ?
-                new ObjectParameter("IdAsignacion", idAsignacion) :
-                new ObjectParameter("IdAsignacion", typeof(int));
-    
-            var idUsuarioParameter = idUsuario.HasValue ?
-                new ObjectParameter("IdUsuario", idUsuario) :
-                new ObjectParameter("IdUsuario", typeof(int));
-    
-            var idActivoParameter = idActivo.HasValue ?
-                new ObjectParameter("IdActivo", idActivo) :
-                new ObjectParameter("IdActivo", typeof(int));
-    
-            var fechaInicialAsignacionParameter = fechaInicialAsignacion.HasValue ?
-                new ObjectParameter("FechaInicialAsignacion", fechaInicialAsignacion) :
-                new ObjectParameter("FechaInicialAsignacion", typeof(System.DateTime));
-    
-            var fechafinalAsignacionParameter = fechafinalAsignacion.HasValue ?
-                new ObjectParameter("FechafinalAsignacion", fechafinalAsignacion) :
-                new ObjectParameter("FechafinalAsignacion", typeof(System.DateTime));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spAsignUsuarioModificaDatos", idAsignacionParameter, idUsuarioParameter, idActivoParameter, fechaInicialAsignacionParameter, fechafinalAsignacionParameter);
-        }
-    
-        public virtual ObjectResult<spAsignUsuarioRetornaDatosId_Result> spAsignUsuarioRetornaDatosId(Nullable<int> idAsignacion)
-        {
-            var idAsignacionParameter = idAsignacion.HasValue ?
-                new ObjectParameter("IdAsignacion", idAsignacion) :
-                new ObjectParameter("IdAsignacion", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spAsignUsuarioRetornaDatosId_Result>("spAsignUsuarioRetornaDatosId", idAsignacionParameter);
-        }
-    
-        public virtual ObjectResult<spAsignUsuarioRetornaLista_Result> spAsignUsuarioRetornaLista(string nombre, string descripcion)
-        {
-            var nombreParameter = nombre != null ?
-                new ObjectParameter("Nombre", nombre) :
-                new ObjectParameter("Nombre", typeof(string));
-    
-            var descripcionParameter = descripcion != null ?
-                new ObjectParameter("Descripcion", descripcion) :
-                new ObjectParameter("Descripcion", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spAsignUsuarioRetornaLista_Result>("spAsignUsuarioRetornaLista", nombreParameter, descripcionParameter);
-        }
-    
-        public virtual ObjectResult<spAsignUsuarioRetornaListaId_Result> spAsignUsuarioRetornaListaId(Nullable<int> idUsuario)
-        {
-            var idUsuarioParameter = idUsuario.HasValue ?
-                new ObjectParameter("IdUsuario", idUsuario) :
-                new ObjectParameter("IdUsuario", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spAsignUsuarioRetornaListaId_Result>("spAsignUsuarioRetornaListaId", idUsuarioParameter);
-        }
-    
-        public virtual ObjectResult<sp_RetornaDepreciados_Result> sp_RetornaDepreciados()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaDepreciados_Result>("sp_RetornaDepreciados");
         }
     }
 }
