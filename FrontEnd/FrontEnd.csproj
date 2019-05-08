@@ -704,6 +704,7 @@
   <ItemGroup>
     <None Include="Resources\Imagenes\add.png" />
     <None Include="Resources\Imagenes\activos.png" />
+    <None Include="Resources\Imagenes\arrow-point-to-right.png" />
     <Content Include="Resources\Imagenes\assets.png" />
     <None Include="Resources\Imagenes\myprofile.png" />
     <None Include="Resources\Imagenes\logo.png" />

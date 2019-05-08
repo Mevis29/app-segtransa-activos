@@ -66,12 +66,12 @@
             // 
             this.lblActivos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblActivos.AutoSize = true;
-            this.lblActivos.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActivos.ForeColor = System.Drawing.Color.Navy;
-            this.lblActivos.Location = new System.Drawing.Point(32, 36);
+            this.lblActivos.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActivos.ForeColor = System.Drawing.Color.DimGray;
+            this.lblActivos.Location = new System.Drawing.Point(42, 18);
             this.lblActivos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblActivos.Name = "lblActivos";
-            this.lblActivos.Size = new System.Drawing.Size(119, 36);
+            this.lblActivos.Size = new System.Drawing.Size(98, 34);
             this.lblActivos.TabIndex = 2;
             this.lblActivos.Text = "Activos";
             this.lblActivos.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -297,7 +297,7 @@
             this.btnActivoAgregar.UseVisualStyleBackColor = false;
             this.btnActivoAgregar.Click += new System.EventHandler(this.btnActivoAgregar_Click);
             // 
-            // FrmActivos_n
+            // frmMenuPrincipal_n
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -312,7 +312,7 @@
             this.Controls.Add(this.btnActivoAgregar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "FrmActivos_n";
+            this.Name = "frmMenuPrincipal_n";
             this.Load += new System.EventHandler(this.frmActivos_n_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosActivos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.activosBindingSource)).EndInit();

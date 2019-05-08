@@ -23,8 +23,8 @@ namespace FrontEnd.Forms_new
         public frmReparaciones()
         {
             InitializeComponent();
-            tablaReparaciones.Columns[0].Width = 80;
-            tablaReparaciones.Columns[1].Width = 100;
+           // tablaReparaciones.Columns[0].Width = 80;
+           // tablaReparaciones.Columns[1].Width = 100;
         }
         #region funcionesExternas
         private void cargarReparaciones()
@@ -40,8 +40,8 @@ namespace FrontEnd.Forms_new
         {
             if (ValoresAplicacion.rolUsuario == "Empleado")
             {
-                this.tablaReparaciones.Size = new Size(1240, 120);
-                this.tablaReparaciones.Location = new Point(10, 50);
+                //this.tablaReparaciones.Size = new Size(1240, 120);
+                //this.tablaReparaciones.Location = new Point(10, 50);
                 this.agregarReparacionToolStripMenuItem.Visible = false;
                 this.modificarToolStripMenuItem.Visible = false;
                 this.eliminarReparacionSeleccionadoToolStripMenuItem.Visible = false;
@@ -189,9 +189,5 @@ namespace FrontEnd.Forms_new
             }
         }
 
-        private void cerrarVentanaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

@@ -35,6 +35,15 @@ namespace FrontEnd.Forms_new
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tablaActivos = new System.Windows.Forms.DataGridView();
+            this.idActivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codActivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.garantiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.activosDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.activosDataSet = new FrontEnd.DataSources_Forms.ActivosDataSet();
             this.sEGTRANSADataSourceACTIVOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sEGTRANSADataSource_ACTIVOS = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_ACTIVOS();
             this.activosBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -48,26 +57,17 @@ namespace FrontEnd.Forms_new
             this.fechaInicio = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.activosTableAdapter = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_ACTIVOSTableAdapters.ActivosTableAdapter();
-            this.activosDataSet = new FrontEnd.DataSources_Forms.ActivosDataSet();
             this.activosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.activosTableAdapter1 = new FrontEnd.DataSources_Forms.ActivosDataSetTableAdapters.ActivosTableAdapter();
-            this.activosDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.activosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.idActivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codActivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.garantiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablaActivos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activosBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activosDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSourceACTIVOSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSource_ACTIVOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.activosBindingSource)).BeginInit();
             this.grpBuscar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.activosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.activosBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.activosDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.activosBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // tablaActivos
@@ -80,9 +80,10 @@ namespace FrontEnd.Forms_new
             this.tablaActivos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.tablaActivos.AutoGenerateColumns = false;
             this.tablaActivos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tablaActivos.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -99,7 +100,7 @@ namespace FrontEnd.Forms_new
             this.tablaActivos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tablaActivos.DataSource = this.activosBindingSource2;
             this.tablaActivos.EnableHeadersVisualStyles = false;
-            this.tablaActivos.Location = new System.Drawing.Point(-1, 152);
+            this.tablaActivos.Location = new System.Drawing.Point(25, 155);
             this.tablaActivos.Margin = new System.Windows.Forms.Padding(2);
             this.tablaActivos.MultiSelect = false;
             this.tablaActivos.Name = "tablaActivos";
@@ -107,7 +108,7 @@ namespace FrontEnd.Forms_new
             this.tablaActivos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -116,141 +117,9 @@ namespace FrontEnd.Forms_new
             this.tablaActivos.RowHeadersVisible = false;
             this.tablaActivos.RowTemplate.Height = 24;
             this.tablaActivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaActivos.Size = new System.Drawing.Size(803, 223);
+            this.tablaActivos.Size = new System.Drawing.Size(803, 196);
             this.tablaActivos.TabIndex = 34;
             this.tablaActivos.SelectionChanged += new System.EventHandler(this.tablaActivos_SelectionChanged);
-            // 
-            // sEGTRANSADataSourceACTIVOSBindingSource
-            // 
-            this.sEGTRANSADataSourceACTIVOSBindingSource.DataSource = this.sEGTRANSADataSource_ACTIVOS;
-            this.sEGTRANSADataSourceACTIVOSBindingSource.Position = 0;
-            // 
-            // sEGTRANSADataSource_ACTIVOS
-            // 
-            this.sEGTRANSADataSource_ACTIVOS.DataSetName = "SEGTRANSADataSource_ACTIVOS";
-            this.sEGTRANSADataSource_ACTIVOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // grpBuscar
-            // 
-            this.grpBuscar.Controls.Add(this.txtBusqueda);
-            this.grpBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpBuscar.Location = new System.Drawing.Point(10, 75);
-            this.grpBuscar.Name = "grpBuscar";
-            this.grpBuscar.Size = new System.Drawing.Size(195, 68);
-            this.grpBuscar.TabIndex = 33;
-            this.grpBuscar.TabStop = false;
-            this.grpBuscar.Text = "Buscar:";
-            // 
-            // txtBusqueda
-            // 
-            this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusqueda.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.txtBusqueda.Location = new System.Drawing.Point(6, 28);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(165, 26);
-            this.txtBusqueda.TabIndex = 2;
-            this.txtBusqueda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
-            // 
-            // dpFechaFinal
-            // 
-            this.dpFechaFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dpFechaFinal.Location = new System.Drawing.Point(516, 101);
-            this.dpFechaFinal.MinDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
-            this.dpFechaFinal.Name = "dpFechaFinal";
-            this.dpFechaFinal.Size = new System.Drawing.Size(257, 26);
-            this.dpFechaFinal.TabIndex = 27;
-            // 
-            // lblFechaFinal
-            // 
-            this.lblFechaFinal.AutoSize = true;
-            this.lblFechaFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaFinal.Location = new System.Drawing.Point(513, 75);
-            this.lblFechaFinal.Name = "lblFechaFinal";
-            this.lblFechaFinal.Size = new System.Drawing.Size(203, 18);
-            this.lblFechaFinal.TabIndex = 32;
-            this.lblFechaFinal.Text = "Fecha final de reparación:";
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(698, 399);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 28;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(593, 399);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 29;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // dpFechaInicial
-            // 
-            this.dpFechaInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dpFechaInicial.Location = new System.Drawing.Point(227, 101);
-            this.dpFechaInicial.MinDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
-            this.dpFechaInicial.Name = "dpFechaInicial";
-            this.dpFechaInicial.Size = new System.Drawing.Size(258, 26);
-            this.dpFechaInicial.TabIndex = 26;
-            // 
-            // fechaInicio
-            // 
-            this.fechaInicio.AutoSize = true;
-            this.fechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaInicio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.fechaInicio.Location = new System.Drawing.Point(224, 75);
-            this.fechaInicio.Name = "fechaInicio";
-            this.fechaInicio.Size = new System.Drawing.Size(215, 18);
-            this.fechaInicio.TabIndex = 31;
-            this.fechaInicio.Text = "Fecha inicial de reparación:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Location = new System.Drawing.Point(328, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 18);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "Agregar Reparación";
-            // 
-            // activosTableAdapter
-            // 
-            this.activosTableAdapter.ClearBeforeFill = true;
-            // 
-            // activosDataSet
-            // 
-            this.activosDataSet.DataSetName = "ActivosDataSet";
-            this.activosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // activosBindingSource1
-            // 
-            this.activosBindingSource1.DataMember = "Activos";
-            this.activosBindingSource1.DataSource = this.activosDataSet;
-            // 
-            // activosTableAdapter1
-            // 
-            this.activosTableAdapter1.ClearBeforeFill = true;
-            // 
-            // activosDataSetBindingSource
-            // 
-            this.activosDataSetBindingSource.DataSource = this.activosDataSet;
-            this.activosDataSetBindingSource.Position = 0;
-            // 
-            // activosBindingSource2
-            // 
-            this.activosBindingSource2.DataMember = "Activos";
-            this.activosBindingSource2.DataSource = this.activosDataSetBindingSource;
             // 
             // idActivoDataGridViewTextBoxColumn
             // 
@@ -294,11 +163,152 @@ namespace FrontEnd.Forms_new
             this.garantiaDataGridViewTextBoxColumn.Name = "garantiaDataGridViewTextBoxColumn";
             this.garantiaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // activosBindingSource2
+            // 
+            this.activosBindingSource2.DataMember = "Activos";
+            this.activosBindingSource2.DataSource = this.activosDataSetBindingSource;
+            // 
+            // activosDataSetBindingSource
+            // 
+            this.activosDataSetBindingSource.DataSource = this.activosDataSet;
+            this.activosDataSetBindingSource.Position = 0;
+            // 
+            // activosDataSet
+            // 
+            this.activosDataSet.DataSetName = "ActivosDataSet";
+            this.activosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sEGTRANSADataSourceACTIVOSBindingSource
+            // 
+            this.sEGTRANSADataSourceACTIVOSBindingSource.DataSource = this.sEGTRANSADataSource_ACTIVOS;
+            this.sEGTRANSADataSourceACTIVOSBindingSource.Position = 0;
+            // 
+            // sEGTRANSADataSource_ACTIVOS
+            // 
+            this.sEGTRANSADataSource_ACTIVOS.DataSetName = "SEGTRANSADataSource_ACTIVOS";
+            this.sEGTRANSADataSource_ACTIVOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // grpBuscar
+            // 
+            this.grpBuscar.Controls.Add(this.txtBusqueda);
+            this.grpBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpBuscar.Location = new System.Drawing.Point(10, 75);
+            this.grpBuscar.Name = "grpBuscar";
+            this.grpBuscar.Size = new System.Drawing.Size(195, 64);
+            this.grpBuscar.TabIndex = 33;
+            this.grpBuscar.TabStop = false;
+            this.grpBuscar.Text = "Buscar:";
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusqueda.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.txtBusqueda.Location = new System.Drawing.Point(15, 29);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(165, 23);
+            this.txtBusqueda.TabIndex = 2;
+            this.txtBusqueda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
+            // 
+            // dpFechaFinal
+            // 
+            this.dpFechaFinal.CalendarFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpFechaFinal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpFechaFinal.Location = new System.Drawing.Point(516, 101);
+            this.dpFechaFinal.MinDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
+            this.dpFechaFinal.Name = "dpFechaFinal";
+            this.dpFechaFinal.Size = new System.Drawing.Size(257, 23);
+            this.dpFechaFinal.TabIndex = 27;
+            // 
+            // lblFechaFinal
+            // 
+            this.lblFechaFinal.AutoSize = true;
+            this.lblFechaFinal.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaFinal.Location = new System.Drawing.Point(513, 75);
+            this.lblFechaFinal.Name = "lblFechaFinal";
+            this.lblFechaFinal.Size = new System.Drawing.Size(204, 18);
+            this.lblFechaFinal.TabIndex = 32;
+            this.lblFechaFinal.Text = "Fecha final de reparación:";
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.Location = new System.Drawing.Point(355, 374);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(145, 46);
+            this.btnAgregar.TabIndex = 28;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.DarkGray;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(731, 393);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(97, 27);
+            this.btnCancelar.TabIndex = 29;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // dpFechaInicial
+            // 
+            this.dpFechaInicial.CalendarFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpFechaInicial.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpFechaInicial.Location = new System.Drawing.Point(227, 101);
+            this.dpFechaInicial.MinDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
+            this.dpFechaInicial.Name = "dpFechaInicial";
+            this.dpFechaInicial.Size = new System.Drawing.Size(242, 23);
+            this.dpFechaInicial.TabIndex = 26;
+            // 
+            // fechaInicio
+            // 
+            this.fechaInicio.AutoSize = true;
+            this.fechaInicio.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fechaInicio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.fechaInicio.Location = new System.Drawing.Point(224, 75);
+            this.fechaInicio.Name = "fechaInicio";
+            this.fechaInicio.Size = new System.Drawing.Size(218, 18);
+            this.fechaInicio.TabIndex = 31;
+            this.fechaInicio.Text = "Fecha inicial de reparación:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(325, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(201, 22);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Agregar Reparación";
+            // 
+            // activosTableAdapter
+            // 
+            this.activosTableAdapter.ClearBeforeFill = true;
+            // 
+            // activosBindingSource1
+            // 
+            this.activosBindingSource1.DataMember = "Activos";
+            this.activosBindingSource1.DataSource = this.activosDataSet;
+            // 
+            // activosTableAdapter1
+            // 
+            this.activosTableAdapter1.ClearBeforeFill = true;
+            // 
             // frmReparacionesAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 434);
+            this.ClientSize = new System.Drawing.Size(857, 432);
             this.Controls.Add(this.tablaActivos);
             this.Controls.Add(this.grpBuscar);
             this.Controls.Add(this.dpFechaFinal);
@@ -313,15 +323,15 @@ namespace FrontEnd.Forms_new
             this.Text = "FrmReparacionesAgregar";
             this.Load += new System.EventHandler(this.FrmReparacionesAgregar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablaActivos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activosBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activosDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSourceACTIVOSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSource_ACTIVOS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.activosBindingSource)).EndInit();
             this.grpBuscar.ResumeLayout(false);
             this.grpBuscar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.activosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.activosBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.activosDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.activosBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
