@@ -40,11 +40,9 @@ namespace FrontEnd.Forms_new
         {
             if (ValoresAplicacion.rolUsuario == "Empleado")
             {
-                this.tablaReparaciones.Size = new Size(1240, 120);
-                this.tablaReparaciones.Location = new Point(10, 50);
-                this.agregarReparacionToolStripMenuItem.Visible = false;
-                this.modificarToolStripMenuItem.Visible = false;
-                this.eliminarReparacionSeleccionadoToolStripMenuItem.Visible = false;
+               /* this.tablaReparaciones.Size = new Size(1240, 120);
+                this.tablaReparaciones.Location = new Point(10, 50);*/
+                this.menuStrip1.Visible = false;
                 this.cargarReparaciones();
             }
             else
