@@ -69,12 +69,12 @@ namespace Frontend
             try
             {
                 IUsuariosDAL usuariosDAL = new UsuariosImplDAL();
-
+                CryptoEngine cryptoEngine = new CryptoEngine();
 
                 DialogResult dialogResult = MessageBox.Show("Seguro que desea cambiar su contrasena?", "Confirmación", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    usuarios.Contrasena = txtNuevaClave.Text;
+                    usuarios.Contrasena = cryptoEngine.Encrypt(txtNuevaClave.Text);
                     usuariosDAL.Update(usuarios);
                     showInfo("Su clave de ingreso fue actualizada!");
 

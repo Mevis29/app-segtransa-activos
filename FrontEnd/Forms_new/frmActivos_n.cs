@@ -173,7 +173,7 @@ namespace Frontend
             catch (Exception ex)
             {
 
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error: el activo tiene una asignación. Si desea eliminarlo, primero elimine todas sus asignaciones");
             }
 
 

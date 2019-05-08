@@ -52,7 +52,7 @@ namespace FronEnd
                 String apellido = this.txtApellido1.Text;
                 String cedula = txtCedula.Text;
                 String contrasena = txtContrasena.Text;
-
+                CryptoEngine cryptoEngine = new CryptoEngine();
                 // Valida que los campos requeridos tengan valores (Nombre, Apellido y/o Cedula)
 
                 if (nombre.Length <= 0 || apellido.Length <=0 || cedula.Length <=0)
@@ -80,7 +80,7 @@ namespace FronEnd
                     Usuario.Direccion = txtDireccion.Text;
                     Usuario.RolUsuario = (int)cmbBoxRol.SelectedValue;
                     Usuario.RolUsuarios = (RolUsuarios)cmbBoxRol.SelectedItem;
-                    Usuario.Contrasena = txtContrasena.Text;
+                    Usuario.Contrasena = cryptoEngine.Encrypt(txtContrasena.Text);
                     Usuario.FechaCreacion = DateTime.Now;
                     Usuario.EstadoUsuario = 1; // Estado default al agregar un usuario es 1 de Activo
 

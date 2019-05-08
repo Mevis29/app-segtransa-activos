@@ -119,7 +119,7 @@ namespace Frontend
             catch (Exception ex)
             {
 
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error: Este usuario tiene un activo asignado. Si desea eliminarlo, primero elimine sus asignaciones" );
             }
 
 

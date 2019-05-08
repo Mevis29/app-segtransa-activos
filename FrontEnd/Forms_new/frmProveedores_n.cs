@@ -119,7 +119,7 @@ namespace Frontend
             catch (Exception ex)
             {
 
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error: ese proveedor está ligado a un activo." );
             }
 
 
