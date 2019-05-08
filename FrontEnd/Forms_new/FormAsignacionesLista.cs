@@ -173,13 +173,23 @@ namespace FrontEnd.Formularios
                 if (valorSeleccionado > -1)
                 //    if (valorSeleccionado > this.IdAsignacion)
                 {
-                    this.EliminarDatos(valorSeleccionado);
-                    string detalleBitacora = "Se eliminó la asignación del activo: " + codigo.Trim() + " al empleado: " + nombreEmpleado.Trim();
-                    bitacora.IdUsuario = ValoresAplicacion.idUsuario;
-                    bitacora.DetalleBitacora = detalleBitacora;
-                    bitacoraDAL.Add(bitacora);
-                    this.CargarDatos();                 
-                    //   this.IdAsignacion = IdAsignacion;
+                    DialogResult dialogResult = MessageBox.Show("Seguro que desea eliminar la asignacion?", "Confirmación", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        this.EliminarDatos(valorSeleccionado);
+                        string detalleBitacora = "Se eliminó la asignación del activo: " + codigo.Trim() + " al empleado: " + nombreEmpleado.Trim();
+                        bitacora.IdUsuario = ValoresAplicacion.idUsuario;
+                        bitacora.DetalleBitacora = detalleBitacora;
+                        bitacoraDAL.Add(bitacora);
+                        this.CargarDatos();
+                        //   this.IdAsignacion = IdAsignacion;
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        MessageBox.Show("Operacion Cancelada");
+                    }
+
+
                 }
                 else
                 {

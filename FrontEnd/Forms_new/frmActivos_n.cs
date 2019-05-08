@@ -129,7 +129,7 @@ namespace Frontend
 
                 using (FrmActivosModificar_n form = new FrmActivosModificar_n(activo.IdActivo))
                 {
-                    MessageBox.Show(activo.IdActivo.ToString());
+                    //MessageBox.Show(activo.IdActivo.ToString());
                     form.ShowDialog(this);
                     cargarActivos();
                 }

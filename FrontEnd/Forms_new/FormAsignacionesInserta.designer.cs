@@ -38,16 +38,17 @@
             this.lblFechFinalAsg = new System.Windows.Forms.Label();
             this.dtpFechInicialAsig = new System.Windows.Forms.DateTimePicker();
             this.dtpFechfinalAsig = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblActivo
             // 
             this.lblActivo.AutoSize = true;
-            this.lblActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActivo.Location = new System.Drawing.Point(41, 131);
+            this.lblActivo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActivo.Location = new System.Drawing.Point(41, 198);
             this.lblActivo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblActivo.Name = "lblActivo";
-            this.lblActivo.Size = new System.Drawing.Size(126, 18);
+            this.lblActivo.Size = new System.Drawing.Size(141, 18);
             this.lblActivo.TabIndex = 30;
             this.lblActivo.Text = "Asociar un Activo:";
             // 
@@ -57,45 +58,52 @@
             this.cboActivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboActivo.FormattingEnabled = true;
-            this.cboActivo.Location = new System.Drawing.Point(41, 171);
+            this.cboActivo.Location = new System.Drawing.Point(37, 220);
             this.cboActivo.Margin = new System.Windows.Forms.Padding(4);
             this.cboActivo.Name = "cboActivo";
-            this.cboActivo.Size = new System.Drawing.Size(376, 26);
+            this.cboActivo.Size = new System.Drawing.Size(312, 26);
             this.cboActivo.TabIndex = 29;
             this.cboActivo.ValueMember = "Id";
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(307, 434);
+            this.btnCancelar.BackColor = System.Drawing.Color.DarkGray;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(587, 347);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(94, 33);
+            this.btnCancelar.Size = new System.Drawing.Size(97, 27);
             this.btnCancelar.TabIndex = 28;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(58, 434);
+            this.btnAceptar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
+            this.btnAceptar.Location = new System.Drawing.Point(305, 314);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(94, 33);
+            this.btnAceptar.Size = new System.Drawing.Size(145, 46);
             this.btnAceptar.TabIndex = 27;
             this.btnAceptar.Text = "Insertar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // lblEmpleado
             // 
             this.lblEmpleado.AutoSize = true;
-            this.lblEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpleado.Location = new System.Drawing.Point(41, 31);
+            this.lblEmpleado.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpleado.Location = new System.Drawing.Point(41, 86);
             this.lblEmpleado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmpleado.Name = "lblEmpleado";
-            this.lblEmpleado.Size = new System.Drawing.Size(160, 18);
+            this.lblEmpleado.Size = new System.Drawing.Size(180, 18);
             this.lblEmpleado.TabIndex = 26;
             this.lblEmpleado.Text = "Nombre del Empleado:";
             // 
@@ -103,62 +111,73 @@
             // 
             this.cboEmpleado.DisplayMember = "Empleado";
             this.cboEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboEmpleado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboEmpleado.FormattingEnabled = true;
-            this.cboEmpleado.Location = new System.Drawing.Point(41, 71);
+            this.cboEmpleado.Location = new System.Drawing.Point(44, 108);
             this.cboEmpleado.Margin = new System.Windows.Forms.Padding(4);
             this.cboEmpleado.Name = "cboEmpleado";
-            this.cboEmpleado.Size = new System.Drawing.Size(376, 26);
+            this.cboEmpleado.Size = new System.Drawing.Size(305, 25);
             this.cboEmpleado.TabIndex = 25;
             this.cboEmpleado.ValueMember = "Id";
             // 
             // lblFechInicioAsg
             // 
             this.lblFechInicioAsg.AutoSize = true;
-            this.lblFechInicioAsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechInicioAsg.Location = new System.Drawing.Point(34, 252);
+            this.lblFechInicioAsg.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechInicioAsg.Location = new System.Drawing.Point(415, 89);
             this.lblFechInicioAsg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFechInicioAsg.Name = "lblFechInicioAsg";
-            this.lblFechInicioAsg.Size = new System.Drawing.Size(91, 18);
+            this.lblFechInicioAsg.Size = new System.Drawing.Size(103, 18);
             this.lblFechInicioAsg.TabIndex = 32;
             this.lblFechInicioAsg.Text = "Fecha Inicio:";
             // 
             // lblFechFinalAsg
             // 
             this.lblFechFinalAsg.AutoSize = true;
-            this.lblFechFinalAsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechFinalAsg.Location = new System.Drawing.Point(34, 321);
+            this.lblFechFinalAsg.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechFinalAsg.Location = new System.Drawing.Point(415, 197);
             this.lblFechFinalAsg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFechFinalAsg.Name = "lblFechFinalAsg";
-            this.lblFechFinalAsg.Size = new System.Drawing.Size(88, 18);
+            this.lblFechFinalAsg.Size = new System.Drawing.Size(96, 18);
             this.lblFechFinalAsg.TabIndex = 34;
             this.lblFechFinalAsg.Text = "Fecha Final:";
             // 
             // dtpFechInicialAsig
             // 
             this.dtpFechInicialAsig.CustomFormat = "ddd dd-MMM-yyyy";
-            this.dtpFechInicialAsig.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechInicialAsig.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechInicialAsig.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechInicialAsig.Location = new System.Drawing.Point(170, 252);
+            this.dtpFechInicialAsig.Location = new System.Drawing.Point(415, 110);
             this.dtpFechInicialAsig.Name = "dtpFechInicialAsig";
-            this.dtpFechInicialAsig.Size = new System.Drawing.Size(247, 24);
+            this.dtpFechInicialAsig.Size = new System.Drawing.Size(247, 23);
             this.dtpFechInicialAsig.TabIndex = 35;
             // 
             // dtpFechfinalAsig
             // 
             this.dtpFechfinalAsig.CustomFormat = "ddd dd-MMM-yyyy";
-            this.dtpFechfinalAsig.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechfinalAsig.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechfinalAsig.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechfinalAsig.Location = new System.Drawing.Point(170, 317);
+            this.dtpFechfinalAsig.Location = new System.Drawing.Point(415, 223);
             this.dtpFechfinalAsig.Name = "dtpFechfinalAsig";
-            this.dtpFechfinalAsig.Size = new System.Drawing.Size(247, 24);
+            this.dtpFechfinalAsig.Size = new System.Drawing.Size(247, 23);
             this.dtpFechfinalAsig.TabIndex = 36;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.label1.Location = new System.Drawing.Point(222, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(195, 22);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "Agregar Asignación";
             // 
             // FormAsignacionesInserta
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(479, 511);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(713, 407);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpFechfinalAsig);
             this.Controls.Add(this.dtpFechInicialAsig);
             this.Controls.Add(this.lblFechFinalAsg);
@@ -169,7 +188,7 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblEmpleado);
             this.Controls.Add(this.cboEmpleado);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "FormAsignacionesInserta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -192,5 +211,6 @@
         private System.Windows.Forms.Label lblFechFinalAsg;
         private System.Windows.Forms.DateTimePicker dtpFechInicialAsig;
         private System.Windows.Forms.DateTimePicker dtpFechfinalAsig;
+        private System.Windows.Forms.Label label1;
     }
 }
