@@ -34,11 +34,11 @@
             this.reporteDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeActivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeDepreciadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.contentPnl = new System.Windows.Forms.Panel();
             this.lblReportes = new System.Windows.Forms.Label();
-            this.reporteDeDepreciadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contentPnl.SuspendLayout();
             this.SuspendLayout();
@@ -63,38 +63,51 @@
             // 
             // opcionRptBitacora
             // 
+            this.opcionRptBitacora.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.opcionRptBitacora.Name = "opcionRptBitacora";
-            this.opcionRptBitacora.Size = new System.Drawing.Size(122, 20);
-            this.opcionRptBitacora.Text = "Reporte de bitácora";
+            this.opcionRptBitacora.Size = new System.Drawing.Size(129, 20);
+            this.opcionRptBitacora.Text = "Reporte de Bitácora";
             this.opcionRptBitacora.Click += new System.EventHandler(this.opcionRptBitacora_Click);
             // 
             // optionRptReparaciones
             // 
+            this.optionRptReparaciones.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.optionRptReparaciones.Name = "optionRptReparaciones";
-            this.optionRptReparaciones.Size = new System.Drawing.Size(146, 20);
-            this.optionRptReparaciones.Text = "Reporte de reparaciones";
+            this.optionRptReparaciones.Size = new System.Drawing.Size(159, 20);
+            this.optionRptReparaciones.Text = "Reporte de Reparaciones";
             this.optionRptReparaciones.Click += new System.EventHandler(this.optionRptReparaciones_Click);
             // 
             // reporteDeToolStripMenuItem
             // 
+            this.reporteDeToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reporteDeToolStripMenuItem.Name = "reporteDeToolStripMenuItem";
-            this.reporteDeToolStripMenuItem.Size = new System.Drawing.Size(150, 20);
-            this.reporteDeToolStripMenuItem.Text = "Reporte de asignaciones ";
+            this.reporteDeToolStripMenuItem.Size = new System.Drawing.Size(156, 20);
+            this.reporteDeToolStripMenuItem.Text = "Reporte de Asignaciones ";
             this.reporteDeToolStripMenuItem.Click += new System.EventHandler(this.optionRptAsignaciones_Click);
             // 
             // reporteDeActivosToolStripMenuItem
             // 
+            this.reporteDeActivosToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reporteDeActivosToolStripMenuItem.Name = "reporteDeActivosToolStripMenuItem";
-            this.reporteDeActivosToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
-            this.reporteDeActivosToolStripMenuItem.Text = "Reporte de activos";
+            this.reporteDeActivosToolStripMenuItem.Size = new System.Drawing.Size(123, 20);
+            this.reporteDeActivosToolStripMenuItem.Text = "Reporte de Activos";
             this.reporteDeActivosToolStripMenuItem.Click += new System.EventHandler(this.optionRptActivos_Click);
             // 
             // reporteDeUsuariosToolStripMenuItem
             // 
+            this.reporteDeUsuariosToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reporteDeUsuariosToolStripMenuItem.Name = "reporteDeUsuariosToolStripMenuItem";
-            this.reporteDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(123, 20);
+            this.reporteDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(126, 20);
             this.reporteDeUsuariosToolStripMenuItem.Text = "Reporte de usuarios";
             this.reporteDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.optionRptUsuarios_Click);
+            // 
+            // reporteDeDepreciadosToolStripMenuItem
+            // 
+            this.reporteDeDepreciadosToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reporteDeDepreciadosToolStripMenuItem.Name = "reporteDeDepreciadosToolStripMenuItem";
+            this.reporteDeDepreciadosToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
+            this.reporteDeDepreciadosToolStripMenuItem.Text = "Depreciados";
+            this.reporteDeDepreciadosToolStripMenuItem.Click += new System.EventHandler(this.reporteDeDepreciadosToolStripMenuItem_Click);
             // 
             // cerrarToolStripMenuItem
             // 
@@ -121,7 +134,7 @@
             this.contentPnl.Controls.Add(this.lblReportes);
             this.contentPnl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentPnl.Location = new System.Drawing.Point(0, 24);
-            this.contentPnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.contentPnl.Margin = new System.Windows.Forms.Padding(2);
             this.contentPnl.Name = "contentPnl";
             this.contentPnl.Size = new System.Drawing.Size(800, 426);
             this.contentPnl.TabIndex = 30;
@@ -131,18 +144,11 @@
             this.lblReportes.AutoSize = true;
             this.lblReportes.Font = new System.Drawing.Font("Franklin Gothic Medium", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReportes.ForeColor = System.Drawing.Color.DimGray;
-            this.lblReportes.Location = new System.Drawing.Point(365, 176);
+            this.lblReportes.Location = new System.Drawing.Point(42, 18);
             this.lblReportes.Name = "lblReportes";
             this.lblReportes.Size = new System.Drawing.Size(129, 37);
             this.lblReportes.TabIndex = 0;
             this.lblReportes.Text = "Reportes";
-            // 
-            // reporteDeDepreciadosToolStripMenuItem
-            // 
-            this.reporteDeDepreciadosToolStripMenuItem.Name = "reporteDeDepreciadosToolStripMenuItem";
-            this.reporteDeDepreciadosToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
-            this.reporteDeDepreciadosToolStripMenuItem.Text = "Depreciados";
-            this.reporteDeDepreciadosToolStripMenuItem.Click += new System.EventHandler(this.reporteDeDepreciadosToolStripMenuItem_Click);
             // 
             // frmMenuReportes
             // 
