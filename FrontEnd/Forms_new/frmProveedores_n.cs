@@ -76,7 +76,7 @@ namespace Frontend
                               
                 using (FrmProveedoresModificar_n form = new FrmProveedoresModificar_n(proveedor.IdProveedor))
                 {
-                   MessageBox.Show(proveedor.IdProveedor.ToString());
+                   
                     form.ShowDialog(this);
                     cargarProveedores();
                 }

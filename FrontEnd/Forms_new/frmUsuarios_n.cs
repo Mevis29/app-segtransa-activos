@@ -75,7 +75,7 @@ namespace Frontend
                               
                 using (FrmUsuariosModificar_n form = new FrmUsuariosModificar_n(usuario.IdUsuario))
                 {
-                   MessageBox.Show(usuario.Nombre);
+                  
                     form.ShowDialog(this);
                     cargarUsuarios();
                 }

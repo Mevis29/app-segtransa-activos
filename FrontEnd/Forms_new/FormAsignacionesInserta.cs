@@ -39,8 +39,8 @@ namespace FrontEnd.Formularios
             //Invocar las herramientas refereciadas a valores del sistema
             this.dtpFechInicialAsig.Value = new DateTime(2019, 01, 01);
             this.dtpFechfinalAsig.Value = new DateTime(2019, 01, 01);
-            this.cboEmpleado.SelectedValue = "";
-            this.cboActivo.SelectedValue = "";
+            this.cboEmpleado.SelectedIndex = 0;
+            this.cboActivo.SelectedIndex = 0;
         }
         #endregion
 
@@ -168,6 +168,7 @@ namespace FrontEnd.Formularios
 
         private bool validarExisteAsignacion()
         {
+
             AsignacionesImplDAL asignacionDal = new AsignacionesImplDAL();
             UsuariosImplDAL usuariosDal = new UsuariosImplDAL();
             string nombreEmpleado = retornarFragmento(cboEmpleado.Text)[1];

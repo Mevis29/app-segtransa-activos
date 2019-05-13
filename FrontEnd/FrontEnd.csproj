@@ -471,7 +471,9 @@
     <EmbeddedResource Include="Reportes\rptRolUsuario.rdlc" />
     <EmbeddedResource Include="Reportes\rptUsuario.rdlc" />
     <EmbeddedResource Include="Reportes\rtpBitacora.rdlc" />
-    <None Include="App.Config" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="DataSources_Forms\ActivosDataSet.xsc">
       <DependentUpon>ActivosDataSet.xsd</DependentUpon>
     </None>
