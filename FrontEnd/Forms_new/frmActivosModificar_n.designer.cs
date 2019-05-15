@@ -157,6 +157,7 @@
             // 
             // cmbBoxProveedor
             // 
+            this.cmbBoxProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxProveedor.FormattingEnabled = true;
             this.cmbBoxProveedor.Location = new System.Drawing.Point(152, 32);
             this.cmbBoxProveedor.Name = "cmbBoxProveedor";
@@ -254,6 +255,7 @@
             // 
             // cmbBoxEstadoActivos
             // 
+            this.cmbBoxEstadoActivos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxEstadoActivos.FormattingEnabled = true;
             this.cmbBoxEstadoActivos.Location = new System.Drawing.Point(108, 141);
             this.cmbBoxEstadoActivos.Name = "cmbBoxEstadoActivos";
@@ -277,6 +279,7 @@
             // 
             // cmbBoxCategorias
             // 
+            this.cmbBoxCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxCategorias.FormattingEnabled = true;
             this.cmbBoxCategorias.Location = new System.Drawing.Point(108, 87);
             this.cmbBoxCategorias.Name = "cmbBoxCategorias";

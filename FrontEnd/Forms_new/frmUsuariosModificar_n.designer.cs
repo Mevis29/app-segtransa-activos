@@ -159,6 +159,7 @@
             // 
             // cmbBoxRolA
             // 
+            this.cmbBoxRolA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxRolA.FormattingEnabled = true;
             this.cmbBoxRolA.Location = new System.Drawing.Point(113, 32);
             this.cmbBoxRolA.Name = "cmbBoxRolA";
@@ -443,6 +444,7 @@
             // 
             // cmbBoxEstadoA
             // 
+            this.cmbBoxEstadoA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxEstadoA.FormattingEnabled = true;
             this.cmbBoxEstadoA.Location = new System.Drawing.Point(113, 129);
             this.cmbBoxEstadoA.Name = "cmbBoxEstadoA";

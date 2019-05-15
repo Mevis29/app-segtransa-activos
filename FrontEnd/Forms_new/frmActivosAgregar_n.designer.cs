@@ -50,11 +50,11 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblEstadoActivo = new System.Windows.Forms.Label();
             this.groupBoxDatosProveedor = new System.Windows.Forms.GroupBox();
+            this.txtMesesDepreciacion = new System.Windows.Forms.TextBox();
+            this.lblMesesDepreciacion = new System.Windows.Forms.Label();
             this.lblErrorPrecio = new System.Windows.Forms.Label();
             this.txtGarantia = new System.Windows.Forms.TextBox();
             this.lblGarantia = new System.Windows.Forms.Label();
-            this.lblMesesDepreciacion = new System.Windows.Forms.Label();
-            this.txtMesesDepreciacion = new System.Windows.Forms.TextBox();
             this.groupBoxDatosPers.SuspendLayout();
             this.groupBoxDatosProveedor.SuspendLayout();
             this.SuspendLayout();
@@ -158,6 +158,7 @@
             // 
             // cmbBoxProveedor
             // 
+            this.cmbBoxProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxProveedor.FormattingEnabled = true;
             this.cmbBoxProveedor.Location = new System.Drawing.Point(150, 32);
             this.cmbBoxProveedor.Name = "cmbBoxProveedor";
@@ -255,6 +256,7 @@
             // 
             // cmbBoxEstadoActivos
             // 
+            this.cmbBoxEstadoActivos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxEstadoActivos.FormattingEnabled = true;
             this.cmbBoxEstadoActivos.Location = new System.Drawing.Point(108, 141);
             this.cmbBoxEstadoActivos.Name = "cmbBoxEstadoActivos";
@@ -278,6 +280,7 @@
             // 
             // cmbBoxCategorias
             // 
+            this.cmbBoxCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxCategorias.FormattingEnabled = true;
             this.cmbBoxCategorias.Location = new System.Drawing.Point(108, 87);
             this.cmbBoxCategorias.Name = "cmbBoxCategorias";
@@ -379,6 +382,35 @@
             this.groupBoxDatosProveedor.TabStop = false;
             this.groupBoxDatosProveedor.Text = "Datos Proveedor";
             // 
+            // txtMesesDepreciacion
+            // 
+            this.txtMesesDepreciacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMesesDepreciacion.BackColor = System.Drawing.Color.White;
+            this.txtMesesDepreciacion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMesesDepreciacion.Location = new System.Drawing.Point(150, 163);
+            this.txtMesesDepreciacion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMesesDepreciacion.Name = "txtMesesDepreciacion";
+            this.txtMesesDepreciacion.Size = new System.Drawing.Size(142, 22);
+            this.txtMesesDepreciacion.TabIndex = 30;
+            this.txtMesesDepreciacion.Text = "0";
+            // 
+            // lblMesesDepreciacion
+            // 
+            this.lblMesesDepreciacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMesesDepreciacion.AutoSize = true;
+            this.lblMesesDepreciacion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMesesDepreciacion.ForeColor = System.Drawing.Color.Black;
+            this.lblMesesDepreciacion.Location = new System.Drawing.Point(9, 166);
+            this.lblMesesDepreciacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMesesDepreciacion.Name = "lblMesesDepreciacion";
+            this.lblMesesDepreciacion.Size = new System.Drawing.Size(132, 17);
+            this.lblMesesDepreciacion.TabIndex = 29;
+            this.lblMesesDepreciacion.Text = "Meses depreciación:";
+            // 
             // lblErrorPrecio
             // 
             this.lblErrorPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -423,35 +455,6 @@
             this.lblGarantia.Size = new System.Drawing.Size(113, 17);
             this.lblGarantia.TabIndex = 22;
             this.lblGarantia.Text = "Garantia (meses):";
-            // 
-            // lblMesesDepreciacion
-            // 
-            this.lblMesesDepreciacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMesesDepreciacion.AutoSize = true;
-            this.lblMesesDepreciacion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMesesDepreciacion.ForeColor = System.Drawing.Color.Black;
-            this.lblMesesDepreciacion.Location = new System.Drawing.Point(9, 166);
-            this.lblMesesDepreciacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblMesesDepreciacion.Name = "lblMesesDepreciacion";
-            this.lblMesesDepreciacion.Size = new System.Drawing.Size(132, 17);
-            this.lblMesesDepreciacion.TabIndex = 29;
-            this.lblMesesDepreciacion.Text = "Meses depreciación:";
-            // 
-            // txtMesesDepreciacion
-            // 
-            this.txtMesesDepreciacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMesesDepreciacion.BackColor = System.Drawing.Color.White;
-            this.txtMesesDepreciacion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMesesDepreciacion.Location = new System.Drawing.Point(150, 163);
-            this.txtMesesDepreciacion.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMesesDepreciacion.Name = "txtMesesDepreciacion";
-            this.txtMesesDepreciacion.Size = new System.Drawing.Size(142, 22);
-            this.txtMesesDepreciacion.TabIndex = 30;
-            this.txtMesesDepreciacion.Text = "0";
             // 
             // FrmActivosAgregar_n
             // 
