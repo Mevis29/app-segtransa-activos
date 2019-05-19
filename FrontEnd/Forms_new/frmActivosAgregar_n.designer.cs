@@ -131,10 +131,10 @@
             this.cancelarBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelarBtn.ForeColor = System.Drawing.Color.White;
             this.cancelarBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cancelarBtn.Location = new System.Drawing.Point(586, 355);
+            this.cancelarBtn.Location = new System.Drawing.Point(480, 355);
             this.cancelarBtn.Margin = new System.Windows.Forms.Padding(2);
             this.cancelarBtn.Name = "cancelarBtn";
-            this.cancelarBtn.Size = new System.Drawing.Size(97, 27);
+            this.cancelarBtn.Size = new System.Drawing.Size(145, 51);
             this.cancelarBtn.TabIndex = 7;
             this.cancelarBtn.Text = "Cancelar";
             this.cancelarBtn.UseVisualStyleBackColor = false;

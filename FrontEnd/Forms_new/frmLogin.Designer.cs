@@ -127,7 +127,7 @@
             this.tbxUserId.Name = "tbxUserId";
             this.tbxUserId.Size = new System.Drawing.Size(282, 20);
             this.tbxUserId.TabIndex = 2;
-            this.tbxUserId.Text = "USUARIO";
+            this.tbxUserId.Text = "CORREO";
             this.tbxUserId.Enter += new System.EventHandler(this.tbxUserId_Enter);
             this.tbxUserId.Leave += new System.EventHandler(this.tbxUserId_Leave);
             // 
