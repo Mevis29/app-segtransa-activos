@@ -168,7 +168,7 @@ namespace FrontEnd.Formularios
 
         private bool validarExisteAsignacion()
         {
-
+            bool insertar = false;
             AsignacionesImplDAL asignacionDal = new AsignacionesImplDAL();
             UsuariosImplDAL usuariosDal = new UsuariosImplDAL();
             string nombreEmpleado = retornarFragmento(cboEmpleado.Text)[1];
@@ -180,7 +180,8 @@ namespace FrontEnd.Formularios
                 if (asignacion.Usuario.Trim().Equals(nombreEmpleado.Trim()) && asignacion.Codigo.Trim().Equals(codigoActivo.Trim()))
                 {
                     MessageBox.Show("Esa asignación ya existe.");
-                    return true;
+                    insertar = true;
+                    return insertar;
                 }
                 if (asignacion.Codigo.Trim().Equals(codigoActivo.Trim()))
                 {
@@ -190,8 +191,10 @@ namespace FrontEnd.Formularios
             if (contadorAsignacion >= 1)
             {
                 MessageBox.Show("Alerta: Ese activo ya tiene una asignación.", "Alerta");
+                insertar = true;
+                return insertar;
             }
-            return false;
+            return insertar;
         }
 
         private string[] retornarFragmento(string concatenacion)

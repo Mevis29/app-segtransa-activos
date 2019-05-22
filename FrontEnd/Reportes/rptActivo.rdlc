@@ -64,7 +64,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>SEGTRANSADataSetActivo</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\dadab\Desktop\app-segtransa-activos\FrontEnd\DataSources_Reportes\SEGTRANSADataSetActivo.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Vannessa\Videos\Documents\GitHub\app-segtransa-activos\FrontEnd\DataSources_Reportes\SEGTRANSADataSetActivo.xsd</rd:SchemaPath>
         <rd:TableName>sp_obtenerActivos</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -793,6 +793,7 @@
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
+                        <UseValueAsLabel>true</UseValueAsLabel>
                       </ChartDataLabel>
                       <Style />
                       <ChartMarker>

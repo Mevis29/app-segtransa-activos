@@ -207,6 +207,7 @@ namespace FrontEnd.Formularios
             if (contadorAsignacion >= 1)
             {
                 MessageBox.Show("Alerta: Ese activo ya tiene una asignación.", "Alerta");
+                return true;
             }
             return false;
         }
