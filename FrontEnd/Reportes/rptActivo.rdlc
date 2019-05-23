@@ -772,14 +772,14 @@
                       <Value>=Fields!Categoria.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Switch(Fields!Categoria.Value = 1, "Computadora Portatil", Fields!Categoria.Value = 2, "Computadora Escritorio", Fields!Categoria.Value = 3, "Camara de videovigilancia",Fields!Categoria.Value = 4, "Perifericos de Computadoras",Fields!Categoria.Value = 5, "Mobiliario de Oficina",Fields!Categoria.Value = 7, "Equipo de Redes")</Label>
+                  <Label>=Switch(Fields!Categoria.Value = 1, "Computadora Portatil", Fields!Categoria.Value = 2, "Computadora Escritorio", Fields!Categoria.Value = 7, "Equipo de redes",Fields!Categoria.Value = 26, "Equipo de transportes",Fields!Categoria.Value = 25, "Mobiliario",Fields!Categoria.Value = 27, "Otros")</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>Categoria</Label>
+                  <Label>Id Activo</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
@@ -789,7 +789,7 @@
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Sum(Fields!Categoria.Value)</Y>
+                        <Y>=Sum(Fields!IdActivo.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
