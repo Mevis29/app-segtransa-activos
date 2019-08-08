@@ -38,9 +38,6 @@ namespace FrontEnd.Formularios
             this.CargarEmpleados();
             this.CargarActivos();
             this.CargarDatos();
-
-            this.dtpFechInicialAsig.Value = new DateTime(2019, 01, 01);
-            this.dtpFechfinalAsig.Value = new DateTime(2019, 01, 01);
         }
         #endregion
 
@@ -59,8 +56,6 @@ namespace FrontEnd.Formularios
             if (validarExisteAsignacion() == false)
             {
                 this.ModificarDatos();
-                this.cboEmpleado.SelectedValue = "";
-                this.cboActivo.SelectedValue = "";
             }
             // this.dtpFechInicialAsg.Value = new DateTime(1980, 01, 01);
             // this.dtpFechFinAsgn.Value = new DateTime(1980, 01, 01);
@@ -70,11 +65,10 @@ namespace FrontEnd.Formularios
         #region Mètodo  CargarEmpleados
         void CargarEmpleados()
         {
-            // Objeto de la instancia del Mètodo  pr q no se devuelvan vacios 
             UsuariosImplDAL Empleados = new UsuariosImplDAL();
-            //Mètodo pr retornr lista de solo Empleados
+            //metodo pr retornar list resumns de adccns
             this.cboEmpleado.DataSource = Empleados.retornaListaEmpleados(null);
-            ///el cbo invoca el origen de datos de Empleado pr retornarlo a la lista desplegada
+            ///el cbo invoca el origen de datos de Adiccions pr retornarlo a la lista desplegada
         }
         #endregion
 
@@ -104,11 +98,9 @@ namespace FrontEnd.Formularios
             spAsignUsuarioRetornaDatosId_Result resultadoSP = Asignacion.retornaAsignUsuarioId(this.IdAsignacion);
             if (resultadoSP != null)
             {
-                //obtiene la selcciòn del dato pr ser tratado
-                this.cboEmpleado.SelectedValue = resultadoSP.Usuario;
                 this.cboActivo.SelectedValue = resultadoSP.Activo;
+                this.cboEmpleado.SelectedValue = resultadoSP.Usuario;
                 this.dtpFechInicialAsig.Value = DateTime.Parse(resultadoSP.FechaInicialAsig);
-                this.dtpFechfinalAsig.Value = DateTime.Parse(resultadoSP.FechafinAsig);
             }
             else
             {
@@ -138,13 +130,14 @@ namespace FrontEnd.Formularios
 
 
                     //metodo pr modificar adiccn x client existnt
-                    Asignacion.ModificaAsignUsuario(this.IdAsignacion, IdUsuario, IdActivo, this.dtpFechInicialAsig.Value, this.dtpFechfinalAsig.Value);
+                    Asignacion.ModificaAsignUsuario(this.IdAsignacion, IdUsuario, IdActivo, this.dtpFechInicialAsig.Value, DateTime.MaxValue);
                     string detalleBitacora = "Se modificó la asignación del activo: " + codigo.Trim() + " al empleado: " + nombreEmpleado.Trim();
                     bitacora.IdUsuario = ValoresAplicacion.idUsuario;
                     bitacora.DetalleBitacora = detalleBitacora;
                     bitacoraDAL.Add(bitacora);
                     MessageBox.Show("Registro modificado correctamente.",
                         "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
                 }
                 catch (Exception)
                 {
@@ -169,10 +162,6 @@ namespace FrontEnd.Formularios
             {
                 mensaje += "\nDebe ingresar un valor para Activo.";
             }
-            if (dtpFechInicialAsig.Value >= dtpFechfinalAsig.Value)
-            {
-                mensaje += "\nLa fecha inicial no puede ser mayor a la fecha final.";
-            }
 
             if (mensaje != "")
             {
@@ -188,7 +177,7 @@ namespace FrontEnd.Formularios
         {
             AsignacionesImplDAL asignacionDal = new AsignacionesImplDAL();
             UsuariosImplDAL usuariosDal = new UsuariosImplDAL();
-            string nombreEmpleado = retornarFragmento(cboEmpleado.Text)[1];
+
             string codigoActivo = retornarFragmento(cboActivo.Text)[0];
             string descripcionActivo = retornarFragmento(cboActivo.Text)[1];
             int contadorAsignacion = 0;

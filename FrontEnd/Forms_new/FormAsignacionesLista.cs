@@ -42,6 +42,7 @@ namespace FrontEnd.Formularios
         private void FormAsignacionesLista_Load(object sender, EventArgs e)
         {
             //          this.tHAsignacionesTableAdapterBindingSource.Fill(this.SegtransaDataSetTableAdapters.THAsignaciones);
+            dgvLista.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.CargarDatos();
             this.EstablerAccesoRolUsuario();
 
@@ -55,8 +56,6 @@ namespace FrontEnd.Formularios
             {
                 this.dgvLista.Size = new Size(1240, 120);
                 this.dgvLista.Location = new Point(10, 50);
-                this.mnuAgregar.Visible = false;
-                this.mnuModificar.Visible = false;
                 this.btnEliminar.Visible = false;
                 this.CargarDatos();
             }
@@ -87,7 +86,7 @@ namespace FrontEnd.Formularios
                 /// Objeto de la instancia del Mètodo
                 AsignacionesImplDAL datos = new AsignacionesImplDAL();
                 //Mètodo pr retornar list completa de asignacions x Usuario
-                this.dgvLista.DataSource = datos.retornaListaAsignUsuario(this.txtEmpleado.Text, this.txtActivo.Text);
+                dgvLista.DataSource = datos.retornaListaAsignUsuario(this.txtEmpleado.Text, this.txtActivo.Text);
 
 
             }
@@ -131,30 +130,14 @@ namespace FrontEnd.Formularios
         #region evento mnuAgregar
         private void mnuAgregar_Click(object sender, EventArgs e)
         {
-            ///al agregar, cargar y muestra los datos en el dgv
-            FormAsignacionesInserta formInsertarAsignacion = new FormAsignacionesInserta();
-            formInsertarAsignacion.ShowDialog();
-            this.CargarDatos();
+           
         }
         #endregion
 
         #region evento mnuModificar
         private void mnuModificar_Click(object sender, EventArgs e)
         {
-            int valorSeleccionado = this.RetornarIdSeleccionado(); //retorna el valor del id seleccdo en el dgv
-
-            if (valorSeleccionado > -1)
-            {
-                //mostrar el formulario enviando como valor lo seleccionado en el DGV
-                FormAsignacionesModifica formModificarAsignacion = new FormAsignacionesModifica(valorSeleccionado);
-                formModificarAsignacion.ShowDialog();
-                this.CargarDatos();
-            }
-            else
-            {
-                MessageBox.Show("Debe seleccionar una fila válida",
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         #endregion
@@ -167,26 +150,7 @@ namespace FrontEnd.Formularios
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            {
-                int valorSeleccionado = RetornarIdSeleccionado(); //retorna el valor del id seleccdo en el dgv
-
-                if (valorSeleccionado > -1)
-                //    if (valorSeleccionado > this.IdAsignacion)
-                {
-                    this.EliminarDatos(valorSeleccionado);
-                    string detalleBitacora = "Se eliminó la asignación del activo: " + codigo.Trim() + " al empleado: " + nombreEmpleado.Trim();
-                    bitacora.IdUsuario = ValoresAplicacion.idUsuario;
-                    bitacora.DetalleBitacora = detalleBitacora;
-                    bitacoraDAL.Add(bitacora);
-                    this.CargarDatos();                 
-                    //   this.IdAsignacion = IdAsignacion;
-                }
-                else
-                {
-                    MessageBox.Show("Debe seleccionar una fila válida",
-                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+            
         }
         #endregion
 
@@ -220,6 +184,56 @@ namespace FrontEnd.Formularios
                 MessageBox.Show("No fue posible eliminar el registro. \nEs posible que el registro se encuentre en uso.",
                     "Error de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.btnEliminar.Enabled = false;
+            }
+        }
+
+        private void BtnActivoAgregar_Click(object sender, EventArgs e)
+        {
+            ///al agregar, cargar y muestra los datos en el dgv
+            FormAsignacionesInserta formInsertarAsignacion = new FormAsignacionesInserta();
+            formInsertarAsignacion.ShowDialog();
+            this.CargarDatos();
+        }
+
+        private void BtnActivoModificar_Click(object sender, EventArgs e)
+        {
+            int valorSeleccionado = this.RetornarIdSeleccionado(); //retorna el valor del id seleccdo en el dgv
+
+            if (valorSeleccionado > -1)
+            {
+                //mostrar el formulario enviando como valor lo seleccionado en el DGV
+                FormAsignacionesModifica formModificarAsignacion = new FormAsignacionesModifica(valorSeleccionado);
+                formModificarAsignacion.ShowDialog();
+                this.CargarDatos();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una fila válida",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnEliminar_Click_1(object sender, EventArgs e)
+        {
+            {
+                int valorSeleccionado = RetornarIdSeleccionado(); //retorna el valor del id seleccdo en el dgv
+
+                if (valorSeleccionado > -1)
+                //    if (valorSeleccionado > this.IdAsignacion)
+                {
+                    this.EliminarDatos(valorSeleccionado);
+                    string detalleBitacora = "Se eliminó la asignación del activo: " + codigo.Trim() + " al empleado: " + nombreEmpleado.Trim();
+                    bitacora.IdUsuario = ValoresAplicacion.idUsuario;
+                    bitacora.DetalleBitacora = detalleBitacora;
+                    bitacoraDAL.Add(bitacora);
+                    this.CargarDatos();
+                    //   this.IdAsignacion = IdAsignacion;
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar una fila válida",
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

@@ -44,8 +44,6 @@
             this.cmbBoxEstadoActivos = new System.Windows.Forms.ComboBox();
             this.lblFechaCompra = new System.Windows.Forms.Label();
             this.cmbBoxCategorias = new System.Windows.Forms.ComboBox();
-            this.lblErrorCodigo = new System.Windows.Forms.Label();
-            this.lblErrorCategoria = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblEstadoActivo = new System.Windows.Forms.Label();
@@ -150,9 +148,9 @@
             this.errorLbl.Location = new System.Drawing.Point(414, 281);
             this.errorLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.errorLbl.Name = "errorLbl";
-            this.errorLbl.Size = new System.Drawing.Size(269, 17);
+            this.errorLbl.Size = new System.Drawing.Size(262, 17);
             this.errorLbl.TabIndex = 8;
-            this.errorLbl.Text = "Por favor ingrese los valores requeridos";
+            this.errorLbl.Text = "Debe completar toda la información.";
             this.errorLbl.Visible = false;
             // 
             // cmbBoxProveedor
@@ -229,8 +227,6 @@
             this.groupBoxDatosPers.Controls.Add(this.cmbBoxEstadoActivos);
             this.groupBoxDatosPers.Controls.Add(this.lblFechaCompra);
             this.groupBoxDatosPers.Controls.Add(this.cmbBoxCategorias);
-            this.groupBoxDatosPers.Controls.Add(this.lblErrorCodigo);
-            this.groupBoxDatosPers.Controls.Add(this.lblErrorCategoria);
             this.groupBoxDatosPers.Controls.Add(this.txtDescripcion);
             this.groupBoxDatosPers.Controls.Add(this.lblDescripcion);
             this.groupBoxDatosPers.Controls.Add(this.lblEstadoActivo);
@@ -285,38 +281,6 @@
             this.cmbBoxCategorias.Name = "cmbBoxCategorias";
             this.cmbBoxCategorias.Size = new System.Drawing.Size(239, 24);
             this.cmbBoxCategorias.TabIndex = 26;
-            // 
-            // lblErrorCodigo
-            // 
-            this.lblErrorCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblErrorCodigo.AutoSize = true;
-            this.lblErrorCodigo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorCodigo.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorCodigo.Location = new System.Drawing.Point(5, 34);
-            this.lblErrorCodigo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblErrorCodigo.Name = "lblErrorCodigo";
-            this.lblErrorCodigo.Size = new System.Drawing.Size(14, 17);
-            this.lblErrorCodigo.TabIndex = 22;
-            this.lblErrorCodigo.Text = "*";
-            this.lblErrorCodigo.Visible = false;
-            // 
-            // lblErrorCategoria
-            // 
-            this.lblErrorCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblErrorCategoria.AutoSize = true;
-            this.lblErrorCategoria.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorCategoria.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorCategoria.Location = new System.Drawing.Point(5, 90);
-            this.lblErrorCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblErrorCategoria.Name = "lblErrorCategoria";
-            this.lblErrorCategoria.Size = new System.Drawing.Size(14, 17);
-            this.lblErrorCategoria.TabIndex = 21;
-            this.lblErrorCategoria.Text = "*";
-            this.lblErrorCategoria.Visible = false;
             // 
             // txtDescripcion
             // 
@@ -498,8 +462,6 @@
         private System.Windows.Forms.GroupBox groupBoxDatosProveedor;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label lblDescripcion;
-        private System.Windows.Forms.Label lblErrorCategoria;
-        private System.Windows.Forms.Label lblErrorCodigo;
         private System.Windows.Forms.TextBox txtGarantia;
         private System.Windows.Forms.Label lblGarantia;
         private System.Windows.Forms.DateTimePicker dateFechaCompra;

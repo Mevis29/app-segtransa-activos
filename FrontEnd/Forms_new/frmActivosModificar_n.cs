@@ -28,8 +28,7 @@ namespace FronEnd
 
         public FrmActivosModificar_n()
         {
-            InitializeComponent();
-       
+            InitializeComponent();    
         }
 
         public FrmActivosModificar_n(int id)
@@ -40,7 +39,6 @@ namespace FronEnd
             proveedorDAL = new ProveedoresImplDAL();
             estadoActivoDAL = new EstadoActivosImplDAL();
             Activo = activoDAL.mostrarActivo(id);
-
         }
 
         private void CargaComboBox()
@@ -50,18 +48,40 @@ namespace FronEnd
             cmbBoxProveedor.ValueMember = "IdProveedor";
             List<Proveedores> proveedores = proveedorDAL.GetProveedores();
             cmbBoxProveedor.DataSource = proveedores;
+            for (int i=0; i<proveedores.Count; i++)
+            {
+                if (proveedores[i].IdProveedor == Activo.Proveedor)
+                {
+                    cmbBoxProveedor.SelectedItem = proveedores[i];
+                }
+            }
 
             //ComboBox de Categorias
             cmbBoxCategorias.DisplayMember = "Descripcion";
             cmbBoxCategorias.ValueMember = "IdCategoria";
             List<Categorias> categorias = categoriaDAL.GetCategorias();
             cmbBoxCategorias.DataSource = categorias;
+            for (int i = 0; i < categorias.Count; i++)
+            {
+                if (categorias[i].IdCategoria == Activo.Categoria)
+                {
+                    cmbBoxCategorias.SelectedItem = categorias[i];
+                }
+            }
 
             //ComboBox de EstadoActivo
             cmbBoxEstadoActivos.DisplayMember = "NombreEstado";
             cmbBoxEstadoActivos.ValueMember = "IdEstadoActivo";
             List<EstadoActivos> estadoActivos = estadoActivoDAL.GetEstadoActivos();
             cmbBoxEstadoActivos.DataSource = estadoActivos;
+            cmbBoxProveedor.DataSource = proveedores;
+            for (int i = 0; i < estadoActivos.Count; i++)
+            {
+                if (estadoActivos[i].IdEstadoActivo == Activo.EstadoActivo)
+                {
+                    cmbBoxEstadoActivos.SelectedItem = estadoActivos[i];
+                }
+            }
         }
 
         private void FrmActivosModificar_n_Load(object sender, EventArgs e)

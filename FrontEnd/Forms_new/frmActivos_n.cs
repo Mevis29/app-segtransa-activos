@@ -95,6 +95,7 @@ namespace Frontend
         private void frmActivos_n_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sEGTRANSADataSource_ACTIVOS.Activos' table. You can move, or remove it, as needed.
+            tblDatosActivos.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.activosTableAdapter.Fill(this.sEGTRANSADataSource_ACTIVOS.Activos);
             cargarActivos();
         }
@@ -158,7 +159,7 @@ namespace Frontend
                     bitacora.DetalleBitacora = detalleBitacora;
                     bitacora.IdUsuario = ValoresAplicacion.idUsuario;
                     bitacoraDAL.Add(bitacora);
-                    MessageBox.Show("Activo Eliminado");
+                    MessageBox.Show("Activo Eliminado: " +activo.CodActivo);
 
                     //usuarios.Clear();
                     //lstUsuarios.DataSource = null;

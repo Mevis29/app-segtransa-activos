@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblActivos = new System.Windows.Forms.Label();
             this.tblDatosActivos = new System.Windows.Forms.DataGridView();
             this.idActivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,18 +41,19 @@
             this.precioActualDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.garantiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MesesDepreciacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sEGTRANSADataSource_ACTIVOS = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_ACTIVOS();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sEGTRANSADataSource_USUARIOS = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_USUARIOS();
             this.sEGTRANSADataSourceUSUARIOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuariosTableAdapter = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_USUARIOSTableAdapters.UsuariosTableAdapter();
-            this.activosTableAdapter = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_ACTIVOSTableAdapters.ActivosTableAdapter();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnActivoModificar = new System.Windows.Forms.Button();
             this.btnActivoEliminar = new System.Windows.Forms.Button();
             this.btnActivoAgregar = new System.Windows.Forms.Button();
+            this.activosTableAdapter = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_ACTIVOSTableAdapters.ActivosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosActivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.activosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSource_ACTIVOS)).BeginInit();
@@ -68,7 +69,7 @@
             this.lblActivos.AutoSize = true;
             this.lblActivos.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblActivos.ForeColor = System.Drawing.Color.DimGray;
-            this.lblActivos.Location = new System.Drawing.Point(42, 18);
+            this.lblActivos.Location = new System.Drawing.Point(94, 18);
             this.lblActivos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblActivos.Name = "lblActivos";
             this.lblActivos.Size = new System.Drawing.Size(98, 34);
@@ -85,17 +86,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tblDatosActivos.AutoGenerateColumns = false;
+            this.tblDatosActivos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.tblDatosActivos.BackgroundColor = System.Drawing.Color.White;
             this.tblDatosActivos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tblDatosActivos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblDatosActivos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblDatosActivos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.tblDatosActivos.ColumnHeadersHeight = 35;
             this.tblDatosActivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.tblDatosActivos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -105,32 +107,33 @@
             this.precioInicialDataGridViewTextBoxColumn,
             this.precioActualDataGridViewTextBoxColumn,
             this.fechaCompraDataGridViewTextBoxColumn,
-            this.garantiaDataGridViewTextBoxColumn});
+            this.garantiaDataGridViewTextBoxColumn,
+            this.MesesDepreciacion});
             this.tblDatosActivos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tblDatosActivos.DataSource = this.activosBindingSource;
             this.tblDatosActivos.EnableHeadersVisualStyles = false;
             this.tblDatosActivos.GridColor = System.Drawing.Color.MidnightBlue;
-            this.tblDatosActivos.Location = new System.Drawing.Point(38, 99);
+            this.tblDatosActivos.Location = new System.Drawing.Point(25, 96);
             this.tblDatosActivos.Margin = new System.Windows.Forms.Padding(2);
             this.tblDatosActivos.Name = "tblDatosActivos";
             this.tblDatosActivos.ReadOnly = true;
             this.tblDatosActivos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblDatosActivos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblDatosActivos.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.tblDatosActivos.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            this.tblDatosActivos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            this.tblDatosActivos.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.tblDatosActivos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.tblDatosActivos.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
             this.tblDatosActivos.RowTemplate.Height = 25;
             this.tblDatosActivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tblDatosActivos.Size = new System.Drawing.Size(703, 326);
+            this.tblDatosActivos.Size = new System.Drawing.Size(852, 326);
             this.tblDatosActivos.TabIndex = 4;
             // 
             // idActivoDataGridViewTextBoxColumn
@@ -139,6 +142,7 @@
             this.idActivoDataGridViewTextBoxColumn.HeaderText = "Id Activo";
             this.idActivoDataGridViewTextBoxColumn.Name = "idActivoDataGridViewTextBoxColumn";
             this.idActivoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idActivoDataGridViewTextBoxColumn.Width = 82;
             // 
             // codActivoDataGridViewTextBoxColumn
             // 
@@ -146,6 +150,7 @@
             this.codActivoDataGridViewTextBoxColumn.HeaderText = "Codigo del Activo";
             this.codActivoDataGridViewTextBoxColumn.Name = "codActivoDataGridViewTextBoxColumn";
             this.codActivoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codActivoDataGridViewTextBoxColumn.Width = 99;
             // 
             // descripcionDataGridViewTextBoxColumn
             // 
@@ -153,6 +158,7 @@
             this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripción";
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descripcionDataGridViewTextBoxColumn.Width = 108;
             // 
             // precioInicialDataGridViewTextBoxColumn
             // 
@@ -160,6 +166,7 @@
             this.precioInicialDataGridViewTextBoxColumn.HeaderText = "Precio Inicial";
             this.precioInicialDataGridViewTextBoxColumn.Name = "precioInicialDataGridViewTextBoxColumn";
             this.precioInicialDataGridViewTextBoxColumn.ReadOnly = true;
+            this.precioInicialDataGridViewTextBoxColumn.Width = 106;
             // 
             // precioActualDataGridViewTextBoxColumn
             // 
@@ -167,6 +174,7 @@
             this.precioActualDataGridViewTextBoxColumn.HeaderText = "Precio Actual";
             this.precioActualDataGridViewTextBoxColumn.Name = "precioActualDataGridViewTextBoxColumn";
             this.precioActualDataGridViewTextBoxColumn.ReadOnly = true;
+            this.precioActualDataGridViewTextBoxColumn.Width = 108;
             // 
             // fechaCompraDataGridViewTextBoxColumn
             // 
@@ -174,6 +182,7 @@
             this.fechaCompraDataGridViewTextBoxColumn.HeaderText = "Fecha de Compra";
             this.fechaCompraDataGridViewTextBoxColumn.Name = "fechaCompraDataGridViewTextBoxColumn";
             this.fechaCompraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaCompraDataGridViewTextBoxColumn.Width = 135;
             // 
             // garantiaDataGridViewTextBoxColumn
             // 
@@ -181,6 +190,15 @@
             this.garantiaDataGridViewTextBoxColumn.HeaderText = "Garantía";
             this.garantiaDataGridViewTextBoxColumn.Name = "garantiaDataGridViewTextBoxColumn";
             this.garantiaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.garantiaDataGridViewTextBoxColumn.Width = 89;
+            // 
+            // MesesDepreciacion
+            // 
+            this.MesesDepreciacion.DataPropertyName = "MesesDepreciacion";
+            this.MesesDepreciacion.HeaderText = "Meses Depreciacion";
+            this.MesesDepreciacion.Name = "MesesDepreciacion";
+            this.MesesDepreciacion.ReadOnly = true;
+            this.MesesDepreciacion.Width = 148;
             // 
             // activosBindingSource
             // 
@@ -210,10 +228,6 @@
             // usuariosTableAdapter
             // 
             this.usuariosTableAdapter.ClearBeforeFill = true;
-            // 
-            // activosTableAdapter
-            // 
-            this.activosTableAdapter.ClearBeforeFill = true;
             // 
             // txtBusqueda
             // 
@@ -245,7 +259,7 @@
             this.btnActivoModificar.ForeColor = System.Drawing.Color.White;
             this.btnActivoModificar.Image = global::FrontEnd.Properties.Resources.update;
             this.btnActivoModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActivoModificar.Location = new System.Drawing.Point(310, 446);
+            this.btnActivoModificar.Location = new System.Drawing.Point(387, 446);
             this.btnActivoModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnActivoModificar.Name = "btnActivoModificar";
             this.btnActivoModificar.Size = new System.Drawing.Size(110, 36);
@@ -266,7 +280,7 @@
             this.btnActivoEliminar.ForeColor = System.Drawing.Color.White;
             this.btnActivoEliminar.Image = global::FrontEnd.Properties.Resources.minus_button;
             this.btnActivoEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActivoEliminar.Location = new System.Drawing.Point(456, 446);
+            this.btnActivoEliminar.Location = new System.Drawing.Point(537, 446);
             this.btnActivoEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnActivoEliminar.Name = "btnActivoEliminar";
             this.btnActivoEliminar.Size = new System.Drawing.Size(110, 36);
@@ -287,7 +301,7 @@
             this.btnActivoAgregar.ForeColor = System.Drawing.Color.White;
             this.btnActivoAgregar.Image = global::FrontEnd.Properties.Resources.add;
             this.btnActivoAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActivoAgregar.Location = new System.Drawing.Point(161, 446);
+            this.btnActivoAgregar.Location = new System.Drawing.Point(238, 446);
             this.btnActivoAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnActivoAgregar.Name = "btnActivoAgregar";
             this.btnActivoAgregar.Size = new System.Drawing.Size(110, 36);
@@ -297,12 +311,16 @@
             this.btnActivoAgregar.UseVisualStyleBackColor = false;
             this.btnActivoAgregar.Click += new System.EventHandler(this.btnActivoAgregar_Click);
             // 
+            // activosTableAdapter
+            // 
+            this.activosTableAdapter.ClearBeforeFill = true;
+            // 
             // frmMenuPrincipal_n
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(797, 513);
+            this.ClientSize = new System.Drawing.Size(901, 513);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.btnActivoModificar);
@@ -348,5 +366,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precioActualDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaCompraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn garantiaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MesesDepreciacion;
     }
 }

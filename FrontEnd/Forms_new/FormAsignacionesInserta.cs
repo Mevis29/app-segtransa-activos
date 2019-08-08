@@ -37,8 +37,6 @@ namespace FrontEnd.Formularios
             this.CargarActivos();
 
             //Invocar las herramientas refereciadas a valores del sistema
-            this.dtpFechInicialAsig.Value = new DateTime(2019, 01, 01);
-            this.dtpFechfinalAsig.Value = new DateTime(2019, 01, 01);
             this.cboEmpleado.SelectedIndex = 0;
             this.cboActivo.SelectedIndex = 0;
         }
@@ -61,8 +59,7 @@ namespace FrontEnd.Formularios
             if (validarExisteAsignacion() == false)
             {
                 this.InsertarDatos();
-                this.cboEmpleado.SelectedValue = "";
-                this.cboActivo.SelectedValue = "";
+                Close();
             }
 
         }
@@ -111,7 +108,7 @@ namespace FrontEnd.Formularios
                     nombreEmpleado = this.cboEmpleado.SelectedText;
                     //mètodo pr insertar nvo  activo x empleado
                     Asignacion.InsertaAsignUsuario(IdUsuario, IdActivo,
-                               this.dtpFechInicialAsig.Value, this.dtpFechfinalAsig.Value);
+                               DateTime.Now, DateTime.MaxValue);
                     string detalleBitacora = "Se agregó la asignación del activo: " + codigo.Trim() + " al empleado: " + nombreEmpleado.Trim();
                     bitacora.IdUsuario = ValoresAplicacion.idUsuario;
                     bitacora.DetalleBitacora = detalleBitacora;
@@ -122,8 +119,6 @@ namespace FrontEnd.Formularios
                     //carga los datos vacios pr obtener valores
                     this.cboEmpleado.Text = "";
                     this.cboActivo.Text = "";
-                    this.dtpFechInicialAsig.Value = new DateTime(1980, 01, 01);
-                    this.dtpFechfinalAsig.Value = new DateTime(1980, 01, 01);
                 }
                 catch (Exception)
                 {
@@ -150,12 +145,6 @@ namespace FrontEnd.Formularios
             {
                 mensaje += "\nDebe ingresar un valor para Activo.";
             }
-
-            if (dtpFechInicialAsig.Value >= dtpFechfinalAsig.Value)
-            {
-                mensaje += "\nLa fecha inicial no puede ser mayor a la fecha final.";
-            }
-
             if (mensaje != "")
             {
                 MessageBox.Show(mensaje, "Error de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
