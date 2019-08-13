@@ -34,10 +34,6 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.lblEmpleado = new System.Windows.Forms.Label();
             this.cboEmpleado = new System.Windows.Forms.ComboBox();
-            this.lblFechInicioAsg = new System.Windows.Forms.Label();
-            this.lblFechFinalAsg = new System.Windows.Forms.Label();
-            this.dtpFechInicialAsig = new System.Windows.Forms.DateTimePicker();
-            this.dtpFechfinalAsig = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lblActivo
@@ -67,7 +63,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(307, 434);
+            this.btnCancelar.Location = new System.Drawing.Point(295, 245);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 33);
@@ -79,7 +75,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(58, 434);
+            this.btnAceptar.Location = new System.Drawing.Point(46, 245);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(94, 33);
@@ -112,57 +108,11 @@
             this.cboEmpleado.TabIndex = 25;
             this.cboEmpleado.ValueMember = "Id";
             // 
-            // lblFechInicioAsg
-            // 
-            this.lblFechInicioAsg.AutoSize = true;
-            this.lblFechInicioAsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechInicioAsg.Location = new System.Drawing.Point(34, 252);
-            this.lblFechInicioAsg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblFechInicioAsg.Name = "lblFechInicioAsg";
-            this.lblFechInicioAsg.Size = new System.Drawing.Size(91, 18);
-            this.lblFechInicioAsg.TabIndex = 32;
-            this.lblFechInicioAsg.Text = "Fecha Inicio:";
-            // 
-            // lblFechFinalAsg
-            // 
-            this.lblFechFinalAsg.AutoSize = true;
-            this.lblFechFinalAsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechFinalAsg.Location = new System.Drawing.Point(34, 321);
-            this.lblFechFinalAsg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblFechFinalAsg.Name = "lblFechFinalAsg";
-            this.lblFechFinalAsg.Size = new System.Drawing.Size(88, 18);
-            this.lblFechFinalAsg.TabIndex = 34;
-            this.lblFechFinalAsg.Text = "Fecha Final:";
-            // 
-            // dtpFechInicialAsig
-            // 
-            this.dtpFechInicialAsig.CustomFormat = "ddd dd-MMM-yyyy";
-            this.dtpFechInicialAsig.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechInicialAsig.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechInicialAsig.Location = new System.Drawing.Point(170, 252);
-            this.dtpFechInicialAsig.Name = "dtpFechInicialAsig";
-            this.dtpFechInicialAsig.Size = new System.Drawing.Size(247, 24);
-            this.dtpFechInicialAsig.TabIndex = 35;
-            // 
-            // dtpFechfinalAsig
-            // 
-            this.dtpFechfinalAsig.CustomFormat = "ddd dd-MMM-yyyy";
-            this.dtpFechfinalAsig.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechfinalAsig.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechfinalAsig.Location = new System.Drawing.Point(170, 317);
-            this.dtpFechfinalAsig.Name = "dtpFechfinalAsig";
-            this.dtpFechfinalAsig.Size = new System.Drawing.Size(247, 24);
-            this.dtpFechfinalAsig.TabIndex = 36;
-            // 
             // FormAsignacionesInserta
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(479, 511);
-            this.Controls.Add(this.dtpFechfinalAsig);
-            this.Controls.Add(this.dtpFechInicialAsig);
-            this.Controls.Add(this.lblFechFinalAsg);
-            this.Controls.Add(this.lblFechInicioAsg);
+            this.ClientSize = new System.Drawing.Size(462, 312);
             this.Controls.Add(this.lblActivo);
             this.Controls.Add(this.cboActivo);
             this.Controls.Add(this.btnCancelar);
@@ -188,9 +138,5 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Label lblEmpleado;
         private System.Windows.Forms.ComboBox cboEmpleado;
-        private System.Windows.Forms.Label lblFechInicioAsg;
-        private System.Windows.Forms.Label lblFechFinalAsg;
-        private System.Windows.Forms.DateTimePicker dtpFechInicialAsig;
-        private System.Windows.Forms.DateTimePicker dtpFechfinalAsig;
     }
 }

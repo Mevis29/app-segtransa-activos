@@ -33,11 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework">
+      <HintPath>..\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.BatchParserClient, Version=15.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.SqlManagementObjects.150.18131.0\lib\net45\Microsoft.SqlServer.BatchParserClient.dll</HintPath>
@@ -191,155 +191,163 @@
     <Compile Include="DAL\IEstadoActivosDAL.cs" />
     <Compile Include="DAL\IUsuariosDAL.cs" />
     <Compile Include="Entities\Activos.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Bitacora.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Categorias.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Depreciacion.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\EstadoActivos.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\EstadoUsuarios.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Proveedores.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\RolUsuarios.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Segtransa.Context.cs">
+    <Compile Include="Entities\segtransa.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Segtransa.Context.tt</DependentUpon>
+      <DependentUpon>segtransa.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Segtransa.cs">
+    <Compile Include="Entities\segtransa.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Segtransa.Designer.cs">
+    <Compile Include="Entities\segtransa.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Segtransa.edmx</DependentUpon>
+      <DependentUpon>segtransa.edmx</DependentUpon>
     </Compile>
     <Compile Include="Entities\spActivosRetornaDatosId_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\spActivosRetornaListaId_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\spActivosRetornaListaResumen_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\spActivosRetornaLista_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\spAsignUsuarioRetornaDatosId_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\spAsignUsuarioRetornaListaId_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\spAsignUsuarioRetornaLista_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\spEstadoActivosRetornaLista_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\spEstadoUsuariosRetornaLista_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\spRolesRetornaLista_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\spUsuariosRetornaDatosId_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\spUsuariosRetornaDatosLogin_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\spUsuariosRetornaListaEmpleado_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\spUsuariosRetornaListaId_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\spUsuariosRetornaLista_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\sp_BuscarActivosPorIdYNombre_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\sp_BuscarActivos_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\sp_mostrarActivo_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\sp_obtenerActivos_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\sp_RetornaBitacora_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\sp_retornaDepreciacionesLista_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\sp_RetornaDepreciacionId_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\sp_RetornaDepreciacion_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\sp_RetornaDepreciados_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\sp_RetornaReparacion_Result.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\THAsignaciones.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\THReparaciones.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Usuarios.cs">
-      <DependentUpon>Segtransa.tt</DependentUpon>
+      <DependentUpon>segtransa.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Entities\Segtransa.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Segtransa.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="App.Config" />
-    <None Include="Entities\Segtransa.edmx.diagram">
-      <DependentUpon>Segtransa.edmx</DependentUpon>
+    <EntityDeploy Include="Entities\segtransa.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>segtransa.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entities\segtransa.edmx.diagram">
+      <DependentUpon>segtransa.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Entities\Segtransa.Context.tt">
+    <Content Include="Entities\segtransa.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Segtransa.edmx</DependentUpon>
-      <LastGenOutput>Segtransa.Context.cs</LastGenOutput>
+      <DependentUpon>segtransa.edmx</DependentUpon>
+      <LastGenOutput>segtransa.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Entities\Segtransa.tt">
+    <Content Include="Entities\segtransa.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Segtransa.edmx</DependentUpon>
-      <LastGenOutput>Segtransa.cs</LastGenOutput>
+      <DependentUpon>segtransa.edmx</DependentUpon>
+      <LastGenOutput>segtransa.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

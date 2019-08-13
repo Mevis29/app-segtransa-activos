@@ -27,7 +27,6 @@ namespace FrontEnd
         private IBitacoraDAL bitacoraDAL = new BitacoraImplDAL();
         private Bitacora bitacora = new Bitacora();
         public Usuarios user;
-        int contadorIntentos = 0;
 
         private void showInfo(string Mensaje)
         {
@@ -36,7 +35,36 @@ namespace FrontEnd
 
         private void btnIng_Click(object sender, EventArgs e)
         {
-            contadorIntentos = contadorIntentos + 1;
+            Properties.Settings.Default["contadorIntentos"] = (int)Properties.Settings.Default["contadorIntentos"] + 1;
+            Properties.Settings.Default.Save();
+            if ((int)Properties.Settings.Default["contadorIntentos"] == 6)
+            {
+                Properties.Settings.Default["fechaUltimoIntento"] = DateTime.Now;
+                Properties.Settings.Default["bloqueado"] = true;
+                Properties.Settings.Default.Save();
+            }
+            if (!(bool)Properties.Settings.Default["bloqueado"])
+            {
+                iniciarSesion();
+            }
+            else
+            {
+                desbloqueoIntentos();
+                if (!(bool)Properties.Settings.Default["bloqueado"])
+                {
+                    Properties.Settings.Default["contadorIntentos"] = (int)Properties.Settings.Default["contadorIntentos"] + 1;
+                    Properties.Settings.Default.Save();
+                    iniciarSesion();
+                }
+                else
+                {
+                    showInfo("Alcanzó el número máximo de intentos. Por favor, esperar unos minutos.");
+                }
+            }
+        }
+
+        private void iniciarSesion()
+        {
             int i = 0;
             int id = -1;
             string pass;
@@ -45,24 +73,13 @@ namespace FrontEnd
             {
                 showInfo("El campo de usuario vacio o con formato equivocado! \nPor favor ingrese su correo!");
                 tbxUserId.Clear();
-                if (contadorIntentos > 5)
-                {
-                    showInfo("Alcanzo el numero maximo de Intentos! \nPor favor comuniquese con el departamento de Informatica!");
-                    Close();
-                }
             }
-            else 
+            else
             {
                 correo = tbxUserId.Text;
-
                 if (string.IsNullOrWhiteSpace(tbxPassword.Text) || string.IsNullOrEmpty(tbxPassword.Text))
                 {
                     showInfo("El campo de Password se encuentra vacio! \nPor favor ingrese su Password!");
-                    if (contadorIntentos > 5)
-                    {
-                        showInfo("Alcanzo el numero maximo de Intentos! \nPor favor comuniquese con el departamento de Informatica!");
-                        Close();
-                    }
                 }
                 else
                 {
@@ -78,12 +95,12 @@ namespace FrontEnd
 
                             if (usuariosDal.isValidPassword(pass, correo))
                             {
-                                string rolDescripcion= string.Empty;
+                                string rolDescripcion = string.Empty;
                                 /*Validado usuario y password se le da acceso a un menu de opciones de acuerdo a su roll, admin o cualquier otro*/
                                 user = usuariosDal.Getcorreo(correo);
                                 ValoresAplicacion.correoUsuario = user.Correo;
                                 ValoresAplicacion.idUsuario = user.IdUsuario;
-                                if (user.RolUsuario==1)
+                                if (user.RolUsuario == 1)
                                 {
                                     rolDescripcion = "Administrador";
                                 }
@@ -133,11 +150,6 @@ namespace FrontEnd
                                 tbxUserId.Clear();
                                 tbxPassword.Clear();
                                 showInfo("Los datos ingresados no son correctos! \nPor favor ingrese sus datos!");
-                                if (contadorIntentos > 5)
-                                {
-                                    showInfo("Alcanzo el numero maximo de Intentos! \nPor favor comuniquese con el departamento de Informatica!");
-                                    Close();
-                                }
                             }
                         }
                         else
@@ -145,19 +157,25 @@ namespace FrontEnd
                             tbxUserId.Clear();
                             tbxPassword.Clear();
                             showInfo("Los datos ingresados no son correctos! \nPor favor ingrese sus datos!");
-                            if (contadorIntentos > 5)
-                            {
-                                showInfo("Alcanzo el numero maximo de Intentos! \nPor favor comuniquese con el departamento de Informatica!");
-                                Close();
-                            }
                         }
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         MessageBox.Show("Verifique que las credenciales de usuario sean correctas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    
-                } 
+
+                }
+            }
+        }
+
+        private void desbloqueoIntentos()
+        {
+            double tiempobloqueo = DateTime.Now.Subtract((DateTime)Properties.Settings.Default["fechaUltimoIntento"]).TotalMinutes;
+            if (tiempobloqueo > 15)
+            {
+                Properties.Settings.Default["contadorIntentos"] = 0;
+                Properties.Settings.Default["bloqueado"] = false;
+                Properties.Settings.Default.Save();
             }
         }
 
@@ -218,14 +236,14 @@ namespace FrontEnd
 
         private void frmLogin_MouseDown(object sender, MouseEventArgs e)
         {
-           // ReleaseCapture();
-           // SendMessage(this.Handle, 0x112, 0xf012, 0);
+            // ReleaseCapture();
+            // SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
-           // ReleaseCapture();
-           // SendMessage(this.Handle, 0x112, 0xf012, 0);
+            // ReleaseCapture();
+            // SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
     }

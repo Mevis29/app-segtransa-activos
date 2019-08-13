@@ -10,7 +10,7 @@ using System.Data.Entity;
 public class UsuariosImplDAL : IUsuariosDAL
 {
 
-    private BDContext context;
+    private BDContext context = new BDContext();
 
     public void Add(Usuarios Usuario)
     {
@@ -19,8 +19,8 @@ public class UsuariosImplDAL : IUsuariosDAL
             using (context = new BDContext())
             {
                 Usuario.RolUsuarios = (from c in context.RolUsuarios
-                                        where c.IdRol == Usuario.RolUsuario //idRolUsuario
-                                        select c).First();
+                                       where c.IdRol == Usuario.RolUsuario //idRolUsuario
+                                       select c).First();
 
                 context.Usuarios.Add(Usuario);
                 context.SaveChanges();
@@ -63,7 +63,7 @@ public class UsuariosImplDAL : IUsuariosDAL
     {
         List<spUsuariosRetornaListaId_Result> resultado;
 
-        using(context = new BDContext())
+        using (context = new BDContext())
         {
             resultado = this.context.spUsuariosRetornaListaId(pIdUsuario).ToList();
         }
@@ -71,9 +71,9 @@ public class UsuariosImplDAL : IUsuariosDAL
 
         //List<spUsuariosRetornaListaId_Result> resultado = new List<spUsuariosRetornaListaId_Result>();
 
-//        resultado = this.context.spUsuariosRetornaListaId(pIdUsuario).ToList();
+        //        resultado = this.context.spUsuariosRetornaListaId(pIdUsuario).ToList();
 
-  //      return resultado;
+        //      return resultado;
     }
 
 
@@ -103,17 +103,17 @@ public class UsuariosImplDAL : IUsuariosDAL
         try
         {
             Usuarios result = new Usuarios();
-            
+
             using (context = new BDContext())
             {
                 result = (from c in context.Usuarios
                           where c.Correo.Equals(correo)
                           select c).FirstOrDefault();
-                          //select c).First();
+                //select c).First();
             }
             return result;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
 
             return null;
@@ -144,7 +144,7 @@ public class UsuariosImplDAL : IUsuariosDAL
         bool real = false;
         Usuarios usuarios = new Usuarios();
         usuarios = Getcorreo(correo);
-        if (usuarios.Correo.Equals(correo))
+        if (usuarios.Correo.ToUpper().Equals(correo.ToUpper()))
         {
             real = true;
         }
@@ -177,7 +177,7 @@ public class UsuariosImplDAL : IUsuariosDAL
         bool resultado = false;
         try
         {
-            using(context = new BDContext())
+            using (context = new BDContext())
             {
                 int registrosAfectados = context.spUsuariosActualizaUltLogin(pIdUsuario);
 
@@ -186,7 +186,7 @@ public class UsuariosImplDAL : IUsuariosDAL
                     resultado = true;
                 }
             }
-            
+
         }
         catch (Exception)
         {
@@ -202,12 +202,9 @@ public class UsuariosImplDAL : IUsuariosDAL
     public List<spUsuariosRetornaLista_Result> retornaListaUsuarios(string pCedula, string pNombre, string pCorreo)
     {
         List<spUsuariosRetornaLista_Result> resultado = new List<spUsuariosRetornaLista_Result>();
-        using (context = new BDContext())
-        {
-   
-            resultado = this.context.spUsuariosRetornaLista(pCedula, pNombre, pCorreo).ToList();
-        }
-            
+
+        resultado = this.context.spUsuariosRetornaLista(pCedula, pNombre, pCorreo).ToList();
+
 
         return resultado;
     }
