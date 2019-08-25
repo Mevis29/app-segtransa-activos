@@ -191,7 +191,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_IdUsuario_Bi">
-          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
@@ -203,7 +205,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_IdUsuario_THA">
-          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="THAsignaciones" Type="Self.THAsignaciones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">

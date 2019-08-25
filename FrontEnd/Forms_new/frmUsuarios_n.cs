@@ -100,7 +100,7 @@ namespace Frontend
                 //Usuarios usuario = (Usuarios)lstUsuarios.SelectedItem;
                 Usuarios usuario = (Usuarios)tblDatosUsuarios.CurrentRow.DataBoundItem;
 
-                DialogResult dialogResult = MessageBox.Show("Seguro que desea eliminar al usuario " + usuario.Nombre + "?", "Confirmación", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("¿Seguro que desea eliminar al usuario "  + usuario.Nombre +"? Si elimina este usuario, se eliminarán todas sus asignaciones ", "Confirmación", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     usuarioDAL.Delete(usuario.IdUsuario);
@@ -123,7 +123,7 @@ namespace Frontend
             catch (Exception ex)
             {
 
-                MessageBox.Show("Error: Este usuario tiene un activo asignado. Si desea eliminarlo, primero elimine sus asignaciones" );
+                MessageBox.Show("Hubo en error." );
             }
 
 
