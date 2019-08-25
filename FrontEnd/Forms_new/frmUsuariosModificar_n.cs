@@ -46,16 +46,14 @@ namespace FronEnd
             cmbBoxRolA.ValueMember = "IdRol";
             List<RolUsuarios> rol_Usuarios = rolUsuariosDAL.GetRols();
             cmbBoxRolA.DataSource = rol_Usuarios;
-           // cmbBoxRolA.SelectedValue = Usuario.RolUsuario.ToString();
-
-            //ComboBox de Estado del Usuario
-            cmbBoxEstadoA.DisplayMember = "NombreEstado";
-            cmbBoxEstadoA.ValueMember = "IdEstadoUsuario";
-            List<EstadoUsuarios> estado_Usuarios = estadoUsuariosDAL.GetEstadoUsuarios();
-            cmbBoxEstadoA.DataSource = estado_Usuarios;
-            //cmbBoxEstadoA.SelectedItem = Usuario.EstadoUsuario.ToString();
-          
-
+            // cmbBoxRolA.SelectedValue = Usuario.RolUsuario.ToString();
+            for (int i = 0; i < rol_Usuarios.Count; i++)
+            {
+                if (rol_Usuarios[i].IdRol == Usuario.RolUsuario)
+                {
+                    cmbBoxRolA.SelectedItem = rol_Usuarios[i];
+                }
+            }
         }
 
         private void FrmUsuariosModificar_n_Load(object sender, EventArgs e)
@@ -83,25 +81,53 @@ namespace FronEnd
                 String apellido = this.txtApellido1A.Text;
                 String cedula = txtCedulaA.Text;
                 String contrasena = aux.Encrypt(txtContrasenaA.Text);
-
+                String correo = txtCorreoA.Text;
+                CryptoEngine cryptoEngine = new CryptoEngine();
                 // Valida que los campos requeridos tengan valores (Nombre, Apellido y/o Cedula)
 
-                if (nombre.Length <= 0 || apellido.Length <=0 || cedula.Length <=0)
+                if (nombre.Length <= 0 || apellido.Length <=0 || cedula.Length <=0 || correo.Length <= 0 || contrasena.Length <= 0)
                 {
                     this.errorLbl.Visible = true;
-                    this.lblErrorApellido.Visible = true;
-                    this.lblErrorContrasena.Visible = true;
-                    this.lblErrorNombre.Visible = true;
+                   
                 }
                 //Valida que el campo de Cedula lleve solo numeros
                 else if(Regex.IsMatch(cedula,@"^\d+$") == false){
                     this.lblErrorCed.Visible = true;
+                    this.lblErrorApellido.Visible = false;
+                    this.lblErrorNombre.Visible = false;
+                    this.lblErrorCorreo.Visible = false;
+                }
+                //Valida que el nombre solo lleve letras
+                else if (Regex.IsMatch(nombre, @"[a-zA-Z]+") == false)
+                {
+                    this.lblErrorCed.Visible = false;
+                    this.lblErrorApellido.Visible = false;
+                    this.lblErrorNombre.Visible = true;
+                    this.lblErrorCorreo.Visible = false;
+                }
+                //Valida que el apellido solo lleve letras
+                else if (Regex.IsMatch(apellido, @"[a-zA-Z]+") == false)
+                {
+                    this.lblErrorCed.Visible = false;
+                    this.lblErrorApellido.Visible = false;
+                    this.lblErrorNombre.Visible = true;
+                    this.lblErrorCorreo.Visible = false;
+                }
+                else if (!validarCorreo())
+                {
+                    this.lblErrorCed.Visible = false;
+                    this.lblErrorApellido.Visible = false;
+                    this.lblErrorNombre.Visible = false;
+                    this.lblErrorCorreo.Visible = true;
                 }
                 // Si estan esas validaciones, se crea el objeto a insertar en la Base de Datos
                 else
                 {
                     this.errorLbl.Visible = false;
                     this.lblErrorCed.Visible = false;
+                    this.lblErrorNombre.Visible = false;
+                    this.lblErrorApellido.Visible = false;
+                    this.lblErrorCorreo.Visible = false;
 
                     //Usuario = new Usuarios();
                     
@@ -130,8 +156,7 @@ namespace FronEnd
                         Usuario.Contrasena = aux.Encrypt(txtContrasenaA.Text);
                     }*/
 
-                    Usuario.EstadoUsuario = (int)cmbBoxEstadoA.SelectedValue;
-                    Usuario.EstadoUsuarios = (EstadoUsuarios)cmbBoxEstadoA.SelectedItem;
+                    
                     
 
                     usuariosDAL.Update(Usuario);
@@ -147,14 +172,19 @@ namespace FronEnd
             catch (Exception ex)
             {
 
-                MessageBox.Show("Error " + ex.Message);
+                MessageBox.Show("Ha ocurrido un error. Revise que la cédula y el correo no estén siendo usados por otro usuario" );
             }
 
 
         }
 
+        private bool validarCorreo()
+        {
+            bool isEmail = Regex.IsMatch(txtCorreoA.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
+            return isEmail;
+        }
 
-       protected override void OnClosing(CancelEventArgs e)
+        protected override void OnClosing(CancelEventArgs e)
         {
             // Let the default behavior to happen.
             base.OnClosing(e);

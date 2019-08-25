@@ -355,7 +355,7 @@
         </TablixRowHierarchy>
         <DataSetName>DepreciadosDS</DataSetName>
         <Top>0.67583in</Top>
-        <Left>1.69314in</Left>
+        <Left>1.26429in</Left>
         <Height>0.5in</Height>
         <Width>5in</Width>
         <Style>
@@ -394,7 +394,7 @@
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
           <Top>0.375in</Top>
-          <Left>1.52777in</Left>
+          <Left>1.6706in</Left>
           <Height>0.25in</Height>
           <Width>1.72917in</Width>
           <Style>
@@ -458,7 +458,7 @@
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
           <Top>0.375in</Top>
-          <Left>6.40705in</Left>
+          <Left>6.16308in</Left>
           <Height>0.25in</Height>
           <Width>0.3125in</Width>
           <ZIndex>2</ZIndex>
@@ -491,7 +491,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
           <Top>0.375in</Top>
-          <Left>6.78899in</Left>
+          <Left>6.63228in</Left>
           <Height>0.25in</Height>
           <Width>0.25in</Width>
           <ZIndex>3</ZIndex>
@@ -524,7 +524,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
           <Top>0.375in</Top>
-          <Left>5.87649in</Left>
+          <Left>5.45081in</Left>
           <Height>0.25in</Height>
           <Width>0.55556in</Width>
           <ZIndex>4</ZIndex>
@@ -557,7 +557,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox5</rd:DefaultName>
           <Top>0.375in</Top>
-          <Left>4in</Left>
+          <Left>3.55647in</Left>
           <Height>0.25in</Height>
           <Width>0.69314in</Width>
           <ZIndex>5</ZIndex>
@@ -589,7 +589,7 @@
           </Paragraphs>
           <rd:DefaultName>UserID</rd:DefaultName>
           <Top>0.375in</Top>
-          <Left>4.69314in</Left>
+          <Left>4.40632in</Left>
           <Height>0.25in</Height>
           <Width>0.88778in</Width>
           <ZIndex>6</ZIndex>

@@ -28,7 +28,6 @@ namespace Frontend
         private void cargarUsuarios() {
             try
             {
-                
                 this.usuariosBindingSource.DataSource = null;
                 this.usuariosBindingSource.DataSource = usuarioDAL.GetUsuarios();
             }
@@ -43,7 +42,12 @@ namespace Frontend
             // TODO: This line of code loads data into the 'sEGTRANSADataSource_USUARIOS.Usuarios' table. You can move, or remove it, as needed.
             this.usuariosTableAdapter.Fill(this.sEGTRANSADataSource_USUARIOS.Usuarios);
             cargarUsuarios();
+            tblDatosUsuarios.Columns[4].Visible = false;
+            tblDatosUsuarios.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            tblDatosUsuarios.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            tblDatosUsuarios.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
         }
+
 
         // Codigo para llamar al form de Agregar
         private void btnUsuarioAgregar_Click(object sender, EventArgs e)

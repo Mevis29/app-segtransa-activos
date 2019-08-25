@@ -235,7 +235,7 @@
         </TablixRowHierarchy>
         <DataSetName>sp_RetornaBitacoraDataSet</DataSetName>
         <Top>0.45708in</Top>
-        <Left>1.05248in</Left>
+        <Left>0.75831in</Left>
         <Height>0.5in</Height>
         <Width>5.92862in</Width>
         <Style>
@@ -274,7 +274,7 @@
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
           <Top>0.32292in</Top>
-          <Left>1.65277in</Left>
+          <Left>1.7956in</Left>
           <Height>0.25in</Height>
           <Width>1.72917in</Width>
           <Style>
@@ -339,7 +339,7 @@
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
           <Top>0.32292in</Top>
-          <Left>6.43482in</Left>
+          <Left>6.28808in</Left>
           <Height>0.25in</Height>
           <Width>0.3125in</Width>
           <ZIndex>2</ZIndex>
@@ -372,7 +372,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
           <Top>0.32292in</Top>
-          <Left>6.91399in</Left>
+          <Left>6.75728in</Left>
           <Height>0.25in</Height>
           <Width>0.25in</Width>
           <ZIndex>3</ZIndex>
@@ -405,7 +405,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
           <Top>0.32292in</Top>
-          <Left>5.90426in</Left>
+          <Left>5.57581in</Left>
           <Height>0.25in</Height>
           <Width>0.55556in</Width>
           <ZIndex>4</ZIndex>
@@ -438,7 +438,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox5</rd:DefaultName>
           <Top>0.32292in</Top>
-          <Left>4.125in</Left>
+          <Left>3.68147in</Left>
           <Height>0.25in</Height>
           <Width>0.69314in</Width>
           <ZIndex>5</ZIndex>
@@ -470,7 +470,7 @@
           </Paragraphs>
           <rd:DefaultName>UserID</rd:DefaultName>
           <Top>0.32292in</Top>
-          <Left>4.81814in</Left>
+          <Left>4.53132in</Left>
           <Height>0.25in</Height>
           <Width>0.88778in</Width>
           <ZIndex>6</ZIndex>

@@ -37,7 +37,7 @@ namespace BackEnd.DAL
             }
             catch(Exception ex)
             {
-                MessageBox.Show("hola" + ex);
+               throw;
             }
         }
 

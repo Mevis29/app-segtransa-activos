@@ -138,7 +138,7 @@ namespace FrontEnd
 
                                 // abrir form Menu Principal
 
-
+                                desbloquear();
                                 FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(user);
                                 menuPrincipal.Show();
                                 tbxUserId.Clear();
@@ -173,10 +173,15 @@ namespace FrontEnd
             double tiempobloqueo = DateTime.Now.Subtract((DateTime)Properties.Settings.Default["fechaUltimoIntento"]).TotalMinutes;
             if (tiempobloqueo > 15)
             {
-                Properties.Settings.Default["contadorIntentos"] = 0;
-                Properties.Settings.Default["bloqueado"] = false;
-                Properties.Settings.Default.Save();
+                desbloquear();
             }
+        }
+
+        private void desbloquear()
+        {
+            Properties.Settings.Default["contadorIntentos"] = 0;
+            Properties.Settings.Default["bloqueado"] = false;
+            Properties.Settings.Default.Save();
         }
 
         private bool validarCorreo()

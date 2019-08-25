@@ -41,10 +41,8 @@ namespace Frontend
 
             DataGridViewColumn columnFechaInicio = tblMisActivos.Columns[3];
             columnFechaInicio.Width = 150;
-            DataGridViewColumn columnFechaFin = tblMisActivos.Columns[4];
-            columnFechaFin.Width = 160;
+            tblMisActivos.Columns[4].Visible = false;
             cargarMisActivos();
-
             if (ValoresAplicacion.rolUsuario.Equals("Administrador"))
             {
                 btnSolicitarRep.Visible = true;

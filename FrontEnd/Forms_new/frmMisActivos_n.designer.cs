@@ -55,7 +55,7 @@
             this.lblMiPerfil.AutoSize = true;
             this.lblMiPerfil.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMiPerfil.ForeColor = System.Drawing.Color.DimGray;
-            this.lblMiPerfil.Location = new System.Drawing.Point(42, 18);
+            this.lblMiPerfil.Location = new System.Drawing.Point(325, 18);
             this.lblMiPerfil.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMiPerfil.Name = "lblMiPerfil";
             this.lblMiPerfil.Size = new System.Drawing.Size(146, 34);
@@ -72,6 +72,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tblMisActivos.AutoGenerateColumns = false;
+            this.tblMisActivos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tblMisActivos.BackgroundColor = System.Drawing.Color.White;
             this.tblMisActivos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tblMisActivos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -105,7 +106,7 @@
             this.tblMisActivos.DefaultCellStyle = dataGridViewCellStyle2;
             this.tblMisActivos.EnableHeadersVisualStyles = false;
             this.tblMisActivos.GridColor = System.Drawing.Color.DarkSlateBlue;
-            this.tblMisActivos.Location = new System.Drawing.Point(38, 89);
+            this.tblMisActivos.Location = new System.Drawing.Point(51, 85);
             this.tblMisActivos.Margin = new System.Windows.Forms.Padding(2);
             this.tblMisActivos.Name = "tblMisActivos";
             this.tblMisActivos.ReadOnly = true;
@@ -178,7 +179,7 @@
             // 
             // btnSolicitarRep
             // 
-            this.btnSolicitarRep.Location = new System.Drawing.Point(601, 445);
+            this.btnSolicitarRep.Location = new System.Drawing.Point(51, 444);
             this.btnSolicitarRep.Name = "btnSolicitarRep";
             this.btnSolicitarRep.Size = new System.Drawing.Size(132, 37);
             this.btnSolicitarRep.TabIndex = 4;

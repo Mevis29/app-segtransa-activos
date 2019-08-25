@@ -66,7 +66,7 @@
             this.lblUsuarios.AutoSize = true;
             this.lblUsuarios.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuarios.ForeColor = System.Drawing.Color.DimGray;
-            this.lblUsuarios.Location = new System.Drawing.Point(42, 18);
+            this.lblUsuarios.Location = new System.Drawing.Point(331, 9);
             this.lblUsuarios.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsuarios.Name = "lblUsuarios";
             this.lblUsuarios.Size = new System.Drawing.Size(115, 34);
@@ -83,6 +83,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tblDatosUsuarios.AutoGenerateColumns = false;
+            this.tblDatosUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tblDatosUsuarios.BackgroundColor = System.Drawing.Color.White;
             this.tblDatosUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tblDatosUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -111,7 +112,7 @@
             this.tblDatosUsuarios.DataSource = this.usuariosBindingSource;
             this.tblDatosUsuarios.EnableHeadersVisualStyles = false;
             this.tblDatosUsuarios.GridColor = System.Drawing.Color.DarkSlateBlue;
-            this.tblDatosUsuarios.Location = new System.Drawing.Point(38, 89);
+            this.tblDatosUsuarios.Location = new System.Drawing.Point(47, 85);
             this.tblDatosUsuarios.Margin = new System.Windows.Forms.Padding(2);
             this.tblDatosUsuarios.Name = "tblDatosUsuarios";
             this.tblDatosUsuarios.ReadOnly = true;
@@ -131,7 +132,7 @@
             this.tblDatosUsuarios.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
             this.tblDatosUsuarios.RowTemplate.Height = 25;
             this.tblDatosUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tblDatosUsuarios.Size = new System.Drawing.Size(703, 326);
+            this.tblDatosUsuarios.Size = new System.Drawing.Size(685, 326);
             this.tblDatosUsuarios.TabIndex = 4;
             // 
             // idUsuarioDataGridViewTextBoxColumn
@@ -225,25 +226,26 @@
             // 
             // txtBusquedaU
             // 
-            this.txtBusquedaU.Location = new System.Drawing.Point(489, 33);
+            this.txtBusquedaU.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtBusquedaU.Location = new System.Drawing.Point(280, 54);
             this.txtBusquedaU.Name = "txtBusquedaU";
-            this.txtBusquedaU.ReadOnly = true;
             this.txtBusquedaU.Size = new System.Drawing.Size(189, 20);
             this.txtBusquedaU.TabIndex = 10;
             this.txtBusquedaU.TextChanged += new System.EventHandler(this.txtBusquedaU_TextChanged);
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.Image = global::FrontEnd.Properties.Resources.big_loupe1;
-            this.pictureBox1.Location = new System.Drawing.Point(697, 33);
+            this.pictureBox1.Location = new System.Drawing.Point(475, 53);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 36);
+            this.pictureBox1.Size = new System.Drawing.Size(24, 22);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
             // btnUsuarioModificar
             // 
-            this.btnUsuarioModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUsuarioModificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnUsuarioModificar.BackColor = System.Drawing.Color.Goldenrod;
             this.btnUsuarioModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUsuarioModificar.FlatAppearance.BorderSize = 0;
@@ -252,7 +254,7 @@
             this.btnUsuarioModificar.ForeColor = System.Drawing.Color.White;
             this.btnUsuarioModificar.Image = global::FrontEnd.Properties.Resources.curved_arrows;
             this.btnUsuarioModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarioModificar.Location = new System.Drawing.Point(310, 446);
+            this.btnUsuarioModificar.Location = new System.Drawing.Point(334, 446);
             this.btnUsuarioModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnUsuarioModificar.Name = "btnUsuarioModificar";
             this.btnUsuarioModificar.Size = new System.Drawing.Size(110, 36);
@@ -264,7 +266,7 @@
             // 
             // btnUsuarioEliminar
             // 
-            this.btnUsuarioEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUsuarioEliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnUsuarioEliminar.BackColor = System.Drawing.Color.Goldenrod;
             this.btnUsuarioEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUsuarioEliminar.FlatAppearance.BorderSize = 0;
@@ -273,7 +275,7 @@
             this.btnUsuarioEliminar.ForeColor = System.Drawing.Color.White;
             this.btnUsuarioEliminar.Image = global::FrontEnd.Properties.Resources.minus_button;
             this.btnUsuarioEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarioEliminar.Location = new System.Drawing.Point(453, 446);
+            this.btnUsuarioEliminar.Location = new System.Drawing.Point(478, 446);
             this.btnUsuarioEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnUsuarioEliminar.Name = "btnUsuarioEliminar";
             this.btnUsuarioEliminar.Size = new System.Drawing.Size(110, 36);
@@ -285,7 +287,7 @@
             // 
             // btnUsuarioAgregar
             // 
-            this.btnUsuarioAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUsuarioAgregar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnUsuarioAgregar.BackColor = System.Drawing.Color.Goldenrod;
             this.btnUsuarioAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUsuarioAgregar.FlatAppearance.BorderSize = 0;
@@ -294,7 +296,7 @@
             this.btnUsuarioAgregar.ForeColor = System.Drawing.Color.White;
             this.btnUsuarioAgregar.Image = global::FrontEnd.Properties.Resources.plus_button;
             this.btnUsuarioAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarioAgregar.Location = new System.Drawing.Point(161, 446);
+            this.btnUsuarioAgregar.Location = new System.Drawing.Point(190, 446);
             this.btnUsuarioAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnUsuarioAgregar.Name = "btnUsuarioAgregar";
             this.btnUsuarioAgregar.Size = new System.Drawing.Size(110, 36);
@@ -309,7 +311,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(797, 513);
+            this.ClientSize = new System.Drawing.Size(779, 513);
             this.Controls.Add(this.txtBusquedaU);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnUsuarioModificar);

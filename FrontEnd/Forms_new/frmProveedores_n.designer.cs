@@ -55,12 +55,11 @@
             // 
             // lblProveedores
             // 
-            this.lblProveedores.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblProveedores.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblProveedores.AutoSize = true;
             this.lblProveedores.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProveedores.ForeColor = System.Drawing.Color.DimGray;
-            this.lblProveedores.Location = new System.Drawing.Point(42, 18);
+            this.lblProveedores.Location = new System.Drawing.Point(318, 9);
             this.lblProveedores.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProveedores.Name = "lblProveedores";
             this.lblProveedores.Size = new System.Drawing.Size(158, 34);
@@ -77,6 +76,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tblDatosProveedores.AutoGenerateColumns = false;
+            this.tblDatosProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tblDatosProveedores.BackgroundColor = System.Drawing.Color.White;
             this.tblDatosProveedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tblDatosProveedores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -100,7 +100,7 @@
             this.tblDatosProveedores.DataSource = this.proveedoresBindingSource;
             this.tblDatosProveedores.EnableHeadersVisualStyles = false;
             this.tblDatosProveedores.GridColor = System.Drawing.Color.DarkSlateBlue;
-            this.tblDatosProveedores.Location = new System.Drawing.Point(116, 99);
+            this.tblDatosProveedores.Location = new System.Drawing.Point(148, 92);
             this.tblDatosProveedores.Margin = new System.Windows.Forms.Padding(2);
             this.tblDatosProveedores.Name = "tblDatosProveedores";
             this.tblDatosProveedores.ReadOnly = true;
@@ -170,7 +170,7 @@
             // 
             // btnProveedorModificar
             // 
-            this.btnProveedorModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnProveedorModificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnProveedorModificar.BackColor = System.Drawing.Color.Goldenrod;
             this.btnProveedorModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProveedorModificar.FlatAppearance.BorderSize = 0;
@@ -179,7 +179,7 @@
             this.btnProveedorModificar.ForeColor = System.Drawing.Color.White;
             this.btnProveedorModificar.Image = global::FrontEnd.Properties.Resources.curved_arrows;
             this.btnProveedorModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedorModificar.Location = new System.Drawing.Point(310, 446);
+            this.btnProveedorModificar.Location = new System.Drawing.Point(343, 443);
             this.btnProveedorModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnProveedorModificar.Name = "btnProveedorModificar";
             this.btnProveedorModificar.Size = new System.Drawing.Size(110, 36);
@@ -191,7 +191,7 @@
             // 
             // btnProveedorEliminar
             // 
-            this.btnProveedorEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnProveedorEliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnProveedorEliminar.BackColor = System.Drawing.Color.Goldenrod;
             this.btnProveedorEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProveedorEliminar.FlatAppearance.BorderSize = 0;
@@ -200,7 +200,7 @@
             this.btnProveedorEliminar.ForeColor = System.Drawing.Color.White;
             this.btnProveedorEliminar.Image = global::FrontEnd.Properties.Resources.minus_button;
             this.btnProveedorEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedorEliminar.Location = new System.Drawing.Point(456, 446);
+            this.btnProveedorEliminar.Location = new System.Drawing.Point(475, 443);
             this.btnProveedorEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnProveedorEliminar.Name = "btnProveedorEliminar";
             this.btnProveedorEliminar.Size = new System.Drawing.Size(110, 36);
@@ -212,7 +212,7 @@
             // 
             // btnProveedorAgregar
             // 
-            this.btnProveedorAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnProveedorAgregar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnProveedorAgregar.BackColor = System.Drawing.Color.Goldenrod;
             this.btnProveedorAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProveedorAgregar.FlatAppearance.BorderSize = 0;
@@ -221,7 +221,7 @@
             this.btnProveedorAgregar.ForeColor = System.Drawing.Color.White;
             this.btnProveedorAgregar.Image = global::FrontEnd.Properties.Resources.plus_button;
             this.btnProveedorAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedorAgregar.Location = new System.Drawing.Point(161, 446);
+            this.btnProveedorAgregar.Location = new System.Drawing.Point(211, 443);
             this.btnProveedorAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnProveedorAgregar.Name = "btnProveedorAgregar";
             this.btnProveedorAgregar.Size = new System.Drawing.Size(110, 36);
@@ -237,18 +237,20 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.Image = global::FrontEnd.Properties.Resources.big_loupe1;
-            this.pictureBox1.Location = new System.Drawing.Point(727, 20);
+            this.pictureBox1.Location = new System.Drawing.Point(502, 55);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 36);
+            this.pictureBox1.Size = new System.Drawing.Size(25, 22);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
             // txtBusqueda
             // 
+            this.txtBusqueda.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBusqueda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBusqueda.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtBusqueda.Location = new System.Drawing.Point(481, 21);
+            this.txtBusqueda.Location = new System.Drawing.Point(259, 56);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(237, 23);
             this.txtBusqueda.TabIndex = 8;

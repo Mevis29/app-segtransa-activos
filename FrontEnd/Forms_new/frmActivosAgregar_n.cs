@@ -81,6 +81,22 @@ namespace FronEnd
                     {
                         MessageBox.Show("La fecha de compra debe ser menor que la fecha actual");
                     }
+                    else if (Regex.IsMatch(txtGarantia.Text, @"^\d+$") == false)
+                    {
+                        MessageBox.Show("La garantía no tiene el formato correcto");
+                    }
+                    else if (Regex.IsMatch(txtMesesDepreciacion.Text, @"^\d+$") == false)
+                    {
+                        MessageBox.Show("Los meses de depreciación no tienen el formato correcto");
+                    }
+                    else if (Regex.IsMatch(txtPrecio.Text, @"^[-+]?\d+(\.\d+)?$") == false)
+                    {
+                        MessageBox.Show("El precio no tiene el formato correcto");
+                    }
+                    else if(Convert.ToInt32(txtMesesDepreciacion.Text) == 0)
+                    {
+                        MessageBox.Show("Los meses de depreciación no pueden tener un valor de 0");
+                    }
                     else
                     {
                         Activos activo = new Activos();
@@ -121,7 +137,7 @@ namespace FronEnd
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Uno de los datos ingresados no tiene el formato correcto");
+                    MessageBox.Show("Ha ocurrido un error. Verifique que el código no esté siendo utilizado por otro activo");
                 }
 
             }

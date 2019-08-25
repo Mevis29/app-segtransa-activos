@@ -41,11 +41,10 @@ namespace FrontEnd.Formularios
         #region cargar formAsignacionesLista
         private void FormAsignacionesLista_Load(object sender, EventArgs e)
         {
-            //          this.tHAsignacionesTableAdapterBindingSource.Fill(this.SegtransaDataSetTableAdapters.THAsignaciones);
+            //          this.tHAsignacionesTableAdapterBindingSource.Fill(this.SegtransaDataSetTableAdapters.THAsignaciones);  
             dgvLista.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.CargarDatos();
             this.EstablerAccesoRolUsuario();
-
         }
         #endregion
 
@@ -87,8 +86,6 @@ namespace FrontEnd.Formularios
                 AsignacionesImplDAL datos = new AsignacionesImplDAL();
                 //Mètodo pr retornar list completa de asignacions x Usuario
                 dgvLista.DataSource = datos.retornaListaAsignUsuario(this.txtEmpleado.Text, this.txtActivo.Text);
-
-
             }
 
             catch (Exception ex)

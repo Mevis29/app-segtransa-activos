@@ -501,7 +501,7 @@
         </TablixRowHierarchy>
         <DataSetName>tblReparaciones</DataSetName>
         <Top>0.655in</Top>
-        <Left>0.51389in</Left>
+        <Left>0.48375in</Left>
         <Height>0.5in</Height>
         <Width>7.22917in</Width>
         <Style>
@@ -540,7 +540,7 @@
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
           <Top>0.27021in</Top>
-          <Left>2.04166in</Left>
+          <Left>2.18449in</Left>
           <Height>0.25in</Height>
           <Width>1.72917in</Width>
           <Style>
@@ -605,7 +605,7 @@
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
           <Top>0.27021in</Top>
-          <Left>6.92094in</Left>
+          <Left>6.67697in</Left>
           <Height>0.25in</Height>
           <Width>0.3125in</Width>
           <ZIndex>2</ZIndex>
@@ -638,7 +638,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
           <Top>0.27021in</Top>
-          <Left>7.30288in</Left>
+          <Left>7.14617in</Left>
           <Height>0.25in</Height>
           <Width>0.25in</Width>
           <ZIndex>3</ZIndex>
@@ -671,7 +671,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
           <Top>0.27021in</Top>
-          <Left>6.39038in</Left>
+          <Left>5.9647in</Left>
           <Height>0.25in</Height>
           <Width>0.55556in</Width>
           <ZIndex>4</ZIndex>
@@ -704,7 +704,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox5</rd:DefaultName>
           <Top>0.27021in</Top>
-          <Left>4.51389in</Left>
+          <Left>4.07036in</Left>
           <Height>0.25in</Height>
           <Width>0.69314in</Width>
           <ZIndex>5</ZIndex>
@@ -736,7 +736,7 @@
           </Paragraphs>
           <rd:DefaultName>UserID</rd:DefaultName>
           <Top>0.27021in</Top>
-          <Left>5.20703in</Left>
+          <Left>4.92021in</Left>
           <Height>0.25in</Height>
           <Width>0.88778in</Width>
           <ZIndex>6</ZIndex>

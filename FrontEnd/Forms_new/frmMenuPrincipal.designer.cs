@@ -79,7 +79,7 @@
             this.menuVertical.Location = new System.Drawing.Point(0, 0);
             this.menuVertical.Margin = new System.Windows.Forms.Padding(2);
             this.menuVertical.Name = "menuVertical";
-            this.menuVertical.Size = new System.Drawing.Size(203, 570);
+            this.menuVertical.Size = new System.Drawing.Size(199, 570);
             this.menuVertical.TabIndex = 0;
             // 
             // btnSalir
@@ -309,10 +309,10 @@
             this.tituloPnl.Controls.Add(this.cerrarIcon);
             this.tituloPnl.Controls.Add(this.menuIcon);
             this.tituloPnl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tituloPnl.Location = new System.Drawing.Point(203, 0);
+            this.tituloPnl.Location = new System.Drawing.Point(199, 0);
             this.tituloPnl.Margin = new System.Windows.Forms.Padding(2);
             this.tituloPnl.Name = "tituloPnl";
-            this.tituloPnl.Size = new System.Drawing.Size(797, 57);
+            this.tituloPnl.Size = new System.Drawing.Size(912, 57);
             this.tituloPnl.TabIndex = 1;
             this.tituloPnl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tituloPnl_MouseDown);
             // 
@@ -322,9 +322,9 @@
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BackgroundImage = global::FrontEnd.Properties.Resources.logo2_01;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel2.Location = new System.Drawing.Point(232, 5);
+            this.panel2.Location = new System.Drawing.Point(226, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(340, 49);
+            this.panel2.Size = new System.Drawing.Size(455, 49);
             this.panel2.TabIndex = 1;
             // 
             // lblFecha
@@ -333,7 +333,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.LightGray;
-            this.lblFecha.Location = new System.Drawing.Point(668, 33);
+            this.lblFecha.Location = new System.Drawing.Point(725, 33);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(41, 16);
             this.lblFecha.TabIndex = 2;
@@ -359,7 +359,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.LightGray;
-            this.lblNombre.Location = new System.Drawing.Point(83, 33);
+            this.lblNombre.Location = new System.Drawing.Point(141, 33);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(41, 16);
             this.lblNombre.TabIndex = 1;
@@ -371,7 +371,7 @@
             this.minimizarIcon.BackColor = System.Drawing.Color.Black;
             this.minimizarIcon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.minimizarIcon.Image = ((System.Drawing.Image)(resources.GetObject("minimizarIcon.Image")));
-            this.minimizarIcon.Location = new System.Drawing.Point(742, 2);
+            this.minimizarIcon.Location = new System.Drawing.Point(857, 2);
             this.minimizarIcon.Margin = new System.Windows.Forms.Padding(2);
             this.minimizarIcon.Name = "minimizarIcon";
             this.minimizarIcon.Size = new System.Drawing.Size(17, 14);
@@ -386,7 +386,7 @@
             this.cerrarIcon.BackColor = System.Drawing.Color.Black;
             this.cerrarIcon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cerrarIcon.Image = ((System.Drawing.Image)(resources.GetObject("cerrarIcon.Image")));
-            this.cerrarIcon.Location = new System.Drawing.Point(775, 2);
+            this.cerrarIcon.Location = new System.Drawing.Point(890, 2);
             this.cerrarIcon.Margin = new System.Windows.Forms.Padding(2);
             this.cerrarIcon.Name = "cerrarIcon";
             this.cerrarIcon.Size = new System.Drawing.Size(17, 14);
@@ -416,10 +416,10 @@
             this.contentPnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.contentPnl.Controls.Add(this.label2);
             this.contentPnl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contentPnl.Location = new System.Drawing.Point(203, 57);
+            this.contentPnl.Location = new System.Drawing.Point(199, 57);
             this.contentPnl.Margin = new System.Windows.Forms.Padding(2);
             this.contentPnl.Name = "contentPnl";
-            this.contentPnl.Size = new System.Drawing.Size(797, 513);
+            this.contentPnl.Size = new System.Drawing.Size(912, 513);
             this.contentPnl.TabIndex = 2;
             this.contentPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.contentPnl_Paint);
             // 
@@ -431,7 +431,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Franklin Gothic Medium", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(224, 57);
+            this.label2.Location = new System.Drawing.Point(262, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(386, 37);
             this.label2.TabIndex = 0;
@@ -450,7 +450,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1000, 570);
+            this.ClientSize = new System.Drawing.Size(1111, 570);
             this.Controls.Add(this.contentPnl);
             this.Controls.Add(this.tituloPnl);
             this.Controls.Add(this.menuVertical);

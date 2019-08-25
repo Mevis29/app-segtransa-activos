@@ -42,9 +42,9 @@ namespace FrontEnd.Forms_new
             {
                 //this.tablaReparaciones.Size = new Size(1240, 120);
                 //this.tablaReparaciones.Location = new Point(10, 50);
-                this.agregarReparacionToolStripMenuItem.Visible = false;
-                this.modificarToolStripMenuItem.Visible = false;
-                this.eliminarReparacionSeleccionadoToolStripMenuItem.Visible = false;
+                btnReparacionAgregar.Visible = false;
+                btnReparacionModificar.Visible = false;
+                btnReparacionEliminar.Visible = false;
                 this.cargarReparaciones();
             }
             else
@@ -88,6 +88,7 @@ namespace FrontEnd.Forms_new
         private void frmReparaciones_Load(object sender, EventArgs e)
         {
             this.EstablerAccesoRolUsuario();
+            tablaReparaciones.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
         }
 
 
@@ -128,12 +129,39 @@ namespace FrontEnd.Forms_new
 
         private void agregarReparacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tablaReparaciones_SelectionChanged(object sender, EventArgs e)
+        {
+            if (tablaReparaciones.SelectedRows.Count != 0)
+            {
+                idReparacion = tablaReparaciones.Rows[tablaReparaciones.SelectedRows[0].Index].Cells[0].Value.ToString();
+            }
+            else
+            {
+                idReparacion = null;
+            }
+        }
+
+        private void eliminarReparacionSeleccionadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnUsuarioAgregar_Click(object sender, EventArgs e)
+        {
             frmReparacionesAgregar formReparacionesInsertar = new frmReparacionesAgregar();
             formReparacionesInsertar.FormClosing += new FormClosingEventHandler(this.recargar);
             formReparacionesInsertar.ShowDialog();
         }
 
-        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnUsuarioModificar_Click(object sender, EventArgs e)
         {
             if (idReparacion == null)
             {
@@ -152,19 +180,7 @@ namespace FrontEnd.Forms_new
             }
         }
 
-        private void tablaReparaciones_SelectionChanged(object sender, EventArgs e)
-        {
-            if (tablaReparaciones.SelectedRows.Count != 0)
-            {
-                idReparacion = tablaReparaciones.Rows[tablaReparaciones.SelectedRows[0].Index].Cells[0].Value.ToString();
-            }
-            else
-            {
-                idReparacion = null;
-            }
-        }
-
-        private void eliminarReparacionSeleccionadoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnUsuarioEliminar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -172,8 +188,8 @@ namespace FrontEnd.Forms_new
                 {
                     reparacionesDAL.Eliminar(Convert.ToInt32(this.idReparacion));
                     //Se obtiene el código según el valos de la celda en la tabla
-                    string codigo=tablaReparaciones.Rows[tablaReparaciones.SelectedRows[0].Index].Cells[2].Value.ToString();
-                    int id = Convert.ToInt16( tablaReparaciones.Rows[tablaReparaciones.SelectedRows[0].Index].Cells[1].Value.ToString());
+                    string codigo = tablaReparaciones.Rows[tablaReparaciones.SelectedRows[0].Index].Cells[2].Value.ToString();
+                    int id = Convert.ToInt16(tablaReparaciones.Rows[tablaReparaciones.SelectedRows[0].Index].Cells[1].Value.ToString());
                     string detalleBitacora = "Se eliminó la reparación del activo: " + codigo.Trim() + id.ToString();
                     bitacora.IdUsuario = ValoresAplicacion.idUsuario;
                     bitacora.DetalleBitacora = detalleBitacora;
@@ -181,13 +197,11 @@ namespace FrontEnd.Forms_new
                     MessageBox.Show("Reparación eliminada", "Confirmacion");
                     cargarReparaciones();
                 }
-
             }
             catch (Exception)
             {
                 MessageBox.Show("No se puede borrar el activo seleccionado", "Error");
             }
         }
-
     }
 }

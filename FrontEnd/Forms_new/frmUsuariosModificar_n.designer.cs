@@ -41,8 +41,6 @@
             this.lblContrasena = new System.Windows.Forms.Label();
             this.txtContrasenaA = new System.Windows.Forms.TextBox();
             this.groupBoxDatosPers = new System.Windows.Forms.GroupBox();
-            this.lblErrorNombre = new System.Windows.Forms.Label();
-            this.lblErrorApellido = new System.Windows.Forms.Label();
             this.lblErrorCed = new System.Windows.Forms.Label();
             this.txtDireccionA = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
@@ -53,9 +51,9 @@
             this.txtCedulaA = new System.Windows.Forms.TextBox();
             this.lblCedula = new System.Windows.Forms.Label();
             this.groupBoxDatosAcceso = new System.Windows.Forms.GroupBox();
-            this.cmbBoxEstadoA = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblErrorContrasena = new System.Windows.Forms.Label();
+            this.lblErrorNombre = new System.Windows.Forms.Label();
+            this.lblErrorApellido = new System.Windows.Forms.Label();
+            this.lblErrorCorreo = new System.Windows.Forms.Label();
             this.groupBoxDatosPers.SuspendLayout();
             this.groupBoxDatosAcceso.SuspendLayout();
             this.SuspendLayout();
@@ -240,8 +238,9 @@
             // 
             // groupBoxDatosPers
             // 
-            this.groupBoxDatosPers.Controls.Add(this.lblErrorNombre);
+            this.groupBoxDatosPers.Controls.Add(this.lblErrorCorreo);
             this.groupBoxDatosPers.Controls.Add(this.lblErrorApellido);
+            this.groupBoxDatosPers.Controls.Add(this.lblErrorNombre);
             this.groupBoxDatosPers.Controls.Add(this.lblErrorCed);
             this.groupBoxDatosPers.Controls.Add(this.txtDireccionA);
             this.groupBoxDatosPers.Controls.Add(this.lblDireccion);
@@ -263,38 +262,6 @@
             this.groupBoxDatosPers.TabIndex = 15;
             this.groupBoxDatosPers.TabStop = false;
             this.groupBoxDatosPers.Text = "Datos Personales";
-            // 
-            // lblErrorNombre
-            // 
-            this.lblErrorNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblErrorNombre.AutoSize = true;
-            this.lblErrorNombre.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorNombre.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorNombre.Location = new System.Drawing.Point(5, 34);
-            this.lblErrorNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblErrorNombre.Name = "lblErrorNombre";
-            this.lblErrorNombre.Size = new System.Drawing.Size(14, 17);
-            this.lblErrorNombre.TabIndex = 22;
-            this.lblErrorNombre.Text = "*";
-            this.lblErrorNombre.Visible = false;
-            // 
-            // lblErrorApellido
-            // 
-            this.lblErrorApellido.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblErrorApellido.AutoSize = true;
-            this.lblErrorApellido.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorApellido.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorApellido.Location = new System.Drawing.Point(5, 90);
-            this.lblErrorApellido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblErrorApellido.Name = "lblErrorApellido";
-            this.lblErrorApellido.Size = new System.Drawing.Size(14, 17);
-            this.lblErrorApellido.TabIndex = 21;
-            this.lblErrorApellido.Text = "*";
-            this.lblErrorApellido.Visible = false;
             // 
             // lblErrorCed
             // 
@@ -319,7 +286,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDireccionA.BackColor = System.Drawing.Color.White;
             this.txtDireccionA.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccionA.Location = new System.Drawing.Point(89, 266);
+            this.txtDireccionA.Location = new System.Drawing.Point(89, 269);
             this.txtDireccionA.Margin = new System.Windows.Forms.Padding(2);
             this.txtDireccionA.Name = "txtDireccionA";
             this.txtDireccionA.Size = new System.Drawing.Size(216, 22);
@@ -333,7 +300,7 @@
             this.lblDireccion.AutoSize = true;
             this.lblDireccion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDireccion.ForeColor = System.Drawing.Color.Black;
-            this.lblDireccion.Location = new System.Drawing.Point(12, 271);
+            this.lblDireccion.Location = new System.Drawing.Point(12, 274);
             this.lblDireccion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(66, 17);
@@ -426,9 +393,6 @@
             // 
             // groupBoxDatosAcceso
             // 
-            this.groupBoxDatosAcceso.Controls.Add(this.cmbBoxEstadoA);
-            this.groupBoxDatosAcceso.Controls.Add(this.label1);
-            this.groupBoxDatosAcceso.Controls.Add(this.lblErrorContrasena);
             this.groupBoxDatosAcceso.Controls.Add(this.lblRol);
             this.groupBoxDatosAcceso.Controls.Add(this.cmbBoxRolA);
             this.groupBoxDatosAcceso.Controls.Add(this.txtContrasenaA);
@@ -437,50 +401,58 @@
             this.groupBoxDatosAcceso.ForeColor = System.Drawing.Color.Black;
             this.groupBoxDatosAcceso.Location = new System.Drawing.Point(405, 62);
             this.groupBoxDatosAcceso.Name = "groupBoxDatosAcceso";
-            this.groupBoxDatosAcceso.Size = new System.Drawing.Size(278, 172);
+            this.groupBoxDatosAcceso.Size = new System.Drawing.Size(278, 138);
             this.groupBoxDatosAcceso.TabIndex = 16;
             this.groupBoxDatosAcceso.TabStop = false;
             this.groupBoxDatosAcceso.Text = "Acceso a la Aplicacion";
             // 
-            // cmbBoxEstadoA
+            // lblErrorNombre
             // 
-            this.cmbBoxEstadoA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBoxEstadoA.FormattingEnabled = true;
-            this.cmbBoxEstadoA.Location = new System.Drawing.Point(113, 129);
-            this.cmbBoxEstadoA.Name = "cmbBoxEstadoA";
-            this.cmbBoxEstadoA.Size = new System.Drawing.Size(136, 24);
-            this.cmbBoxEstadoA.TabIndex = 24;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblErrorNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(14, 131);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 17);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Estado:";
+            this.lblErrorNombre.AutoSize = true;
+            this.lblErrorNombre.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorNombre.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorNombre.Location = new System.Drawing.Point(35, 58);
+            this.lblErrorNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblErrorNombre.Name = "lblErrorNombre";
+            this.lblErrorNombre.Size = new System.Drawing.Size(284, 17);
+            this.lblErrorNombre.TabIndex = 21;
+            this.lblErrorNombre.Text = "Por favor ingrese el nombre (SOLO letras)";
+            this.lblErrorNombre.Visible = false;
             // 
-            // lblErrorContrasena
+            // lblErrorApellido
             // 
-            this.lblErrorContrasena.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblErrorApellido.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblErrorContrasena.AutoSize = true;
-            this.lblErrorContrasena.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorContrasena.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorContrasena.Location = new System.Drawing.Point(2, 87);
-            this.lblErrorContrasena.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblErrorContrasena.Name = "lblErrorContrasena";
-            this.lblErrorContrasena.Size = new System.Drawing.Size(14, 17);
-            this.lblErrorContrasena.TabIndex = 21;
-            this.lblErrorContrasena.Text = "*";
-            this.lblErrorContrasena.Visible = false;
+            this.lblErrorApellido.AutoSize = true;
+            this.lblErrorApellido.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorApellido.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorApellido.Location = new System.Drawing.Point(35, 109);
+            this.lblErrorApellido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblErrorApellido.Name = "lblErrorApellido";
+            this.lblErrorApellido.Size = new System.Drawing.Size(288, 17);
+            this.lblErrorApellido.TabIndex = 23;
+            this.lblErrorApellido.Text = "Por favor ingrese el apellido (SOLO letras)";
+            this.lblErrorApellido.Visible = false;
+            // 
+            // lblErrorCorreo
+            // 
+            this.lblErrorCorreo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblErrorCorreo.AutoSize = true;
+            this.lblErrorCorreo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorCorreo.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCorreo.Location = new System.Drawing.Point(33, 250);
+            this.lblErrorCorreo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblErrorCorreo.Name = "lblErrorCorreo";
+            this.lblErrorCorreo.Size = new System.Drawing.Size(312, 17);
+            this.lblErrorCorreo.TabIndex = 24;
+            this.lblErrorCorreo.Text = "Por favor ingrese un formato de correo válido";
+            this.lblErrorCorreo.Visible = false;
             // 
             // FrmUsuariosModificar_n
             // 
@@ -533,10 +505,8 @@
         private System.Windows.Forms.TextBox txtTelefonoA;
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.Label lblErrorCed;
-        private System.Windows.Forms.Label lblErrorApellido;
-        private System.Windows.Forms.Label lblErrorContrasena;
         private System.Windows.Forms.Label lblErrorNombre;
-        private System.Windows.Forms.ComboBox cmbBoxEstadoA;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblErrorApellido;
+        private System.Windows.Forms.Label lblErrorCorreo;
     }
 }

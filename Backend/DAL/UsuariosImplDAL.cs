@@ -132,7 +132,7 @@ public class UsuariosImplDAL : IUsuariosDAL
             }
 
         }
-        catch (Exception)
+        catch (Exception ex)
         {
             throw;
         }

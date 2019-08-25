@@ -22,6 +22,7 @@ namespace Frontend
         private IBitacoraDAL bitacoraDAL = new BitacoraImplDAL();
         private Bitacora bitacora = new Bitacora();
         int idActivo;
+
         public frmMenuPrincipal_n()
         {
             InitializeComponent();
@@ -95,7 +96,7 @@ namespace Frontend
         private void frmActivos_n_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sEGTRANSADataSource_ACTIVOS.Activos' table. You can move, or remove it, as needed.
-            tblDatosActivos.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            tblDatosActivos.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.activosTableAdapter.Fill(this.sEGTRANSADataSource_ACTIVOS.Activos);
             cargarActivos();
         }

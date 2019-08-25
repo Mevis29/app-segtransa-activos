@@ -34,12 +34,12 @@
             this.sEGTRANSADataSetActivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sEGTRANSADataSetActivo = new FrontEnd.DataSources_Reportes.SEGTRANSADataSetActivo();
             this.label2 = new System.Windows.Forms.Label();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.sEGTRANSADataSource_ACTIVOS = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_ACTIVOS();
             this.sEGTRANSADataSourceACTIVOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.activosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.activosTableAdapter = new FrontEnd.DataSources_Forms.SEGTRANSADataSource_ACTIVOSTableAdapters.ActivosTableAdapter();
             this.sp_obtenerActivosTableAdapter = new FrontEnd.DataSources_Reportes.SEGTRANSADataSetActivoTableAdapters.sp_obtenerActivosTableAdapter();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.spobtenerActivosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSetActivoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sEGTRANSADataSetActivo)).BeginInit();
@@ -74,20 +74,6 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "Reporte de Activos";
             // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.spobtenerActivosBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "FrontEnd.Reportes.rptActivo.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(2, 50);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(786, 437);
-            this.reportViewer1.TabIndex = 26;
-            // 
             // sEGTRANSADataSource_ACTIVOS
             // 
             this.sEGTRANSADataSource_ACTIVOS.DataSetName = "SEGTRANSADataSource_ACTIVOS";
@@ -110,6 +96,20 @@
             // sp_obtenerActivosTableAdapter
             // 
             this.sp_obtenerActivosTableAdapter.ClearBeforeFill = true;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.spobtenerActivosBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "FrontEnd.Reportes.rptActivo.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(2, 50);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(786, 437);
+            this.reportViewer1.TabIndex = 26;
             // 
             // frmRptActivo
             // 
@@ -137,7 +137,6 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource sEGTRANSADataSourceACTIVOSBindingSource;
         private DataSources_Forms.SEGTRANSADataSource_ACTIVOS sEGTRANSADataSource_ACTIVOS;
         private System.Windows.Forms.BindingSource activosBindingSource;
@@ -146,5 +145,6 @@
         private System.Windows.Forms.BindingSource sEGTRANSADataSetActivoBindingSource;
         private System.Windows.Forms.BindingSource spobtenerActivosBindingSource;
         private DataSources_Reportes.SEGTRANSADataSetActivoTableAdapters.sp_obtenerActivosTableAdapter sp_obtenerActivosTableAdapter;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

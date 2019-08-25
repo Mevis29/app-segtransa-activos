@@ -35,11 +35,6 @@ namespace FrontEnd.Forms_new
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarReparacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarReparacionSeleccionadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tablaReparaciones = new System.Windows.Forms.DataGridView();
             this.idReparacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idActivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,7 +48,9 @@ namespace FrontEnd.Forms_new
             this.lblReparaciones = new System.Windows.Forms.Label();
             this.sp_RetornaReparacionTableAdapter = new FrontEnd.DataSources_Forms.sp_RetornaReparacionesDSTableAdapters.sp_RetornaReparacionTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.menuStrip1.SuspendLayout();
+            this.btnReparacionModificar = new System.Windows.Forms.Button();
+            this.btnReparacionEliminar = new System.Windows.Forms.Button();
+            this.btnReparacionAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaReparaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spRetornaReparacionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_RetornaReparacionesDS)).BeginInit();
@@ -62,58 +59,15 @@ namespace FrontEnd.Forms_new
             // 
             // txtBusqueda
             // 
+            this.txtBusqueda.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBusqueda.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.txtBusqueda.Location = new System.Drawing.Point(489, 49);
+            this.txtBusqueda.Location = new System.Drawing.Point(265, 56);
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(189, 20);
+            this.txtBusqueda.Size = new System.Drawing.Size(228, 20);
             this.txtBusqueda.TabIndex = 2;
             this.txtBusqueda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.opcionesToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(797, 25);
-            this.menuStrip1.TabIndex = 27;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // opcionesToolStripMenuItem
-            // 
-            this.opcionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarReparacionToolStripMenuItem,
-            this.modificarToolStripMenuItem,
-            this.eliminarReparacionSeleccionadoToolStripMenuItem});
-            this.opcionesToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(77, 21);
-            this.opcionesToolStripMenuItem.Text = "Opciones";
-            // 
-            // agregarReparacionToolStripMenuItem
-            // 
-            this.agregarReparacionToolStripMenuItem.Name = "agregarReparacionToolStripMenuItem";
-            this.agregarReparacionToolStripMenuItem.Size = new System.Drawing.Size(292, 22);
-            this.agregarReparacionToolStripMenuItem.Text = "Agregar Nueva Reparacion";
-            this.agregarReparacionToolStripMenuItem.Click += new System.EventHandler(this.agregarReparacionToolStripMenuItem_Click);
-            // 
-            // modificarToolStripMenuItem
-            // 
-            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(292, 22);
-            this.modificarToolStripMenuItem.Text = "Modificar Reparación Seleccionada";
-            this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
-            // 
-            // eliminarReparacionSeleccionadoToolStripMenuItem
-            // 
-            this.eliminarReparacionSeleccionadoToolStripMenuItem.Name = "eliminarReparacionSeleccionadoToolStripMenuItem";
-            this.eliminarReparacionSeleccionadoToolStripMenuItem.Size = new System.Drawing.Size(292, 22);
-            this.eliminarReparacionSeleccionadoToolStripMenuItem.Text = "Eliminar Reparación Seleccionada";
-            this.eliminarReparacionSeleccionadoToolStripMenuItem.Click += new System.EventHandler(this.eliminarReparacionSeleccionadoToolStripMenuItem_Click);
             // 
             // tablaReparaciones
             // 
@@ -125,6 +79,7 @@ namespace FrontEnd.Forms_new
             this.tablaReparaciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tablaReparaciones.AutoGenerateColumns = false;
+            this.tablaReparaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tablaReparaciones.BackgroundColor = System.Drawing.Color.White;
             this.tablaReparaciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tablaReparaciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -149,7 +104,7 @@ namespace FrontEnd.Forms_new
             this.tablaReparaciones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tablaReparaciones.DataSource = this.spRetornaReparacionBindingSource;
             this.tablaReparaciones.EnableHeadersVisualStyles = false;
-            this.tablaReparaciones.Location = new System.Drawing.Point(38, 89);
+            this.tablaReparaciones.Location = new System.Drawing.Point(47, 89);
             this.tablaReparaciones.Margin = new System.Windows.Forms.Padding(2);
             this.tablaReparaciones.Name = "tablaReparaciones";
             this.tablaReparaciones.ReadOnly = true;
@@ -230,10 +185,11 @@ namespace FrontEnd.Forms_new
             // 
             // lblReparaciones
             // 
+            this.lblReparaciones.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblReparaciones.AutoSize = true;
             this.lblReparaciones.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReparaciones.ForeColor = System.Drawing.Color.DimGray;
-            this.lblReparaciones.Location = new System.Drawing.Point(42, 35);
+            this.lblReparaciones.Location = new System.Drawing.Point(292, 9);
             this.lblReparaciones.Name = "lblReparaciones";
             this.lblReparaciones.Size = new System.Drawing.Size(175, 34);
             this.lblReparaciones.TabIndex = 25;
@@ -245,30 +201,94 @@ namespace FrontEnd.Forms_new
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.Image = global::FrontEnd.Properties.Resources.big_loupe1;
-            this.pictureBox1.Location = new System.Drawing.Point(705, 48);
+            this.pictureBox1.Location = new System.Drawing.Point(503, 51);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 36);
+            this.pictureBox1.Size = new System.Drawing.Size(28, 25);
             this.pictureBox1.TabIndex = 29;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnReparacionModificar
+            // 
+            this.btnReparacionModificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnReparacionModificar.BackColor = System.Drawing.Color.Goldenrod;
+            this.btnReparacionModificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReparacionModificar.FlatAppearance.BorderSize = 0;
+            this.btnReparacionModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReparacionModificar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReparacionModificar.ForeColor = System.Drawing.Color.White;
+            this.btnReparacionModificar.Image = global::FrontEnd.Properties.Resources.curved_arrows;
+            this.btnReparacionModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReparacionModificar.Location = new System.Drawing.Point(343, 438);
+            this.btnReparacionModificar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReparacionModificar.Name = "btnReparacionModificar";
+            this.btnReparacionModificar.Size = new System.Drawing.Size(110, 36);
+            this.btnReparacionModificar.TabIndex = 32;
+            this.btnReparacionModificar.Text = "Modificar";
+            this.btnReparacionModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReparacionModificar.UseVisualStyleBackColor = false;
+            this.btnReparacionModificar.Click += new System.EventHandler(this.btnUsuarioModificar_Click);
+            // 
+            // btnReparacionEliminar
+            // 
+            this.btnReparacionEliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnReparacionEliminar.BackColor = System.Drawing.Color.Goldenrod;
+            this.btnReparacionEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReparacionEliminar.FlatAppearance.BorderSize = 0;
+            this.btnReparacionEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReparacionEliminar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReparacionEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnReparacionEliminar.Image = global::FrontEnd.Properties.Resources.minus_button;
+            this.btnReparacionEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReparacionEliminar.Location = new System.Drawing.Point(485, 438);
+            this.btnReparacionEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReparacionEliminar.Name = "btnReparacionEliminar";
+            this.btnReparacionEliminar.Size = new System.Drawing.Size(110, 36);
+            this.btnReparacionEliminar.TabIndex = 31;
+            this.btnReparacionEliminar.Text = "Eliminar";
+            this.btnReparacionEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReparacionEliminar.UseVisualStyleBackColor = false;
+            this.btnReparacionEliminar.Click += new System.EventHandler(this.btnUsuarioEliminar_Click);
+            // 
+            // btnReparacionAgregar
+            // 
+            this.btnReparacionAgregar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnReparacionAgregar.BackColor = System.Drawing.Color.Goldenrod;
+            this.btnReparacionAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReparacionAgregar.FlatAppearance.BorderSize = 0;
+            this.btnReparacionAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReparacionAgregar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReparacionAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnReparacionAgregar.Image = global::FrontEnd.Properties.Resources.plus_button;
+            this.btnReparacionAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReparacionAgregar.Location = new System.Drawing.Point(201, 438);
+            this.btnReparacionAgregar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReparacionAgregar.Name = "btnReparacionAgregar";
+            this.btnReparacionAgregar.Size = new System.Drawing.Size(110, 36);
+            this.btnReparacionAgregar.TabIndex = 30;
+            this.btnReparacionAgregar.Text = "Agregar";
+            this.btnReparacionAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReparacionAgregar.UseVisualStyleBackColor = false;
+            this.btnReparacionAgregar.Click += new System.EventHandler(this.btnUsuarioAgregar_Click);
             // 
             // frmReparaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(797, 513);
+            this.ClientSize = new System.Drawing.Size(797, 496);
+            this.Controls.Add(this.btnReparacionModificar);
+            this.Controls.Add(this.btnReparacionEliminar);
+            this.Controls.Add(this.btnReparacionAgregar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBusqueda);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tablaReparaciones);
             this.Controls.Add(this.lblReparaciones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmReparaciones";
             this.Text = "frmReparaciones";
             this.Load += new System.EventHandler(this.frmReparaciones_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaReparaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spRetornaReparacionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_RetornaReparacionesDS)).EndInit();
@@ -280,11 +300,6 @@ namespace FrontEnd.Forms_new
 
         #endregion
         private System.Windows.Forms.TextBox txtBusqueda;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem opcionesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem agregarReparacionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarReparacionSeleccionadoToolStripMenuItem;
         private System.Windows.Forms.DataGridView tablaReparaciones;
         private System.Windows.Forms.Label lblReparaciones;
         private System.Windows.Forms.BindingSource spRetornaReparacionBindingSource;
@@ -298,5 +313,8 @@ namespace FrontEnd.Forms_new
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreProveedorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicialReparacionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechafinalReparacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnReparacionModificar;
+        private System.Windows.Forms.Button btnReparacionEliminar;
+        private System.Windows.Forms.Button btnReparacionAgregar;
     }
 }

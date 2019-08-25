@@ -42,7 +42,7 @@ namespace Frontend
         {
             // TODO: This line of code loads data into the 'sEGTRANSADataSource_PROVEEDORES.Proveedores' table. You can move, or remove it, as needed.
             this.proveedoresTableAdapter.Fill(this.sEGTRANSADataSource_PROVEEDORES.Proveedores);
-           
+            tblDatosProveedores.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             cargarProveedores();
         }
 

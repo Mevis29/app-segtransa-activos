@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblActivos = new System.Windows.Forms.Label();
             this.tblDatosActivos = new System.Windows.Forms.DataGridView();
             this.idActivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,7 +69,7 @@
             this.lblActivos.AutoSize = true;
             this.lblActivos.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblActivos.ForeColor = System.Drawing.Color.DimGray;
-            this.lblActivos.Location = new System.Drawing.Point(94, 18);
+            this.lblActivos.Location = new System.Drawing.Point(378, 3);
             this.lblActivos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblActivos.Name = "lblActivos";
             this.lblActivos.Size = new System.Drawing.Size(98, 34);
@@ -86,18 +86,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tblDatosActivos.AutoGenerateColumns = false;
-            this.tblDatosActivos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.tblDatosActivos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tblDatosActivos.BackgroundColor = System.Drawing.Color.White;
             this.tblDatosActivos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tblDatosActivos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblDatosActivos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblDatosActivos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tblDatosActivos.ColumnHeadersHeight = 35;
             this.tblDatosActivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.tblDatosActivos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -113,22 +113,23 @@
             this.tblDatosActivos.DataSource = this.activosBindingSource;
             this.tblDatosActivos.EnableHeadersVisualStyles = false;
             this.tblDatosActivos.GridColor = System.Drawing.Color.MidnightBlue;
-            this.tblDatosActivos.Location = new System.Drawing.Point(25, 96);
+            this.tblDatosActivos.Location = new System.Drawing.Point(24, 84);
             this.tblDatosActivos.Margin = new System.Windows.Forms.Padding(2);
+            this.tblDatosActivos.MultiSelect = false;
             this.tblDatosActivos.Name = "tblDatosActivos";
             this.tblDatosActivos.ReadOnly = true;
             this.tblDatosActivos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblDatosActivos.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblDatosActivos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.tblDatosActivos.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.tblDatosActivos.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            this.tblDatosActivos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.tblDatosActivos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.tblDatosActivos.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
             this.tblDatosActivos.RowTemplate.Height = 25;
@@ -142,7 +143,6 @@
             this.idActivoDataGridViewTextBoxColumn.HeaderText = "Id Activo";
             this.idActivoDataGridViewTextBoxColumn.Name = "idActivoDataGridViewTextBoxColumn";
             this.idActivoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idActivoDataGridViewTextBoxColumn.Width = 82;
             // 
             // codActivoDataGridViewTextBoxColumn
             // 
@@ -150,7 +150,6 @@
             this.codActivoDataGridViewTextBoxColumn.HeaderText = "Codigo del Activo";
             this.codActivoDataGridViewTextBoxColumn.Name = "codActivoDataGridViewTextBoxColumn";
             this.codActivoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codActivoDataGridViewTextBoxColumn.Width = 99;
             // 
             // descripcionDataGridViewTextBoxColumn
             // 
@@ -158,7 +157,6 @@
             this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripción";
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descripcionDataGridViewTextBoxColumn.Width = 108;
             // 
             // precioInicialDataGridViewTextBoxColumn
             // 
@@ -166,7 +164,6 @@
             this.precioInicialDataGridViewTextBoxColumn.HeaderText = "Precio Inicial";
             this.precioInicialDataGridViewTextBoxColumn.Name = "precioInicialDataGridViewTextBoxColumn";
             this.precioInicialDataGridViewTextBoxColumn.ReadOnly = true;
-            this.precioInicialDataGridViewTextBoxColumn.Width = 106;
             // 
             // precioActualDataGridViewTextBoxColumn
             // 
@@ -174,7 +171,6 @@
             this.precioActualDataGridViewTextBoxColumn.HeaderText = "Precio Actual";
             this.precioActualDataGridViewTextBoxColumn.Name = "precioActualDataGridViewTextBoxColumn";
             this.precioActualDataGridViewTextBoxColumn.ReadOnly = true;
-            this.precioActualDataGridViewTextBoxColumn.Width = 108;
             // 
             // fechaCompraDataGridViewTextBoxColumn
             // 
@@ -182,7 +178,6 @@
             this.fechaCompraDataGridViewTextBoxColumn.HeaderText = "Fecha de Compra";
             this.fechaCompraDataGridViewTextBoxColumn.Name = "fechaCompraDataGridViewTextBoxColumn";
             this.fechaCompraDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechaCompraDataGridViewTextBoxColumn.Width = 135;
             // 
             // garantiaDataGridViewTextBoxColumn
             // 
@@ -190,7 +185,6 @@
             this.garantiaDataGridViewTextBoxColumn.HeaderText = "Garantía";
             this.garantiaDataGridViewTextBoxColumn.Name = "garantiaDataGridViewTextBoxColumn";
             this.garantiaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.garantiaDataGridViewTextBoxColumn.Width = 89;
             // 
             // MesesDepreciacion
             // 
@@ -198,7 +192,6 @@
             this.MesesDepreciacion.HeaderText = "Meses Depreciacion";
             this.MesesDepreciacion.Name = "MesesDepreciacion";
             this.MesesDepreciacion.ReadOnly = true;
-            this.MesesDepreciacion.Width = 148;
             // 
             // activosBindingSource
             // 
@@ -231,9 +224,10 @@
             // 
             // txtBusqueda
             // 
+            this.txtBusqueda.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBusqueda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBusqueda.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtBusqueda.Location = new System.Drawing.Point(459, 36);
+            this.txtBusqueda.Location = new System.Drawing.Point(308, 49);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(237, 23);
             this.txtBusqueda.TabIndex = 0;
@@ -241,16 +235,17 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.Image = global::FrontEnd.Properties.Resources.big_loupe1;
-            this.pictureBox1.Location = new System.Drawing.Point(705, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(551, 48);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 36);
+            this.pictureBox1.Size = new System.Drawing.Size(28, 24);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
             // btnActivoModificar
             // 
-            this.btnActivoModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActivoModificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnActivoModificar.BackColor = System.Drawing.Color.Goldenrod;
             this.btnActivoModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActivoModificar.FlatAppearance.BorderSize = 0;
@@ -259,7 +254,7 @@
             this.btnActivoModificar.ForeColor = System.Drawing.Color.White;
             this.btnActivoModificar.Image = global::FrontEnd.Properties.Resources.update;
             this.btnActivoModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActivoModificar.Location = new System.Drawing.Point(387, 446);
+            this.btnActivoModificar.Location = new System.Drawing.Point(395, 443);
             this.btnActivoModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnActivoModificar.Name = "btnActivoModificar";
             this.btnActivoModificar.Size = new System.Drawing.Size(110, 36);
@@ -271,7 +266,7 @@
             // 
             // btnActivoEliminar
             // 
-            this.btnActivoEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActivoEliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnActivoEliminar.BackColor = System.Drawing.Color.Goldenrod;
             this.btnActivoEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActivoEliminar.FlatAppearance.BorderSize = 0;
@@ -280,7 +275,7 @@
             this.btnActivoEliminar.ForeColor = System.Drawing.Color.White;
             this.btnActivoEliminar.Image = global::FrontEnd.Properties.Resources.minus_button;
             this.btnActivoEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActivoEliminar.Location = new System.Drawing.Point(537, 446);
+            this.btnActivoEliminar.Location = new System.Drawing.Point(542, 443);
             this.btnActivoEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnActivoEliminar.Name = "btnActivoEliminar";
             this.btnActivoEliminar.Size = new System.Drawing.Size(110, 36);
@@ -292,7 +287,7 @@
             // 
             // btnActivoAgregar
             // 
-            this.btnActivoAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActivoAgregar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnActivoAgregar.BackColor = System.Drawing.Color.Goldenrod;
             this.btnActivoAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActivoAgregar.FlatAppearance.BorderSize = 0;
@@ -301,7 +296,7 @@
             this.btnActivoAgregar.ForeColor = System.Drawing.Color.White;
             this.btnActivoAgregar.Image = global::FrontEnd.Properties.Resources.add;
             this.btnActivoAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActivoAgregar.Location = new System.Drawing.Point(238, 446);
+            this.btnActivoAgregar.Location = new System.Drawing.Point(248, 442);
             this.btnActivoAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnActivoAgregar.Name = "btnActivoAgregar";
             this.btnActivoAgregar.Size = new System.Drawing.Size(110, 36);
