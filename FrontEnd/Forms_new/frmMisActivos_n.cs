@@ -71,6 +71,7 @@ namespace Frontend
         private void btnSolicitarRep_Click(object sender, EventArgs e)
         {
             frmReparacionesAgregar formReparacionesInsertar = new frmReparacionesAgregar();
+            formReparacionesInsertar.Show();
            
         }
     }

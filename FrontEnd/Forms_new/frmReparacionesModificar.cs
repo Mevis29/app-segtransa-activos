@@ -47,7 +47,7 @@ namespace FrontEnd.Forms_new
         private void frmReparacionesModificar_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
-            this.txtActivo.Text = codActivo+idActivo;
+            this.txtActivo.Text = codActivo;
             this.txtDescripcion.Text = descripcion;
             this.dpFechaInicial.Value = fechaInicial;
             this.dpFechaFinal.Value = fechaFinal;      
@@ -72,7 +72,7 @@ namespace FrontEnd.Forms_new
                     reparacion.FechafinalReparacion = dpFechaFinal.Value;
                     reparacion.IdReparacion = idActRepSelec;
                     reparacionesDAL.ModificarReparacion(reparacion);
-                    string detalleBitacora = "Se modificó la reparación del activo: " + codActivo + idActivo;
+                    string detalleBitacora = "Se modificó la reparación del activo: " + codActivo;
                     bitacora.IdUsuario = ValoresAplicacion.idUsuario;
                     bitacora.DetalleBitacora = detalleBitacora;
                     bitacoraDAL.Add(bitacora);
